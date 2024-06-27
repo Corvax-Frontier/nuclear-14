@@ -1,0 +1,12 @@
+ent-N14BaseMagazine12.7Pistol = пистолетный магазин (12.7mm)
+  .desc = { ent-BaseItem.desc }
+ent-N14MagazinePistol12mm = пистолетный магазин (12.7mm)
+  .desc = { ent-N14BaseMagazine12.7Pistol.desc }
+ent-N14BaseMagazine12.7SubMachineGun = ПП магазин (12.7mm)
+  .desc = { ent-BaseItem.desc }
+ent-N14MagazineSMG12mm = ПП магазин (12.7mm)
+  .desc = { ent-N14BaseMagazine12.7SubMachineGun.desc }
+ent-N14BaseTopMag12.7SubMachineGun = ПП магазин (12.7mm)
+  .desc = { ent-BaseItem.desc }
+ent-N14TopMagazineSMG12mm = ПП магазин верхнего крепления (12.7mm)
+  .desc = { ent-N14BaseTopMag12.7SubMachineGun.desc }

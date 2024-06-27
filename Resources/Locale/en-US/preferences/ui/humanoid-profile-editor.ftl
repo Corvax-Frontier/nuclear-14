@@ -3,7 +3,6 @@ humanoid-profile-editor-name-label = Name:
 humanoid-profile-editor-name-random-button = Randomize
 humanoid-profile-editor-appearance-tab = Appearance
 humanoid-profile-editor-clothing = Show clothing
-humanoid-profile-editor-loadouts = Show loadout
 humanoid-profile-editor-clothing-show = Show
 humanoid-profile-editor-sex-label = Sex:
 humanoid-profile-editor-sex-male-text = Male
@@ -20,8 +19,7 @@ humanoid-profile-editor-pronouns-neuter-text = It / It
 humanoid-profile-editor-import-button = Import
 humanoid-profile-editor-export-button = Export
 humanoid-profile-editor-save-button = Save
-humanoid-profile-editor-clothing-label = Clothing:
-humanoid-profile-editor-backpack-label = Backpack:
+humanoid-profile-editor-reset-button = Reset
 humanoid-profile-editor-spawn-priority-label = Spawn priority:
 humanoid-profile-editor-eyes-label = Eye color:
 humanoid-profile-editor-jobs-tab = Jobs
@@ -44,20 +42,20 @@ humanoid-profile-editor-department-jobs-label = {$departmentName} jobs
 humanoid-profile-editor-antags-tab = Antags
 humanoid-profile-editor-antag-preference-yes-button = Yes
 humanoid-profile-editor-antag-preference-no-button = No
-humanoid-profile-editor-traits-tab = Traits
+
 humanoid-profile-editor-job-priority-high-button = High
 humanoid-profile-editor-job-priority-medium-button = Medium
 humanoid-profile-editor-job-priority-low-button = Low
 humanoid-profile-editor-job-priority-never-button = Never
 humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC names and descriptions will lead to admin intervention on this server. Read our \[Rules\] for more.
-humanoid-profile-editor-loadouts-tab = Loadout
-humanoid-profile-editor-loadouts-uncategorized-tab = Uncategorized
-humanoid-profile-editor-loadouts-no-loadouts = No loadouts found
-humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
-humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable
-humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
-    When enabled, loadouts that your current character setup cannot use will be shown highlighted in red.
-    You will still not be able to use the invalid loadouts unless your character setup changes to fit the requirements.
-    This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every time.
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description
+
+# Traits
+humanoid-profile-editor-traits-tab = Traits
+humanoid-profile-editor-no-traits = No traits available
+
+humanoid-profile-editor-trait-count-hint = Points available: [{$current}/{$max}]
+
+trait-category-disabilities = Disabilities
+trait-category-speech = Speech traits

@@ -1,0 +1,4 @@
+ent-BaseMagazineBox5.56Rifle = { ent-BaseItem }
+  .desc = { ent-BaseItem.desc }
+ent-MagazineBox5.56 = ammunition box (5.56mm)
+  .desc = { ent-BaseMagazineBox5.56Rifle.desc }
