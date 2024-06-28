@@ -1,8 +1,8 @@
-ent-N14WreckCoupe = wrecked coupe
-    .desc = a wrecked pre-war car.
-ent-N14WreckMusclecar = wrecked muscle car
-    .desc = a wrecked pre-war car.
-ent-N14WreckSportscar = wrecked sports car
-    .desc = a wrecked pre-war car.
-ent-N14WreckVan = wrecked van
-    .desc = a wrecked pre-war van.
+ent-N14WreckCoupe = разбитый купе
+    .desc = Разбитый довоенный автомобиль.
+ent-N14WreckMusclecar = разбитый маслкар
+    .desc = Разбитый довоенный автомобиль.
+ent-N14WreckSportscar = разбитый спорткар
+    .desc = Разбитый довоенный автомобиль.
+ent-N14WreckVan = разбитый фургон
+    .desc = Разбитый довоенный фургон.

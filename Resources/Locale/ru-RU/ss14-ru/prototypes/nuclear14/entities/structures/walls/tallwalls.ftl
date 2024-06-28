@@ -1,3 +1,3 @@
-ent-N14WallBrickTall = brick wall
-    .suffix = tall
+ent-N14WallBrickTall = кирпичная стена
+    .suffix = высокая
     .desc = { ent-BaseWall.desc }

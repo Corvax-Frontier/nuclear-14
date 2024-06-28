@@ -1,6 +1,6 @@
-ent-N14Soil = soil
-    .desc = Looks good for planting things in.
-ent-N14HydroponicsPlanterEmpty = planter
-    .desc = A wooden planter for growing things. Just needs soil.
-ent-N14HydroponicsPlanter = planter
-    .desc = A wooden planter with soil for growing things in.
+ent-N14Soil = почва
+    .desc = Хорошо подходит для посадки растений.
+ent-N14HydroponicsPlanterEmpty = горшок для растений
+    .desc = Деревянный горшок для выращивания растений. Просто добавьте почвы.
+ent-N14HydroponicsPlanter = горшок для растений
+    .desc = Деревянный горшок для выращивания растений.

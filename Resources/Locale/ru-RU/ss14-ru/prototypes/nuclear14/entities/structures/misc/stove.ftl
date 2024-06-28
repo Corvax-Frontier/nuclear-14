@@ -1,2 +1,2 @@
-ent-N14CookingStove = stove
-    .desc = A pre-war stove for cooking things.
+ent-N14CookingStove = газовая плита
+    .desc = Довоенная газовая плита для готовки.

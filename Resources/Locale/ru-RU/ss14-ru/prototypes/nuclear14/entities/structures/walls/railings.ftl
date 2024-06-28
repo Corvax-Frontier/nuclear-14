@@ -1,6 +1,6 @@
-ent-RailingYellow = yellow railing
-    .desc = Basic railing meant to protect idiots like you from falling.
-ent-RailingYellowCorner = yellow railing
-    .desc = Basic railing meant to protect idiots like you from falling.
-ent-RailingYellowEnd = yellow railing
-    .desc = Basic railing meant to protect idiots like you from falling.
+ent-RailingYellow = жёлтые перила
+    .desc = Простые перила, предназначенные для защиты таких идиотов как вы от падения.
+ent-RailingYellowCorner = жёлтые перила
+    .desc = Простые перила, предназначенные для защиты таких идиотов как вы от падения.
+ent-RailingYellowEnd = жёлтые перила
+    .desc = Простые перила, предназначенные для защиты таких идиотов как вы от падения.
