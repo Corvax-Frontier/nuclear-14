@@ -23,7 +23,8 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new("[^А-Яа-яёЁ0-9' -]"); // Corvax-Localization
+        //private static readonly Regex RestrictedNameRegex = new("[^А-Яа-яёЁ0-9' -]"); // Corvax-Localization
+        private static readonly Regex RestrictedNameRegex = new("[^а-яА-Яa-zA-Z-'0-9]"); // Corvax-Localization
         public const int MaxNameLength = 32;
         public const int MaxDescLength = 512;
 
