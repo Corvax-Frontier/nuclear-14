@@ -1,10 +1,10 @@
-ent-N14WallmountFireHydrant = fire hydrant
-    .desc = A wall mounted hydrant for putting out large fires.
+ent-N14WallmountFireHydrant = пожарный гидрант
+    .desc = Настенный гидрант для тушения больших пожаров.
 ent-N14WallmountFireHydrantOpen = { ent-N14WallmountFireHydrant }
-    .suffix = Open
+    .suffix = Открыт
     .desc = { ent-N14WallmountFireHydrant.desc }
 ent-N14WallmountFireHydrantOld = { ent-N14WallmountFireHydrant }
     .desc = { ent-N14WallmountFireHydrant.desc }
 ent-N14WallmountFireHydrantOldOpen = { ent-N14WallmountFireHydrantOld }
-    .suffix = Open
+    .suffix = Открыт
     .desc = { ent-N14WallmountFireHydrantOld.desc }

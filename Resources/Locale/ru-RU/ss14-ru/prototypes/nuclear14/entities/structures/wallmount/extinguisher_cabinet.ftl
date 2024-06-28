@@ -1,11 +1,11 @@
-ent-N14FireExtinguisherCabinet = extinguisher cabinet
-    .desc = A small wall mounted cabinet designed to hold a fire extinguisher.
+ent-N14FireExtinguisherCabinet = шкаф для огнетушителя
+    .desc = Небольшой настенный шкаф, предназначенный для хранения огнетушителя.
 ent-N14FireExtinguisherCabinetOpen = { ent-N14FireExtinguisherCabinet }
-    .suffix = Open
+    .suffix = Открытый
     .desc = { ent-N14FireExtinguisherCabinet.desc }
 ent-N14FireExtinguisherCabinetFilled = { ent-N14FireExtinguisherCabinet }
-    .suffix = Filled
+    .suffix = Заполненный
     .desc = { ent-N14FireExtinguisherCabinet.desc }
 ent-N14FireExtinguisherCabinetFilledOpen = { ent-N14FireExtinguisherCabinetFilled }
-    .suffix = Filled, Open
+    .suffix = Заполненный, Открытый
     .desc = { ent-N14FireExtinguisherCabinetFilled.desc }

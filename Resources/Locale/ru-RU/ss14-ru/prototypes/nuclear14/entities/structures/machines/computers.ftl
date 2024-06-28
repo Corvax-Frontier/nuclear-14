@@ -1,4 +1,4 @@
-ent-N14BaseComputer = computer
-    .desc = An old heavy computer.
-ent-N14ComputerCargoOrders = cargo request computer
-    .desc = Used to order supplies.
+ent-N14BaseComputer = компьютер
+    .desc = Древний компьютер.
+ent-N14ComputerCargoOrders = консоль заказа грузов
+    .desc = Используется для оформления заказов.

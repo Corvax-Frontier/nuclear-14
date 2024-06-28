@@ -1,2 +1,2 @@
-ent-N14ComputerVDU = VDU
-    .desc = A wall mounted video display unit.
+ent-N14ComputerVDU = настенный дисплей
+    .desc = Настенный видеодисплей.

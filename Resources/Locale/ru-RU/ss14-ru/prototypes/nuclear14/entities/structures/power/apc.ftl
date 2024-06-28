@@ -1,7 +1,7 @@
-ent-N14APCBreaker = Electrical Breaker
-    .desc = A breaker box for controlling electrical systems.
-ent-N14APCBreakerFrame = APC frame
-    .desc = A breaker box for controlling electrical systems., lacking the electronics.
+ent-N14APCBreaker = Распределительный короб
+    .desc = Распределительная коробка для управления электрическими системами.
+ent-N14APCBreakerFrame = Распределительный короб
+    .desc = Распределительная коробка для управления электрическими системами, пустая.
 ent-N14APCBreakerConstructed = { ent-N14APCBreaker }
-    .suffix = Open
+    .suffix = Открытая
     .desc = { ent-N14APCBreaker.desc }

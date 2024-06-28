@@ -1,8 +1,8 @@
-ent-N14BarricadeSandbagSingle = sandbags
-    .desc = A sandbag fortification.
-ent-N14BarricadeTanktrap = tank trap
-    .desc = A metal fabricated spike for blocking vehicles.
-ent-N14BarricadeTanktrapRusty = tank trap
-    .desc = A rusty metal fabricated spike for blocking vehicles.
-ent-N14BarricadeRazorwire = razorwire barricade
-    .desc = A razorwire fortification.
+ent-N14BarricadeSandbagSingle = мешки с песком
+    .desc = Укрепление из мешков с песком.
+ent-N14BarricadeTanktrap = противотанковый еж
+    .desc = Металлический шип для блокирования транспортных средств.
+ent-N14BarricadeTanktrapRusty = противотанковый еж
+    .desc = Ржавый металлический шип для блокирования транспортных средств.
+ent-N14BarricadeRazorwire = баррикада с колючей проволокой
+    .desc = Укрепление с колючей проволокой.

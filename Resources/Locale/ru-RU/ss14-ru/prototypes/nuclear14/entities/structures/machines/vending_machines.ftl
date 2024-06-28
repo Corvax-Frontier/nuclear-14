@@ -1,5 +1,6 @@
-ent-N14VendingMachineNukaCola = Nuka-Cola machine
-    .desc = A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
-ent-N14VendingMachineNukaColaIrradiated = Nuka-Cola machine
-    .desc = A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
-    .suffix = irradiated
+ent-N14VendingMachineNukaCola = автомат с Ядер-Колой
+    .desc = Довоенный торговый автомат, который продает напитки бренда Ядер-Кола.
+ent-N14VendingMachineNukaColaIrradiated = автомат с Ядер-Колой
+    .desc = Довоенный торговый автомат, который продает напитки бренда Ядер-Кола.
+    .suffix = радиоактивный
+

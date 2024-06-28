@@ -1,7 +1,7 @@
-ent-N14FloraDesertCactus = Cactus
-    .desc = A cactus. Prickly.
-ent-N14FloraDesertTree1 = tree yucca
-    .desc = A Joshua Tree.
+ent-N14FloraDesertCactus = Кактус
+    .desc = Кактус. Колется.
+ent-N14FloraDesertTree1 = банановая юкка
+    .desc = Дерево.
 ent-N14FloraDesertTree2 = { ent-N14FloraDesertTree1 }
     .desc = { ent-N14FloraDesertTree1.desc }
 ent-N14FloraDesertTree3 = { ent-N14FloraDesertTree1 }
