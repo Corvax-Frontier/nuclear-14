@@ -1,6 +1,6 @@
-ent-N14JunkCurtain = curtains
-    .desc = No privacy guaranteed.
-    .suffix = closed
-ent-N14JunkCurtainOpen = curtains
-    .desc = No privacy guaranteed.
-    .suffix = open
+ent-N14JunkCurtain = занавески
+    .desc = Конфиденциальность не гарантируется.
+    .suffix = Закрытые
+ent-N14JunkCurtainOpen = занавески
+    .desc = Конфиденциальность не гарантируется.
+    .suffix = открытые

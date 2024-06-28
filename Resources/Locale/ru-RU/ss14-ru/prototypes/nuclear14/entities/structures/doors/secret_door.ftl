@@ -1,6 +1,6 @@
-ent-N14DoorSecretRuin = ruined wall
-    .desc = A ruined wall from a pre-war structure.
-    .suffix = secret door
-ent-N14DoorSecretWoodLog = log wall
-    .desc = A wall made out of wooden logs.
-    .suffix = secret door
+ent-N14DoorSecretRuin = Разрушенная стена
+    .desc = Разрушенная стена со времен начала ядерной войны.
+    .suffix = Секретная дверь
+ent-N14DoorSecretWoodLog = Бревенчатая стена
+    .desc = Стена, сделанная из кучи бревен.
+    .suffix = Секретная дверь

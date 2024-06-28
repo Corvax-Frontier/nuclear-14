@@ -1,2 +1,2 @@
-ent-N14FenceChainGate = fence gate
-    .desc = A gate in the fence to allow access.
+ent-N14FenceChainGate = калитка
+    .desc = Простенькая калитка. Есть вход и выход. Что еще ей нужно?

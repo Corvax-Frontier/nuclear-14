@@ -1,7 +1,7 @@
-ent-N14Airlock = bunker door
-    .desc = It opens, it closes, it might crush you, and there might be only radiation and monsters behind it. Has to be manually activated.
+ent-N14Airlock = Дверь бункера
+    .desc = Может как открыться, так и закрыться, раздавив вас. Внутри вас ждут только полчища монстров и радиация. Может быть активирована вручную.
 ent-N14DoorBunkerVault = { ent-N14Airlock }
-    .suffix = Vault
+    .suffix = Хранилище
     .desc = { ent-N14Airlock.desc }
 ent-N14DoorBunker = { ent-N14Airlock }
     .desc = { ent-N14Airlock.desc }

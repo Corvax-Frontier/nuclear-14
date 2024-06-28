@@ -1,5 +1,5 @@
-ent-N14DoorShutterFramedRoller = shutter
-    .desc = A lightweight airtight roller shutter door.
-ent-N14DoorShutterRoller = garage shutter
-    .desc = A lightweight airtight roller shutter door.
-    .suffix = frameless
+ent-N14DoorShutterFramedRoller = Дверь с рольставнями
+    .desc = Легкая герметичная дверь с рольставнями.
+ent-N14DoorShutterRoller = Ворота гаража
+    .desc = Легкая герметичная дверь с рольставнями.
+    .suffix = безрамочный

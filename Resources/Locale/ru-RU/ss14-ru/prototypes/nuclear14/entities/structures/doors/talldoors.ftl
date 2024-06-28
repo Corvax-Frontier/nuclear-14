@@ -1,3 +1,3 @@
-ent-N14DoorMetalBlueTall = metal Door
-    .desc = An old blue metal door.
-    .suffix = tall
+ent-N14DoorMetalBlueTall = Металлическая дверь
+    .desc = Безумно старая синяя дверь.
+    .suffix = Высокая
