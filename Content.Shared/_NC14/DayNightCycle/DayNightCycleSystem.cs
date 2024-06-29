@@ -1,10 +1,8 @@
+using System.Linq;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Timing;
-using System.Collections.Generic;
 
-namespace Content.Server._NC14.DayNightCycle
+namespace Content.Shared._NC14.DayNightCycle
 {
     public sealed class DayNightCycleSystem : EntitySystem
     {
@@ -74,7 +72,7 @@ namespace Content.Server._NC14.DayNightCycle
         private void UpdateLightColor(DayNightCycleComponent dayNight, MapLightComponent? mapLight = null, EntityUid? uid = null)
         {
             var color = GetInterpolatedColor(dayNight);
-            
+
             if (mapLight != null && uid.HasValue)
             {
                 mapLight.AmbientLightColor = color;
@@ -98,8 +96,8 @@ namespace Content.Server._NC14.DayNightCycle
             }
 
             // If we're here, we're between the last and first entry
-            var lastEntry = entries[^1];
-            var firstEntry = entries[0];
+            var lastEntry = entries.Last();
+            var firstEntry = entries.First();
             var wrappedT = (time - lastEntry.Time) / (1f + firstEntry.Time - lastEntry.Time);
             return InterpolateHexColors(lastEntry.ColorHex, firstEntry.ColorHex, wrappedT);
         }
