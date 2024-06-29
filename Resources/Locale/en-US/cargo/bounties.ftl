@@ -65,6 +65,8 @@ bounty-item-cardboard-box = Cardboard box
 bounty-item-wine = Wine bottle
 bounty-item-cotton-boll = Cotton boll
 bounty-item-microwave-machine-board = Microwave machine board
+bounty-lasergun = Laser gun
+bounty-food = Meat food
 
 bounty-description-artifact = NanoTrasen is in some hot water for stealing artifacts from non-spacefaring planets. Return one and we'll compensate you for it.
 bounty-description-baseball-bat = Baseball fever is going on at CentCom! Be a dear and ship them some baseball bats, so that management can live out their childhood dream.
@@ -132,3 +134,5 @@ bounty-description-cardobard-box = "The Cardborgs Cometh" is a new play premieri
 bounty-description-wine = The new librarian and the Quartermaster are falling head over heels for each other after she caught him disassembling the bookshelves for wood. Send a couple bottles of wine (Or cans, if you must) to help make the date go well.
 bounty-description-cotton-boll = A massive swarm of mothroaches ate all the paper and cloth on the station. Send us some cotton to help keep our winged crewmembers fed.
 bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny to stick forks in all the kitchen microwaves. Help us replace them before the chefs start making clown burgers.
+bounty-description-lasergun = The Salvage Caravan requests a large shipment of laser weapons to mop up a hive of xenomorphs.
+bounty-description-food = After the rat king invasion, a neighboring unathi station was left completely without food. A large meat food shipment is needed.
