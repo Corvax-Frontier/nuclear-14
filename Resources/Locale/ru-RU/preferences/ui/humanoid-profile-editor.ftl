@@ -52,3 +52,12 @@ humanoid-profile-editor-no-traits = Нет доступных черт
 humanoid-profile-editor-trait-count-hint = Доступно очков: [{ $current }/{ $max }]
 trait-category-disabilities = Ограничения
 trait-category-speech = Черты речи
+humanoid-profile-editor-loadouts-tab = Инвентарь
+humanoid-profile-editor-loadouts-uncategorized-tab = Без категории
+humanoid-profile-editor-loadouts-no-loadouts = Инвентарь отсутствует
+humanoid-profile-editor-loadouts-points-label = У вас осталось {$points} из {$max} очков
+humanoid-profile-editor-loadouts-show-unusable-button = Показать недоступное
+humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
+    Если эта функция включена, снаряжение, которое не подходит для текущей конфигурации вашего персонажа, будет выделено красным цветом.
+    Вы по-прежнему не сможете использовать недоступное снаряжение, пока конфигурация вашего персонажа не будет соответствовать требованиям.
+    Эта опция может быть полезна, если вы часто переключаетесь между несколькими профессиями и не хотите каждый раз заново выбирать снаряжение.
