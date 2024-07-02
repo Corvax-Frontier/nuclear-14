@@ -4,9 +4,6 @@ using System.Threading;
 using Content.Server.Administration.Managers;
 using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Server.NPC.Systems;
-using Content.Server.Worldgen;
-using Content.Server.Worldgen.Components;
-using Content.Server.Worldgen.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Mobs;
 using Content.Shared.NPC;
@@ -17,10 +14,10 @@ using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Server.Worldgen; // Frontier
-using Content.Server.Worldgen.Components; // Frontier
-using Content.Server.Worldgen.Systems; // Frontier
-using Robust.Server.GameObjects; // Frontier
+using Content.Server.Worldgen; // Corvax
+using Content.Server.Worldgen.Components; // Corvax
+using Content.Server.Worldgen.Systems; // Corvax
+using Robust.Server.GameObjects; // Corvax
 
 namespace Content.Server.NPC.HTN;
 
@@ -30,12 +27,12 @@ public sealed class HTNSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly NPCUtilitySystem _utility = default!;
-    // Frontier
+    // Corvax
     [Dependency] private readonly WorldControllerSystem _world = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     private EntityQuery<WorldControllerComponent> _mapQuery;
     private EntityQuery<LoadedChunkComponent> _loadedQuery;
-    // Frontier
+    // Corvax
 
     private readonly JobQueue _planQueue = new(0.004);
 
@@ -45,8 +42,8 @@ public sealed class HTNSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        _mapQuery = GetEntityQuery<WorldControllerComponent>(); // Frontier
-        _loadedQuery = GetEntityQuery<LoadedChunkComponent>(); // Frontier
+        _mapQuery = GetEntityQuery<WorldControllerComponent>(); // Corvax
+        _loadedQuery = GetEntityQuery<LoadedChunkComponent>(); // Corvax
         SubscribeLocalEvent<HTNComponent, MobStateChangedEvent>(_npc.OnMobStateChange);
         SubscribeLocalEvent<HTNComponent, MapInitEvent>(_npc.OnNPCMapInit);
         SubscribeLocalEvent<HTNComponent, PlayerAttachedEvent>(_npc.OnPlayerNPCAttach);
@@ -163,13 +160,13 @@ public sealed class HTNSystem : EntitySystem
         _planQueue.Process();
         var query = EntityQueryEnumerator<ActiveNPCComponent, HTNComponent>();
 
-        while (query.MoveNext(out var uid, out _, out var comp))
+        while(query.MoveNext(out var uid, out _, out var comp))
         {
             // If we're over our max count or it's not MapInit then ignore the NPC.
             if (count >= maxUpdates)
                 break;
 
-            if (!IsNPCActive(uid))  // Frontier
+            if (!IsNPCActive(uid))  // Corvax
                 continue;
 
             if (comp.PlanningJob != null)
@@ -259,8 +256,8 @@ public sealed class HTNSystem : EntitySystem
             count++;
         }
     }
-
-    private bool IsNPCActive(EntityUid entity) // Frontier
+// Corvax-start
+    private bool IsNPCActive(EntityUid entity)
     {
         var transform = Transform(entity);
 
@@ -271,6 +268,7 @@ public sealed class HTNSystem : EntitySystem
 
         return _loadedQuery.TryGetComponent(chunk, out var loaded) && loaded.Loaders is not null;
     }
+// Corvax-end
 
     private void AppendDebugText(HTNTask task, StringBuilder text, List<int> planBtr, List<int> btr, ref int level)
     {
