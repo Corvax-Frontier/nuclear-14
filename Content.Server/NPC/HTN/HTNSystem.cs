@@ -2,17 +2,25 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using Content.Server.Administration.Managers;
-using Robust.Shared.CPUJob.JobQueues;
-using Robust.Shared.CPUJob.JobQueues.Queues;
 using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Server.NPC.Systems;
+using Content.Server.Worldgen;
+using Content.Server.Worldgen.Components;
+using Content.Server.Worldgen.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Mobs;
 using Content.Shared.NPC;
 using JetBrains.Annotations;
+using Robust.Server.GameObjects;
+using Robust.Shared.CPUJob.JobQueues;
+using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Server.Worldgen; // Frontier
+using Content.Server.Worldgen.Components; // Frontier
+using Content.Server.Worldgen.Systems; // Frontier
+using Robust.Server.GameObjects; // Frontier
 
 namespace Content.Server.NPC.HTN;
 
@@ -22,6 +30,12 @@ public sealed class HTNSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly NPCUtilitySystem _utility = default!;
+    // Frontier
+    [Dependency] private readonly WorldControllerSystem _world = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    private EntityQuery<WorldControllerComponent> _mapQuery;
+    private EntityQuery<LoadedChunkComponent> _loadedQuery;
+    // Frontier
 
     private readonly JobQueue _planQueue = new(0.004);
 
@@ -31,6 +45,8 @@ public sealed class HTNSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        _mapQuery = GetEntityQuery<WorldControllerComponent>(); // Frontier
+        _loadedQuery = GetEntityQuery<LoadedChunkComponent>(); // Frontier
         SubscribeLocalEvent<HTNComponent, MobStateChangedEvent>(_npc.OnMobStateChange);
         SubscribeLocalEvent<HTNComponent, MapInitEvent>(_npc.OnNPCMapInit);
         SubscribeLocalEvent<HTNComponent, PlayerAttachedEvent>(_npc.OnPlayerNPCAttach);
@@ -147,11 +163,14 @@ public sealed class HTNSystem : EntitySystem
         _planQueue.Process();
         var query = EntityQueryEnumerator<ActiveNPCComponent, HTNComponent>();
 
-        while(query.MoveNext(out var uid, out _, out var comp))
+        while (query.MoveNext(out var uid, out _, out var comp))
         {
             // If we're over our max count or it's not MapInit then ignore the NPC.
             if (count >= maxUpdates)
                 break;
+
+            if (!IsNPCActive(uid))  // Frontier
+                continue;
 
             if (comp.PlanningJob != null)
             {
@@ -239,6 +258,18 @@ public sealed class HTNSystem : EntitySystem
             Update(comp, frameTime);
             count++;
         }
+    }
+
+    private bool IsNPCActive(EntityUid entity) // Frontier
+    {
+        var transform = Transform(entity);
+
+        if (!_mapQuery.TryGetComponent(transform.MapUid, out var worldComponent))
+            return true;
+
+        var chunk = _world.GetOrCreateChunk(WorldGen.WorldToChunkCoords(_transform.GetWorldPosition(transform)).Floored(), transform.MapUid.Value, worldComponent);
+
+        return _loadedQuery.TryGetComponent(chunk, out var loaded) && loaded.Loaders is not null;
     }
 
     private void AppendDebugText(HTNTask task, StringBuilder text, List<int> planBtr, List<int> btr, ref int level)
