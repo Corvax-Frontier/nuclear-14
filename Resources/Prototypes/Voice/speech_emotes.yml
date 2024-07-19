@@ -2,7 +2,7 @@
 - type: emote
   id: Scream
   category: Vocal
-  chatMessages: [screams!]
+  chatMessages: ["chat-emote-msg-scream"]
   chatTriggers:
     - scream
     - screams
@@ -43,7 +43,7 @@
 - type: emote
   id: Laugh
   category: Vocal
-  chatMessages: [laughs]
+  chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laugh
     - laughs
@@ -93,7 +93,7 @@
 - type: emote
   id: Honk
   category: Vocal
-  chatMessages: [honks]
+  chatMessages: ["chat-emote-msg-honk"]
   chatTriggers:
     - honk
     - honk.
@@ -116,7 +116,7 @@
 - type: emote
   id: Sigh
   category: Vocal
-  chatMessages: [sighs]
+  chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sigh
     - sighs
@@ -136,7 +136,7 @@
 - type: emote
   id: Whistle
   category: Vocal
-  chatMessages: [whistle]
+  chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
     - whistle
     - whistle.
@@ -159,7 +159,7 @@
 - type: emote
   id: Crying
   category: Vocal
-  chatMessages: [crying]
+  chatMessages: ["chat-emote-msg-crying"]
   chatTriggers:
     - cry
     - cry.
@@ -190,7 +190,7 @@
 - type: emote
   id: Squish
   category: Vocal
-  chatMessages: [squishing]
+  chatMessages: ["chat-emote-msg-squish"]
   chatTriggers:
     - squish
     - squish.
@@ -210,7 +210,7 @@
 - type: emote
   id: Chitter
   category: Vocal
-  chatMessages: [chitters.]
+  chatMessages: ["chat-emote-msg-chitter"]
   chatTriggers:
    - chitter
    - chitter.
@@ -230,7 +230,7 @@
 - type: emote
   id: Squeak
   category: Vocal
-  chatMessages: [squeaks.]
+  chatMessages: ["chat-emote-msg-squeak"]
   chatTriggers:
    - squeak
    - squeak.
@@ -250,7 +250,7 @@
 - type: emote
   id: Click
   category: Vocal
-  chatMessages: [click.]
+  chatMessages: ["chat-emote-msg-click"]
   chatTriggers:
    - click
    - click.
@@ -281,7 +281,7 @@
 - type: emote
   id: Clap
   category: Hands
-  chatMessages: [claps!]
+  chatMessages: ["chat-emote-msg-clap"]
   chatTriggers:
     - clap
     - claps
@@ -308,7 +308,7 @@
 - type: emote
   id: Snap
   category: Hands
-  chatMessages: [snaps fingers] # snaps <{THEIR($ent)}> fingers?
+  chatMessages: ["chat-emote-msg-snap"] # snaps <{THEIR($ent)}> fingers?
   chatTriggers:
     - snap
     - snaps
@@ -349,7 +349,7 @@
 - type: emote
   id: Salute
   category: Hands
-  chatMessages: [Salute]
+  chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
     - salute
     - salute.
@@ -374,7 +374,7 @@
 
 - type: emote
   id: DefaultDeathgasp
-  chatMessages: ["emote-deathgasp"]
+  chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp
   - задыхается
@@ -384,7 +384,7 @@
 - type: emote
   id: Buzz
   category: Vocal
-  chatMessages: [buzz!]
+  chatMessages: ["chat-emote-msg-buzz"]
   chatTriggers:
     - buzzing
     - buzzing!
@@ -418,7 +418,7 @@
 - type: emote
   id: Chirp
   category: Vocal
-  chatMessages: [chirps!]
+  chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
     - chirp
     - chirp.
