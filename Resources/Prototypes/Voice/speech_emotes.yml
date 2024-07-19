@@ -95,18 +95,6 @@
   category: Vocal
   chatMessages: ["chat-emote-msg-honk"]
   chatTriggers:
-    - honk
-    - honk.
-    - honk!
-    - honks
-    - honks.
-    - honks!
-    - honked
-    - honked.
-    - honked!
-    - honking
-    - honking.
-    - honking!
     # Corvax-Localization-Start
     - хонк
     - хонк.
