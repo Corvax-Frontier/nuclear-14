@@ -10,7 +10,6 @@ namespace Content.Shared.IoC
         {
             IoCManager.Register<MarkingManager, MarkingManager>();
             IoCManager.Register<ContentLocalizationManager, ContentLocalizationManager>();
-            IoCManager.Register<ILocalizationManager, TokenFixer>();
         }
     }
 }

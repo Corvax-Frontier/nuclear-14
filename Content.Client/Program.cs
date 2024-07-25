@@ -1,3 +1,4 @@
+using Content.Shared.Tokens;
 using Robust.Client;
 
 namespace Content.Client
@@ -6,6 +7,7 @@ namespace Content.Client
     {
         public static void Main(string[] args)
         {
+            IoCManager.Register<ILocalizationManager, TokenFixer>();
             ContentStart.Start(args);
         }
     }
