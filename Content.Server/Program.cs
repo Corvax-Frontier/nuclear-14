@@ -7,8 +7,6 @@ namespace Content.Server
     {
         public static void Main(string[] args)
         {
-            IoCManager.InitThread();
-            IoCManager.Register<ILocalizationManager, TokenFixer>();
             ContentStart.Start(args);
         }
     }
