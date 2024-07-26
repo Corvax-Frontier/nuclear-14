@@ -6,9 +6,9 @@ ent-N14JunkItemBasePlastic = { ent-N14JunkItemBase }
     .desc = { ent-N14JunkItemBase.desc }
 ent-N14JunkItemBaseMetal = { ent-N14JunkItemBase }
     .desc = { ent-N14JunkItemBase.desc }
-ent-N14JunkItemBaseContainer = { ent-['N14JunkItemBase', 'DrinkBottlePlasticBaseFull'] }
+ent-N14JunkItemBaseContainer = { ent-N14JunkItemBase }
 
-  .desc = { ent-['N14JunkItemBase', 'DrinkBottlePlasticBaseFull'].desc }
+  .desc = { ent-N14JunkItemBase.desc }
 ent-N14JunkAbraxoCleaner = Abraxo Cleaner
     .desc = Abraxo brand detergent.
 ent-N14Junk8Ball = 8 Ball

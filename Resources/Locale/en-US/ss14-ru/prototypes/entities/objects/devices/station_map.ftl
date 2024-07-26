@@ -1,9 +1,9 @@
 ent-BaseHandheldStationMap = station map
     .desc = Displays a readout of the current station.
-ent-HandheldStationMap = { ent-['BaseHandheldStationMap', 'PowerCellSlotSmallItem'] }
+ent-HandheldStationMap = { ent-BaseHandheldStationMap }
 
   .suffix = Handheld, Powered
-  .desc = { ent-['BaseHandheldStationMap', 'PowerCellSlotSmallItem'].desc }
+  .desc = { ent-BaseHandheldStationMap.desc }
 ent-HandheldStationMapEmpty = { ent-HandheldStationMap }
     .suffix = Handheld, Empty
     .desc = { ent-HandheldStationMap.desc }

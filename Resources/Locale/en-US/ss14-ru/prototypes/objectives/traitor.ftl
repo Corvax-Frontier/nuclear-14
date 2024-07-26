@@ -1,23 +1,23 @@
 ent-BaseTraitorObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
-ent-BaseTraitorSocialObjective = { ent-['BaseTraitorObjective', 'BaseSocialObjective'] }
+ent-BaseTraitorSocialObjective = { ent-BaseSocialObjective }
 
-  .desc = { ent-['BaseTraitorObjective', 'BaseSocialObjective'].desc }
-ent-BaseTraitorStealObjective = { ent-['BaseTraitorObjective', 'BaseStealObjective'] }
+  .desc = { ent-BaseSocialObjective.desc }
+ent-BaseTraitorStealObjective = { ent-BaseStealObjective }
 
-  .desc = { ent-['BaseTraitorObjective', 'BaseStealObjective'].desc }
+  .desc = { ent-BaseStealObjective.desc }
 ent-EscapeShuttleObjective = Escape to centcom alive and unrestrained.
     .desc = One of our undercover agents will debrief you when you arrive. Don't show up in cuffs.
-ent-KillRandomPersonObjective = { ent-['BaseTraitorObjective', 'BaseKillObjective'] }
+ent-KillRandomPersonObjective = { ent-'BaseKillObjective }
 
   .desc = Do it however you like, just make sure they don't make it to centcom.
-ent-KillRandomHeadObjective = { ent-['BaseTraitorObjective', 'BaseKillObjective'] }
+ent-KillRandomHeadObjective = { ent-BaseKillObjective }
 
   .desc = We need this head gone and you probably know why. Good luck, agent.
-ent-RandomTraitorAliveObjective = { ent-['BaseTraitorSocialObjective', 'BaseKeepAliveObjective'] }
+ent-RandomTraitorAliveObjective = { ent-BaseKeepAliveObjective }
 
   .desc = Identify yourself at your own risk. We just need them alive.
-ent-RandomTraitorProgressObjective = { ent-['BaseTraitorSocialObjective', 'BaseHelpProgressObjective'] }
+ent-RandomTraitorProgressObjective = { ent-BaseHelpProgressObjective }
 
   .desc = Identify yourself at your own risk. We just need them to succeed.
 ent-BaseCMOStealObjective = { ent-BaseTraitorStealObjective }

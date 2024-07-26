@@ -8,19 +8,19 @@ ent-BubblishTranslatorImplanter = bubblish translator implant
     .desc = { ent-BaseTranslatorImplanter.desc }
 ent-NekomimeticTranslatorImplanter = nekomimetic translator implant
 
-  .desc = { ent-['BaseTranslatorImplanter'].desc }
+  .desc = { ent-BaseTranslatorImplanter.desc }
 ent-DraconicTranslatorImplanter = draconic translator implant
 
-  .desc = { ent-['BaseTranslatorImplanter'].desc }
+  .desc = { ent-BaseTranslatorImplanter.desc }
 ent-CanilunztTranslatorImplanter = canilunzt translator implant
 
-  .desc = { ent-['BaseTranslatorImplanter'].desc }
+  .desc = { ent-BaseTranslatorImplanter.desc }
 ent-SolCommonTranslatorImplanter = sol-common translator implant
 
-  .desc = { ent-['BaseTranslatorImplanter'].desc }
+  .desc = { ent-BaseTranslatorImplanter.desc }
 ent-RootSpeakTranslatorImplanter = root-speak translator implant
 
-  .desc = { ent-['BaseTranslatorImplanter'].desc }
+  .desc = { ent-BaseTranslatorImplanter.desc }
 ent-MofficTranslatorImplanter = moffic translator implant
 
-  .desc = { ent-['BaseTranslatorImplanter'].desc }
+  .desc = { ent-BaseTranslatorImplanter.desc }

@@ -4,9 +4,9 @@ ent-ClothingOuterBaseLarge = { ent-ClothingOuterBase }
     .desc = { ent-ClothingOuterBase.desc }
 ent-ClothingOuterStorageBase = { ent-ClothingOuterBase }
     .desc = { ent-ClothingOuterBase.desc }
-ent-ClothingOuterStorageFoldableBase = { ent-['ClothingOuterStorageBase', 'BaseFoldable'] }
+ent-ClothingOuterStorageFoldableBase = { ent-ClothingOuterStorageBase }
 
-  .desc = { ent-['ClothingOuterStorageBase', 'BaseFoldable'].desc }
+  .desc = { ent-ClothingOuterStorageBase.desc }
 ent-ClothingOuterStorageFoldableBaseOpened = { ent-ClothingOuterStorageFoldableBase }
     .suffix = opened
     .desc = { ent-ClothingOuterStorageFoldableBase.desc }
@@ -14,7 +14,7 @@ ent-ClothingOuterStorageToggleableBase = { ent-ClothingOuterStorageBase }
     .desc = { ent-ClothingOuterStorageBase.desc }
 ent-ClothingOuterHardsuitBase = base hardsuit
 
-  .desc = { ent-['ClothingOuterBase', 'GeigerCounterClothing'].desc }
+  .desc = { ent-ClothingOuterBase.desc }
 ent-ClothingOuterEVASuitBase = base EVA Suit
     .desc = { ent-ClothingOuterBase.desc }
 ent-ClothingOuterBaseToggleable = hoodie with hood

@@ -1,12 +1,12 @@
 ent-TranslatorUnpowered = translator
     .desc = Translates speech.
-ent-TranslatorPoweredBase = { ent-['TranslatorUnpowered', 'PowerCellSlotMediumItem'] }
+ent-TranslatorPoweredBase = { ent-TranslatorUnpowered }
 
-  .desc = { ent-['TranslatorUnpowered', 'PowerCellSlotMediumItem'].desc }
-ent-Translator = { ent-['PowerCellSlotMediumItem', 'TranslatorPoweredBase'] }
+  .desc = { ent-TranslatorUnpowered.desc }
+ent-Translator = { ent-PowerCellSlotMediumItem }
 
   .suffix = Powered
-  .desc = { ent-['PowerCellSlotMediumItem', 'TranslatorPoweredBase'].desc }
+  .desc = { ent-PowerCellSlotMediumItem.desc }
 ent-TranslatorForeigner = foreigner's translator
     .desc = A special-issue translator that helps foreigner's speak and understand this station's primary language.
 ent-CanilunztTranslator = Canilunzt translator

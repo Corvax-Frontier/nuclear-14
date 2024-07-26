@@ -1,6 +1,6 @@
-ent-BaseDecoy = { ent-['BaseItem', 'BaseFoldable'] }
+ent-BaseDecoy = { ent-BaseItem }
 
-  .desc = { ent-['BaseItem', 'BaseFoldable'].desc }
+  .desc = { ent-BaseItem.desc }
 ent-BalloonOperative = operative balloon
     .desc = Upon closer inspection, this Syndicate operative is actually a balloon.
 ent-BalloonAgent = agent balloon

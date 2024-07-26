@@ -1,5 +1,5 @@
-ent-BaseHeaterMachine = { ent-['BaseMachinePowered', 'ConstructibleMachine'] }
+ent-BaseHeaterMachine = { ent-BaseMachinePowered }
 
-  .desc = { ent-['BaseMachinePowered', 'ConstructibleMachine'].desc }
+  .desc = { ent-BaseMachinePowered.desc }
 ent-ChemistryHotplate = hotplate
     .desc = The descendent of the microwaves, our newest invention in beaker heating technology: the hotplate!

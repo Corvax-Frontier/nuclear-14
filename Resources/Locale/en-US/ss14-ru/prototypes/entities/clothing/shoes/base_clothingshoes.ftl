@@ -2,8 +2,8 @@ ent-ClothingShoesBase = { ent-Clothing }
     .desc = { ent-Clothing.desc }
 ent-ClothingShoesBaseButcherable = { ent-ClothingShoesBase }
     .desc = { ent-ClothingShoesBase.desc }
-ent-ClothingShoesMilitaryBase = { ent-['ClothingShoesBase', 'ClothingSlotBase'] }
+ent-ClothingShoesMilitaryBase = { ent-ClothingShoesBase }
 
-  .desc = { ent-['ClothingShoesBase', 'ClothingSlotBase'].desc }
+  .desc = { ent-ClothingShoesBase.desc }
 ent-ClothingShoesBaseWinterBoots = { ent-ClothingShoesBaseButcherable }
     .desc = Fluffy boots to help survive even the coldest of winters.

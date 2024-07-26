@@ -68,7 +68,7 @@ ent-CrateSyndicate = Syndicate crate
     .desc = A dark steel crate with red bands and a letter S embossed on the front.
 ent-CrateTrashCart = trash cart
 
-  .desc = { ent-['StructureWheeled', 'CrateBaseWeldable'].desc }
+  .desc = { ent-StructureWheeled.desc }
 ent-CrateTrashCartJani = janitorial trash cart
     .desc = { ent-CrateBaseSecure.desc }
 ent-InvisibleCrate = { ent-CrateBaseWeldable }
