@@ -1,5 +1,5 @@
-ent-BaseMagazineBoxRifle = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseMagazineBoxRifle = { ent-BaseMagazineBox }
+    .desc = { ent-BaseMagazineBox.desc }
 ent-MagazineBoxRifleBig = ammunition box (.20 rifle)
     .desc = { ent-BaseMagazineBoxRifle.desc }
 ent-MagazineBoxRifleBigRubber = ammunition box (.20 rifle rubber)

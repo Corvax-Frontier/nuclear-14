@@ -6,9 +6,10 @@ ent-N14BookshelfDestroyed = bookshelf
     .desc = A broken old shelf.
 ent-N14ShelfWood1 = wooden shelf
     .desc = A dusty old shelf.
-ent-N14LootShelfWood1 = { ent-N14ShelfWood1 }
+ent-N14LootShelfWood1 = { ent-['N14ShelfWood1', 'N14StorageFillDomestic'] }
+
   .suffix = Loot, RandomDomestic
-  .desc = { ent-N14ShelfWood1.desc }
+  .desc = { ent-['N14ShelfWood1', 'N14StorageFillDomestic'].desc }
 ent-N14ShelfWood = { ent-N14ShelfWood1 }
     .desc = { ent-N14ShelfWood1.desc }
 ent-N14ShelfWoodAlt = { ent-N14ShelfWood }

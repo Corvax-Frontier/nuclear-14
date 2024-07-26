@@ -4,6 +4,7 @@ ent-AnomalyLocatorUnpowered = anomaly locator
     .desc = A device designed to aid in the locating of anomalies. Did you check the gas miners?
     .suffix = Unpowered
 ent-AnomalyLocator = { ent-AnomalyLocatorUnpowered }
+
   .suffix = Powered
   .desc = { ent-AnomalyLocatorUnpowered.desc }
 ent-AnomalyLocatorEmpty = { ent-AnomalyLocator }
@@ -13,6 +14,7 @@ ent-AnomalyLocatorWideUnpowered = wide-spectrum anomaly locator
     .desc = A device that looks for anomalies from an extended distance, but has no way to determine the distance to them.
     .suffix = Unpowered
 ent-AnomalyLocatorWide = { ent-AnomalyLocatorWideUnpowered }
+
   .suffix = Powered
   .desc = { ent-AnomalyLocatorWideUnpowered.desc }
 ent-AnomalyLocatorWideEmpty = { ent-AnomalyLocatorWide }

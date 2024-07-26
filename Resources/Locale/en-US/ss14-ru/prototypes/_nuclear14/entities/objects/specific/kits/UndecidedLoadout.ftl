@@ -1,0 +1,10 @@
+ent-NCRtrooperloadoutkits = Undecided NCR Trooper Loadout Kit
+    .desc = please only take one
+ent-NCRNCOloadoutkits = Undecided NCR NCO Loadout Kit
+    .desc = please only take one
+ent-NCRrangerloadoutkits = Undecided NCR Ranger Loadout Kit
+    .desc = please only take one
+ent-NCRveteranrangerloadoutkits = Undecided NCR Veteran Ranger Loadout Kit
+    .desc = please only take one
+ent-NCRBoSMidwestkits = Undecided BoS Midwest Kit
+    .desc = please only take one

@@ -1,5 +1,5 @@
 ent-BaseMagazineBoxPistol = ammunition box (.35 auto)
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseMagazineBox.desc }
 ent-MagazineBoxPistol = ammunition box (.35 auto)
     .desc = { ent-BaseMagazineBoxPistol.desc }
 ent-MagazineBoxPistolPractice = ammunition box (.35 auto practice)

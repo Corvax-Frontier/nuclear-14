@@ -28,3 +28,5 @@ ent-N14ClothingBackpackVaultOverseerFilled = { ent-N14ClothingBackpackVaultBlue 
     .desc = { ent-N14ClothingBackpackVaultBlue.desc }
 ent-N14ClothingBackpackVaultSecurityFilled = { ent-N14ClothingBackpackVaultBlue }
     .desc = { ent-N14ClothingBackpackVaultBlue.desc }
+ent-N14ClothingBackpackRandomFill = { ent-N14ClothingBackpackExplorer }
+    .desc = { ent-N14ClothingBackpackExplorer.desc }

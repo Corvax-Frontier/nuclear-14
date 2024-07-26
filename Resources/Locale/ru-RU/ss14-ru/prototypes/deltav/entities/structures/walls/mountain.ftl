@@ -10,3 +10,6 @@ ent-MountainRock = горная порода
 ent-AsteroidAltRockMining = астероид
     .desc = Каменистый астероид.
     .suffix = Высокая добыча руды
+ent-AsteroidRockOreCrab = астероидная порода
+    .desc = Скалистый астероид.
+    .suffix = Рудный краб

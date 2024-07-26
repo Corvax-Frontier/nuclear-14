@@ -1,5 +1,6 @@
 ent-N14CigPackBase = cigarette pack
-    .desc = { ent-BaseStorageItem.desc }
+
+  .desc = { ent-BaseStorageItem'.desc }
 ent-N14CigarettePackSalem = Salem cigs pack
     .desc = A refined green cigarette packet. A label on the packaging reads, Salem. Refreshes your taste.
 ent-N14CigarettePackKool = Kools cigs pack

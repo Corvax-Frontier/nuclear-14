@@ -6,3 +6,5 @@ ent-N14ButchersCleaver = butcher's cleaver
     .desc = A huge blade used for chopping and chopping up meat.
 ent-N14CombatKnife = combat knife
     .desc = A deadly knife intended for melee confrontations.
+ent-N14TribalKnife = tribal knife
+    .desc = A deadly knife intended for melee confrontations, this one is handmade by tribals.

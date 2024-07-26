@@ -1,5 +1,5 @@
-ent-BaseMagazineBoxMagnum = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseMagazineBoxMagnum = { ent-BaseMagazineBox }
+    .desc = { ent-BaseMagazineBox.desc }
 ent-MagazineBoxMagnum = ammunition box (.45 magnum)
     .desc = { ent-BaseMagazineBoxMagnum.desc }
 ent-MagazineBoxMagnumPractice = ammunition box (.45 magnum practice)

@@ -1,8 +1,13 @@
 ent-TranslatorUnpowered = переводчик
     .desc = Переводит речь, когда не забывает подзарядиться.
+ent-TranslatorPoweredBase = { ent-TranslatorUnpowered }
+
+  .desc = { ent-TranslatorUnpowered.desc }
 ent-Translator = { ent-TranslatorUnpowered }
     .suffix = Заряженный
     .desc = { ent-TranslatorUnpowered.desc }
+ent-TranslatorForeigner = Переводчик иностранца
+    .desc = Специальный переводчик, который помогает иностранцам говорить и понимать основной язык этой станции.
 ent-TranslatorEmpty = { ent-Translator }
     .suffix = Пустой
     .desc = { ent-Translator.desc }

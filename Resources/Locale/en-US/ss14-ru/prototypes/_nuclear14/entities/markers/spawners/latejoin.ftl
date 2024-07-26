@@ -1,5 +1,5 @@
 ent-N14LatejoinMarkerBase = { "" }
-    .desc = { "" }
+    .desc = right click > enter, to leave the round.
 ent-N14SpawnPointLatejoin = latejoin spawn point
     .suffix = Wastelander
     .desc = { ent-N14LatejoinMarkerBase.desc }

@@ -5,15 +5,16 @@ ghost-role-component-default-rules =
                                      Вам разрешается помнить знания об игре в целом, например, как готовить, как использовать предметы и т.д.
                                      Вам [color=red]НЕ[/color] разрешается помнить, имя, внешность и т.д. вашего предыдущего персонажа.
 # Delta V soft antag rule
-deltav-ghost-role-information-softantag-rules = Вам разрешено нападать на экипаж без провокации.
-                                                Вам разрешено сосуществовать с экипажем.
-                                                Экипажу разрешено убивать вас без предупреждения.
-
+deltav-ghost-role-information-softantag-rules =
+    Вам разрешено нападать на экипаж без провокации.
+    Вам разрешено сосуществовать с экипажем.
+    Экипажу разрешено убивать вас без предупреждения.
 # Delta V salvage antag rule
-deltav-ghost-role-information-salvageantag-rules =  Вы антагонист.
-                                                    Вам разрешено нападать на игроков без провокации. НЕ УНИЧТОЖАЙТЕ ИХ ТЕЛА!
-                                                    Вам разрешено нападать на шаттлы.
-                                                    Вам НЕ разрешено заходить на станцию.
+deltav-ghost-role-information-salvageantag-rules =
+    Вы антагонист.
+    Вам разрешено нападать на игроков без провокации. НЕ УНИЧТОЖАЙТЕ ИХ ТЕЛА!
+    Вам разрешено нападать на шаттлы.
+    Вам НЕ разрешено заходить на станцию.
 ghost-role-information-mouse-name = Мышь
 ghost-role-information-mouse-description = Голодная и озорная мышь.
 ghost-role-information-mothroach-name = Таракамоль

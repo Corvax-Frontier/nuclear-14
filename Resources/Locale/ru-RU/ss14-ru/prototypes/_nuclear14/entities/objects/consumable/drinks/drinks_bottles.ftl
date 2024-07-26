@@ -1,5 +1,8 @@
 ent-DrinkBottleBaseFull50 = { ent-DrinkBottleGlassBaseFull }
     .desc = { ent-DrinkBottleGlassBaseFull.desc }
+ent-DrinkBottleBaseEmpty50 = { ent-DrinkBottleBaseFull50 }
+    .suffix = Пустой
+    .desc = { ent-DrinkBottleBaseFull50.desc }
 ent-N14DrinkBottleMilkEmpty = бутылка молока
     .desc = Пустая бутылка из-под молока.
 ent-N14DrinkMilkBrahmin = молоко брамина

@@ -24,7 +24,3 @@ ent-ActionPsionicInvisibility = action-name-psionic-invisibility
     .desc = action-description-psionic-invisibility
 ent-ActionPsionicInvisibilityUsed = action-name-psionic-invisibility-off
     .desc = action-description-psionic-invisibility-off
-ent-ActionFabricateLollipop = action-name-fabricate-lollipop
-    .desc = action-description-fabricate-lollipop
-ent-ActionFabricateGumball = action-name-fabricate-gumball
-    .desc = action-description-fabricate-gumball

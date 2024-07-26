@@ -3,6 +3,7 @@ ent-SaxophoneInstrument = saxophone
 ent-AccordionInstrument = accordion
     .desc = { ent-BaseHandheldInstrument.desc }
 ent-HarmonicaInstrument = harmonica
+
   .desc = { ent-BaseHandheldInstrument.desc }
 ent-ClarinetInstrument = clarinet
     .desc = Skweedward tintacklays.

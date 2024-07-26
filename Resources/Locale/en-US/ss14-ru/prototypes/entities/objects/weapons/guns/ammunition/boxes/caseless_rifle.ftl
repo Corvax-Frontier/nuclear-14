@@ -1,5 +1,5 @@
 ent-BaseMagazineBoxCaselessRifle = ammunition box (.25 caseless)
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseMagazineBox.desc }
 ent-MagazineBoxCaselessRifle10x24 = ammunition box (.25 caseless)
     .desc = { ent-BaseMagazineBoxCaselessRifle.desc }
 ent-MagazineBoxCaselessRifleBig = ammunition box (.25 caseless)

@@ -1,2 +1,2 @@
 ent-FalloutStation = { ent-BaseStation }
-  .desc = { ent-BaseStation.desc }
+    .desc = { ent-BaseStation.desc }

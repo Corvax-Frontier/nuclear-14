@@ -1,3 +1,5 @@
+ent-N14ClothingBeltStorageBase = Abstract Belt
+    .desc = You shouldn't be seeing this.
 ent-ClothingBeltBoSWebbing = BoS carrier
     .desc = A simple black carrier capable of holding all kind of ammo.
 ent-ClothingBeltMilitary = military carrier

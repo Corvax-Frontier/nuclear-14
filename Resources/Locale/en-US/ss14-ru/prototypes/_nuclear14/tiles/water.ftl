@@ -1,8 +1,14 @@
 ent-N14FloorWaterDirtyEntity = water
     .desc = A real thirst quencher.
 ent-N14FloorWaterSewerDeep = deep sewer water
-    .desc = A real thirst quencher.
+    .desc = Years of built up feces and urine and other fluids.
 ent-N14FloorWaterSewerMedium = sewer water
-    .desc = { ent-N14FloorWaterSewerDeep.desc }
+    .desc = Years of built up feces and urine and other fluids.
 ent-N14FloorWaterSewerShallow = shallow sewer water
-    .desc = { ent-N14FloorWaterSewerDeep.desc }
+    .desc = Years of built up feces and urine and other fluids.
+ent-N14FloorWaterDeep = deep water
+    .desc = Endless Abyss.
+ent-N14FloorWaterMedium = water
+    .desc = Unclean water, likely highly irradiated.
+ent-N14FloorWaterShallow = shallow water
+    .desc = Unclean water, likely highly irradiated

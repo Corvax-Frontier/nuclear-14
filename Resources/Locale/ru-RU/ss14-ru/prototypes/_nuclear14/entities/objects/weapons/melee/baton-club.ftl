@@ -1,3 +1,9 @@
+ent-N14PoliceBaton = полицейская дубинка
+    .desc = { ent-BaseItem.desc }
+ent-N14TribalClub = племенная булава
+    .desc = { ent-BaseItem.desc }
+ent-N14BrokenPipe = сломанная труба
+    .desc = { ent-BaseItem.desc }
 ent-N14BasePoliceBaton = полицейская дубинка
 ent-N14BaseTribalClub = племенная булава
 ent-N14BaseBrokenPipe = сломанная труба

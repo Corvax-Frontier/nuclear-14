@@ -52,3 +52,7 @@ ent-ActionToggleEyes = Open/Close eyes
     .desc = Close your eyes to protect your peepers, or open your eyes to enjoy the pretty lights.
 ent-ActionToggleWagging = action-name-toggle-wagging
     .desc = action-description-toggle-wagging
+ent-ActionFabricateLollipop = action-name-fabricate-lollipop
+    .desc = action-description-fabricate-lollipop
+ent-ActionFabricateGumball = action-name-fabricate-gumball
+    .desc = action-description-fabricate-gumball

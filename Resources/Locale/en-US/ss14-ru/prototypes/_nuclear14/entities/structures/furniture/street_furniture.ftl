@@ -108,12 +108,14 @@ ent-N14LightStreetLampPostRaiderPoweredEmptyRight = { ent-N14LightStreetLampPost
 ent-N14LightStreetLampPostRaiderPoweredEmptyLeft = { ent-N14LightStreetLampPostPoweredEmptyLeft }
     .suffix = Empty, Left
     .desc = { ent-N14LightStreetLampPostPoweredEmptyLeft.desc }
-ent-N14LightStreetLampPostRaiderPoweredRight = { ent-N14LightStreetLampPostPoweredRight }
+ent-N14LightStreetLampPostRaiderPoweredRight = { ent-['N14LightStreetLampPostRaiderPoweredEmptyRight', 'N14LightStreetLampPostPoweredRight'] }
+
   .suffix = Powered, Right
-  .desc = { ent-N14LightStreetLampPostPoweredRight.desc }
-ent-N14LightStreetLampPostRaiderPoweredLeft = { ent-N14LightStreetLampPostPoweredLeft }
+  .desc = { ent-['N14LightStreetLampPostRaiderPoweredEmptyRight', 'N14LightStreetLampPostPoweredRight'].desc }
+ent-N14LightStreetLampPostRaiderPoweredLeft = { ent-['N14LightStreetLampPostRaiderPoweredEmptyLeft', 'N14LightStreetLampPostPoweredLeft'] }
+
   .suffix = Powered, Left
-  .desc = { ent-N14LightStreetLampPostPoweredLeft.desc }
+  .desc = { ent-['N14LightStreetLampPostRaiderPoweredEmptyLeft', 'N14LightStreetLampPostPoweredLeft'].desc }
 ent-N14LightStreetLampPostAlwaysPoweredRight2 = { ent-N14LightStreetLampPostAlwaysPoweredRight }
     .suffix = Always Powered, Right
     .desc = { ent-N14LightStreetLampPostAlwaysPoweredRight.desc }

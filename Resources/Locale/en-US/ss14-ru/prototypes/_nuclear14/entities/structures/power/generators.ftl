@@ -1,4 +1,6 @@
-ent-N14GeneratorBase = generator
+ent-N14BaseGenerator = generator
+    .desc = A high efficiency thermoelectric generator.
+ent-N14BaseGeneratorPortable = generator
     .desc = A generator that uses expendable fusion cores.
 ent-N14GeneratorFusioncore = fusion core generator
     .desc = A generator that uses expendable fusion cores.
