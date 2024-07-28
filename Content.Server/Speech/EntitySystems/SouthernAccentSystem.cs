@@ -21,10 +21,6 @@ public sealed class SouthernAccentSystem : EntitySystem
     private static readonly Regex RegexReplaceCh = new(@"ч", RegexOptions.IgnoreCase);
     private static readonly Regex RegexReplaceF = new(@"ф", RegexOptions.IgnoreCase);
     private static readonly Regex RegexReplaceTsa = new(@"тся\b", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexReplaceT = new(@"т", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexReplaceO = new(@"о", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexReplaceV = new(@"в", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexReplaceDa = new(@"да\b", RegexOptions.IgnoreCase);
 
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
 
@@ -57,10 +53,6 @@ public sealed class SouthernAccentSystem : EntitySystem
         message = RegexReplaceCh.Replace(message, match => ReplaceWithCase(match.Value, "ць"));
         message = RegexReplaceF.Replace(message, match => ReplaceWithCase(match.Value, "в"));
         message = RegexReplaceTsa.Replace(message, match => ReplaceWithCase(match.Value, "ться"));
-        message = RegexReplaceT.Replace(message, match => ReplaceWithCase(match.Value, "д"));
-        message = RegexReplaceO.Replace(message, match => ReplaceWithCase(match.Value, "а"));
-        message = RegexReplaceV.Replace(message, match => ReplaceWithCase(match.Value, "б"));
-        message = RegexReplaceDa.Replace(message, match => ReplaceWithCase(match.Value, "даа"));
 
         args.Message = message;
     }
