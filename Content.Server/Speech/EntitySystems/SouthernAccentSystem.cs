@@ -18,7 +18,7 @@ public sealed class SouthernAccentSystem : EntitySystem
     private void OnAccent(EntityUid uid, SouthernAccentComponent component, AccentGetEvent args)
     {
         var message = args.Message;
-        message = _replacement.ApplyReplacements(message, "chinese");
+        message = _replacement.ApplyReplacements(message, "southern");
 
         // Существующие замены
         message = Regex.Replace(message, @"\bр", "л");
