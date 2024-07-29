@@ -35,6 +35,8 @@ namespace Content.Client.Preferences.UI
         private readonly Button _createNewCharacterButton;
         private readonly HumanoidProfileEditor _humanoidProfileEditor;
 
+        public HumanoidCharacterProfile? Profile => _humanoidProfileEditor.Profile;
+
         public CharacterSetupGui(
             IEntityManager entityManager,
             IResourceCache resourceCache,

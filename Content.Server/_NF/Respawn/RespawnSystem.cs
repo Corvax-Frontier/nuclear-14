@@ -5,6 +5,7 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Robust.Server.Player;
+using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -58,7 +59,7 @@ public sealed class RespawnSystem : EntitySystem
 
     private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
-        if (e.NewStatus == Robust.Shared.Enums.SessionStatus.Connected)
+        if (e.NewStatus == SessionStatus.Connected)
             SendRespawnResetTime(e.Session, GetRespawnResetTime(e.Session));
     }
 

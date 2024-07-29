@@ -1,3 +1,4 @@
+using Content.Server._NF.NewLife;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
 using Content.Shared.GameTicking;
@@ -37,12 +38,19 @@ namespace Content.Server.GameTicking.Commands
             }
 
             var ticker = _entManager.System<GameTicker>();
+            var newLife = _entManager.System<NewLifeSystem>();
             var stationJobs = _entManager.System<StationJobsSystem>();
 
             if (ticker.PlayerGameStatuses.TryGetValue(player.UserId, out var status) && status == PlayerGameStatus.JoinedGame)
             {
                 Logger.InfoS("security", $"{player.Name} ({player.UserId}) attempted to latejoin while in-game.");
                 shell.WriteError($"{player.Name} is not in the lobby.   This incident will be reported.");
+                return;
+            }
+
+            if (newLife.IsProfileUsed(player, ticker.GetPlayerProfile(player)))
+            {
+                shell.WriteLine("Selected profile has been used in this round.");
                 return;
             }
 

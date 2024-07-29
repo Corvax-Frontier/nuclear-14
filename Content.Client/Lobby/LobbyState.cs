@@ -1,3 +1,4 @@
+using Content.Client._NF.NewLife;
 using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.LateJoin;
@@ -5,8 +6,10 @@ using Content.Client.Lobby.UI;
 using Content.Client.Message;
 using Content.Client.Preferences;
 using Content.Client.Preferences.UI;
+using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
+using Content.Shared.Administration;
 using Robust.Client;
 using Robust.Client.Console;
 using Robust.Client.ResourceManagement;
@@ -31,6 +34,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+        [Dependency] private readonly NewLifeSystem _newLife = default!;
 
         [ViewVariables] private CharacterSetupGui? _characterSetup;
 
@@ -117,6 +121,12 @@ namespace Content.Client.Lobby
         {
             if (!_gameTicker.IsGameStarted)
                 return;
+
+            if (_characterSetup?.Profile is null || _newLife.IsProfileUsed(_characterSetup.Profile))
+            {
+                new DialogWindow(Loc.GetString("lobby-state-profile-has-been-used"), [], cancel: false).OpenCentered();
+                return;
+            }
 
             new LateJoinGui().OpenCentered();
         }
