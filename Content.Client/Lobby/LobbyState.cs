@@ -34,7 +34,8 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-        [Dependency] private readonly NewLifeSystem _newLife = default!;
+
+        [UISystemDependency] private readonly NewLifeSystem? _newLife = default;
 
         [ViewVariables] private CharacterSetupGui? _characterSetup;
 
@@ -122,7 +123,7 @@ namespace Content.Client.Lobby
             if (!_gameTicker.IsGameStarted)
                 return;
 
-            if (_characterSetup?.Profile is null || _newLife.IsProfileUsed(_characterSetup.Profile))
+            if (_characterSetup?.Profile is not null && _newLife?.IsProfileUsed(_characterSetup.Profile) == true)
             {
                 new DialogWindow(Loc.GetString("lobby-state-profile-has-been-used"), [], cancel: false).OpenCentered();
                 return;
