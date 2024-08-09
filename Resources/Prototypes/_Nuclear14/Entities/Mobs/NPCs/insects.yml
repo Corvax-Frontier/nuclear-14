@@ -58,6 +58,10 @@
     - id: N14FoodBloatflyAcidSac
       amount: 1
       prob: 0.75
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Giant Ant
 - type: entity
@@ -119,6 +123,10 @@
     damage:
       groups:
         Brute: 5
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Giant Fire Ant
 - type: entity
@@ -162,6 +170,10 @@
     - id: N14FoodFireantNectar
       amount: 1
       prob: 0.75
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Radroach
 - type: entity
@@ -218,6 +230,10 @@
     spawned:
     - id: N14FoodMeatRadroachFillet
       amount: 1
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Radscorpion
 - type: entity
@@ -303,6 +319,10 @@
         Quantity: 0.1
       - ReagentId: Radium
         Quantity: 0.1
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Barkscorpion
 - type: entity
@@ -330,6 +350,10 @@
       reagents:
       - ReagentId: Toxin
         Quantity: 0.2
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Cazador
 #SCARY FUCKERS, RUUUN!!
@@ -403,3 +427,7 @@
     - id: N14FoodCazadorAcidSac
       amount: 1
       prob: 0.75
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20

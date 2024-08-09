@@ -63,6 +63,10 @@
   - type: Tag
     tags:
     - Molerat
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Feral Dog
 - type: entity
@@ -128,6 +132,10 @@
   - type: Tag
     tags:
     - DogFeral
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Gecko
 - type: entity
@@ -285,6 +293,10 @@
       reagents:
       - ReagentId: NightstalkerVenom
         Quantity: 0.1
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Nightstalker
 - type: entity
@@ -394,6 +406,10 @@
   - type: Tag
     tags:
     - Nightstalker
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Yao Guai
 - type: entity
@@ -468,6 +484,10 @@
   - type: Tag
     tags:
     - Yaoguai
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK:Scaley Animals
 #MARK: Deathclaw
@@ -570,6 +590,10 @@
   - type: Tag
     tags:
     - Deathclaw
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Albino Deathclaw
 - type: entity
@@ -609,6 +633,10 @@
         Base: dead # TODO: Crit sprite
       Dead:
         Base: dead
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 - type: entity
   name: deathclaw maid
@@ -658,6 +686,10 @@
       types:
         Slash: 20
         Structural: 10
+  - type: Despawn #Corvax-Fallout
+    delayToCheck: 60
+    delayToDelete: 1
+    distanceToCheck: 20
 
 #MARK: Passive Animals
 #MARK: Brahmin
