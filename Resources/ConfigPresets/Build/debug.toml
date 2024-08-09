@@ -5,8 +5,4 @@ enabled = false
 [shuttle]
 auto_call_time = 0
 
-[discord]
-ahelp_webhook = "https://discord.com/api/webhooks/1265991736426106941/na0D2ZLZhMqvH0eJD-c0MVbpaVHbUtvv7FGmirupW4CQbtHjrZTLqIuVfGU-WMc2LwGO"
-round_update_webhook = "https://discord.com/api/webhooks/1265796792071753762/QtOLclW9hTWkI_ZN8BYG2TJbwWIBbkKzpH1FHZ3nx0QnUNMVk_LvogSa1i4wgZ0Ey5rh"
-round_end_role = "1226580799739134025"
 
