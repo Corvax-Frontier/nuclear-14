@@ -1,6 +1,7 @@
 - type: gameMap
   id: Sunnyvale
   mapName: 'Sunnyvale'
+#  mapPath: /Maps/N14/SunnyvaleSurface.yml
   mapPath: /Maps/Corvax/CorvaxSunnyvaleSurface.yml # Corvax-Legion / Hi Boich
   minPlayers: 0
   stations:
