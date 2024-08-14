@@ -15,7 +15,7 @@ public sealed class ScottishAccentSystem : EntitySystem
     private static readonly Regex RegexZh = new(@"ж", RegexOptions.IgnoreCase);
     private static readonly Regex RegexE = new(@"у", RegexOptions.IgnoreCase);
     private static readonly Regex RegexY = new(@"ы", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexO = new(@"а", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexA = new(@"а", RegexOptions.IgnoreCase);
 
     public override void Initialize()
     {
