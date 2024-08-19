@@ -1,4 +1,4 @@
-job-greet-station-name = Добро пожаловать на борт { $stationName }.
+job-greet-station-name = Добро пожаловать на территорию { $stationName }.
 job-greet-introduce-job-name = Ваша должность: { $jobName }.
 job-greet-important-disconnect-admin-notify = Вы играете ключевую роль в выживании группы. Если вам нужно покинуть Пустошь, используйте аварийный сигнал "SOS" (Админ помощь), чтобы предупредить Смотрителей.
 job-greet-supervisors-warning = Как { $jobName } вы обязаны { $supervisors } Особые обстоятельства могут изменить это.
