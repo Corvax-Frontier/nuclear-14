@@ -107,17 +107,11 @@
     capacity: 1
     proto: N14Cartridge50
   - type: Wieldable
-  - type: GunWieldBonus
-    minAngle: -23
-    maxAngle: -104
   - type: Gun
-    minAngle: 24
-    maxAngle: 105
-    angleIncrease: 4
-    angleDecay: 16
     fireRate: 1.2
     soundGunshot:
       collection: N14AntiMaterielGunshot
+  - type: GunRequiresWield
 
 - type: entity
   name: lever action carbine
