@@ -353,3 +353,13 @@
     state: base
   content:
   - KitRecruitHealer
+
+- type: UndecideLodoutBackSet
+  id: RangerSniperSet
+  name: undecided-loadout-category-ncr-ranger-sniper-name
+ description: undecided-loadout-category-ncr-ranger-sniper-description
+ sprite:
+     sprite: Corvax/Object/Misc/kits.rsi
+     state: base
+ content:
+    - KitRangerSniper
