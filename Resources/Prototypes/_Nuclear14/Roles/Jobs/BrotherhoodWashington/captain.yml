@@ -37,10 +37,11 @@
     back: N14ClothingBackpackMilitary
     shoes: N14ClothingBootsCombatMK2Filled
     head: N14ClothingHeadHatBrotherhoodCap
-    outerClothing: N14ClothingOuterCombatArmorBOSMK2
+    outerClothing: N14ClothingOuterPowerArmorT51
     id: N14IDBrotherhoodHolotag
     ears: N14ClothingHeadsetBOSWashington
     belt: ClothingBeltBoSWebbing
+    pocket1: KitAssaultBoSMidwest
 
 - type: playTimeTracker
   id: BoSWashingtonCaptain

@@ -40,6 +40,8 @@
     id: N14IDBrotherhoodHolotag
     ears: N14ClothingHeadsetBOSWashington
     belt: ClothingBeltBoSWebbing
+    pocket1: KitAssaultBoSMidwest
+    outerClothing: N14ClothingOuterPowerArmorT60
 
 - type: playTimeTracker
   id: BoSWashingtonCommander
