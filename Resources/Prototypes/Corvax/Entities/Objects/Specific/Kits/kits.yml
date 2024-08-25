@@ -587,9 +587,7 @@
       - id: ClothingBeltNCR
       - id: N14Weapon50NcrRifle
       - id: MagazineBox50
-        amount: 4
-      - id: N14Stimpak
+        amount: 1
       - id: N14BoxCardboardMREBoxKFilled
-      - id: N14CombatKnife
     sound: 
       path: /Audio/Effects/unwrap.ogg
