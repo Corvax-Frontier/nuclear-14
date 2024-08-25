@@ -43,3 +43,5 @@ ent-KitRecruitMelee = рукопашный набор легионера-рек�
     .desc = { ent-KitCenturionBestiary.desc }
 ent-KitRecruitHealer = набор легионера-рекрута лекаря
     .desc = { ent-KitCenturionBestiary.desc }
+ent-KitRangerSniper = набор рейнджера снайпера
+    .desk = { ent-KitRangerSniper.desk }
