@@ -70,6 +70,7 @@
     - RangerMarksmanSet
     - RangerCQBSet
     - RangerTrailmanSet
+    - RangerSniperSet # Corvax-N14
   - type: ActivatableUI
     key: enum.UndecidedLoadoutBackpackUIKey.Key
   - type: UserInterface
