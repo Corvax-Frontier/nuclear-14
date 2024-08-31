@@ -1,8 +1,8 @@
+using Content.Client._NC.DiscordAuth;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
-using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
 using Content.Client.Options;
 using Content.Client.Eui;
