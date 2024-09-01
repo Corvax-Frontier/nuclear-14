@@ -258,3 +258,14 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.45
+        Radiation: 0.7
+  - type: ClothingSpecialModifier
+    strengthModifier: 2
+    agilityModifier: -2
