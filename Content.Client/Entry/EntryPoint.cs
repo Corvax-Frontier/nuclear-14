@@ -1,11 +1,8 @@
-using Content.Client.Corvax.DiscordAuth;
+using Content.Client._NC.DiscordAuth;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
-using Content.Client.DiscordAuth;
-using Content.Client.JoinQueue;
 using Content.Client.Eui;
-using Content.Client.Flash;
 using Content.Client.Fullscreen;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
@@ -136,6 +133,7 @@ namespace Content.Client.Entry
             _extendedDisconnectInformation.Initialize();
             _jobRequirements.Initialize();
             _playbackMan.Initialize();
+            _discordAuthManager.Initialize();
 
             //AUTOSCALING default Setup!
             _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffX", 1080);
@@ -196,7 +194,7 @@ namespace Content.Client.Entry
                     _resourceManager,
                     ReplayConstants.ReplayZipFolder.ToRootedPath());
 
-                _replayMan.LastLoad = (null, ReplayConstants.ReplayZipFolder.ToRootedPath());
+                //_replayMan.LastLoad = (null, ReplayConstants.ReplayZipFolder.ToRootedPath());
                 _replayLoad.LoadAndStartReplay(reader);
             }
             else if (_gameController.LaunchState.FromLauncher)
@@ -219,7 +217,7 @@ namespace Content.Client.Entry
         {
             if (level == ModUpdateLevel.FramePreEngine)
             {
-                _debugMonitorManager.FrameUpdate();
+                //_debugMonitorManager.FrameUpdate();
             }
         }
     }
