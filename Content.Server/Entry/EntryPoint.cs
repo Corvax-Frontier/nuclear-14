@@ -69,8 +69,9 @@ namespace Content.Server.Entry
             factory.DoAutoRegistrations();
             factory.IgnoreMissingComponents("Visuals");
 
-            factory.RegisterIgnore(IgnoredComponents.List);
 
+            factory.RegisterIgnore(IgnoredComponents.List);
+            prototypes.RegisterIgnore("guideEntry");
             prototypes.RegisterIgnore("parallax");
 
             ServerContentIoC.Register();
