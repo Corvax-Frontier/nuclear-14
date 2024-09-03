@@ -1,4 +1,4 @@
-- type: npcFactionMember
+- type: npcFaction
   id: CaesarLegion
   hostile:
   - Wastelander
