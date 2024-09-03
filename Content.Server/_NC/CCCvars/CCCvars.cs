@@ -18,4 +18,7 @@ public static class CCCVars
 
     public static readonly CVarDef<string> DiscordGuildID =
         CVarDef.Create("jerry.discord_guildId", "1222332535628103750", CVar.CONFIDENTIAL | CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> ApiKey =
+        CVarDef.Create("jerry.discord_apikey", "", CVar.CONFIDENTIAL | CVar.SERVERONLY);
 }

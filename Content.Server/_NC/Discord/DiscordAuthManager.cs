@@ -39,13 +39,12 @@ public sealed class DiscordAuthManager : IPostInjectInit
     public void Initialize()
     {
         _configuration.OnValueChanged(CCCVars.DiscordApiUrl, (value) => _apiUrl = value, true);
-
+        _configuration.OnValueChanged(CCCVars.ApiKey, (value) => _apiKey = value, true);
         _sawmill = Logger.GetSawmill("discord_auth");
         _net.RegisterNetMessage<MsgDiscordAuthRequired>();
         _net.RegisterNetMessage<MsgDiscordAuthCheck>(OnAuthCheck);
         _net.Disconnect += OnDisconnect;
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
-
         PlayerVerified += OnPlayerVerified;
     }
 
@@ -92,18 +91,19 @@ public sealed class DiscordAuthManager : IPostInjectInit
     {
         _sawmill.Debug($"Player {userId} check Discord verification");
 
-        var requestUrl = $"{_apiUrl}/check?userid={userId}";
+        var requestUrl = $"{_apiUrl}/check?userid={userId}&api_token={_apiKey}";
         var response = await _httpClient.GetAsync(requestUrl, cancel);
         if (!response.IsSuccessStatusCode)
             return null;
         var discordData = await response.Content.ReadFromJsonAsync<DiscordUserData>(cancel);
+
         return discordData;
     }
 
     public async Task<string> GenerateLink(NetUserId userId, CancellationToken cancel = default)
     {
         _sawmill.Debug($"Generating link for {userId}");
-        var requestUrl = $"{_apiUrl}/link?userid={userId}";
+        var requestUrl = $"{_apiUrl}/link?userid={userId}&api_token={_apiKey}";
         var response = await _httpClient.GetAsync(requestUrl, cancel);
         var link = await response.Content.ReadFromJsonAsync<DiscordLinkResponse>(cancel);
         return link!.Link;

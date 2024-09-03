@@ -21,6 +21,7 @@ public sealed class SponsorsManager
     private readonly HttpClient _httpClient = new();
     private string _guildId = default!;
     private string _apiUrl = default!;
+    private string _apiKey = default!;
 
     private Dictionary<NetUserId, SponsorData> _cachedSponsors = new();
 
@@ -28,6 +29,7 @@ public sealed class SponsorsManager
     {
         _configuration.OnValueChanged(CCCVars.DiscordGuildID, s => _guildId = s, true);
         _configuration.OnValueChanged(CCCVars.DiscordApiUrl, s => _apiUrl = s, true);
+        _configuration.OnValueChanged(CCCVars.ApiKey, value => _apiKey = value, true);
 
         _discordAuthManager.PlayerVerified += OnPlayerVerified;
         _netManager.Disconnect += OnDisconnect;
@@ -58,7 +60,7 @@ public sealed class SponsorsManager
 
     private async Task<List<string>?> GetRoles(NetUserId userId)
     {
-        var requestUrl = $"{_apiUrl}/roles?userid={userId}&guildid={_guildId}";
+        var requestUrl = $"{_apiUrl}/roles?userid={userId}&guildid={_guildId}&api_token={_apiKey}";
         var response = await _httpClient.GetAsync(requestUrl);
 
         if (!response.IsSuccessStatusCode)
@@ -90,7 +92,7 @@ public sealed class SponsorData
 {
     public static readonly Dictionary<string, SponsorLevel> RolesMap = new()
     {
-        { "1240638475221602385", SponsorLevel.Normal },
+        { "1237790603601776710", SponsorLevel.Normal },
     };
 
     public static SponsorLevel ParseRoles(List<string> roles)
@@ -98,8 +100,9 @@ public sealed class SponsorData
         var highestRole = SponsorLevel.None;
         foreach (var role in roles)
         {
-            if ((int)RolesMap[role] > (int)highestRole)
-                highestRole = RolesMap[role];
+            if (RolesMap.ContainsKey(role))
+                if ((int)RolesMap[role] > (int)highestRole)
+                    highestRole = RolesMap[role];
         }
 
         return highestRole;

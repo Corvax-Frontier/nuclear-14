@@ -7,14 +7,14 @@
         <PanelContainer StyleClasses="AngleRect" />
         <BoxContainer Orientation="Vertical">
             <BoxContainer Orientation="Horizontal">
-                <Label Margin="8 0 0 0" Text="{Loc 'stalker-discord-auth-title'}"
+                <Label Margin="8 0 0 0" Text="aboba"
                        StyleClasses="LabelHeading" VAlign="Center" />
-                <Button Name="QuitButton" Text="{Loc 'stalker-discord-auth-quit-btn'}"
+                <Button Name="QuitButton" Text="aboba"
                         HorizontalAlignment="Right" HorizontalExpand="True" />
             </BoxContainer>
             <controls:HighDivider />
             <BoxContainer Orientation="Vertical" Margin="50 20 50 20">
-                <Label Text="{Loc 'stalker-discord-info'}" Align="Center" />
+                <Label Text="aboba" Align="Center" />
             </BoxContainer>
             <Button Name="AuthorizeButton" Text="Authorize" HorizontalExpand="True" StyleClasses="OpenRight" />
         </BoxContainer>
