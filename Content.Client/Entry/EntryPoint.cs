@@ -3,9 +3,11 @@ using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Eui;
+using Content.Client.Flash;
 using Content.Client.Fullscreen;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
+using Content.Client.JoinQueue;
 using Content.Client.Info;
 using Content.Client.Input;
 using Content.Client.IoC;
@@ -70,8 +72,9 @@ namespace Content.Client.Entry
         [Dependency] private readonly ContentReplayPlaybackManager _playbackMan = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
+        [Dependency] private readonly JoinQueueManager _joinQueue = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly ContentReplayPlaybackManager _replayMan = default!;
+        //[Dependency] private readonly ContentReplayPlaybackManager _replayMan = default!;
         [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
 
         public override void Init()
@@ -104,10 +107,12 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("objective");
             _prototypeManager.RegisterIgnore("holiday");
             _prototypeManager.RegisterIgnore("htnCompound");
+            _prototypeManager.RegisterIgnore("aiFaction");
             _prototypeManager.RegisterIgnore("htnPrimitive");
             _prototypeManager.RegisterIgnore("gameMap");
             _prototypeManager.RegisterIgnore("gameMapPool");
             _prototypeManager.RegisterIgnore("lobbyBackground");
+            _prototypeManager.RegisterIgnore("npcFaction");
             _prototypeManager.RegisterIgnore("gamePreset");
             _prototypeManager.RegisterIgnore("noiseChannel");
             _prototypeManager.RegisterIgnore("spaceBiome");
@@ -122,6 +127,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
+            _prototypeManager.RegisterIgnore("stationGoal");
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
@@ -130,6 +136,7 @@ namespace Content.Client.Entry
             _changelogManager.Initialize();
             _viewportManager.Initialize();
             _ghostKick.Initialize();
+            _rulesManager.Initialize();
             _extendedDisconnectInformation.Initialize();
             _jobRequirements.Initialize();
             _playbackMan.Initialize();
@@ -156,6 +163,7 @@ namespace Content.Client.Entry
 
             _overlayManager.AddOverlay(new SingularityOverlay());
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
+            _overlayManager.AddOverlay(new FlashOverlay());
             _chatManager.Initialize();
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();
@@ -163,6 +171,7 @@ namespace Content.Client.Entry
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
+            _joinQueue.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
             {
