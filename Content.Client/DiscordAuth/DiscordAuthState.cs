@@ -1,4 +1,5 @@
 using System.Threading;
+using Content.Shared._NC.DiscordAuth;
 using Content.Shared.DiscordAuth;
 using Robust.Client.State;
 using Robust.Client.UserInterface;

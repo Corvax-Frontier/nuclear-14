@@ -55,8 +55,8 @@ namespace Content.Client.IoC
             IoCManager.Register<DocumentParsingManager>();
             IoCManager.Register<ContentReplayPlaybackManager, ContentReplayPlaybackManager>();
             collection.Register<ISharedPlaytimeManager, JobRequirementsManager>();
-            IoCManager.Register<JoinQueueManager>();
             IoCManager.Register<DiscordAuthManager>();
+            IoCManager.Register<JoinQueueManager>();
         }
     }
 }

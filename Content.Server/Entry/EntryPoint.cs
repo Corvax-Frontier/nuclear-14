@@ -29,6 +29,7 @@ using Robust.Server;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -46,6 +47,7 @@ namespace Content.Server.Entry
         private PlayTimeTrackingManager? _playTimeTracking;
         private IEntitySystemManager? _sysMan;
         private IServerDbManager? _dbManager;
+        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
 
         /// <inheritdoc />
         public override void Init()
@@ -104,12 +106,10 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
-                IoCManager.Resolve<JoinQueueManager>().Initialize();
                 IoCManager.Resolve<DiscordAuthManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
-                IoCManager.Resolve<DiscordAuthManager>().Initialize();
                 IoCManager.Resolve<SponsorsManager>().Initialize();
-
+                IoCManager.Resolve<JoinQueueManager>().Initialize();
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();
