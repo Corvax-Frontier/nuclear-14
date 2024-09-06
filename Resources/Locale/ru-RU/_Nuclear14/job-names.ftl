@@ -63,7 +63,7 @@ job-name-tribal-elder = старейшина племени
 job-description-tribal-elder = Ведите своё племя через хорошие и плохие времена, сохраняя ваши верования.
 job-name-tribal-farmer = племенной фермер
 job-description-tribal-farmer = Производите пищу и товары для племени, чтобы поддерживать его существование.
-job-name-tribal-healer = знахарь
+job-name-tribal-healer = племенной знахарь
 job-description-tribal-healer = Создавайте лекарства и снадобья для племени, как велит традиция.
 # Убежище
 # Смотрителю нужно также добавить `vault-`
