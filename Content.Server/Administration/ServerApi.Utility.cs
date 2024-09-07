@@ -22,16 +22,6 @@ public sealed partial class ServerApi
         });
     }
 
-    private void RegisterActorHandler(HttpMethod method, string exactPath, Func<IStatusHandlerContext, Actor, Task> handler)
-    {
-        RegisterHandler(method, exactPath, async context =>
-        {
-            if (await CheckActor(context) is not { } actor)
-                return;
-
-            await handler(context, actor);
-        });
-    }
 
     /// <summary>
     /// Async helper function which runs a task on the main thread and returns the result.
@@ -143,5 +133,4 @@ public sealed partial class ServerApi
             .ConfigureAwait(false);
     }
 
-    private static string FormatLogActor(Actor actor) => $"{actor.Name} ({actor.Guid})";
 }
