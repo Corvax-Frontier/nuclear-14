@@ -1,5 +1,5 @@
-﻿﻿using System.Collections.Immutable;
- using System.Linq;
+﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
@@ -22,10 +22,12 @@ using Content.Shared.Prototypes;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Asynchronous;
 using Robust.Shared.Configuration;
+using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Server.Database;
 
 namespace Content.Server.Administration;
 
@@ -62,6 +64,8 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
+    [Dependency] private readonly IConsoleHost _shell = default!;
+    [Dependency] private readonly IServerDbManager _db = default!;
 
     private string _token = string.Empty;
     private ISawmill _sawmill = default!;
@@ -81,6 +85,7 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/restartnow", ActionRoundRestartNow);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/kick", ActionKick);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/ban", ActionBan);
+        RegisterActorHandler(HttpMethod.Post, "/admin/actions/shutdown", ShutdownAction);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/add_game_rule", ActionAddGameRule);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/end_game_rule", ActionEndGameRule);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/force_preset", ActionForcePreset);
@@ -352,35 +357,35 @@ public sealed partial class ServerApi : IPostInjectInit
 
         await RunOnMainThread(async () =>
         {
-            if (!_playerManager.TryGetSessionById(new NetUserId(body.Guid), out var player))
-            {
-                await RespondError(
-                    context,
-                    ErrorCode.PlayerNotFound,
-                    HttpStatusCode.UnprocessableContent,
-                    "Player not found");
-                return;
-            }
-            var located = await _locator.LookupIdByNameOrIdAsync(new NetUserId(body.Guid).UserId.ToString());
+            var data = await _locator.LookupIdByNameOrIdAsync($"{body.TargetUsername}");
 
-            if (located == null)
+            if (data == null)
             {
-                _sawmill.Info(Loc.GetString("cmd-ban-player"));
+                await context.RespondErrorAsync(HttpStatusCode.BadRequest);
                 return;
             }
-            var targetHWid = located.LastHWId;
+
+            var targetHWid = data.LastHWId;
+            var targetId = data.UserId;
+            var targetUsername = data.Username;
             var reason = body.Reason ?? "No reason supplied";
             reason += " (banned by admin)";
 
             if (body.Reason != null)
-                _bans.CreateServerBan(new NetUserId(body.Guid), body.TargetUsername, new NetUserId(actor.Guid),null, targetHWid, (uint)body.Minutes, (NoteSeverity)body.Severity, body.Reason);
+                _bans.CreateServerBan(targetId, targetUsername, new NetUserId(actor.Guid),null, targetHWid, (uint)body.Minutes, (NoteSeverity)body.Severity, body.Reason);
             else
-                _bans.CreateServerBan(new NetUserId(body.Guid), body.TargetUsername, new NetUserId(actor.Guid),null, targetHWid, (uint)body.Minutes, (NoteSeverity)body.Severity, "No reason");
+                _bans.CreateServerBan(targetId, targetUsername, new NetUserId(actor.Guid),null, targetHWid, (uint)body.Minutes, (NoteSeverity)body.Severity, "No reason");
 
             await RespondOk(context);
 
-            _sawmill.Info($"Banned player {player.Name} ({player.UserId}) for {reason} by {FormatLogActor(actor)} to {body.Minutes}");
+            _sawmill.Info($"Banned player {data.Username} ({data.UserId}) for {reason} by {FormatLogActor(actor)} to {body.Minutes}");
         });
+    }
+
+    private async Task ShutdownAction(IStatusHandlerContext context, Actor actor)
+    {
+        _shell.ExecuteCommand("shutdown");
+        await RespondOk(context);
     }
 
     private async Task ActionRoundStart(IStatusHandlerContext context, Actor actor)
@@ -665,7 +670,6 @@ public sealed partial class ServerApi : IPostInjectInit
 
     private sealed class BanActionBody
     {
-        public required Guid Guid { get; init; }
         public int Minutes { get; init; }
         public int Severity { get; init; }
         public string? TargetUsername { get; init; }
