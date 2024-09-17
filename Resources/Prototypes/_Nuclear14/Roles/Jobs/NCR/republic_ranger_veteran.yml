@@ -11,7 +11,7 @@
     - !type:WhitelistRequirement
   startingGear: NCRRangerVeteranGear
   icon: "JobIconHeadOfSecurity"
-  supervisors: ent-job-supervisors-ncr # Corvax-Nukelear
+  supervisors: ent-job-supervisors-ncr # Corvax-Nuclear
   requireAdminNotify: true
   canBeAntag: false
   accessGroups:
