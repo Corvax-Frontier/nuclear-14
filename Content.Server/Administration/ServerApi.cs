@@ -1,5 +1,4 @@
-﻿using System.Collections.Immutable;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
@@ -17,7 +16,6 @@ using Content.Server.RoundEnd;
 using Content.Shared.Administration.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Content.Shared.PDA;
 using Content.Shared.Prototypes;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Asynchronous;
@@ -67,6 +65,7 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly IConsoleHost _shell = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
 
+
     private string _token = string.Empty;
     private ISawmill _sawmill = default!;
 
@@ -78,6 +77,7 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Get, "/admin/info", InfoHandler);
         RegisterHandler(HttpMethod.Get, "/admin/game_rules", GetGameRules);
         RegisterHandler(HttpMethod.Get, "/admin/presets", GetPresets);
+        RegisterHandler(HttpMethod.Get, "/admin/getckey", ActionGetCkey);
 
         // Post
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/start", ActionRoundStart);
@@ -497,6 +497,22 @@ public sealed partial class ServerApi : IPostInjectInit
             GameRules = gameRules
         });
     }
+    /// <summary>
+    ///    Returns a user ckey by NetUserId.
+    /// </summary>
+    private async Task ActionGetCkey(IStatusHandlerContext context)
+    {
+        var body = await ReadJson<GetCkeyActionBody>(context);
+        if (body == null)
+            return;
+
+        var data = await _locator.LookupIdAsync(new NetUserId(body.UserUid));
+
+        if (data != null)
+            await context.RespondJsonAsync(data.Username);
+        else
+            await context.RespondErrorAsync(HttpStatusCode.BadRequest);
+    }
 
 
     /// <summary>
@@ -666,6 +682,11 @@ public sealed partial class ServerApi : IPostInjectInit
     {
         public required Guid Guid { get; init; }
         public string? Reason { get; init; }
+    }
+
+    private sealed class GetCkeyActionBody
+    {
+        public required Guid UserUid { get; init; }
     }
 
     private sealed class BanActionBody
