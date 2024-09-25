@@ -45,17 +45,6 @@ namespace Content.Server.Administration;
 /// Exposes various admin-related APIs via the game server's <see cref="StatusHost"/>.
 /// </summary>
 
-public class ServerApiAhelpMessage : EntitySystem
-{
-    public async Task SendAhelpMessage(NetUserId playerUserId, NetUserId senderUserId, string message, INetChannel channel)
-    {
-        RaiseNetworkEvent(new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId,message), channel);
-    }
-    public async Task SendAhelpMessageEx(SharedBwoinkSystem.BwoinkTextMessage msg, INetChannel channel)
-    {
-        RaiseNetworkEvent(msg, channel);
-    }
-}
 public sealed partial class ServerApi : IPostInjectInit
 {
     private const string SS14TokenScheme = "SS14Token";
@@ -418,23 +407,17 @@ public sealed partial class ServerApi : IPostInjectInit
             await context.RespondErrorAsync(HttpStatusCode.BadRequest);
             return;
         }
+        var _bwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
         var playerUserId = new NetUserId(body.UserId);
         var senderUserId = new NetUserId(actor.Guid);
-        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId, body.Text, DateTime.Now);
-        ServerApiAhelpMessage _serverApiAhelpMessage = new ServerApiAhelpMessage();
+        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId, body.Text);
         await RunOnMainThread(async () =>
         {
-
-
             if (_playerManager.TryGetSessionById(playerUserId, out var session))
             {
-                string overrideMsgText = $"(Discord)[color=blue]{actor.Name}[/color]";
-                overrideMsgText = $"{overrideMsgText}: {body.Text}";
-                _serverApiAhelpMessage?.SendAhelpMessage(playerUserId, senderUserId, overrideMsgText, session.Channel);
+                _bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session));
+                await RespondOk(context);
             }
-            else if(session != null)
-                _serverApiAhelpMessage?.SendAhelpMessageEx(message, session.Channel);
-
         });
     }
 
