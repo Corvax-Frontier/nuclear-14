@@ -470,7 +470,6 @@ namespace Content.Server.Administration.Systems
         {
             var senderSession = eventArgs.SenderSession;
 
-            // TODO: Sanitize text?
             // Confirm that this person is actually allowed to send a message here.
             var personalChannel = senderSession.UserId == message.UserId;
             var senderAdmin = _adminManager.GetAdminData(senderSession);
