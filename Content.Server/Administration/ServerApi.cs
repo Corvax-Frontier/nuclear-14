@@ -28,12 +28,34 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Server.Database;
+using Content.Shared.Administration;
+using static Robust.Shared.GameObjects.EntitySystem;
+using Robust.Server.Player;
+using Robust.Shared;
+using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
+using Robust.Shared.Network;
+using Robust.Shared.Player;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Administration;
 
 /// <summary>
 /// Exposes various admin-related APIs via the game server's <see cref="StatusHost"/>.
 /// </summary>
+
+public class ServerApiAhelpMessage : EntitySystem
+{
+    public async Task SendAhelpMessage(NetUserId playerUserId, NetUserId senderUserId, string message, INetChannel channel)
+    {
+        RaiseNetworkEvent(new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId,message), channel);
+    }
+    public async Task SendAhelpMessageEx(SharedBwoinkSystem.BwoinkTextMessage msg, INetChannel channel)
+    {
+        RaiseNetworkEvent(msg, channel);
+    }
+}
 public sealed partial class ServerApi : IPostInjectInit
 {
     private const string SS14TokenScheme = "SS14Token";
@@ -51,7 +73,8 @@ public sealed partial class ServerApi : IPostInjectInit
 
     [Dependency] private readonly IStatusHost _statusHost = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
+
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly ISharedAdminManager _adminManager = default!;
     [Dependency] private readonly IGameMapManager _gameMapManager = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
@@ -82,6 +105,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         // Post
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/start", ActionRoundStart);
+        RegisterActorHandler(HttpMethod.Post, "/admin/actions/ahelp/send", ActionAhelpSend);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/end", ActionRoundEnd);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/restartnow", ActionRoundRestartNow);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/kick", ActionKick);
@@ -93,6 +117,7 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/set_motd", ActionForceMotd);
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
     }
+
 
     public void Initialize()
     {
@@ -380,6 +405,36 @@ public sealed partial class ServerApi : IPostInjectInit
             await RespondOk(context);
 
             _sawmill.Info($"Banned player {data.Username} ({data.UserId}) for {reason} by {FormatLogActor(actor)} to {body.Minutes}");
+        });
+    }
+
+    private async Task ActionAhelpSend(IStatusHandlerContext context, Actor actor)
+    {
+        var body = await ReadJson<DiscordAhelpBody>(context);
+        if (body == null)
+            return;
+        if (body.Text == null)
+        {
+            await context.RespondErrorAsync(HttpStatusCode.BadRequest);
+            return;
+        }
+        var playerUserId = new NetUserId(body.UserId);
+        var senderUserId = new NetUserId(actor.Guid);
+        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId, body.Text, DateTime.Now);
+        ServerApiAhelpMessage _serverApiAhelpMessage = new ServerApiAhelpMessage();
+        await RunOnMainThread(async () =>
+        {
+
+
+            if (_playerManager.TryGetSessionById(playerUserId, out var session))
+            {
+                string overrideMsgText = $"(Discord)[color=blue]{actor.Name}[/color]";
+                overrideMsgText = $"{overrideMsgText}: {body.Text}";
+                _serverApiAhelpMessage?.SendAhelpMessage(playerUserId, senderUserId, overrideMsgText, session.Channel);
+            }
+            else if(session != null)
+                _serverApiAhelpMessage?.SendAhelpMessageEx(message, session.Channel);
+
         });
     }
 
@@ -689,7 +744,13 @@ public sealed partial class ServerApi : IPostInjectInit
     {
         public required Guid UserUid { get; init; }
     }
-    
+
+    private sealed class DiscordAhelpBody
+    {
+        public required Guid UserId { get; init; }
+        public required Guid TrueSender { get; init; }
+        public string? Text { get; init; }
+    }
     private sealed class BanActionBody
     {
         public int Minutes { get; init; }
