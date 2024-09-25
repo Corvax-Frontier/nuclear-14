@@ -1,4 +1,4 @@
-﻿using System.Collections.Immutable;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -734,6 +734,7 @@ public sealed partial class ServerApi : IPostInjectInit
         public required Guid TrueSender { get; init; }
         public string? Text { get; init; }
     }
+
     private sealed class BanActionBody
     {
         public int Minutes { get; init; }
