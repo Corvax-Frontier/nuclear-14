@@ -9,7 +9,6 @@ using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Discord;
 using Content.Server.GameTicking;
-using Content.Shared._NC.DiscordAhelpMessage;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Mind;
