@@ -9,8 +9,6 @@ using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.JoinQueue;
 using Content.Server.Database;
-using Content.Server.Discord;
-using Content.Server.DiscordAuth;
 using Content.Server.EUI;
 using Content.Server.GhostKick;
 using Content.Server.Info;
@@ -62,7 +60,7 @@ namespace Content.Server.IoC
             IoCManager.Register<UserDbDataManager>();
             IoCManager.Register<ServerInfoManager>();
             IoCManager.Register<PoissonDiskSampler>();
-            IoCManager.Register<DiscordWebhook>();
+            //IoCManager.Register<DiscordWebhook>();
             IoCManager.Register<ServerDbEntryManager>();
             IoCManager.Register<DiscordAuthManager>();
             IoCManager.Register<SponsorsManager>();
