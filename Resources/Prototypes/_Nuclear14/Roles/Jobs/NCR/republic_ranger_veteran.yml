@@ -8,7 +8,7 @@
     - !type:CharacterPlaytimeRequirement
       tracker: NCRRanger
       min: 216000 # 60 hours as NCR
-    - !type:CharacterWhitelistRequirement
+  whitelisted: true
   startingGear: NCRRangerVeteranGear
   icon: "JobIconHeadOfSecurity"
   supervisors: ent-job-supervisors-ncr # Corvax-Nuclear

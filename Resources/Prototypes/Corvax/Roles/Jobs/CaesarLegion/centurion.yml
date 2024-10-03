@@ -8,7 +8,7 @@
     - !type:DepartmentTimeRequirement
       department: CaesarLegion
       time: 0 # WL-only
-    - !type:WhitelistRequirement
+  whitelisted: true
   startingGear: CaesarLegionCenturionGear
   alwaysUseSpawner: true
   icon: "JobIconLegioner"

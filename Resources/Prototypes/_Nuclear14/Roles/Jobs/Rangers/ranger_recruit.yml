@@ -17,8 +17,7 @@
       - type: NpcFactionMember
         factions:
           - Rangers
-  requirements:
-    - !type:CharacterWhitelistRequirement
+  whitelisted: true
 
 - type: startingGear
   id: RangerRecruitGear
