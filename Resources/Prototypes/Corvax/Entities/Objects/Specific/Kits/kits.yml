@@ -826,7 +826,7 @@
       - id: N14WeaponLaserPistol
       - id: N14PowerCellSmall
         amount: 2
-      - id: N14WeaponLaserAutoRifle
+      - id: N14WeaponLaserRifleAuto
       - id: N14PowerCellHigh
         amount: 3
       - id: N14Stimpak
