@@ -6,7 +6,7 @@
   playTimeTracker: NCRRangerVeteran
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      tracker: NCRRanger
+      department: NCR
       min: 216000 # 60 hours as NCR
     - !type:CharacterWhitelistRequirement
   startingGear: NCRRangerVeteranGear
