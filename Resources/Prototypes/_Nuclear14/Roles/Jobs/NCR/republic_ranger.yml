@@ -8,7 +8,7 @@
     - !type:CharacterDepartmentTimeRequirement
       department: NCR
       min: 36000 # 10 hours as NCR
-  whitelisted: true
+    - !type:CharacterWhitelistRequirement
   startingGear: NCRRangerGear
   supervisors: ent-job-supervisors-ncr # Corvax-Nuclear
   icon: JobIconSecurityOfficer

@@ -5,10 +5,10 @@
   description: job-description-ncr-ranger-veteran
   playTimeTracker: NCRRangerVeteran
   requirements:
-    - !type:CharacterPlaytimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       tracker: NCRRanger
       min: 216000 # 60 hours as NCR
-  whitelisted: true
+    - !type:CharacterWhitelistRequirement
   startingGear: NCRRangerVeteranGear
   icon: "JobIconHeadOfSecurity"
   supervisors: ent-job-supervisors-ncr # Corvax-Nuclear
