@@ -408,7 +408,7 @@ public sealed partial class ServerApi : IPostInjectInit
             await context.RespondErrorAsync(HttpStatusCode.BadRequest);
             return;
         }
-        var _bwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
+        //var _bwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
         var playerUserId = new NetUserId(body.UserId);
         var senderUserId = new NetUserId(actor.Guid);
         var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId, body.Text);
@@ -416,7 +416,7 @@ public sealed partial class ServerApi : IPostInjectInit
         {
             if (_playerManager.TryGetSessionById(playerUserId, out var session))
             {
-                _bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session));
+                //_bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session));
                 await RespondOk(context);
             }
         });
