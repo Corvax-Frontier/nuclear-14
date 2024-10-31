@@ -456,31 +456,6 @@ namespace Content.Server.Administration.Systems
                         RaiseNetworkEvent(msg, session.Channel);
                 }
             }
-
-            var sendsWebhook = _webhookUrl != string.Empty;
-            if (sendsWebhook)
-            {
-                if (!_messageQueues.ContainsKey(msg.UserId))
-                    _messageQueues[msg.UserId] = new Queue<string>();
-
-                var str = message.Text;
-                var unameLength = senderSession.Name.Length;
-
-                if (unameLength + str.Length + _maxAdditionalChars > DescriptionMax)
-                {
-                    str = str[..(DescriptionMax - _maxAdditionalChars - unameLength)];
-                }
-                var nonAfkAdmins = GetNonAfkAdmins();
-                _messageQueues[msg.UserId].Enqueue(GenerateAHelpMessage(senderSession.Name, str, !personalChannel, _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss"), _gameTicker.RunLevel, playedSound: playSound, noReceivers: nonAfkAdmins.Count == 0));
-            }
-
-            if (admins.Count != 0 || sendsWebhook)
-                return;
-
-            // No admin online, let the player know
-            var systemText = Loc.GetString("bwoink-system-starmute-message-no-other-users");
-            var starMuteMsg = new BwoinkTextMessage(message.UserId, SystemUserId, systemText);
-            RaiseNetworkEvent(starMuteMsg, senderSession.Channel);
         }
 
         private IList<INetChannel> GetNonAfkAdmins()
