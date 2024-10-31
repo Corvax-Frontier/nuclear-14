@@ -456,7 +456,6 @@ namespace Content.Server.Administration.Systems
                         RaiseNetworkEvent(msg, session.Channel);
                 }
             }
-
             var sendsWebhook = _webhookUrl != string.Empty;
             if (sendsWebhook)
             {
