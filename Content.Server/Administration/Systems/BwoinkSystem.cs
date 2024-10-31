@@ -517,5 +517,64 @@ namespace Content.Server.Administration.Systems
             stringbuilder.Append(message);
             return stringbuilder.ToString();
         }
+        public void DiscordAhelpSendMessage(BwoinkTextMessage message, EntitySessionEventArgs eventArgs)
+        {
+            var senderSession = eventArgs.SenderSession;
+            // Confirm that this person is actually allowed to send a message here.
+            var personalChannel = senderSession.UserId == message.UserId;
+            var senderAdmin = _adminManager.GetAdminData(senderSession);
+            var senderAHelpAdmin = senderAdmin?.HasFlag(AdminFlags.Adminhelp) ?? false;
+            var authorized = personalChannel || senderAHelpAdmin;
+            if (!authorized)
+            {
+                // Unauthorized bwoink (log?)
+                return;
+            }
+            var escapedText = FormattedMessage.EscapeText(message.Text);
+            string bwoinkText;
+            if (senderAdmin is not null && senderAdmin.Flags == AdminFlags.Adminhelp) // Mentor. Not full admin. That's why it's colored differently.
+            {
+                bwoinkText = $"[color=purple]{senderSession.Name}[/color]";
+            }
+            else if (senderAdmin is not null && senderAdmin.HasFlag(AdminFlags.Adminhelp))
+            {
+                bwoinkText = $"[color=red]{senderSession.Name}[/color]";
+            }
+            else
+            {
+                bwoinkText = $"{senderSession.Name}";
+            }
+            bwoinkText = $"{"(Discord) "}{bwoinkText}: {escapedText}";
+            // If it's not an admin / admin chooses to keep the sound then play it.
+            var playSound = !senderAHelpAdmin || message.PlaySound;
+            var msg = new BwoinkTextMessage(message.UserId, senderSession.UserId, bwoinkText, playSound: playSound);
+            LogBwoink(msg);
+            var admins = GetTargetAdmins();
+            // Notify all admins
+            foreach (var channel in admins)
+            {
+                RaiseNetworkEvent(msg, channel);
+            }
+            var sendsWebhook = _webhookUrl != string.Empty;
+            if (sendsWebhook)
+            {
+                if (!_messageQueues.ContainsKey(msg.UserId))
+                    _messageQueues[msg.UserId] = new Queue<string>();
+                var str = message.Text;
+                var unameLength = senderSession.Name.Length;
+                if (unameLength + str.Length + _maxAdditionalChars > DescriptionMax)
+                {
+                    str = str[..(DescriptionMax - _maxAdditionalChars - unameLength)];
+                }
+                var nonAfkAdmins = GetNonAfkAdmins();
+                _messageQueues[msg.UserId].Enqueue(GenerateAHelpMessage(senderSession.Name, str, !personalChannel, _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss"), _gameTicker.RunLevel, playedSound: playSound, noReceivers: nonAfkAdmins.Count == 0));
+            }
+            if (admins.Count != 0 || sendsWebhook)
+                return;
+            // No admin online, let the player know
+            var systemText = Loc.GetString("bwoink-system-starmute-message-no-other-users");
+            var starMuteMsg = new BwoinkTextMessage(message.UserId, SystemUserId, systemText);
+            RaiseNetworkEvent(starMuteMsg, senderSession.Channel);
+        }
     }
 }
