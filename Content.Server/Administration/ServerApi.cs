@@ -95,7 +95,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         // Post
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/start", ActionRoundStart);
-        RegisterActorHandler(HttpMethod.Post, "/admin/actions/ahelp/send", ActionAhelpSend);
+        //RegisterActorHandler(HttpMethod.Post, "/admin/actions/ahelp/send", ActionAhelpSend);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/end", ActionRoundEnd);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/round/restartnow", ActionRoundRestartNow);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/kick", ActionKick);
@@ -398,7 +398,7 @@ public sealed partial class ServerApi : IPostInjectInit
         });
     }
 
-    private async Task ActionAhelpSend(IStatusHandlerContext context, Actor actor)
+    /*private async Task ActionAhelpSend(IStatusHandlerContext context, Actor actor)
     {
         var body = await ReadJson<DiscordAhelpBody>(context);
         if (body == null)
@@ -420,7 +420,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 await RespondOk(context);
             }
         });
-    }
+    }*/
 
     private async Task ShutdownAction(IStatusHandlerContext context, Actor actor)
     {
