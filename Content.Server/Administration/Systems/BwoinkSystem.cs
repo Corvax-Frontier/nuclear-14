@@ -465,7 +465,7 @@ namespace Content.Server.Administration.Systems
             }
         }
 
-        public void DiscordAhelpSendMessage(BwoinkTextMessage message, EntitySessionEventArgs eventArgs)
+        /*public void DiscordAhelpSendMessage(BwoinkTextMessage message, EntitySessionEventArgs eventArgs)
         {
             var senderSession = eventArgs.SenderSession;
 
@@ -537,7 +537,7 @@ namespace Content.Server.Administration.Systems
             var systemText = Loc.GetString("bwoink-system-starmute-message-no-other-users");
             var starMuteMsg = new BwoinkTextMessage(message.UserId, SystemUserId, systemText);
             RaiseNetworkEvent(starMuteMsg, senderSession.Channel);
-        }
+        }*/
 
         private IList<INetChannel> GetNonAfkAdmins()
         {
