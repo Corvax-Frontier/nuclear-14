@@ -547,7 +547,7 @@ namespace Content.Server.Administration.Systems
             bwoinkText = $"{"(Discord) "}{bwoinkText}: {escapedText}";
             // If it's not an admin / admin chooses to keep the sound then play it.
             var playSound = !senderAHelpAdmin || message.PlaySound;
-            var msg = new BwoinkTextMessage(message.UserId, senderSession.UserId, bwoinkText, playSound: playSound);
+            var msg = new BwoinkTextMessage(message.UserId, message.TrueSender, bwoinkText, playSound: playSound);
             LogBwoink(msg);
             var admins = GetTargetAdmins();
             // Notify all admins
