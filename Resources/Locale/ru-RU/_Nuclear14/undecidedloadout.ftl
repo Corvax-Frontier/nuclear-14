@@ -177,20 +177,25 @@ undecided-loadout-category-bos-ballistics-description =набор
     2 магазина для пистолета калибра 12,7 мм, коробку с патронами 5,56 мм, стимулятор и сухпаёк.
 
 undecided-loadout-category-bos-scribe-medic-name = Медицинский набор Скриптера Братства Стали
-undecided-loadout-category-bos-scribe-medic-description = 
+undecided-loadout-category-bos-scribe-medic-description =
     Ящик со снаряжением, необходимым для выживания бойцов Братства.
     Включает: револьвер калибра 10 мм, 2 спидлоадера, медицинский пояс,
     набор для лечения огнестрельных ранений, медицинскую форму скриптера, нож, стимулятор и сухпаёк.
 
 undecided-loadout-category-bos-scribe-field-name = Полевой набор Скриптера Братства Стали
-undecided-loadout-category-bos-scribe-field-description = 
+undecided-loadout-category-bos-scribe-field-description =
     Ящик со снаряжением, необходимым для поддержки вашего подразделения из тыла.
     Включает: винтовку "Варминт", коробку патронов калибра 5,56 мм, медицинский пояс,
     полевую форму скриптера, нож, стимулятор и сухпаёк.
 
 undecided-loadout-category-bos-scribe-engineer-name = Инженерный набор Скриптера Братства Стали
-undecided-loadout-category-bos-scribe-engineer-description = 
+undecided-loadout-category-bos-scribe-engineer-description =
     Ящик со снаряжением, необходимым для поддержания базы и технических работ.
     Включает: лазерный пистолет AEP-7, 2 микроядерных батареи, утилитарный пояс,
     инженерную форму скриптера, пожарный топор, стимулятор и сухпаёк.
 
+undecided-loadout-category-engineer-name = Инженерный набор НКР
+undecided-loadout-category-engineer-description =
+    Ящик, содержащий все необходимое для патрулирования пустоши инженеру НКР.
+    Включает: кожаный жилет НКР, пояс с инструментами, дробовик, коробка патронов 12 калибра,
+    пистолет 9 мм, 2 магазина на 9 мм, боевой нож и рацион питания C.
