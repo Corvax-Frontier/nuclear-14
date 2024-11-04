@@ -13,14 +13,14 @@ job-description-bos-mid-squire = Следуйте за своим рыцарем
 # ВБС
 job-name-bos-washington-commander = командир ВБС
 job-description-bos-washington-commander = Ведите Вашингтонское Братство Стали к выполнению вашей задачи.
-job-name-bos-washington-recruit = послушник ВБС
-job-description-bos-washington-recruit = Докажите свою ценность отделению, чтобы продвинуться по рангам.
-job-name-bos-washington-soldier = рыцарь ВБС
-job-description-bos-washington-soldier = Военная сила Братства Стали. Защищайте свое отделение в их целях и производите снаряжение.
-job-name-bos-washington-captain = капитан ВБС
-job-description-bos-washington-captain = Защищайте братство любой ценой. Воплощайте волю командира в пустоши.
-job-name-bos-washington-researcher = скриптер ВБС
-job-description-bos-washington-researcher = Проводите научные миссии и исследования для вашего отделения Братства.
+job-name-bos-washington-initiate = послушник ВБС
+job-description-bos-washington-initiate = Докажите свою ценность отделению, чтобы продвинуться по рангам.
+job-name-bos-washington-knight = рыцарь ВБС
+job-description-bos-washington-knight = Военная сила Братства Стали. Защищайте свое отделение в их целях и производите снаряжение.
+job-name-bos-washington-paladin = паладин ВБС
+job-description-bos-washington-paladin = Защищайте братство любой ценой. Воплощайте волю командира в пустоши.
+job-name-bos-washington-scribe = скриптер ВБС
+job-description-bos-washington-scribe = Проводите научные миссии и исследования для вашего отделения Братства.
 # Караван
 job-name-caravan-leader = глава каравана
 job-description-caravan-leader = Координируйте караванную компанию в регионе и заключайте торговые сделки с местными.

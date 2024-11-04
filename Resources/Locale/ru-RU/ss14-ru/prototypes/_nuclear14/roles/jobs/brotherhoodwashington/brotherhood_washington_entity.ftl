@@ -1,10 +1,10 @@
-ent-N14MobHumanBoSWashingtonCaptain = Капитан Вашингтонского БС
+ent-N14MobHumanBoSWashingtonPaladin = Паладин Вашингтонского БС
     .desc = { ent-MobHuman.desc }
 ent-N14MobHumanBoSWashingtonCommander = Командир Вашингтонского БС
     .desc = { ent-MobHuman.desc }
-ent-N14MobHumanBoSWashingtonRecruit = Рекрут Вашингтонского БС
+ent-N14MobHumanBoSWashingtonInitiate = Послушник Вашингтонского БС
     .desc = { ent-MobHuman.desc }
-ent-N14MobHumanBoSWashingtonResearcher = Учёный Вашингтонского БС
+ent-N14MobHumanBoSWashingtonScribe = Скриптер Вашингтонского БС
     .desc = { ent-MobHuman.desc }
-ent-N14MobHumanBoSWashingtonSoldier = Солдат Вашингтонского БС
+ent-N14MobHumanBoSWashingtonKnight = Рыцарь Вашингтонского БС
     .desc = { ent-MobHuman.desc }
