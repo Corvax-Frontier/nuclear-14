@@ -1,18 +1,19 @@
 - type: job
-  id: NCROfficer
+  id: NCRLT
   setPreference: true
-  name: job-name-ncr-officer
-  description: job-description-ncr-officer
+  name: job-name-ncr-lt
+  description: job-description-ncr-lt
   playTimeTracker: NCROfficer
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: NCR
       min: 72000 # 20 hours
   weight: 10
-  startingGear: NCROfficerGear
+  startingGear: NCRLTGear
   icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true
   canBeAntag: false
+  alwaysUseSpawner: true
   accessGroups:
   - NCR
   special:
@@ -23,7 +24,7 @@
           - NCR
 
 - type: startingGear
-  id: NCROfficerGear
+  id: NCRLTGear
   equipment:
     head: N14ClothingHeadHatNCRBeretOfficer
     back: N14ClothingBackpackNCRFilled
@@ -32,7 +33,7 @@
     belt: ClothingBeltRevolverCaptainfilled
     outerClothing: N14ClothingOuterNCRTrenchCoat
     eyes: ClothingEyesGlassesSunglasses
-    pocket1: NCRNCOloadoutkits
+    pocket1: NCRSGTloadoutkits
     pocket2: RadioHandheld
     id: N14IDNCRDogtagOfficer
   innerClothingSkirt: N14ClothingOfficerUniformNCRSnow #placeholder
