@@ -41,6 +41,6 @@ ent-N14WallDecorWallscreen = настенные мониторы
 ent-N14FlagWallColorado = флаг колорадо
     .desc = Флаг штата Колорадо.
     .suffix = Колорадо
-ent-N14FlagWallColorado = флаг денвера
+ent-N14FlagWallDenver = флаг денвера
     .desc = Флаг штата Денвер.
     .suffix = Денвер

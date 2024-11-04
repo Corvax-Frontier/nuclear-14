@@ -1,3 +1,4 @@
-ent-N14BasePoliceBaton = полицейская дубинка
-ent-N14BaseTribalClub = племенная булава
-ent-N14BaseBrokenPipe = сломанная труба
+ent-N14PoliceBaton = полицейская дубинка
+ent-N14TribalClub = племенная булава
+ent-N14BrokenPipe = сломанная труба
+ent-N14TrenchClub = булава с шипами
