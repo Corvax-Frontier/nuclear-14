@@ -105,3 +105,5 @@ ent-N14ClothingMPUniformNCRSnow = { ent-N14ClothingMPUniformNCRDesert }
     .desc = { ent-N14ClothingMPUniformNCRDesert.desc }
 ent-N14ClothingUniformDesertPantsFull = { ent-N14ClothingUniformDesertPants }
     .desc = Эти штаны видели больше пыльных бурь, чем ты - банок консервированной фасоли. Левое колено усилено пластиной из довоенного дорожного знака. Джинсы, переживающие своего владельца - нормальное явление в Пустоши. К ним прилагается белая рубашка.
+ent-N14ClothingUniformJumpsuitRCMP = униформа КККП
+   .desc = Элегантная красная куртка в сочетании с чёрными брюками — это не самый удачный вариант для маскировки, но её эффект более чем очевиден: она заставляет любого, кто её носит, чувствовать себя уверенно.

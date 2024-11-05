@@ -32,3 +32,5 @@ ent-N14ClothingBackpackVaultSecurityFilled = { ent-N14ClothingBackpackVaultBlue 
     .desc = { ent-N14ClothingBackpackVaultBlue.desc }
 ent-N14ClothingBackpackTribalHealerFilled = { ent-N14ClothingBackpackTrekker }
     .desc = { ent-N14ClothingBackpackTrekker.desc }
+ent-N14ClothingBackpackMilitaryMountieFilled = { ent-N14ClothingBackpackMilitary }
+    .desc = { ent-N14ClothingBackpackMilitary.desc }

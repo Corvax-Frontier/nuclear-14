@@ -78,3 +78,5 @@ ent-N14ClothingHeadHatWinterBoonie = зимний буни
     .desc = шляпа-буни в белоснежном камуфляже.
 ent-N14ClothingHeadHatDesertBoonie = пустынный буни
     .desc = шляпа-буни в пустынном камуфляже.
+ent-N14ClothingHeadHatMountie = шляпа всадника
+    .desc = Элегантная шляпа из натуральной кожи.

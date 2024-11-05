@@ -10,3 +10,5 @@ ent-ClothingBeltRevolverCaptainfilled = { ent-ClothingBeltRevolver }
     .desc = { ent-ClothingBeltRevolver.desc }
 ent-ClothingBeltMedicalfilled = { ent-ClothingBeltMedical }
     .desc = { ent-ClothingBeltMedical.desc }
+ent-ClothingBeltMountieFilled = { ent-ClothingBeltMountie }
+    .desc = { ent-ClothingBeltMountie.desc }
