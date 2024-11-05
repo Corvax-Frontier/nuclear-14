@@ -11,7 +11,7 @@
 
 - type: entity
   parent: N14DoorBunkerGlass
-  id: N14DoorBunkerGlassLockedBoSMidwestInitiate
+  id: N14DoorBunkerGlassLockedBoSWashingtonInitiate
   suffix: Corvax, BoSWashinton, Locked, Initiate
   components:
   - type: ContainerFill

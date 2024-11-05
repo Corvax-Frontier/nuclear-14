@@ -16532,7 +16532,7 @@ entities:
     - type: Transform
       pos: 33.5,83.5
       parent: 2
-- proto: N14DoorBunkerGlassLockedBoSMidwestInitiate
+- proto: N14DoorBunkerGlassLockedBoSWashingtonInitiate
   entities:
   - uid: 2289
     components:
