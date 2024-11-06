@@ -41,3 +41,6 @@ ent-N14RobotMrHandySawBOSWashington = { ent-N14RobotMrHandySaw }
 ent-N14RobotMrGutsyBOSWashington = { ent-N14RobotMrGutsy }
     .suffix = игрок, ВБС, бесстрашный
     .desc = { ent-N14BaseRobotChassis.desc }
+ent-N14RobotMrGutsyBOSMidwest = { ent-N14RobotMrGutsyBOSWashington }
+    .suffix = игрок, СБС, бесстрашный
+    .desc = { ent-N14RobotMrGutsyBOSWashington.desc }

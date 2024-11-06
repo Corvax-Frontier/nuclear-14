@@ -34,3 +34,5 @@ ent-N14BlastDoorExteriorIndestructible = { ent-BlastDoor }
 ent-BlastDoorExteriorIndestructibleOpen = { ent-BlastDoorOpen }
     .suffix = Неуничтоживая, Открыто
     .desc = { ent-BlastDoorOpen.desc }
+ent-N14WallRebar = арматура
+    .desc = Стальная арматура торчащая из земли. Главное не споткнутся.

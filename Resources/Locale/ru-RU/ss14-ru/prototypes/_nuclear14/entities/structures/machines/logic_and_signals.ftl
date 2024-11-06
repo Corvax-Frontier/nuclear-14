@@ -10,3 +10,5 @@ ent-N14DoorVaultControls = Пульт управления дверью Убеж
 ent-N14DoorVaultControlsLocked = { ent-N14DoorVaultControls }
     .suffix = Смотритель Убежища, Закрыто
     .desc = { ent-N14DoorVaultControls.desc }
+ent-N14SignalButton = { ent-SignalButton }
+    .desc = { ent-SignalButton.desc }
