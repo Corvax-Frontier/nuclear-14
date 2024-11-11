@@ -58,6 +58,7 @@
             BoSMidKnight: [ 2, 3 ]
             BoSMidScribe: [ 1, 2 ]
             BoSMidSquire: [ 2, 2 ]
+            BoSMidScout: [ 1, 2 ] # Corvax-Mid-BoS
             Overseer: [ 1, 1 ]
             VaultDoctor: [ 2, 2 ]
             VaultDweller: [ 4, 4 ]

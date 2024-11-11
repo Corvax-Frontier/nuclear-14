@@ -1,4 +1,4 @@
-# Legion kits
+#MARK: Legion kits
 
 - type: entity
   id: LegionCenturionloadoutkits
@@ -137,7 +137,7 @@
       - key: enum.UndecidedLoadoutBackpackUIKey.Key
         type: UndecidedLoadoutBackpackBoundUserInterface
 
-#Washington kits
+#MARK: Washington kits
 
 - type: entity
   id: BoSWashingtonStandartKits
@@ -207,7 +207,29 @@
       - key: enum.UndecidedLoadoutBackpackUIKey.Key
         type: UndecidedLoadoutBackpackBoundUserInterface
 
-### Sets
+#MARK: MidWest BoS kits
+- type: entity
+  id: BoSMidwestScoutkits
+  name: Undecided BoS MidWest Kit
+  description: please only take one
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Misc/kits.rsi
+    state: gunner
+  - type: UndecidedLoadoutBackpack
+    transformAfterSelect: AlwaysPoweredWallLight
+    possibleSets:
+    - ScoutEngineerMidBoSSet
+    - ScoutRifleMidBoSSet
+  - type: ActivatableUI
+    key: enum.UndecidedLoadoutBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      - key: enum.UndecidedLoadoutBackpackUIKey.Key
+        type: UndecidedLoadoutBackpackBoundUserInterface
+
+###MARK: Sets
 
 # Legion
 
@@ -441,7 +463,7 @@
   content:
   - KitRecruitHealer
 
-# Washington BoS
+#MARK: Washington BoS
 
 - type: UndecidedLoadoutBackpackSet
   id: BaseWashingtonBoSSet
@@ -552,3 +574,25 @@
     state: medic
   content:
   - KitScribeMedicWashingtonBoS
+
+#MARK: MidWest BoS
+
+- type: UndecidedLoadoutBackpackSet
+  id: ScoutEngineerMidBoSSet
+  name: undecided-loadout-category-midwest-scout-sniper-name
+  description: undecided-loadout-category-midwest-scout-sniper-description
+  sprite:
+    sprite: _Nuclear14/Objects/Misc/kits.rsi
+    state: gunner
+  content:
+  - KitScoutSniperMidBoS
+
+- type: UndecidedLoadoutBackpackSet
+  id: ScoutRifleMidBoSSet
+  name: undecided-loadout-category-midwest-scout-assault-name
+  description: undecided-loadout-category-midwest-scout-assault-description
+  sprite:
+    sprite: _Nuclear14/Objects/Misc/kits.rsi
+    state: rifleman
+  content:
+  - KitScoutAssaultMidBoS

@@ -1,4 +1,4 @@
-# Legion kits
+#MARK: Legion kits
 
 - type: entity
   name: centurion-bestiary kit
@@ -600,7 +600,7 @@
     sound:
       path: /Audio/Effects/unwrap.ogg
 
-# Washington BoS kits
+#MARK: Washington BoS kits
 
 - type: entity
   name: washingtonbos-base kit
@@ -854,5 +854,51 @@
       - id: ClothingHandsGlovesChemist
       - id: N14Stimpak
       - id: BoxMRE
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+#MARK: MidWest BoS kits
+
+- type: entity
+  name: midwest-scout-sniper kit
+  parent: KitBase
+  id: KitScoutSniperMidBoS
+  description: "A set of MidWest BoS equipment."
+  components:
+  - type: Sprite
+    state: gunner
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: N14WeaponLaserRifleWattz3000
+      - id: N14WeaponLaserPistol
+      - id: N14PowerCellFocused
+        amount: 3
+      - id: N14PowerCellSmall
+        amount: 2
+      - id: N14BoxCardboardMREBoxKFilled
+      - id: N14Stimpak
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: midwest-scout-assault kit
+  parent: KitBase
+  id: KitScoutAssaultMidBoS
+  description: "A set of MidWest BoS equipment."
+  components:
+  - type: Sprite
+    state: rifleman
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: N14WeaponSMG12mmAdvanced
+      - id: N14TopMagazineSMG12mm
+        amount: 3
+      - id: MagazineBox12
+      - id: N14BoxCardboardMREBoxKFilled
+      - id: N14Stimpak
     sound:
       path: /Audio/Effects/unwrap.ogg

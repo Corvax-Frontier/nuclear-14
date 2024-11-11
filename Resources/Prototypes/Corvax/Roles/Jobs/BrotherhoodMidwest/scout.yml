@@ -1,0 +1,48 @@
+- type: job
+  id: BoSMidScout
+  setPreference: true
+  name: job-name-bos-mid-scout
+  description: job-description-bos-mid-scout
+  supervisors: job-supervisors-bos-mid-scout
+  playTimeTracker: BoSMidScout
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: BrotherhoodMidwest
+      min: 72000 # 20 hours
+    - !type:CharacterWhitelistRequirement
+  startingGear: BoSMidScoutGear
+  alwaysUseSpawner: true
+  icon: "JobIconPassenger"
+  requireAdminNotify: true
+  canBeAntag: false
+  access:
+  - BoSMidwest
+  - Paladin
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - BrotherhoodMidwest
+  jobBlockForSpecies:
+  - !type:JobBlockForSpecie
+    nameSpecie: Ghoul
+  - !type:JobBlockForSpecie
+    nameSpecie: GhoulGlowing
+
+- type: startingGear
+  id: BoSMidScoutGear
+  equipment:
+    jumpsuit: N14ClothingUniformBosRecon
+    back: N14ClothingBackpackMilitary
+    shoes: N14ClothingBootsCombatFilled
+    head: N14ClothingHeadHatBrotherhoodMidwestHelmetRecon
+    outerClothing: N14ClothingOuterMidwestReconArmor
+    pocket1: BoSMidwestScoutkits
+    hands: N14ClothingHandsGlovesCombat
+    id: N14IDBrotherhoodHolotagScout
+    ears: N14ClothingHeadsetBOSMidwest
+    belt: ClothingBeltBoSMidwestWebbing
+
+- type: playTimeTracker
+  id: BoSMidScout

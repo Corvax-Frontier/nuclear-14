@@ -1,3 +1,4 @@
+#MARK: Legion
 - type: entity
   parent: SpawnPointJobBase
   id: N14SpawnPointCenturion
@@ -70,3 +71,17 @@
     layers:
       - state: green
       - state: recruit
+
+#MARK: MidWest BoS
+
+- type: entity
+  id: N14SpawnPointBoSMidScout
+  parent: N14SpawnPointWastelander
+  name: BOS midwest scout
+  components:
+  - type: SpawnPoint
+    job_id: BoSMidScout
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger # TODO make new icons

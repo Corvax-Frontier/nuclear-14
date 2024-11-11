@@ -73,3 +73,9 @@ ent-KitScribeEngineerWashingtonBoS = инженерный набор скрип�
     .desc = { ent-KitBaseWashingtonBoS.desc }
 ent-KitScribeMedicWashingtonBoS = мадицинкий набор скриптера Вашингтонского Братства Стали
     .desc = { ent-KitBaseWashingtonBoS.desc }
+
+# MidWest BoS
+ent-KitScoutSniperMidBoS = снайперский набор разведчика Среднезападного Братства Стали
+    .desc = Набор снаряжения Среднезападного Братства Стали
+ent-KitScoutAssaultMidBoS = штурмовой набор разведчика Среднезападного Братства Стали
+    .desc = { ent-KitScoutSniperMidBoS.desc }

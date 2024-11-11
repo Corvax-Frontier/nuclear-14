@@ -1,0 +1,7 @@
+- type: entity
+  parent: BoSMidPaladinCommander
+  id: N14MobHumanBoSMidScout
+  name: BoSMidScout
+  components:
+    - type: Loadout
+      prototypes: [BoSMidScoutGear]

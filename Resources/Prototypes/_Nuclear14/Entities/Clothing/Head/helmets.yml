@@ -439,6 +439,14 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/midwest-brotherhood/bosreconhelmet.rsi
   - type: Clothing
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/midwest-brotherhood/bosreconhelmet.rsi
+  - type: NightVisionItem # Corvax-Nuclear-14
+  - type: Appearance # Corvax-Nuclear-14
+  - type: GenericVisualizer # Corvax-Nuclear-14
+    visuals:
+      enum.NightVisionItemVisuals.Active:
+        nightVisionItemLayer:
+          True: { state: icon }
+          False: { state: icon }
   - type: Tag
     tags:
     - HidesHair

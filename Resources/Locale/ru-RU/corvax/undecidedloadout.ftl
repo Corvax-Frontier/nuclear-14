@@ -196,13 +196,23 @@ undecided-loadout-category-washington-command-gatling-description =
     2 батарейки для пистолета, стимулятор и сухпаёк.
 
 undecided-loadout-category-washington-scribe-engineer-name = Инженерный набор Скриптера Братства Стали
-undecided-loadout-category-washington-scribe-engineer-description = 
+undecided-loadout-category-washington-scribe-engineer-description =
     Ящик со снаряжением, необходимым для поддержания базы и технических работ.
     Включает: 1 автоматическую лазерную винтовка AER9, 1 лазерный пистолет, 3 батареи для винтовки,
     2 батарейки для пистолета, 1 утилитарный пояс, инженерное снаряжение, стимулятор и сухпаёк.
 
 undecided-loadout-category-washington-scribe-medic-name = Медицинский набор Скриптера Братства Стали
-undecided-loadout-category-washington-scribe-medic-description = 
+undecided-loadout-category-washington-scribe-medic-description =
     Ящик со снаряжением, необходимым для выживания бойцов Братства.
     Включает: 1 пистолет с подзарядкой, медицинский пояс, набор для лечения огнестрельных ранений,
     медицинскую форму скриптера, нож, стимулятор и сухпаёк.
+undecided-loadout-category-midwest-scout-sniper-name = Снайперский набор Разведчика Братства Стали
+undecided-loadout-category-midwest-scout-sniper-description =
+    Ящик со всем необходимым для разведчика Братства Стали
+    Включает: Включает: 1 лазерную винтовку "Wattz 3000", 1 лазерный пистолет, 3 батареи для винтовки,
+    2 батарейки для пистолета, стимулятор и сухпаёк.
+undecided-loadout-category-midwest-scout-assault-name = Штурмовой набор Разведчика Братства Стали
+undecided-loadout-category-midwest-scout-assault-description =
+    Ящик со всем необходимым для разведчика Братства Стали
+    Включает: 1 продвинутый 12.7 ПП, 3 магазина 12.7, ящик патрон 12.7,
+    стимулятор и сухпаёк.

@@ -10,6 +10,9 @@ job-name-bos-mid-scribe = скриптер СЗБС
 job-description-bos-mid-scribe = Проводите научные миссии и исследования для вашего отделения Братства.
 job-name-bos-mid-squire = оруженосец СЗБС
 job-description-bos-mid-squire = Следуйте за своим рыцарем в бой и выполняйте его приказы.
+job-name-bos-mid-scout = разведчик СЗБС
+job-description-bos-mid-scout = Вы подчиняетесь напрямую старшему паладину, выполняйте миссии по разведке и устраняйте врагов оставаясь в тени.
+job-supervisors-bos-mid-scout = подчинятся старшему паладину.
 # ВБС
 job-name-bos-washington-commander = командир ВБС
 job-description-bos-washington-commander = Ведите Вашингтонское Братство Стали к выполнению вашей задачи.
