@@ -415,7 +415,7 @@ public sealed partial class ServerApi : IPostInjectInit
             var playerUserId = new NetUserId(data.UserId);
 
         var senderUserId = new NetUserId(body.SenderUserId);
-        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId, senderUserId, body.Text, discord:true);
+        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId, senderUserId, body.Text);
         await RunOnMainThread(async () =>
         {
             if (_playerManager.TryGetSessionById(playerUserId, out var session))
