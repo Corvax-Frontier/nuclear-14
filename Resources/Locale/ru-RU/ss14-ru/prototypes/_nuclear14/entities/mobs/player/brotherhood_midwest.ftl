@@ -8,3 +8,5 @@ ent-N14MobHumanBoSMidScribe = Скриптер СБС
     .desc = { ent-BoSMidPaladinCommander.desc }
 ent-N14MobHumanBoSMidSquire = Сквайр СБС
     .desc = { ent-BoSMidPaladinCommander.desc }
+ent-N14MobHumanBoSMidScout = Разведчик СБС
+    .desc = { ent-BoSMidPaladinCommander.desc }
