@@ -521,6 +521,7 @@ namespace Content.Server.Administration.Systems
         {
             var senderSession = eventArgs.SenderSession;
             // Confirm that this person is actually allowed to send a message here.
+            var adminNickname = _playerManager.GetSessionById(message.TrueSender).Name;
             var personalChannel = senderSession.UserId == message.UserId;
             var senderAdmin = _adminManager.GetAdminData(senderSession);
             var senderAHelpAdmin = senderAdmin?.HasFlag(AdminFlags.Adminhelp) ?? false;
@@ -534,15 +535,15 @@ namespace Content.Server.Administration.Systems
             string bwoinkText;
             if (senderAdmin is not null && senderAdmin.Flags == AdminFlags.Adminhelp) // Mentor. Not full admin. That's why it's colored differently.
             {
-                bwoinkText = $"[color=purple]{senderSession.Name}[/color]";
+                bwoinkText = $"[color=purple]{adminNickname}[/color]";
             }
             else if (senderAdmin is not null && senderAdmin.HasFlag(AdminFlags.Adminhelp))
             {
-                bwoinkText = $"[color=red]{senderSession.Name}[/color]";
+                bwoinkText = $"[color=red]{adminNickname}[/color]";
             }
             else
             {
-                bwoinkText = $"{senderSession.Name}";
+                bwoinkText = $"{adminNickname}";
             }
             bwoinkText = $"{"(Discord) "}{bwoinkText}: {escapedText}";
             // If it's not an admin / admin chooses to keep the sound then play it.
