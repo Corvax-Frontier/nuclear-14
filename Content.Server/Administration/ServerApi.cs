@@ -408,18 +408,23 @@ public sealed partial class ServerApi : IPostInjectInit
             await context.RespondErrorAsync(HttpStatusCode.BadRequest);
             return;
         }
-        var _bwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
-        var playerUserId = new NetUserId(body.UserId);
-        var senderUserId = new NetUserId(actor.Guid);
-        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId,senderUserId, body.Text);
+        var bwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
+        var data = await _locator.LookupIdByNameOrIdAsync($"{body.PlayerNickname}");
+        if (data != null)
+        {
+            var playerUserId = new NetUserId(data.UserId);
+
+        var senderUserId = new NetUserId(body.SenderUserId);
+        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId, senderUserId, body.Text);
         await RunOnMainThread(async () =>
         {
             if (_playerManager.TryGetSessionById(playerUserId, out var session))
             {
-                _bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session));
+                bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session));
                 await RespondOk(context);
             }
         });
+        }
     }
 
     private async Task ShutdownAction(IStatusHandlerContext context, Actor actor)
@@ -731,8 +736,8 @@ public sealed partial class ServerApi : IPostInjectInit
 
     private sealed class DiscordAhelpBody
     {
-        public required Guid UserId { get; init; }
-        public required Guid TrueSender { get; init; }
+        public required string PlayerNickname { get; init; }
+        public required Guid SenderUserId { get; init; }
         public string? Text { get; init; }
     }
 
