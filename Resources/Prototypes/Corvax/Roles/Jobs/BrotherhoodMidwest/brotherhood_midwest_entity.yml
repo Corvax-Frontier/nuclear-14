@@ -3,5 +3,7 @@
   id: N14MobHumanBoSMidScout
   name: BoSMidScout
   components:
+    - type: Icon
+      state: scout
     - type: Loadout
       prototypes: [BoSMidScoutGear]

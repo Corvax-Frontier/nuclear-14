@@ -76,7 +76,7 @@
 
 - type: entity
   id: N14SpawnPointBoSMidScout
-  parent: N14SpawnPointWastelander
+  parent: N14SpawnPointBoSMidPaladinCommander
   name: BOS midwest scout
   components:
   - type: SpawnPoint
@@ -84,4 +84,4 @@
   - type: Sprite
     layers:
       - state: green
-      - state: passenger # TODO make new icons
+      - state: scout
