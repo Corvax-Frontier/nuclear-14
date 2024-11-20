@@ -213,7 +213,8 @@
   - Zetan
   - HostileRobot
   - Feral
-  
+  - CaesarLegion #Corvax-Legion
+
 - type: npcFaction
   id: Feral
   hostile:
