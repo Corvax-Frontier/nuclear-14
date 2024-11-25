@@ -42,7 +42,7 @@
     hands: N14ClothingHandsGlovesCombat
     id: N14IDBrotherhoodHolotagScout
     ears: N14ClothingHeadsetBOSMidwest
-    belt: ClothingBeltBoSMidwestWebbing
+    belt: N14ClothingBeltBoSWebbing
 
 - type: playTimeTracker
   id: BoSMidScout
