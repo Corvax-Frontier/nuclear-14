@@ -23,8 +23,8 @@
       rootTask:
         task: SimpleHumanoidHostileCompound
     - type: Gun #Mobs currently cannot bolt a gun, so we have to simulate them firing it
-      fireRate: 2
-      soundGunshot: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      fireRate: 1.35
+      soundGunshot: /Audio/_Nuclear14/Weapons/Guns/Pistols/N14WeaponPistol9mm/shot1.ogg
       useKey: false
       selectedMode: SemiAuto
       availableModes:
@@ -98,8 +98,8 @@
   suffix: AI
   components:
     - type: Gun
-      fireRate: 5
-      soundGunshot: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      fireRate: 3
+      soundGunshot: /Audio/_Nuclear14/Weapons/Guns/Pistols/N14WeaponPistol9mm/shot1.ogg
       useKey: false
       selectedMode: FullAuto
       availableModes:
@@ -117,3 +117,56 @@
       prototypes:
         - RaiderBossGear
 
+- type: entity
+  name: Psycho Raider Hunter
+  parent: N14MobRaiderPsychoRanged
+  id: N14MobRaiderHunter
+  description: Psychopatic raider armed with a long rifle. Dangerous at a distance.
+  suffix: AI
+  components:
+    - type: Gun
+      fireRate: 0.5
+      soundGunshot: /Audio/_Nuclear14/Weapons/Guns/Snipers/N14WeaponPipeRifle/shot1.ogg
+      useKey: false
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+    - type: CombatMode
+    - type: BasicEntityAmmoProvider
+      proto: N14Cartridge308Rifle
+      capacity: 3
+      count: 3
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 2
+      rechargeSound:
+        path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+    - type: Loadout
+      prototypes:
+        - RaiderHunterGear
+        
+- type: entity
+  name: Psycho Raider Skrimisher
+  parent: N14MobRaiderPsychoRanged
+  id: N14MobRaiderSkrimisher
+  description: Psychopatic raider armed with a scattergun. Deadly at close range.
+  suffix: AI
+  components:
+    - type: Gun
+      fireRate: 0.5
+      soundGunshot: /Audio/_Nuclear14/Weapons/Guns/Shotguns/N14WeaponCaravanShotgun/shot1.ogg
+      useKey: false
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+    - type: CombatMode
+    - type: BasicEntityAmmoProvider
+      proto: N14ShellShotgun20
+      capacity: 6
+      count: 6
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 2
+      rechargeSound:
+        path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg
+    - type: Loadout
+      prototypes:
+        - RaiderSkrimisherGear

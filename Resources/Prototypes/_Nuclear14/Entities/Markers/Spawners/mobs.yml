@@ -378,6 +378,36 @@
       - N14MobRaiderPsychoRanged
       
 - type: entity
+  name: Raider Ranged Psycho Spawner
+  id: N14SpawnMobRaiderPsychoHunter
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Nuclear14/Mobs/RaidersSimpleMob/Raiders.rsi
+        state: raider_ranged
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobRaiderHunter
+      
+- type: entity
+  name: Raider Ranged Psycho Spawner
+  id: N14SpawnMobRaiderPsychoSkrimisher
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Nuclear14/Mobs/RaidersSimpleMob/Raiders.rsi
+        state: raider_ranged
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobRaiderSkrimisher
+      
+- type: entity
   name: Raider Psycho Boss Spawner
   id: N14SpawnMobRaiderBoss
   parent: MarkerBase
@@ -634,6 +664,21 @@
   - type: ConditionalSpawner
     prototypes:
       - N14MobRobotEyebot
+
+- type: entity
+  name: Spore Plant Spawner
+  id: N14SpawnMobSporePlant
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Nuclear14/Mobs/Plants/sporeplant.rsi
+        state: sporeplant
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobSporeplant
 
 #Pets
 - type: entity

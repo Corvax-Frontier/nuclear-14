@@ -34,11 +34,10 @@
     head: N14ClothingHeadHatBrotherhoodBeret
     jumpsuit: N14ClothingUniformJumpsuitBOSBlack
     shoes: N14ClothingBootsCombatFilled
-    outerClothing: N14ClothingOuterBosScribe
     id: N14IDBrotherhoodWashingtonHolotagScribe
     ears: N14ClothingHeadsetBOSWashington
     belt: N14ClothingBeltUtilityFilled
-    pocket1: BoSWashingtonScribeKits # Crovax-N14
+    pocket1: NCRBoSWashingtonScribekits
     back: N14ClothingBackpackMilitary # Crovax-N14
 
 - type: playTimeTracker
