@@ -1740,6 +1740,7 @@
   heatCapacity: 10000
   weather: true
 
+
 # Wasteland
 - type: tile
   id: FloorWasteland
@@ -1747,8 +1748,9 @@
   sprite: /Textures/_Nuclear14/Tiles/wasteland.png
   variants: 4
   placementVariants: [0, 1, 2, 3]
-  baseTurf: space
-  isSubfloor: true
+  baseTurf: FloorBedrock
+  isSubfloor: false
+  canShovel: true
   footstepSounds:
     collection: N14FootstepDirt
   friction: 0.30
@@ -1771,8 +1773,9 @@
     East: /Textures/_Nuclear14/Tiles/Dirt/double_edge_E.png
     North: /Textures/_Nuclear14/Tiles/Dirt/double_edge_N.png
     West: /Textures/_Nuclear14/Tiles/Dirt/double_edge_W.png
-  # baseTurf: FloorBase
-  isSubfloor: true
+  baseTurf: FloorBedrock
+  canShovel: true
+  isSubfloor: false
   footstepSounds:
     collection: N14FootstepDirt
   heatCapacity: 10000
@@ -1792,8 +1795,9 @@
     East: /Textures/_Nuclear14/Tiles/Dirt/double_edge_E.png
     North: /Textures/_Nuclear14/Tiles/Dirt/double_edge_N.png
     West: /Textures/_Nuclear14/Tiles/Dirt/double_edge_W.png
-  # baseTurf: FloorBase
-  isSubfloor: true
+  baseTurf: FloorBedrock
+  canShovel: true
+  isSubfloor: false
   footstepSounds:
     collection: N14FootstepDirt
   heatCapacity: 10000
@@ -1814,8 +1818,9 @@
     East: /Textures/_Nuclear14/Tiles/Rubble/double_edge_E.png
     North: /Textures/_Nuclear14/Tiles/Rubble/double_edge_N.png
     West: /Textures/_Nuclear14/Tiles/Rubble/double_edge_W.png
-  # baseTurf: FloorBase
-  isSubfloor: true
+  baseTurf: FloorBedrock
+  canShovel: true
+  isSubfloor: false
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
@@ -1836,8 +1841,9 @@
     East: /Textures/_Nuclear14/Tiles/Rubble/double_edge_E.png
     North: /Textures/_Nuclear14/Tiles/Rubble/double_edge_N.png
     West: /Textures/_Nuclear14/Tiles/Rubble/double_edge_W.png
-  # baseTurf: FloorBase
-  isSubfloor: true
+  baseTurf: FloorBedrock
+  canShovel: true
+  isSubfloor: false
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
