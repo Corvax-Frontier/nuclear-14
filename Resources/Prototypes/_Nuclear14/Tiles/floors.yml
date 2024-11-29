@@ -1751,6 +1751,7 @@
   baseTurf: FloorBedrock
   isSubfloor: false
   canShovel: true
+  itemDrop: FloorTileItemWasteland
   footstepSounds:
     collection: N14FootstepDirt
   friction: 0.30
@@ -1775,6 +1776,7 @@
     West: /Textures/_Nuclear14/Tiles/Dirt/double_edge_W.png
   baseTurf: FloorBedrock
   canShovel: true
+  itemDrop: FloorTileItemDirtNew
   isSubfloor: false
   footstepSounds:
     collection: N14FootstepDirt
@@ -1798,6 +1800,7 @@
   baseTurf: FloorBedrock
   canShovel: true
   isSubfloor: false
+  itemDrop: FloorTileItemDirtIndoors
   footstepSounds:
     collection: N14FootstepDirt
   heatCapacity: 10000
@@ -1820,6 +1823,7 @@
     West: /Textures/_Nuclear14/Tiles/Rubble/double_edge_W.png
   baseTurf: FloorBedrock
   canShovel: true
+  itemDrop: FloorTileItemRubble
   isSubfloor: false
   footstepSounds:
     collection: FootstepAsteroid
@@ -1843,6 +1847,7 @@
     West: /Textures/_Nuclear14/Tiles/Rubble/double_edge_W.png
   baseTurf: FloorBedrock
   canShovel: true
+  itemDrop: FloorTileItemRubbleIndoors
   isSubfloor: false
   footstepSounds:
     collection: FootstepAsteroid

@@ -138,3 +138,29 @@
   id: FloorTileMetalSolid
   name: metal solid floor
   spawn: FloorTileItemMetalSolid
+
+# Wasteland
+- type: stack
+  id: FloorTileWasteland
+  name: wasteland tile
+  spawn: FloorTileItemWasteland
+
+- type: stack
+  id: FloorTileDirtNew
+  name: wasteland dirt tile
+  spawn: FloorTileItemDirtNew
+
+- type: stack
+  id: FloorTileDirtIndoors
+  name: wasteland dirt tile
+  spawn: FloorTileItemDirtIndoors
+
+- type: stack
+  id: FloorTileRubble
+  name: wasteland rubble
+  spawn: FloorTileItemRubble
+
+- type: stack
+  id: FloorTileRubbleIndoors
+  name: wasteland rubble
+  spawn: FloorTileItemRubbleIndoors
