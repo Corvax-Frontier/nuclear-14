@@ -1,0 +1,17 @@
+#MARK: Wasteland
+
+- type: tile
+  id: FloorWasteland1
+  name: wasteland yellow
+  sprite: /Textures/_Nuclear14/Tiles/wasteland1.png
+  variants: 4
+  placementVariants: [0, 1, 2, 3]
+  baseTurf: space
+  isSubfloor: true
+  footstepSounds:
+    collection: N14FootstepDirt
+  friction: 0.30
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
