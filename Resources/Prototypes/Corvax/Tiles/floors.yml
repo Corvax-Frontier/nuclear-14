@@ -1,7 +1,7 @@
 #MARK: Wasteland
 
 - type: tile
-  id: CorvaxFloorWasteland
+  id: CorvaxFloorWasteland # Corvax-Tiles
   name: пустошь
   sprite: /Textures/Corvax/Tiles/wasteland.png
   variants: 4
@@ -17,7 +17,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandBottom
+  id: CorvaxFloorSwamplandBottom # Corvax-Tiles
   name: пустошь болотистая низ
   sprite: /Textures/Corvax/Tiles/wasteswampbottom.png
   baseTurf: space
@@ -31,7 +31,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandTop
+  id: CorvaxFloorSwamplandTop # Corvax-Tiles
   name: пустошь болотистая верх
   sprite: /Textures/Corvax/Tiles/wasteswamptop.png
   baseTurf: space
@@ -45,7 +45,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandRight
+  id: CorvaxFloorSwamplandRight # Corvax-Tiles
   name: пустошь болотистая прав
   sprite: /Textures/Corvax/Tiles/wasteswampright.png
   baseTurf: space
@@ -59,7 +59,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandLeft
+  id: CorvaxFloorSwamplandLeft # Corvax-Tiles
   name: пустошь болотистая лев
   sprite: /Textures/Corvax/Tiles/wasteswampleft.png
   baseTurf: space
@@ -73,7 +73,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandTopRight
+  id: CorvaxFloorSwamplandTopRight # Corvax-Tiles
   name: пустошь болотистая верх прав
   sprite: /Textures/Corvax/Tiles/wasteswamptopright.png
   baseTurf: space
@@ -87,7 +87,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandTopLeft
+  id: CorvaxFloorSwamplandTopLeft # Corvax-Tiles
   name: пустошь болотистая верх лев
   sprite: /Textures/Corvax/Tiles/wasteswamptopleft.png
   baseTurf: space
@@ -101,7 +101,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandTopRightCorner
+  id: CorvaxFloorSwamplandTopRightCorner # Corvax-Tiles
   name: пустошь угол болотистой верх прав
   sprite: /Textures/Corvax/Tiles/wasteswamptoprightcorner.png
   baseTurf: space
@@ -115,7 +115,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandTopLeftCorner
+  id: CorvaxFloorSwamplandTopLeftCorner # Corvax-Tiles
   name: пустошь угол болотистой верх лев
   sprite: /Textures/Corvax/Tiles/wasteswamptopleftcorner.png
   baseTurf: space
@@ -129,7 +129,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandBottomRight
+  id: CorvaxFloorSwamplandBottomRight # Corvax-Tiles
   name: пустошь болотистая низ прав
   sprite: /Textures/Corvax/Tiles/wasteswampbottomright.png
   baseTurf: space
@@ -143,7 +143,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandBottomLeft
+  id: CorvaxFloorSwamplandBottomLeft # Corvax-Tiles
   name: пустошь болотистая низ лев
   sprite: /Textures/Corvax/Tiles/wasteswampbottomleft.png
   baseTurf: space
@@ -157,7 +157,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandBottomRightCorner
+  id: CorvaxFloorSwamplandBottomRightCorner # Corvax-Tiles
   name: пустошь угол болотистой низ прав
   sprite: /Textures/Corvax/Tiles/wasteswampbottomrightcorner.png
   baseTurf: space
@@ -171,7 +171,7 @@
   indestructible: true
 
 - type: tile
-  id: CorvaxFloorSwamplandBottomLeftCorner
+  id: CorvaxFloorSwamplandBottomLeftCorner # Corvax-Tiles
   name: пустошь угол болотистой низ лев
   sprite: /Textures/Corvax/Tiles/wasteswampbottomleftcorner.png
   baseTurf: space
