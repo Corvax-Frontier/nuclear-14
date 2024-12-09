@@ -1,0 +1,4 @@
+- files: ["wasteland.png", "wasteswampbottom.png", "wasteswampbottomleft.png", "wasteswampbottomleftcorner.png", "wasteswampbottomright.png", "wasteswampbottomrightcorner.png", "wasteswampleft.png", "wasteswampright.png", "wasteswamptop.png", "wasteswamptopleft.png", "wasteswamptopleftcorner.png", "wasteswamptopright.png", "wasteswamptoprightcorner.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Fortuna at commit/2a9408a47e2f83d945335e4feeeeafb552173e6f and edited to work with SS14 by Peptide"
+  source: "https://github.com/FortunaSS13/Fortuna/"
