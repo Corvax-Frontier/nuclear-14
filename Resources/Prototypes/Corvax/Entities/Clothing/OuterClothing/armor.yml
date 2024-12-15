@@ -54,8 +54,8 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
+        Blunt: 0.45
+        Slash: 0.4
         Piercing: 0.4
         Heat: 0.4
   - type: ClothingSpecialModifier
@@ -77,12 +77,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
-        Heat: 0.65
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.45
+        Heat: 0.5
   - type: ClothingSpecialModifier
-    strengthModifier: 1
+    strengthModifier: 2
 
 - type: entity
   parent: ClothingOuterBase
@@ -100,7 +100,7 @@
         Blunt: 0.55
         Slash: 0.55
         Piercing: 0.55
-        Heat: 0.55
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -118,10 +118,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.6
-        Heat: 0.6
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.45
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -139,10 +139,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.65
-        Heat: 0.65
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.55
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -157,8 +157,8 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
+        Blunt: 0.55
+        Slash: 0.55
         Piercing: 0.6
         Heat: 0.6
 
@@ -173,15 +173,15 @@
   - type: Clothing
     sprite: Corvax/Clothing/OuterClothing/Armor/lightreconnaissancearmor.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
+    walkModifier: 1.15
+    sprintModifier: 1.15
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.7
-        Heat: 0.7
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -199,10 +199,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.7
-        Heat: 0.7
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -220,10 +220,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.75
-        Heat: 0.75
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.65
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -238,10 +238,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
+        Blunt: 0.6
+        Slash: 0.65
         Piercing: 0.7
-        Heat: 0.7
+        Heat: 0.5
 
 - type: entity
   parent: ClothingOuterBase
@@ -259,7 +259,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
+        Blunt: 0.75
+        Slash: 0.75
         Piercing: 0.8
-        Heat: 0.8
+        Heat: 0.75

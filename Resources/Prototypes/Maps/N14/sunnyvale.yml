@@ -13,7 +13,6 @@
         - type: CP14StationAdditionalMap
           mapPaths:
           - /Maps/N14/SunnyvaleUnderground.yml
-          #- /Maps/Corvax/CorvaxSunnyvaleUnderground.yml Removed for refactoring
         - type: StationJobs
           overflowJobs:
             - Wastelander

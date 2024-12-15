@@ -14,10 +14,13 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponThermospear
-      - id: N14PilumSpear
+      - id: N14CeremonialSword
       - id: Bola
-      - id: N14HealingPowder
         amount: 2
+      - id: N14Stimpak
+        amount: 4
+      - id: N14SuperStimpak
+        amount: 4
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -38,12 +41,14 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14WeaponRifle556Carbine
-      - id: LongMagazine556Rifle
-        amount: 2
-      - id: MagazineBox556
-      - id: N14HealingPowder
-        amount: 2
+      - id: N14WeaponSMG12mmAdvanced
+      - id: N14TopMagazineSMG12mm
+        amount: 4
+      - id: N14DrinkTeaBroc
+      - id: N14Stimpak
+        amount: 4
+      - id: N14SuperStimpak
+        amount: 4
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -65,8 +70,12 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14LegionnaireShield
-      - id: N14PilumSpear
+      - id: N14PoliceBaton
       - id: Bola
+        amount: 2
+      - id: BoxHandcuff
+      - id: N14Stimpak
+        amount: 2
       - id: N14MedkitCombatFilled
       - id: N14FoodTinK
         amount: 2
@@ -88,11 +97,13 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14WeaponSMG10mmPipe
-      - id: N14MagazineSMG10mm
-        amount: 2
-      - id: MagazineBox10mm
+      - id: N14WeaponLMGAutoRifle
+      - id: Magazine308Rifle
+        amount: 3
+      - id: MagazineBox308
       - id: N14MedkitFilled
+      - id: N14Stimpak
+        amount: 2
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -113,10 +124,12 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14FireAxe
+      - id: N14SuperSledgeHammer
       - id: ThrowingKnife
         amount: 3
-      - id: N14StimpakDirty
+      - id: N14Stimpak
+        amount: 2
+      - id: N14SuperStimpak
         amount: 2
       - id: N14MedkitFilled
       - id: N14FoodTinK
@@ -307,9 +320,10 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14Gladius
-      - id: N14HealingPowder
-      - id: N14WeaponPistol10mm
-      - id: N14MagazinePistol10mm
+      - id: SmokeGrenade
+      - id: N14WeaponSniper44LeverCarbine
+      - id: MagazineBox44
+      - id: N14Stimpak
         amount: 2
       - id: MagazineBox10mm
       - id: N14FoodTinK
@@ -333,10 +347,11 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14Gladius
-      - id: N14FireAxe
+      - id: N14TribalBigClub
       - id: ThrowingKnife
         amount: 3
-      - id: N14StimpakDirty
+      - id: N14Stimpak
+        amount: 4
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -359,7 +374,8 @@
     items:
       - id: N14WeaponKebab
       - id: N14LegionnaireShield
-      - id: N14HealingPowder
+      - id: N14Stimpak
+        amount: 2
       - id: N14FuelTankHandyRusty
       - id: N14FoodTinK
         amount: 2
@@ -382,9 +398,12 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
-      - id: N14TribalMachete
+      - id: N14Gladius
       - id: N14LegionnaireBuckler
-      - id: N14HealingPowder
+      - id: N14WeaponShotgunShort
+      - id: MagazineBox12gauge
+      - id: N14Stimpak
+        amount: 2
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -407,6 +426,13 @@
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
       - id: N14Whip
+      - id: N14WeaponRevolver44Magnun
+      - id: SpeedLoader44
+      - id: MagazineBox44
+      - id: ShockCollar
+        amount: 2
+      - id: N14Multitool
+      - id: RemoteSignaller
       - id: Stunprod
       - id: Zipties
         amount: 3
@@ -432,11 +458,17 @@
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
       - id: N14TribalMachete
-      - id: N14HealingPowder
-        amount: 4
-      - id: N14HealingPoultice
-        amount: 4
+      - id: N14Stimpak
+        amount: 3
       - id: Brutepack
+      - id: N14ClothingBeltMedicalFilled
+      - id: N14MortarpestleGrinder
+      - id: N14FloraWildBrocFlowerClippingSeed
+      - id: N14FloraWildXanderRootClippingSeed
+      - id: N14WeaponPistol45Colt
+      - id: N14MagazinePistol45
+        amount: 2
+      - id: MagazineBox45
       - id: Ointment
       - id: N14FoodTinK
         amount: 2
@@ -460,10 +492,10 @@
     items:
       - id: N14ClothingOuterLegionnaireBulletArmor
       - id: N14TribalMachete
-      - id: N14WeaponPistol9mm
-      - id: N14MagazinePistol9mm
+      - id: N14WeaponSniperHunting
+      - id: N14Stimpak
         amount: 2
-      - id: MagazineBox9mm
+      - id: MagazineBox308
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -485,10 +517,12 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireMeleeArmor
-      - id: N14TribalMachete
+      - id: N14TrenchClub
       - id: N14LegionnaireShield
+        amount: 2
       - id: N14HealingPowder
-      - id: N14StimpakDirty
+      - id: N14Stimpak
+        amount: 2
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -511,10 +545,14 @@
     items:
       - id: N14ClothingOuterLegionnaireRecruitArmor
       - id: ClothingBeltQuiverSpear
-      - id: N14PilumSpear
+      - id: N14WeaponSMG9mm
+      - id: N14MagazineSMG9mm
+        amount: 2
+      - id: MagazineBox9mm
       - id: N14TribalMachete
       - id: N14LegionnaireBuckler
-      - id: N14HealingPowder
+      - id: N14StimpakDirty
+        amount: 2
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -539,7 +577,8 @@
       - id: ClothingBeltQuiverSpear
       - id: N14PilumSpear
         amount: 4
-      - id: N14HealingPowder
+      - id: N14StimpakDirty
+        amount: 2
       - id: N14FoodTinK
         amount: 2
       - id: DrinkWaterBottleFull
@@ -561,9 +600,9 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireMeleeArmor
-      - id: N14TribalMachete
+      - id: N14LongSword
       - id: N14LegionnaireBuckler
-      - id: N14HealingPowder
+      - id: N14StimpakDirty
         amount: 2
       - id: N14FoodTinK
         amount: 2
@@ -587,10 +626,11 @@
     items:
       - id: N14ClothingOuterLegionnaireRecruitArmor
       - id: N14TribalMachete
-      - id: N14HealingPowder
-        amount: 4
+      - id: ClothingBeltMedical
+      - id: N14StimpakDirty
+        amount: 3
       - id: N14HealingPoultice
-        amount: 4
+        amount: 8
       - id: Brutepack
       - id: Ointment
       - id: N14FoodTinK
