@@ -447,4 +447,80 @@
 #    graph: TileWood
 #    node: woodtilelight
 
+# Wasteland floor tiles
+
+- type: entity
+  name: wasteland tile 
+  parent: FloorTileItemBase
+  id: FloorTileItemWasteland
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wasteland dirt
+  - type: FloorTile
+    outputs:
+      - FloorWasteland
+  - type: Stack
+    stackType: FloorTileWasteland
+
+- type: entity
+  name: dirt tile 
+  parent: FloorTileItemBase
+  id: FloorTileItemDirtNew
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wasteland dirt
+  - type: FloorTile
+    outputs:
+      - FloorDirtNew
+  - type: Stack
+    stackType: FloorTileDirtNew
+
+- type: entity
+  name: dirt tile 
+  parent: FloorTileItemBase
+  id: FloorTileItemDirtIndoors
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wasteland dirt
+  - type: FloorTile
+    outputs:
+      - FloorDirtIndoors
+  - type: Stack
+    stackType: FloorTileDirtIndoors
+
+- type: entity
+  name: rubble 
+  parent: FloorTileItemBase
+  id: FloorTileItemRubble
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wasteland rubble
+  - type: FloorTile
+    outputs:
+      - FloorRubble
+  - type: Stack
+    stackType: FloorTileRubble
+
+- type: entity
+  name: rubble 
+  parent: FloorTileItemBase
+  id: FloorTileItemRubbleIndoors
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wasteland rubble
+  - type: FloorTile
+    outputs:
+      - FloorRubble
+  - type: Stack
+    stackType: FloorTileRubbleIndoors
 # Paths and Roads
