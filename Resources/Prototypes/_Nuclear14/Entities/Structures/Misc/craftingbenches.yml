@@ -340,6 +340,7 @@
       # Kitchen
       - N14ButchersCleaver
       - N14KitchenKnife
+      - N14RollingPin
       - N14DrinkMug
       - N14DrinkMugMetal
       - N14DrinkGlass
@@ -352,6 +353,8 @@
       - N14FoodPlateTin
       - N14FoodKebabSkewer
       - N14JunkCookpot
+      - N14FoodBowlBig
+      - N14FoodBowlFancy
       - N14JunkCoffeepot
       - PlantBag
       # Janitorial
