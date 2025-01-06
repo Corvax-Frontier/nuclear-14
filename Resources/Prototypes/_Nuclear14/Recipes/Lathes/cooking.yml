@@ -89,14 +89,6 @@
     Plastic: 50
 
 - type: latheRecipe
-  id: N14FoodBowlBig
-  result: FoodBowlBig
-  completetime: 0.8
-  category: N14Kitchen
-  materials:
-    Glass: 100
-
-- type: latheRecipe
   id: N14FoodPlateTin
   result: FoodPlateTin
   completetime: 0.4
@@ -135,3 +127,27 @@
   completetime: 5
   materials:
     Cloth: 300
+
+- type: latheRecipe
+  id: N14RollingPin
+  result: N14RollingPin
+  completetime: 1
+  category: N14Kitchen
+  materials:
+    Wood: 100
+
+- type: latheRecipe
+  id: N14FoodBowlBig
+  result: FoodBowlBig
+  completetime: 0.5
+  category: N14Kitchen
+  materials:
+    Wood: 50
+
+- type: latheRecipe
+  id: N14FoodBowlFancy
+  result: FoodBowlFancy
+  completetime: 0.5
+  category: N14Kitchen
+  materials:
+    Steel: 50
