@@ -11,6 +11,30 @@
     - N14ClothingOuterPowerArmorT45
 
 - type: loadout
+  id: LoadoutBoSPowerArmorMidwest
+  category: Roles
+  cost: 10
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoSMidPaladin
+  items:
+    - N14ClothingOuterPowerArmorMidwest
+
+- type: loadout
+  id: LoadoutBoSPowerArmorMidwestCommander
+  category: Roles
+  cost: 10
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoSMidPaladinCommander
+  items:
+    - N14ClothingOuterPowerArmorMidwestCommander
+
+- type: loadout
   id: LoadoutBoSMidwestReconArmor
   category: Roles
   cost: 6
