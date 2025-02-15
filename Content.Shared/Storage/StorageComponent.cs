@@ -110,6 +110,15 @@ namespace Content.Shared.Storage
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public StorageDefaultOrientation? DefaultStorageOrientation;
 
+        // Corvax-Change-Start
+        /// <summary>
+        /// Makes crafting button visible
+        /// This needed to make a crafting bench xd
+        /// </summary>
+        [DataField("craft")]
+        public bool Craft;
+        // Corvax-Change-End
+
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte
         {

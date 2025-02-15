@@ -50,6 +50,11 @@ public sealed class StorageContainer : BaseWindow
     private Texture? _sidebarBottomTexture;
     private readonly string _sidebarFatTexturePath = "Storage/sidebar_fat";
     private Texture? _sidebarFatTexture;
+    // Corvax-Change-Start
+    public event Action? OnCraftButtonPressed;
+    private readonly string _craftTexturePath = "Storage/craft";
+    private Texture? _craftTexture;
+    // Corvax-Change-End
 
     public StorageContainer()
     {
@@ -121,6 +126,7 @@ public sealed class StorageContainer : BaseWindow
         _sidebarMiddleTexture = Theme.ResolveTextureOrNull(_sidebarMiddleTexturePath)?.Texture;
         _sidebarBottomTexture = Theme.ResolveTextureOrNull(_sidebarBottomTexturePath)?.Texture;
         _sidebarFatTexture = Theme.ResolveTextureOrNull(_sidebarFatTexturePath)?.Texture;
+        _craftTexture = Theme.ResolveTextureOrNull(_craftTexturePath)?.Texture; // Corvax-Change
     }
 
     public void UpdateContainer(Entity<StorageComponent>? entity)
@@ -145,6 +151,30 @@ public sealed class StorageContainer : BaseWindow
         #region Sidebar
         _sidebar.Children.Clear();
         _sidebar.Rows = boundingGrid.Height + 1;
+        // Corvax-Change-Start
+        var craftButton = new TextureButton
+        {
+            TextureNormal = _craftTexture,
+            Scale = new Vector2(2, 2),
+            Visible = comp.Craft,
+        };
+        craftButton.OnPressed += _ => OnCraftButtonPressed?.Invoke();
+        var craftContainer = new BoxContainer
+        {
+            Children =
+            {
+                new TextureRect
+                {
+                    Texture = boundingGrid.Height == 1 ? _sidebarBottomTexture : _sidebarMiddleTexture,
+                    TextureScale = new Vector2(2, 2),
+                    Children =
+                    {
+                        craftButton
+                    }
+                }
+            }
+        };
+        // Corvax-Change-End
         var exitButton = new TextureButton
         {
             TextureNormal = _entity.System<StorageSystem>().OpenStorageAmount == 1
@@ -183,7 +213,8 @@ public sealed class StorageContainer : BaseWindow
             }
         };
         _sidebar.AddChild(exitContainer);
-        for (var i = 0; i < boundingGrid.Height - 1; i++)
+        _sidebar.AddChild(craftContainer); // Corvax-Change
+        for (var i = 0; i < boundingGrid.Height - 2; i++) // Corvax-Change
         {
             _sidebar.AddChild(new TextureRect
             {
@@ -192,14 +223,17 @@ public sealed class StorageContainer : BaseWindow
             });
         }
 
-        if (boundingGrid.Height > 0)
+        if (boundingGrid.Height != 1) // Corvax-Change-Start
         {
-            _sidebar.AddChild(new TextureRect
+            if (boundingGrid.Height > 0)
             {
-                Texture = _sidebarBottomTexture,
-                TextureScale = new Vector2(2, 2),
-            });
-        }
+                _sidebar.AddChild(new TextureRect
+                {
+                    Texture = _sidebarBottomTexture,
+                    TextureScale = new Vector2(2, 2),
+                });
+            }
+        } // Corvax-Change-End
 
         #endregion
 

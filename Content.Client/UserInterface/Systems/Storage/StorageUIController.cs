@@ -11,6 +11,7 @@ using Content.Shared.Input;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Storage;
+using Content.Shared.Crafting.Events; // Corvax-Change
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
@@ -216,11 +217,13 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         {
             container.OnPiecePressed -= OnPiecePressed;
             container.OnPieceUnpressed -= OnPieceUnpressed;
+            container.OnCraftButtonPressed -= OnCraftButtonPressed; // Corvax-Change
         }
 
         _container = container;
         container.OnPiecePressed += OnPiecePressed;
         container.OnPieceUnpressed += OnPieceUnpressed;
+        container.OnCraftButtonPressed += OnCraftButtonPressed; // Corvax-Change
 
         if (!StaticStorageUIEnabled)
             _container.Orphan();
@@ -385,4 +388,13 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         if (!StaticStorageUIEnabled && _container?.Parent != null && _lastContainerPosition != null)
             _lastContainerPosition = _container.GlobalPosition;
     }
+    // Corvax-Change-Start
+    private void OnCraftButtonPressed()
+    {
+        if (_container?.StorageEntity is not { } storageEnt)
+            return;
+        _entity.RaisePredictiveEvent(new CraftStartedEvent(
+            _entity.GetNetEntity(storageEnt)));
+    }
+    // Corvax-Change-End
 }
