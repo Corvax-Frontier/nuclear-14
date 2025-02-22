@@ -17,6 +17,7 @@ using System.Text;
 using Content.Shared.Tag;
 using Content.Shared.Crafting.Prototypes;
 using System.Diagnostics;
+using Content.Shared.Roles;
 
 namespace Content.Server.Crafting;
 /// <summary>
@@ -102,6 +103,20 @@ public sealed class STBlueprintSystem : EntitySystem
             string workbenchDetails = $"{Loc.GetString("st-blueprint-workbench")}: {workbench}";
             stringBuilder.AppendLine(workbenchDetails);
 
+            string special = $"{Loc.GetString("st-blueprint-Intelligence")}: {blueprint.RequiredIntelligence}";
+            if (blueprint.RequiredIntelligence != 0)
+                stringBuilder.AppendLine(special);
+
+            if (blueprint.AvailableJobs != null && blueprint.AvailableJobs.Any())
+            {
+                stringBuilder.AppendLine($"{Loc.GetString("st-blueprint-availableJobs")}:");
+                foreach (var jobId in blueprint.AvailableJobs)
+                {
+                    if (!_proto.TryIndex(jobId, out JobPrototype? job))
+                        continue;
+                    stringBuilder.AppendLine($"\t{job.LocalizedName}");
+                }
+            }
             stringBuilder.AppendLine(Loc.GetString("st-blueprint-ingridients"));
             foreach (var (id, details) in blueprint.Items)
             {

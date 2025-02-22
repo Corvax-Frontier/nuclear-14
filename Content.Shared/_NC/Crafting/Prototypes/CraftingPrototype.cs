@@ -52,6 +52,15 @@ public sealed class CraftingPrototype : IPrototype
     /// </summary>
     [DataField("requiredWorkbench")]
     public string? RequiredWorkbench;
+
+    /// <summary>
+    /// Minimum intelligence required to craft this recipe.
+    /// </summary>
+    [DataField("requiredIntelligence")]
+    public int RequiredIntelligence = 0;
+
+    [DataField("availableJobs")]
+    public List<string> AvailableJobs = new();
 }
 /// <summary>
 /// Details for crafting recipe item

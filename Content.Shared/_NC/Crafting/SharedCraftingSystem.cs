@@ -24,6 +24,9 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Content.Shared.Nuclear14.Special.Components;
+using Content.Shared.Roles.Jobs;
+using Content.Shared.Mind.Components;
 
 namespace Content.Shared.Crafting;
 public sealed class SharedCraftingSystem : EntitySystem
@@ -36,6 +39,7 @@ public sealed class SharedCraftingSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly SharedJobSystem _jobs = default!;
 
     private List<LightCraftingPrototype> _lightPrototypes = default!;
     private List<string> _tags = new();
@@ -192,7 +196,7 @@ public sealed class SharedCraftingSystem : EntitySystem
         foreach (var proto in protos)
         {
             var container = storage.Containers.First().Value;
-            if (!CraftAvailable(proto, container, workbenchId))
+            if (!CraftAvailable(proto, container, workbenchId, player.Value))
                 continue;
 
             StartDoAfter(player.Value, ent, container, proto, proto.CraftTime);
@@ -302,7 +306,7 @@ public sealed class SharedCraftingSystem : EntitySystem
         return dict1.Keys.Count == dict2.Keys.Except(proto.ResultProtos).Count();
     }
 
-    private bool CraftAvailable(CraftingPrototype proto, BaseContainer container, string? workbenchId)
+    private bool CraftAvailable(CraftingPrototype proto, BaseContainer container, string? workbenchId, EntityUid user)
     {
         var items = GetElementsInStorage(container);
         if (!DictEquals(proto.Items, items, container.ContainedEntities.ToList(), proto))
@@ -314,7 +318,24 @@ public sealed class SharedCraftingSystem : EntitySystem
             if (workbenchId != proto.RequiredWorkbench)
                 return false;
         }
+        // Check if the user has the required intelligence
+        if (proto.RequiredIntelligence > 0)
+        {
+            if (!TryComp<SpecialComponent>(user, out var special))
+                return false;
+            if (special.TotalIntelligence < proto.RequiredIntelligence)
+                return false;
+        }
 
+        if (proto.AvailableJobs?.Count > 0)
+        {
+            if (!TryComp<MindContainerComponent>(user, out var mindContainer))
+                return false;
+
+            var mind = mindContainer.Mind;
+            if (!proto.AvailableJobs.Any(jobId => _jobs.MindHasJobWithId(mind, jobId)))
+                return false;
+        }
         return true;
     }
 
@@ -454,7 +475,7 @@ public sealed class SharedCraftingSystem : EntitySystem
             return;
 
         var workbenchId = meta.EntityPrototype.ID;
-        while (CraftAvailable(proto, container, workbenchId))
+        while (CraftAvailable(proto, container, workbenchId, user))
         {
             // Remove required ingredients
             foreach (var (itemId, requiredAmount) in proto.Items)
