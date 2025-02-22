@@ -59,6 +59,10 @@ public sealed class CraftingPrototype : IPrototype
     [DataField("requiredIntelligence")]
     public int RequiredIntelligence = 0;
 
+    /// <summary>
+    /// A list of job IDs that are permitted to use this crafting recipe.
+    /// If this list is not empty, only characters with one of the specified jobs can craft the item.
+    /// </summary>
     [DataField("availableJobs")]
     public List<string> AvailableJobs = new();
 }
