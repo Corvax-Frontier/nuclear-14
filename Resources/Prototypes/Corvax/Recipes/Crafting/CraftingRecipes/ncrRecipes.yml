@@ -1,6 +1,6 @@
 #MARK: PowerArmor
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorT45NCR
+  id: N14ClothingOuterPowerArmorT45NCRRecipe
   resultProtos:
     - N14ClothingOuterPowerArmorT45NCR
     - N14JunkComponentScrew
@@ -30,7 +30,7 @@
       catalyzer: true
 
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorT51NCR
+  id: N14ClothingOuterPowerArmorT51NCRRecipe
   resultProtos:
     - N14ClothingOuterPowerArmorT51NCR
     - N14JunkComponentScrew
@@ -60,7 +60,7 @@
       catalyzer: true
 
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorT60NCR
+  id: N14ClothingOuterPowerArmorT60NCRRecipe
   resultProtos:
     - N14ClothingOuterPowerArmorT60NCR
     - N14JunkComponentScrew
@@ -90,7 +90,7 @@
       catalyzer: true
 
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorRaider
+  id: N14ClothingOuterPowerArmorRaiderNCRRecipe
   resultProtos:
     - N14ClothingOuterPowerArmorT45NCR
     - N14JunkComponentScrew
@@ -126,7 +126,7 @@
       amount: 10
 
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorAdvanced1NCR
+  id: N14ClothingOuterPowerArmorAdvanced1NCRRecipe
   resultProtos:
     - N14ClothingOuterPowerArmorAdvanced1NCR
     - N14JunkComponentScrew

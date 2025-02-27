@@ -5,4 +5,4 @@
   suffix: Craft, BoS
   components:
     - type: STBlueprint
-      blueprint: N14ClothingOuterPowerArmorT60Tesla
+      blueprint: N14ClothingOuterPowerArmorT60TeslaRecipe

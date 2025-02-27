@@ -1,6 +1,6 @@
 #MARK: PowerArmor
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorT45
+  id: N14ClothingOuterPowerArmorT45Recipe
   resultProtos:
   - N14ClothingOuterPowerArmorT45
   requiredWorkbench: N14WorkbenchStation
@@ -27,7 +27,7 @@
       amount: 10
 
 - type: craftRecipe
-  id: N14ClothingOuterPowerArmorT60Tesla
+  id: N14ClothingOuterPowerArmorT60TeslaRecipe
   resultProtos:
   - N14ClothingOuterPowerArmorT60Tesla
   requiredWorkbench: N14WorkbenchStation
