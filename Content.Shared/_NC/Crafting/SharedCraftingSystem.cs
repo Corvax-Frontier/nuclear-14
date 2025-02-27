@@ -27,7 +27,6 @@ using Robust.Shared.Serialization;
 // using Content.Shared.Nuclear14.Special.Components; // Corvax-Change
 using Content.Shared.Roles.Jobs; // Corvax-Change
 using Content.Shared.Mind.Components; // Corvax-Change
-using Content.Shared.Popups; // Corvax-Change
 
 namespace Content.Shared.Crafting;
 public sealed class SharedCraftingSystem : EntitySystem
@@ -41,7 +40,6 @@ public sealed class SharedCraftingSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!; // Corvax-Change
-    [Dependency] private readonly SharedPopupSystem _popup = default!; // Corvax-Change
 
     private List<LightCraftingPrototype> _lightPrototypes = default!;
     private List<string> _tags = new();
