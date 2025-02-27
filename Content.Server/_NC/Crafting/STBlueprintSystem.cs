@@ -103,9 +103,21 @@ public sealed class STBlueprintSystem : EntitySystem
             string workbenchDetails = $"{Loc.GetString("st-blueprint-workbench")}: {workbench}";
             stringBuilder.AppendLine(workbenchDetails);
 
-            string special = $"{Loc.GetString("st-blueprint-Intelligence")}: {blueprint.RequiredIntelligence}";
-            if (blueprint.RequiredIntelligence != 0)
-                stringBuilder.AppendLine(special);
+            // Corvax-Change-Start
+            if (blueprint.AvailableFaction != null && blueprint.AvailableFaction.Any())
+            {
+                stringBuilder.AppendLine($"{Loc.GetString("st-blueprint-availableFaction")}:");
+                foreach (var id in blueprint.AvailableFaction)
+                {
+                    if (!_proto.TryIndex(id, out DepartmentPrototype? department))
+                        continue;
+                    string localizedDep = Loc.GetString($"department-{department.ID}");
+                    stringBuilder.AppendLine($"\t{localizedDep}");
+                }
+            }
+            // string special = $"{Loc.GetString("st-blueprint-Intelligence")}: {blueprint.RequiredIntelligence}";
+            // if (blueprint.RequiredIntelligence != 0)
+            //     stringBuilder.AppendLine(special);
 
             if (blueprint.AvailableJobs != null && blueprint.AvailableJobs.Any())
             {
@@ -117,6 +129,7 @@ public sealed class STBlueprintSystem : EntitySystem
                     stringBuilder.AppendLine($"\t{job.LocalizedName}");
                 }
             }
+            // Corvax-Change-End
             stringBuilder.AppendLine(Loc.GetString("st-blueprint-ingridients"));
             foreach (var (id, details) in blueprint.Items)
             {

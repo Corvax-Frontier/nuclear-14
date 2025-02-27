@@ -11,6 +11,7 @@
   - type: Appearance
   - type: FollowDistance
     backStrength: 6
+  - type: Craftable
 
 - type: entity
   name: 10mm SMG
@@ -120,7 +121,7 @@
         whitelist:
           tags:
             - N14CartridgePistol127
-            
+
 - type: entity
   name: 12.7mm pipe SMG
   parent: N14WeaponSMGBase
@@ -175,7 +176,7 @@
         whitelist:
           tags:
             - N14CartridgePistol127
-            
+
 - type: entity
   parent: N14WeaponSMG12mmPipe
   id: N14WeaponSMG12mmPipeEmpty
@@ -254,7 +255,7 @@
         whitelist:
           tags:
             - N14CartridgePistol10
-            
+
 - type: entity
   parent: N14WeaponSMG10mmPipe
   id: N14WeaponSMG10mmPipeEmpty

@@ -23,6 +23,7 @@
   - type: Appearance
   - type: FollowDistance
     backStrength: 5
+  - type: Craftable
 
 - type: entity
   name: R-91 Rifle

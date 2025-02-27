@@ -67,6 +67,7 @@
     price: 8
   - type: FollowDistance
     backStrength: 6
+  - type: Craftable
 
 - type: entity
   name: N14BaseInternalPistol
@@ -311,7 +312,7 @@
         whitelist:
           tags:
             - N14CartridgePistol10
-            
+
 - type: entity
   parent: N14WeaponPistol10mmPipe
   id: N14WeaponPistol10mmPipeEmpty

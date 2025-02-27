@@ -24,6 +24,7 @@
     attackRate: 2 #open and close that shit on their arm like hell! because you sure aren't doing any damage with this
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
+  - type: Craftable # Corvax-Change
 
 - type: entity
   name: screwdriver
@@ -49,6 +50,7 @@
         Piercing: 6
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+  - type: Craftable # Corvax-Change
 
 - type: entity
   name: wrench
@@ -71,6 +73,7 @@
         Blunt: 8
     soundHit:
       collection: MetalThud
+  - type: Craftable # Corvax-Change
 
 - type: entity
   name: multitool

@@ -24,9 +24,10 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
-using Content.Shared.Nuclear14.Special.Components;
-using Content.Shared.Roles.Jobs;
-using Content.Shared.Mind.Components;
+// using Content.Shared.Nuclear14.Special.Components; // Corvax-Change
+using Content.Shared.Roles.Jobs; // Corvax-Change
+using Content.Shared.Mind.Components; // Corvax-Change
+using Content.Shared.Popups; // Corvax-Change
 
 namespace Content.Shared.Crafting;
 public sealed class SharedCraftingSystem : EntitySystem
@@ -39,7 +40,8 @@ public sealed class SharedCraftingSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
-    [Dependency] private readonly SharedJobSystem _jobs = default!;
+    [Dependency] private readonly SharedJobSystem _jobs = default!; // Corvax-Change
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // Corvax-Change
 
     private List<LightCraftingPrototype> _lightPrototypes = default!;
     private List<string> _tags = new();
@@ -196,7 +198,7 @@ public sealed class SharedCraftingSystem : EntitySystem
         foreach (var proto in protos)
         {
             var container = storage.Containers.First().Value;
-            if (!CraftAvailable(proto, container, workbenchId, player.Value))
+            if (!CraftAvailable(proto, container, workbenchId, player.Value)) // Corvax-Change
                 continue;
 
             StartDoAfter(player.Value, ent, container, proto, proto.CraftTime);
@@ -318,24 +320,43 @@ public sealed class SharedCraftingSystem : EntitySystem
             if (workbenchId != proto.RequiredWorkbench)
                 return false;
         }
-        // Check if the user has the required intelligence
-        if (proto.RequiredIntelligence > 0)
-        {
-            if (!TryComp<SpecialComponent>(user, out var special))
-                return false;
-            if (special.TotalIntelligence < proto.RequiredIntelligence)
-                return false;
-        }
 
-        if (proto.AvailableJobs?.Count > 0)
+        // Corvax-Change-Start
+        // Check if the user has the required intelligence
+        // if (proto.RequiredIntelligence > 0)
+        // {
+        //     if (!TryComp<SpecialComponent>(user, out var special))
+        //         return false;
+        //     if (special.TotalIntelligence < proto.RequiredIntelligence)
+        //         return false;
+        // }
+
+        // Check if the user's faction is allowed
+        if (proto.AvailableFaction.Count > 0)
         {
             if (!TryComp<MindContainerComponent>(user, out var mindContainer))
                 return false;
 
-            var mind = mindContainer.Mind;
-            if (!proto.AvailableJobs.Any(jobId => _jobs.MindHasJobWithId(mind, jobId)))
+            if (!_jobs.MindTryGetJob(mindContainer.Mind, out _, out var jobPrototype))
+                return false;
+
+            if (!_jobs.TryGetDepartment(jobPrototype.ID, out var departmentPrototype))
+                return false;
+
+            if (!proto.AvailableFaction.Contains(departmentPrototype.ID))
                 return false;
         }
+
+        // Check if the user has an allowed job
+        if (proto.AvailableJobs.Count > 0)
+        {
+            if (!TryComp<MindContainerComponent>(user, out var mindContainer))
+                return false;
+
+            if (!proto.AvailableJobs.Any(jobId => _jobs.MindHasJobWithId(mindContainer.Mind, jobId)))
+                return false;
+        }
+        // Corvax-Change-End
         return true;
     }
 
@@ -475,7 +496,7 @@ public sealed class SharedCraftingSystem : EntitySystem
             return;
 
         var workbenchId = meta.EntityPrototype.ID;
-        while (CraftAvailable(proto, container, workbenchId, user))
+        while (CraftAvailable(proto, container, workbenchId, user)) // Corvax-Change
         {
             // Remove required ingredients
             foreach (var (itemId, requiredAmount) in proto.Items)
