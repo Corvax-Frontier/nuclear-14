@@ -5,7 +5,7 @@
   suffix: Craft, NCR
   components:
     - type: STBlueprint
-      blueprint: N14ClothingOuterPowerArmorT45NCRRecipe
+      blueprint: N14ClothingOuterPowerArmorT45NCR
 
 - type: entity
   parent: N14BaseBlueprint
@@ -14,7 +14,7 @@
   suffix: Craft, NCR
   components:
     - type: STBlueprint
-      blueprint: N14ClothingOuterPowerArmorT51NCRRecipe
+      blueprint: N14ClothingOuterPowerArmorT51NCR
 
 - type: entity
   parent: N14BaseBlueprint
@@ -23,7 +23,7 @@
   suffix: Craft, NCR
   components:
     - type: STBlueprint
-      blueprint: N14ClothingOuterPowerArmorT60NCRRecipe
+      blueprint: N14ClothingOuterPowerArmorT60NCR
 
 - type: entity
   parent: N14BaseBlueprint
@@ -32,7 +32,7 @@
   suffix: Craft, NCR
   components:
     - type: STBlueprint
-      blueprint: N14ClothingOuterPowerArmorRaiderNCRRecipe
+      blueprint: N14ClothingOuterPowerArmorRaider
 
 - type: entity
   parent: N14BaseBlueprint
@@ -41,4 +41,4 @@
   suffix: Craft, NCR
   components:
     - type: STBlueprint
-      blueprint: N14ClothingOuterPowerArmorAdvanced1NCRRecipe
+      blueprint: N14ClothingOuterPowerArmorAdvanced1NCR
