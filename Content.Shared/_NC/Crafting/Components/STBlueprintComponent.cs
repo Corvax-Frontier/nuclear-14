@@ -10,13 +10,15 @@ license:
   at Discord (https://discord.com/invite/pu6DEPGjsN).
 */
 using Robust.Shared.Prototypes;
+using Content.Shared.Crafting.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared._NC.Crafting.Components
 {
     [RegisterComponent]
     public sealed partial class STBlueprintComponent : Component
     {
-        [DataField("blueprint")]
-        public EntProtoId? BlueprintId = null;
+        [DataField("blueprint", customTypeSerializer: typeof(PrototypeIdSerializer<CraftingPrototype>))]
+        public string? BlueprintId = null;
     }
 }

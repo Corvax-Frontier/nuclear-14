@@ -60,11 +60,11 @@ public sealed class STBlueprintSystem : EntitySystem
     /// </summary>
     public void OnBlueprintExamine(EntityUid uid, STBlueprintComponent component, ExaminedEvent args)
     {
-        if (!component.BlueprintId.HasValue)
+        if (component.BlueprintId == null)
             return;
         if (!args.IsInDetailsRange)
             return;
-        if (!_descriptionsByBlueprint.TryGetValue(component.BlueprintId.Value.Id, out var description))
+        if (!_descriptionsByBlueprint.TryGetValue(component.BlueprintId, out var description))
             return;
 
         args.PushMarkup(description);
