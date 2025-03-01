@@ -1,0 +1,17 @@
+ent-N14ClothingOuterPowerArmorT45Blueprint = чертёж восстановления силовой брони T-45
+ent-N14WeaponLaserRevolverBlueprint = чертёж самодельного лазерного револьвера
+ent-N14WeaponLaserRifleMakeshiftBlueprint = чертёж самодельной лазерной винтовки
+ent-N14WeaponRifle556PipeBlueprint = чертёж самодельной штурмовой винтовки
+ent-N14WeaponSniper50PipeBlueprint = чертёж самодельной винтовки .50 калибра
+ent-N14ClothingOuterPowerArmorT45NCRBlueprint = чертёж удаления сервоприводов T-45
+ent-N14ClothingOuterPowerArmorT51NCRBlueprint = чертёж удаления сервоприводов T-51
+ent-N14ClothingOuterPowerArmorT60NCRBlueprint = чертёж удаления сервоприводов T-60
+ent-N14ClothingOuterPowerArmorRaiderBlueprint = чертёж удаления сервоприводов рейдерской брони
+ent-N14ClothingOuterPowerArmorAdvanced1NCRBlueprint = чертёж удаления сервоприводов X-01
+ent-N14WeaponRevolver45-70HandcannonBlueprint = чертёж ручной пушки
+ent-N14WeaponRevolver44TribalBlueprint = чертёж племенного револьвера
+ent-N14ModificationkitRevolver44TribalBlueprint = чертёж комплекта улучшения револьвера
+ent-N14ModificationkitRevolver44TribalUpgradedBlueprint = чертёж расширенного комплекта улучшения револьвера
+ent-N14WeaponSniper556TribalBlueprint = чертёж племенной винтовки
+ent-N14WeaponSniper556TribalUpgradedBlueprint = чертёж племенной штурмовой винтовки
+ent-N14ClothingOuterPowerArmorT60TeslaBlueprint = чертёж модификации силовой брони Т-60

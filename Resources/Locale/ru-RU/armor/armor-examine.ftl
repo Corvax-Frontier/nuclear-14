@@ -17,3 +17,4 @@ armor-damage-type-cold = Низкотемпературный
 armor-damage-type-poison = Ядовитый
 armor-damage-type-shock = Электрический
 armor-damage-type-structural = Структурный
+armor-examine-stamina = - урон по [color=cyan]Выносливости[/color] снижается на [color=lightblue]{$num}%[/color].

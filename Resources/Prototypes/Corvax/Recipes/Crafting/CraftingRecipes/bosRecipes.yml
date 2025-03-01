@@ -37,7 +37,7 @@
   # requiredIntelligence: 7 #TODO: Enable it after fixing the SPECIAL system
   craftTime: 10
   items:
-    N14ClothingOuterPowerArmorT45Blueprint:
+    N14ClothingOuterPowerArmorT60TeslaBlueprint:
       amount: 1
       catalyzer: true
     N14ClothingOuterPowerArmorT60:
