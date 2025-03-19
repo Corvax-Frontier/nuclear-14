@@ -1,168 +1,184 @@
+using System.Numerics;
+using Content.Server.Popups;
+using Content.Shared.DoAfter;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Robust.Shared.Random;
 using Robust.Shared.Map;
+using Robust.Shared.Physics.Components;
 using Content.Server._NC.AdvancedSpawner;
-using Robust.Shared.Audio;
-using Robust.Shared.Timing;
-using Robust.Server.Audio;
-using Robust.Server.GameObjects;
+using GatherResourceDoAfterEvent = Content.Shared._NC.ResourceGatheringSystem.GatherResourceDoAfterEvent;
 
 namespace Content.Server._NC.ResourceGatheringSystem;
 
-public enum ResourceVisuals
-{
-    CurrentAnimation,
-    Richness,
-    Cooldown
-}
-
 public sealed class ResourceGatheringSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] internal new readonly IEntityManager EntityManager = default!;
+    [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
 
-    private static readonly ISawmill Sawmill = Logger.GetSawmill("resourceGathering");
+    private const float SearchRadius = 1.0f;
+    private const int AngleStep = 30;
+    private const int FullCircle = 360;
 
-    public void ProcessGathering(EntityUid actor, EntityCoordinates location, AdvancedRandomSpawnerConfig config)
+    public override void Initialize()
     {
-        Sawmill.Debug($"[ResourceGathering] Processing gathering action by {actor} at {location}");
-
-        var spawner = AdvancedEntitySpawner.Create(_random, _entityManager, _popupSystem, config.Categories, config.MaxSpawnCount);
-        var spawnedItems = spawner.SpawnEntities(actor, location, config.Offset, config);
-
-        if (spawnedItems.Count == 0)
-            _popupSystem.PopupEntity("Ты ничего не нашёл.", actor);
-        else
-            _popupSystem.PopupEntity($"Ты нашёл: {string.Join(", ", spawnedItems)}", actor);
+        base.Initialize();
+        SubscribeLocalEvent<ResourceGatheringComponent, BeforeRangedInteractEvent>(OnUseTool);
+        SubscribeLocalEvent<ResourceGatheringComponent, GatherResourceDoAfterEvent>(OnDoAfter);
     }
 
-    public AdvancedRandomSpawnerConfig CreateDefaultMiningConfig()
+    private void OnUseTool(EntityUid uid, ResourceGatheringComponent comp, BeforeRangedInteractEvent args)
     {
-        var dummyComp = new AdvancedRandomSpawnerComponent
-        {
-            MaxSpawnCount = 2,
-            Offset = 0.0f,
-            DeleteAfterSpawn = false,
-            CategoryWeights = new Dictionary<string, int>
-            {
-                { "ore", 10 },
-                { "trash", 3 }
-            },
-            PrototypeLists = new Dictionary<string, List<SpawnEntry>>
-            {
-                {
-                    "ore",
-                    new List<SpawnEntry>
-                    {
-                        new("iron_ore", 8, 1),
-                        new("gold_ore", 3, 1),
-                        new("platinum_ore", 1, 1)
-                    }
-                },
-                {
-                    "trash",
-                    new List<SpawnEntry>
-                    {
-                        new("rusty_can", 5, 1),
-                        new("broken_tool", 3, 1)
-                    }
-                }
-            }
-        };
-
-        return AdvancedRandomSpawnerConfig.FromComponent(dummyComp);
-    }
-
-    public void TryGatherFromNode(EntityUid actor, EntityUid node, EntityCoordinates location)
-    {
-        if (!TryComp<ResourceNodeComponent>(node, out var nodeComp))
+        if (!args.CanReach)
             return;
 
-        if (nodeComp.IsOnCooldown)
+        StartGathering(uid, comp, args.Target, args.User);
+    }
+
+    private void StartGathering(EntityUid uid, ResourceGatheringComponent comp, EntityUid? target, EntityUid user)
+    {
+        if (target == null || !TryComp<ResourceNodeComponent>(target.Value, out var node))
+            return;
+
+        if (!TryComp<ResourceToolComponent>(uid, out var toolComp))
         {
-            _popupSystem.PopupEntity("Узел отдыхает...", actor);
+            _popupSystem.PopupEntity("Инструмент неисправен!", user, PopupType.LargeCaution);
             return;
         }
 
-        PlayAnimationByRichness(node, nodeComp);
-        _entityManager.System<AudioSystem>().PlayPvs(nodeComp.GatherSound, node);
-        ProcessGathering(actor, location, nodeComp.GatherConfig);
-
-        nodeComp.CurrentUses++;
-        nodeComp.IsOnCooldown = true;
-        UpdateNodeAppearance(node, nodeComp);
-
-        Timer.Spawn(TimeSpan.FromSeconds(nodeComp.CooldownTime), () =>
+        if (node.AllowedTools.Count > 0 && !node.AllowedTools.Contains(toolComp.ToolId))
         {
-            nodeComp.IsOnCooldown = false;
-            RecalculateRichness(nodeComp); // Тут мы убираем параметр node
-            UpdateNodeAppearance(node, nodeComp);
-            _popupSystem.PopupEntity("Узел восстановился!", node);
-        });
+            _popupSystem.PopupEntity("Этот инструмент не подходит!", user, PopupType.LargeCaution);
+            return;
+        }
+
+        if (node.TimeBeforeNextGather > 0f)
+        {
+            _popupSystem.PopupEntity("Здесь пока нечего собирать.", user, PopupType.LargeCaution);
+            return;
+        }
+
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(comp.GatherTime),
+            new GatherResourceDoAfterEvent(), uid, target: target.Value, used: uid)
+        {
+            BreakOnDamage = true,
+            NeedHand = true,
+            DistanceThreshold = 2f
+        };
+
+        _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
-    // Убираем лишний параметр 'node', раз не используется
-    private void PlayAnimationByRichness(EntityUid node, ResourceNodeComponent nodeComp)
+    private void OnDoAfter(EntityUid uid, ResourceGatheringComponent comp, GatherResourceDoAfterEvent args)
     {
-        if (!nodeComp.AnimationStates.TryGetValue(nodeComp.Richness, out var anim))
+        if (args.Handled || args.Cancelled || args.Args.Target == null)
             return;
 
-        _entityManager.System<AppearanceSystem>().SetData(node, ResourceVisuals.CurrentAnimation, anim);
-    }
+        if (!TryComp<ResourceNodeComponent>(args.Args.Target.Value, out var node))
+            return;
 
-    private void UpdateNodeAppearance(EntityUid node, ResourceNodeComponent nodeComp)
-    {
-        _entityManager.System<AppearanceSystem>().SetData(node, ResourceVisuals.Richness, nodeComp.Richness);
-        _entityManager.System<AppearanceSystem>().SetData(node, ResourceVisuals.Cooldown, nodeComp.IsOnCooldown);
-    }
+        var spawnerPrototype = node.LootSpawner;
+        if (string.IsNullOrEmpty(spawnerPrototype))
+            return;
 
-    // Избавились от параметра node
-    private void RecalculateRichness(ResourceNodeComponent nodeComp)
-    {
-        var roll = _random.Next(0, 100);
-        nodeComp.Richness = roll switch
+        var spawnCoords = FindFreePosition(args.Args.User);
+        var spawnerUid = EntityManager.SpawnEntity(spawnerPrototype, spawnCoords);
+
+        if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
         {
-            <= 20 => NodeRichness.Rich,
-            <= 70 => NodeRichness.Medium,
-            _ => NodeRichness.Poor
-        };
+            EntityManager.DeleteEntity(spawnerUid);
+            return;
+        }
+
+        var config = new AdvancedRandomSpawnerConfig(spawner);
+
+        ApplyNodeRichness(node, comp);
+
+        // Важное исправление - ApplyToolEffects принимает готовый toolComp
+        if (TryComp<ResourceToolComponent>(uid, out var toolComp))
+        {
+            ApplyToolEffects(toolComp, comp, config);
+        }
+
+        config.ApplyModifiers(comp.WeightModifiers, comp.ExtraPrototypes);
+
+        node.TimeBeforeNextGather = node.CooldownAfterGather;
+
+        _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
+
+        _popupSystem.PopupEntity("Вы успешно собрали ресурсы!", uid, PopupType.LargeCaution);
+        args.Handled = true;
     }
-}
 
-[RegisterComponent]
-public sealed partial class ResourceNodeComponent : Component
-{
-    [DataField("maxUses")]
-    public int MaxUses = 5;
+    private void ApplyNodeRichness(ResourceNodeComponent node, ResourceGatheringComponent comp)
+    {
+        var richnessModifier = node.ResourceRichness switch
+        {
+            "rich" => 5,
+            "poor" => -3,
+            _ => 0
+        };
 
-    // Default(0) для int нет смысла хранить
-    [DataField("currentUses")]
-    public int CurrentUses; // убрали '= 0;'
+        comp.WeightModifiers["rare"] = comp.WeightModifiers.GetValueOrDefault("rare") + richnessModifier;
+    }
 
-    [DataField("gatherConfig")]
-    public AdvancedRandomSpawnerConfig GatherConfig = default!;
+    // ✅ toolComp передаётся сюда напрямую
+    private void ApplyToolEffects(ResourceToolComponent toolComp, ResourceGatheringComponent comp, AdvancedRandomSpawnerConfig config)
+    {
+        // Весовые модификаторы
+        foreach (var (category, modifier) in toolComp.WeightModifiers)
+        {
+            comp.WeightModifiers[category] = comp.WeightModifiers.GetValueOrDefault(category) + modifier;
+        }
 
-    [DataField("cooldownTime")]
-    public float CooldownTime = 60f;
+        // Добавление прототипов
+        foreach (var (category, entries) in toolComp.ExtraPrototypes)
+        {
+            if (!comp.ExtraPrototypes.ContainsKey(category))
+                comp.ExtraPrototypes[category] = new();
 
-    // Default(false) для bool нет смысла хранить
-    [DataField("isOnCooldown")]
-    public bool IsOnCooldown; // убрали '= false;'
+            comp.ExtraPrototypes[category].AddRange(entries);
+        }
 
-    [DataField("richness")]
-    public NodeRichness Richness = NodeRichness.Medium;
+        // Добавление новых категорий
+        foreach (var (category, weight) in toolComp.AddCategories)
+        {
+            comp.WeightModifiers.TryAdd(category, weight);
+        }
 
-    [DataField("animationStates")]
-    public Dictionary<NodeRichness, string> AnimationStates = new();
+        // Удаление категорий
+        foreach (var category in toolComp.RemoveCategories)
+        {
+            config.CategoryWeights.Remove(category);
+            config.Prototypes.Remove(category);
+        }
 
-    [DataField("gatherSound")]
-    public SoundSpecifier GatherSound = new SoundPathSpecifier("/Audio/Effects/mine_hit.ogg");
-}
+        // Удаление отдельных прототипов
+        foreach (var (category, protosToRemove) in toolComp.RemovePrototypes)
+        {
+            if (config.Prototypes.TryGetValue(category, out var list))
+                list.RemoveAll(entry => protosToRemove.Contains(entry.PrototypeId));
+        }
+    }
 
-public enum NodeRichness
-{
-    Poor,
-    Medium,
-    Rich
+    private EntityCoordinates FindFreePosition(EntityUid user)
+    {
+        if (!EntityManager.TryGetComponent(user, out TransformComponent? userTransform))
+            return new EntityCoordinates(user, Vector2.Zero);
+
+        var origin = userTransform.Coordinates;
+
+        for (var i = 0; i < FullCircle; i += AngleStep)
+        {
+            var angle = i * (float)(Math.PI / 180.0);
+            var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
+            var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
+
+            if (!EntityManager.TryGetComponent(testCoords.EntityId, out PhysicsComponent? physics) || !physics.CanCollide)
+                return testCoords;
+        }
+
+        return origin;
+    }
 }
