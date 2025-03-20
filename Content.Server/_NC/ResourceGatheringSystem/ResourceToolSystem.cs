@@ -1,12 +1,16 @@
-namespace Content.Server._Stalker.ResourceGathering;
+using Content.Shared._NC.ResourceGatheringSystem;
 
-public static class ResourceGatheringUtils
+namespace Content.Server._NC.ResourceGatheringSystem;
+public sealed class ResourceToolSystem : EntitySystem
 {
-    [Obsolete("Пример для отладки или расширений")]
-    public static int GetWeightModifier(string category, Dictionary<string, int> weightModifiers)
+    public bool IsAllowedTool(EntityUid toolEntity, List<string> allowedToolIds)
     {
-        var modifier = weightModifiers.GetValueOrDefault(category, 0);
-        Logger.Info($"[ResourceGatheringUtils] GetWeightModifier: {category} = {modifier}");
-        return modifier;
+        if (allowedToolIds.Count == 0)
+            return true;
+
+        if (!TryComp<SharedResourceToolComponent>(toolEntity, out var toolComp))
+            return false;
+
+        return allowedToolIds.Contains(toolComp.ToolId);
     }
 }

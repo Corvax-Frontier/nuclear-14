@@ -17,6 +17,8 @@ public sealed class AdvancedRandomSpawnerSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, AdvancedRandomSpawnerComponent component, MapInitEvent args)
     {
+        Sawmill.Debug($"[AdvancedSpawner] MapInit started for entity {uid}");
+
         var config = AdvancedRandomSpawnerConfig.FromComponent(component);
         ApplyModifiersFromComponents(uid, config);
         SpawnEntitiesUsingSpawner(uid, config);
@@ -26,6 +28,7 @@ public sealed class AdvancedRandomSpawnerSystem : EntitySystem
     {
         foreach (var modifierData in EntityManager.GetComponents<SpawnModifierComponent>(uid))
         {
+            Sawmill.Debug($"[AdvancedSpawner] Applying modifier from {uid}");
             config.ApplyModifiers(modifierData.WeightModifiers, modifierData.ExtraPrototypes);
             EntityManager.RemoveComponent<SpawnModifierComponent>(uid);
         }
@@ -37,7 +40,14 @@ public sealed class AdvancedRandomSpawnerSystem : EntitySystem
         var spawner = AdvancedEntitySpawner.Create(_random, EntityManager, _popupSystem, config.Categories, config.MaxSpawnCount);
         var spawnedItems = spawner.SpawnEntities(uid, spawnCoords, config.Offset, config);
 
+        Sawmill.Debug(spawnedItems.Count == 0
+    ? $"[AdvancedSpawner] No entities spawned for {uid}"
+    : $"[AdvancedSpawner] Spawned entities for {uid}: {string.Join(", ", spawnedItems)}");
+
         if (config.DeleteAfterSpawn)
+        {
+            Sawmill.Debug($"[AdvancedSpawner] Deleting spawner entity {uid} after spawn.");
             EntityManager.QueueDeleteEntity(uid);
+        }
     }
 }

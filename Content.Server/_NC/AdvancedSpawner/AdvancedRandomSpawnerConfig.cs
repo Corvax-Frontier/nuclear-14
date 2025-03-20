@@ -1,9 +1,6 @@
 namespace Content.Server._NC.AdvancedSpawner;
 
-/// <summary>
-/// Configuration container for advanced random spawner. Holds categories, weights, and prototype lists.
-/// </summary>
-public class AdvancedRandomSpawnerConfig
+public sealed class AdvancedRandomSpawnerConfig
 {
     public readonly Dictionary<string, int> CategoryWeights;
     public readonly List<SpawnCategory> Categories;
@@ -41,9 +38,30 @@ public class AdvancedRandomSpawnerConfig
     }
 
     /// <summary>
-    /// Applies dynamic modifiers to category weights and prototypes.
+    /// Adds a prototype to a specific category.
     /// </summary>
-    public void ApplyModifiers(Dictionary<string, int> weightModifiers, Dictionary<string, List<SpawnEntry>> extraPrototypes)
+    public void AddPrototype(string category, SpawnEntry entry)
+    {
+        if (!Prototypes.ContainsKey(category))
+            Prototypes[category] = new();
+
+        Prototypes[category].Add(entry);
+        Sawmill.Debug($"[AdvancedSpawnerConfig] Added prototype '{entry.PrototypeId}' to category '{category}'");
+    }
+
+    /// <summary>
+    /// Applies weight changes and extra prototypes. Optional parameter for flexibility.
+    /// </summary>
+    public void ApplyModifiers(Dictionary<string, int> weightModifiers, Dictionary<string, List<SpawnEntry>>? extraPrototypes = null)
+    {
+        ApplyWeightModifiers(weightModifiers);
+        EnsurePrototypeCategories();
+
+        if (extraPrototypes != null)
+            ApplyExtraPrototypes(extraPrototypes);
+    }
+
+    private void ApplyWeightModifiers(Dictionary<string, int> weightModifiers)
     {
         foreach (var (category, modifier) in weightModifiers)
         {
@@ -53,13 +71,19 @@ public class AdvancedRandomSpawnerConfig
                 Sawmill.Debug($"[AdvancedSpawnerConfig] Modified weight of '{category}' by {modifier}, new weight: {CategoryWeights[category]}");
             }
         }
+    }
 
+    private void EnsurePrototypeCategories()
+    {
         foreach (var category in CategoryWeights.Keys)
         {
             if (!Prototypes.ContainsKey(category))
                 Prototypes[category] = new List<SpawnEntry>();
         }
+    }
 
+    private void ApplyExtraPrototypes(Dictionary<string, List<SpawnEntry>> extraPrototypes)
+    {
         foreach (var (category, extraEntries) in extraPrototypes)
         {
             if (!Prototypes.ContainsKey(category))
@@ -75,4 +99,3 @@ public class AdvancedRandomSpawnerConfig
         }
     }
 }
-

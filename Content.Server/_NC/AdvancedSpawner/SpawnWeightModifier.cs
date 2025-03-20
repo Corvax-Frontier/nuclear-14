@@ -1,20 +1,24 @@
 namespace Content.Server._NC.AdvancedSpawner;
 
-/// <summary>
-/// Utility class for applying spawn weight and prototype modifiers.
-/// </summary>
 public static class SpawnWeightModifier
 {
     private static readonly ISawmill Sawmill = Logger.GetSawmill("advancedSpawner");
 
-    /// <summary>
-    /// Applies weight changes and adds extra prototypes into existing collections.
-    /// </summary>
+
     public static void ApplyModifiers(
         Dictionary<string, int> categoryWeights,
         Dictionary<string, List<SpawnEntry>> prototypes,
         Dictionary<string, int> weightModifiers,
         Dictionary<string, List<SpawnEntry>> extraPrototypes)
+    {
+        ApplyWeightModifiers(categoryWeights, weightModifiers);
+        EnsurePrototypeCategories(categoryWeights, prototypes);
+        ApplyExtraPrototypes(prototypes, extraPrototypes);
+    }
+
+    private static void ApplyWeightModifiers(
+        Dictionary<string, int> categoryWeights,
+        Dictionary<string, int> weightModifiers)
     {
         foreach (var (category, modifier) in weightModifiers)
         {
@@ -24,7 +28,12 @@ public static class SpawnWeightModifier
                 Sawmill.Debug($"[SpawnWeightModifier] Modified weight of '{category}' by {modifier}, new weight: {categoryWeights[category]}");
             }
         }
+    }
 
+    private static void EnsurePrototypeCategories(
+        Dictionary<string, int> categoryWeights,
+        Dictionary<string, List<SpawnEntry>> prototypes)
+    {
         foreach (var category in categoryWeights.Keys)
         {
             if (!prototypes.ContainsKey(category))
@@ -33,7 +42,12 @@ public static class SpawnWeightModifier
                 Sawmill.Debug($"[SpawnWeightModifier] Initialized prototype list for missing category '{category}'");
             }
         }
+    }
 
+    private static void ApplyExtraPrototypes(
+        Dictionary<string, List<SpawnEntry>> prototypes,
+        Dictionary<string, List<SpawnEntry>> extraPrototypes)
+    {
         foreach (var (category, extraEntries) in extraPrototypes)
         {
             if (!prototypes.ContainsKey(category))

@@ -6,7 +6,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Content.Server._NC.AdvancedSpawner;
-using GatherResourceDoAfterEvent = Content.Shared._NC.ResourceGatheringSystem.GatherResourceDoAfterEvent;
+using Content.Shared._NC.ResourceGatheringSystem;
 
 namespace Content.Server._NC.ResourceGatheringSystem;
 
@@ -14,7 +14,6 @@ public sealed class ResourceGatheringSystem : EntitySystem
 {
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] internal new readonly IEntityManager EntityManager = default!;
     [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
 
     private const float SearchRadius = 1.0f;
@@ -24,11 +23,11 @@ public sealed class ResourceGatheringSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ResourceGatheringComponent, BeforeRangedInteractEvent>(OnUseTool);
-        SubscribeLocalEvent<ResourceGatheringComponent, GatherResourceDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<SharedResourceGatheringComponent, BeforeRangedInteractEvent>(OnUseTool);
+        SubscribeLocalEvent<SharedResourceGatheringComponent, GatherResourceDoAfterEvent>(OnDoAfter);
     }
 
-    private void OnUseTool(EntityUid uid, ResourceGatheringComponent comp, BeforeRangedInteractEvent args)
+    private void OnUseTool(EntityUid uid, SharedResourceGatheringComponent comp, BeforeRangedInteractEvent args)
     {
         if (!args.CanReach)
             return;
@@ -36,12 +35,12 @@ public sealed class ResourceGatheringSystem : EntitySystem
         StartGathering(uid, comp, args.Target, args.User);
     }
 
-    private void StartGathering(EntityUid uid, ResourceGatheringComponent comp, EntityUid? target, EntityUid user)
+    private void StartGathering(EntityUid uid, SharedResourceGatheringComponent comp, EntityUid? target, EntityUid user)
     {
-        if (target == null || !TryComp<ResourceNodeComponent>(target.Value, out var node))
+        if (target == null || !TryComp<SharedResourceNodeComponent>(target.Value, out var node))
             return;
 
-        if (!TryComp<ResourceToolComponent>(uid, out var toolComp))
+        if (!TryComp<SharedResourceToolComponent>(uid, out var toolComp))
         {
             _popupSystem.PopupEntity("Инструмент неисправен!", user, PopupType.LargeCaution);
             return;
@@ -70,20 +69,19 @@ public sealed class ResourceGatheringSystem : EntitySystem
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
-    private void OnDoAfter(EntityUid uid, ResourceGatheringComponent comp, GatherResourceDoAfterEvent args)
+    private void OnDoAfter(EntityUid uid, SharedResourceGatheringComponent comp, GatherResourceDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target == null)
             return;
 
-        if (!TryComp<ResourceNodeComponent>(args.Args.Target.Value, out var node))
+        if (!TryComp<SharedResourceNodeComponent>(args.Args.Target.Value, out var node))
             return;
 
-        var spawnerPrototype = node.LootSpawner;
-        if (string.IsNullOrEmpty(spawnerPrototype))
+        if (string.IsNullOrEmpty(node.LootSpawner))
             return;
 
         var spawnCoords = FindFreePosition(args.Args.User);
-        var spawnerUid = EntityManager.SpawnEntity(spawnerPrototype, spawnCoords);
+        var spawnerUid = EntityManager.SpawnEntity(node.LootSpawner, spawnCoords);
 
         if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
         {
@@ -94,14 +92,8 @@ public sealed class ResourceGatheringSystem : EntitySystem
         var config = new AdvancedRandomSpawnerConfig(spawner);
 
         ApplyNodeRichness(node, comp);
-
-        // Важное исправление - ApplyToolEffects принимает готовый toolComp
-        if (TryComp<ResourceToolComponent>(uid, out var toolComp))
-        {
-            ApplyToolEffects(toolComp, comp, config);
-        }
-
-        config.ApplyModifiers(comp.WeightModifiers, comp.ExtraPrototypes);
+        ProcessToolEffects(uid, comp, config);
+        config.ApplyModifiers(comp.WeightModifiers);
 
         node.TimeBeforeNextGather = node.CooldownAfterGather;
 
@@ -111,54 +103,59 @@ public sealed class ResourceGatheringSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void ApplyNodeRichness(ResourceNodeComponent node, ResourceGatheringComponent comp)
+    private void ProcessToolEffects(EntityUid uid, SharedResourceGatheringComponent comp, AdvancedRandomSpawnerConfig config)
+    {
+        if (TryComp<SharedResourceToolComponent>(uid, out var toolComp))
+        {
+            ApplyToolEffects(toolComp, comp, config);
+        }
+
+        if (TryComp<SharedResourceToolComponent>(uid, out var toolComp2))
+        {
+            foreach (var (category, protoList) in toolComp2.ExtraPrototypeIds)
+            {
+                foreach (var protoId in protoList)
+                {
+                    config.AddPrototype(category, new SpawnEntry { PrototypeId = protoId });
+                }
+            }
+        }
+    }
+
+    private void ApplyNodeRichness(SharedResourceNodeComponent node, SharedResourceGatheringComponent comp)
     {
         var richnessModifier = node.ResourceRichness switch
         {
-            "rich" => 5,
-            "poor" => -3,
+            ResourceRichness.Rich => 5,
+            ResourceRichness.Poor => -3,
             _ => 0
         };
 
         comp.WeightModifiers["rare"] = comp.WeightModifiers.GetValueOrDefault("rare") + richnessModifier;
     }
 
-    // ✅ toolComp передаётся сюда напрямую
-    private void ApplyToolEffects(ResourceToolComponent toolComp, ResourceGatheringComponent comp, AdvancedRandomSpawnerConfig config)
+    private void ApplyToolEffects(SharedResourceToolComponent toolComp, SharedResourceGatheringComponent comp, AdvancedRandomSpawnerConfig config)
     {
-        // Весовые модификаторы
         foreach (var (category, modifier) in toolComp.WeightModifiers)
         {
             comp.WeightModifiers[category] = comp.WeightModifiers.GetValueOrDefault(category) + modifier;
         }
 
-        // Добавление прототипов
-        foreach (var (category, entries) in toolComp.ExtraPrototypes)
-        {
-            if (!comp.ExtraPrototypes.ContainsKey(category))
-                comp.ExtraPrototypes[category] = new();
-
-            comp.ExtraPrototypes[category].AddRange(entries);
-        }
-
-        // Добавление новых категорий
         foreach (var (category, weight) in toolComp.AddCategories)
         {
             comp.WeightModifiers.TryAdd(category, weight);
         }
 
-        // Удаление категорий
         foreach (var category in toolComp.RemoveCategories)
         {
             config.CategoryWeights.Remove(category);
             config.Prototypes.Remove(category);
         }
 
-        // Удаление отдельных прототипов
-        foreach (var (category, protosToRemove) in toolComp.RemovePrototypes)
+        foreach (var (category, prototypesToRemove) in toolComp.RemovePrototypes)
         {
             if (config.Prototypes.TryGetValue(category, out var list))
-                list.RemoveAll(entry => protosToRemove.Contains(entry.PrototypeId));
+                list.RemoveAll(entry => prototypesToRemove.Contains(entry.PrototypeId));
         }
     }
 

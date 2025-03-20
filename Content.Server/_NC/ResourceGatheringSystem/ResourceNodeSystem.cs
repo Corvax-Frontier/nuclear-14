@@ -1,3 +1,5 @@
+using Content.Shared._NC.ResourceGatheringSystem;
+
 namespace Content.Server._NC.ResourceGatheringSystem;
 public sealed class ResourceNodeSystem : EntitySystem
 {
@@ -12,11 +14,10 @@ public sealed class ResourceNodeSystem : EntitySystem
 
         _updateTimer = 0f;
 
-        foreach (var node in EntityQuery<ResourceNodeComponent>())
+        foreach (var node in EntityQuery<SharedResourceNodeComponent>())
         {
             if (node.TimeBeforeNextGather > 0)
                 node.TimeBeforeNextGather = Math.Max(0, node.TimeBeforeNextGather - 1f);
         }
     }
 }
-

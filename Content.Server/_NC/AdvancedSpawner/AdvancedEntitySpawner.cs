@@ -9,7 +9,7 @@ namespace Content.Server._NC.AdvancedSpawner
     /// <summary>
     /// Responsible for spawning entities based on weighted categories and prototypes.
     /// </summary>
-    public class AdvancedEntitySpawner
+    public sealed class AdvancedEntitySpawner
     {
         private readonly IRobustRandom _random;
         private readonly IEntityManager _entityManager;
