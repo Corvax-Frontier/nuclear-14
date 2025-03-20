@@ -1,7 +1,7 @@
 namespace Content.Server._NC.ResourceGatheringSystem;
 
 [RegisterComponent]
-public sealed partial class ResourceNodeComponent : Component
+public sealed partial class ServerResourceNodeComponent : Component
 {
     [DataField] public float CooldownAfterGather = 600f;
     [DataField] internal float TimeBeforeNextGather;
