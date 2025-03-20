@@ -194,7 +194,7 @@ public sealed class ResourceGatheringSystem : EntitySystem
 
         for (var i = 0; i < FullCircle; i += AngleStep)
         {
-            var angle = i * (float)(Math.PI / 180.0);
+            var angle = i * (float) (Math.PI / 180.0);
             var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
             var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
 
