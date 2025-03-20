@@ -3,10 +3,23 @@ namespace Content.Shared._NC.ResourceGatheringSystem;
 [RegisterComponent]
 public sealed partial class SharedResourceGatheringComponent : Component
 {
-    [DataField] public float GatherTime { get; set; } = 5f;
+    /// <summary>
+    /// Base time (in seconds) required to gather resources from a node.
+    /// </summary>
+    [DataField("gatherTime")]
+    public float GatherTime = 5f;
 
-    [DataField] public Dictionary<string, int> WeightModifiers { get; set; } = new();
+    /// <summary>
+    /// Modifiers that adjust spawn chances for specific loot categories.
+    /// Example: { "rare": 2, "common": -1 }
+    /// </summary>
+    [DataField("weightModifiers")]
+    public Dictionary<string, int> WeightModifiers = new();
 
-    [DataField]
-    public Dictionary<string, List<string>> ExtraPrototypeIds { get; set; } = new();
+    /// <summary>
+    /// Additional prototype IDs that can be spawned after successful gathering.
+    /// Example: { "rare": ["gold_nugget", "crystal_shard"] }
+    /// </summary>
+    [DataField("extraPrototypes")]
+    public Dictionary<string, List<string>> ExtraPrototypeIds = new();
 }

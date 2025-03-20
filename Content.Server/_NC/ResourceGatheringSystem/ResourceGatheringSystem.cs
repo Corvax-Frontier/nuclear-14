@@ -37,29 +37,48 @@ public sealed class ResourceGatheringSystem : EntitySystem
 
     private void StartGathering(EntityUid uid, SharedResourceGatheringComponent comp, EntityUid? target, EntityUid user)
     {
-        if (target == null || !TryComp<SharedResourceNodeComponent>(target.Value, out var node))
+        if (target == null || !TryComp<ResourceNode>(target.Value, out var node))
             return;
 
         if (!TryComp<SharedResourceToolComponent>(uid, out var toolComp))
         {
-            _popupSystem.PopupEntity("Инструмент неисправен!", user, PopupType.LargeCaution);
+            _popupSystem.PopupEntity(
+                Loc.GetString("nc-resource-tool-error"),
+                user,
+                PopupType.LargeCaution
+            );
             return;
         }
 
         if (node.AllowedTools.Count > 0 && !node.AllowedTools.Contains(toolComp.ToolId))
         {
-            _popupSystem.PopupEntity("Этот инструмент не подходит!", user, PopupType.LargeCaution);
+            _popupSystem.PopupEntity(
+                Loc.GetString("nc-resource-tool-not-suitable"),
+                user,
+                PopupType.LargeCaution
+            );
             return;
         }
 
         if (node.TimeBeforeNextGather > 0f)
         {
-            _popupSystem.PopupEntity("Здесь пока нечего собирать.", user, PopupType.LargeCaution);
+            _popupSystem.PopupEntity(
+                Loc.GetString("nc-resource-empty"),
+                user,
+                PopupType.LargeCaution
+            );
             return;
         }
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(comp.GatherTime),
-            new GatherResourceDoAfterEvent(), uid, target: target.Value, used: uid)
+        var doAfterArgs = new DoAfterArgs(
+            EntityManager,
+            user,
+            TimeSpan.FromSeconds(comp.GatherTime),
+            new GatherResourceDoAfterEvent(),
+            uid,
+            target: target.Value,
+            used: uid
+        )
         {
             BreakOnDamage = true,
             NeedHand = true,
@@ -74,7 +93,7 @@ public sealed class ResourceGatheringSystem : EntitySystem
         if (args.Handled || args.Cancelled || args.Args.Target == null)
             return;
 
-        if (!TryComp<SharedResourceNodeComponent>(args.Args.Target.Value, out var node))
+        if (!TryComp<ResourceNode>(args.Args.Target.Value, out var node))
             return;
 
         if (string.IsNullOrEmpty(node.LootSpawner))
@@ -99,30 +118,31 @@ public sealed class ResourceGatheringSystem : EntitySystem
 
         _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
 
-        _popupSystem.PopupEntity("Вы успешно собрали ресурсы!", uid, PopupType.LargeCaution);
+        _popupSystem.PopupEntity(
+            Loc.GetString("nc-resource-gather-success"),
+            uid,
+            PopupType.LargeCaution
+        );
         args.Handled = true;
     }
 
     private void ProcessToolEffects(EntityUid uid, SharedResourceGatheringComponent comp, AdvancedRandomSpawnerConfig config)
     {
-        if (TryComp<SharedResourceToolComponent>(uid, out var toolComp))
-        {
-            ApplyToolEffects(toolComp, comp, config);
-        }
+        if (!TryComp<SharedResourceToolComponent>(uid, out var toolComp))
+            return;
 
-        if (TryComp<SharedResourceToolComponent>(uid, out var toolComp2))
+        ApplyToolEffects(toolComp, comp, config);
+
+        foreach (var (category, protoList) in toolComp.ExtraPrototypeIds)
         {
-            foreach (var (category, protoList) in toolComp2.ExtraPrototypeIds)
+            foreach (var protoId in protoList)
             {
-                foreach (var protoId in protoList)
-                {
-                    config.AddPrototype(category, new SpawnEntry { PrototypeId = protoId });
-                }
+                config.AddPrototype(category, new SpawnEntry { PrototypeId = protoId });
             }
         }
     }
 
-    private void ApplyNodeRichness(SharedResourceNodeComponent node, SharedResourceGatheringComponent comp)
+    private void ApplyNodeRichness(ResourceNode node, SharedResourceGatheringComponent comp)
     {
         var richnessModifier = node.ResourceRichness switch
         {
@@ -168,7 +188,7 @@ public sealed class ResourceGatheringSystem : EntitySystem
 
         for (var i = 0; i < FullCircle; i += AngleStep)
         {
-            var angle = i * (float)(Math.PI / 180.0);
+            var angle = i * (float) (Math.PI / 180.0);
             var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
             var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
 
