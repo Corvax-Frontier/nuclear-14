@@ -1,0 +1,25 @@
+- type: entity
+  parent: N14BaseBiomeSpawner
+  id: NFBiomeSpawnerFloraConcrete
+  name: flora random spawn
+  desc: "?"
+  suffix: Flora, Concrete
+  components:
+  - type: Sprite
+    layers:
+      - state: waste
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: NFFloraConcrete
+
+- type: entity
+  parent: NFBiomeSpawnerFloraConcrete
+  id: NFBiomeSpawnerFloraWasteland
+  suffix: Flora, Wasteland
+  components:
+  - type: Sprite
+    layers:
+      - state: waste
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: NFFloraWasteland
