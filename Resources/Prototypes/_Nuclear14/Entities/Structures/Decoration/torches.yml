@@ -1,7 +1,7 @@
 - type: entity
   id: N14Torch
   name: torch
-  suffix: floor
+  suffix: floor, mapping
   description: A flaming torch for lighting an area.
   placement:
     mode: SnapgridCenter
@@ -58,11 +58,11 @@
     color: "#e39c40"
     radius: 5
     power: 16
-    
+
 - type: entity
   parent: N14Torch
   id: N14TorchWall
-  suffix: wall
+  suffix: wall, mapping
   components:
   - type: Sprite
     noRot: false

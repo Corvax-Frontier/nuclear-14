@@ -3,6 +3,7 @@
   id: N14ChalkboardWall
   name: Chalkboard
   description: A dusty chalkboard
+  suffix: Mapping
   components:
   - type: WallMount
     arc: 360
@@ -35,7 +36,7 @@
   - type: Tag
     tags:
     - Wooden
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall1
@@ -43,7 +44,7 @@
   components:
   - type: Sprite
     state: board_mess1
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall2
@@ -51,7 +52,7 @@
   components:
   - type: Sprite
     state: board_mess2
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall3
@@ -59,7 +60,7 @@
   components:
   - type: Sprite
     state: board_mess3
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall4
@@ -67,7 +68,7 @@
   components:
   - type: Sprite
     state: board_mess4
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall5
@@ -75,7 +76,7 @@
   components:
   - type: Sprite
     state: board_mess5
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall6
@@ -83,7 +84,7 @@
   components:
   - type: Sprite
     state: board_mess6
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall7
@@ -91,7 +92,7 @@
   components:
   - type: Sprite
     state: board_text1
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall8
@@ -99,7 +100,7 @@
   components:
   - type: Sprite
     state: board_text2
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall9
@@ -107,7 +108,7 @@
   components:
   - type: Sprite
     state: board_text3
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall10
@@ -115,7 +116,7 @@
   components:
   - type: Sprite
     state: board_text4
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall11
@@ -123,7 +124,7 @@
   components:
   - type: Sprite
     state: board_text5
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall12
@@ -131,7 +132,7 @@
   components:
   - type: Sprite
     state: board_text6
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall13
@@ -139,7 +140,7 @@
   components:
   - type: Sprite
     state: board_text7
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall14
@@ -147,7 +148,7 @@
   components:
   - type: Sprite
     state: board_text8
-    
+
 - type: entity
   parent: N14ChalkboardWall
   id: N14ChalkboardWall15

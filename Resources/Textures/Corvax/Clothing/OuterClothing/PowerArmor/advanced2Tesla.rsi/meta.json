@@ -8,11 +8,14 @@
   },
   "states": [
     {
-      "name": "equipped-OUTERCLOTHING",
-      "directions": 4,
-      "delays":
-      [
+      "name": "inhand-right"
+    },
+    {
+        "name": "equipped-OUTERCLOTHING",
+        "directions": 4,
+        "delays":
         [
+          [
             0.3,
             0.3,
             0.3,
@@ -36,18 +39,13 @@
             0.3,
             0.3
           ]
-      ]
+        ]
     },
     {
       "name": "icon"
     },
     {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
+      "name": "inhand-left"
     }
   ]
 }

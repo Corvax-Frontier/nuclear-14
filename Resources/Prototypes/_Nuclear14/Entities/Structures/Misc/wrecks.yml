@@ -3,6 +3,7 @@
   id: N14WreckCoupe
   name: wrecked coupe
   description: a wrecked pre-war car.
+  suffix: Mapping
   components:
   - type: Fixtures
     fixtures:

@@ -2,6 +2,7 @@
   id: N14FloraLogBase
   name: log
   description: Once a tree, always a log.
+  suffix: Mapping
   abstract: true
   components:
   - type: Clickable
@@ -66,7 +67,7 @@
     oreChance: 1.0
     currentOre: Timber
   - type: Pullable
-  
+
 - type: entity
   parent: N14FloraLogBase
   id: N14FloraLog1
@@ -77,7 +78,7 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,-0.05"
-            
+
 - type: entity
   parent: N14FloraLogBase
   id: N14FloraLogTimber
@@ -124,7 +125,7 @@
   - type: Material
   - type: Item
     size: Huge
-    
+
 - type: entity
   parent: N14FloraLogBase
   id: N14FloraLog3

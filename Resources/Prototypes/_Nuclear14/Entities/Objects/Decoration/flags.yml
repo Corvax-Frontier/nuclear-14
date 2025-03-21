@@ -4,6 +4,7 @@
   id: N14DecorationFlagpoleNCR
   name: NCR flag pole
   description: An NCR flag on a wooden pole.
+  suffix: Mapping
   components:
   - type: Sprite
     sprite: _Nuclear14/Objects/Decoration/Flags/ncr_flagpole.rsi
@@ -49,6 +50,7 @@
   id: N14DecorationFlagpoleBOS
   name: BoS flag pole
   description: A Midwest Brotherhood flag on a wooden pole.
+  suffix: Mapping
   components:
   - type: Sprite
     sprite: _Nuclear14/Objects/Decoration/Flags/bos_flagpole.rsi
