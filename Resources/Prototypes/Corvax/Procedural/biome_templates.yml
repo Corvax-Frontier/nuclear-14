@@ -1,5 +1,5 @@
 - type: biomeTemplate
-  id: NFFloraConcrete # Рандомный спавн цветочков и прочих растений
+  id: NCFloraConcrete # Рандомный спавн цветочков и прочих растений
   layers:
   - !type:BiomeDecalLayer
     divisions: 2
@@ -48,7 +48,7 @@
     tile: N14FloorConcrete
 
 - type: biomeTemplate
-  id: NFFloraWasteland # Рандомный спавн цветочков и прочих растений
+  id: NCFloraWasteland # Рандомный спавн цветочков и прочих растений
   layers:
   - !type:BiomeEntityLayer
     allowedTiles:

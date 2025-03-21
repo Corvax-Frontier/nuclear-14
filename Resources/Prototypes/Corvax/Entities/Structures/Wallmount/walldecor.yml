@@ -1,6 +1,6 @@
 - type: entity
   parent: N14SignBase
-  id: NFFlagWallBazar
+  id: NCFlagWallBazar
   name: flag bazar
   suffix: bazar
   description: You notice something in common with this bird...

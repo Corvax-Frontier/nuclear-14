@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingOuterStorageBase
-  id: NFClothingOuterRobeScribeWesternBoS
+  id: NCClothingOuterRobeScribeWesternBoS
   name: robe scribe Western bos
   description: An elegant robe symbolizing the status and knowledge of the scribe of the Western Brotherhood of Steel. It provides comfort and protection in the harsh post-apocalyptic world.
   components:

@@ -266,7 +266,7 @@
 
 - type: entity
   parent: ClothingOuterBase
-  id: NFClothingOuterBosReconArmor
+  id: NCClothingOuterBosReconArmor
   name: bos armor
   description: The armor of the brotherhood of steel is sturdy and reliable. "The steel is inside! The steel is outside!"
   components:
@@ -284,4 +284,4 @@
         Piercing: 0.65
         Heat: 0.6
   - type: ToggleableClothing
-    clothingPrototype: NFClothingHeadHatBoSReaconHood
+    clothingPrototype: NCClothingHeadHatBoSReaconHood

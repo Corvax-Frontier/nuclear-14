@@ -49,6 +49,6 @@ ent-N14FlagWallColorado = флаг колорадо
 ent-N14FlagWallDenver = флаг денвера
     .desc = Флаг штата Денвер.
     .suffix = Денвер, маппинг
-ent-NFFlagWallBazar = " Базар "
+ent-NCFlagWallBazar = " Базар "
     .desc = Вы замечаете что то общее с этой птицей...
     .suffix = Базар, маппинг

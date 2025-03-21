@@ -1,6 +1,6 @@
-ent-NFBiomeSpawnerFloraConcrete = растения рандом спавн
+ent-NCBiomeSpawnerFloraConcrete = растения рандом спавн
    .desc = "?"
    .suffix = Растения, Песок
-ent-NFBiomeSpawnerFloraWasteland = { ent-NFBiomeSpawnerFloraConcrete }
-    .desc = { ent-NFBiomeSpawnerFloraConcrete.desc }
+ent-NCBiomeSpawnerFloraWasteland = { ent-NCBiomeSpawnerFloraConcrete }
+    .desc = { ent-NCBiomeSpawnerFloraConcrete.desc }
     .suffix = Растения, Трава
