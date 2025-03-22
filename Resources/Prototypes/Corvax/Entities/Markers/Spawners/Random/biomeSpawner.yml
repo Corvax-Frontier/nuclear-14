@@ -2,7 +2,6 @@
   parent: N14BaseBiomeSpawner
   id: NCBiomeSpawnerFloraConcrete
   name: flora random spawn
-  desc: "?"
   suffix: Flora, Concrete
   components:
   - type: Sprite
