@@ -226,3 +226,6 @@ ent-N14DecorFloorSkeletonOver = { ent-N14DecorFloorSkeleton }
 ent-N14DecorBarrels = бочки
     .desc = Старые прогнившие бочки.
     .suffix = Маппинг
+ent-NFDecorFloorPole = металлический шест
+    .desc = При виде этого шеста, у вас появляется странное желание раздеться...
+    .suffix = Маппинг
