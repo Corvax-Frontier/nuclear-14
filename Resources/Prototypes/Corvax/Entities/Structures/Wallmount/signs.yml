@@ -1,6 +1,6 @@
 - type: entity
   parent: N14SignBase
-  id: NFSignBarRat
+  id: NCSignBarRat
   name: " wet rat "
   description: The sign of the Wet Rat bar
   suffix: Mapping

@@ -85,6 +85,6 @@ ent-N14SignTheJerkShakes = вывеска 'Придурок'
 ent-N14SignWickedShipping = вывеска 'Доставка Уикед'
     .desc = Вывеска транспортной компании 'Уикед'.
     .suffix = Маппинг
-ent-NFSignBarRat = ' Мокрая Крыса '
+ent-NCSignBarRat = ' Мокрая Крыса '
     .desc = Вывеска бара " Мокрая Крыса "
     .suffix = Маппинг
