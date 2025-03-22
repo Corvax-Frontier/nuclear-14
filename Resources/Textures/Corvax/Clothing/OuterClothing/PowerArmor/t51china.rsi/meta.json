@@ -9,7 +9,34 @@
   "states": [
     {
       "name": "equipped-OUTERCLOTHING",
-      "directions": 4
+      "directions": 4,
+      "delays":
+      [
+        [
+            0.3,
+            0.3,
+            0.3,
+            0.3
+          ],
+          [
+            0.3,
+            0.3,
+            0.3,
+            0.3
+          ],
+          [
+            0.3,
+            0.3,
+            0.3,
+            0.3
+          ],
+          [
+            0.3,
+            0.3,
+            0.3,
+            0.3
+          ]
+      ]
     },
     {
       "name": "icon"

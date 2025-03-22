@@ -1,6 +1,7 @@
 - type: entity
   id: N14Rails
   name: railway
+  suffix: Mapping
   placement:
     mode: SnapgridCenter
   components:
@@ -29,7 +30,7 @@
   - type: Physics
     bodyType: Static
   - type: Clickable
-  
+
 - type: entity
   parent: N14Rails
   id: N14RailsJunctionRightTop
@@ -45,7 +46,7 @@
   components:
   - type: Sprite
     state: junction-left-top
-    
+
 - type: entity
   parent: N14Rails
   id: N14RailsJunctionRightBottom
@@ -53,7 +54,7 @@
   components:
   - type: Sprite
     state: junction-right-bottom
-    
+
 - type: entity
   parent: N14Rails
   id: N14RailsJunctionLeftBottom
@@ -61,7 +62,7 @@
   components:
   - type: Sprite
     state: junction-left-bottom
-    
+
 - type: entity
   parent: N14Rails
   id: N14RailsTurnWS
@@ -69,7 +70,7 @@
   components:
   - type: Sprite
     state: turn-WS
-    
+
 - type: entity
   parent: N14Rails
   id: N14RailsTurnNW
@@ -77,7 +78,7 @@
   components:
   - type: Sprite
     state: turn-NW
-    
+
 - type: entity
   parent: N14Rails
   id: N14RailsTurnNE
@@ -85,7 +86,7 @@
   components:
   - type: Sprite
     state: turn-NE
-    
+
 - type: entity
   parent: N14Rails
   id: N14RailsTurnSE

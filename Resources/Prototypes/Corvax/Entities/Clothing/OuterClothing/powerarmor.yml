@@ -66,3 +66,19 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.870
     sprintModifier: 0.870
+
+- type: entity
+  parent: N14ClothingOuterPowerArmorAdvanced2
+  id: N14ClothingOuterPowerArmorAdvanced2Tesla
+  name: X-02 tesla power armor
+  description: A lightweight version of the APA with fewer protective coatings to facilitate repairs. The Tesla system provides electrical resistance.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/PowerArmor/advanced2Tesla.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/PowerArmor/advanced2Tesla.rsi
+  - type: ToggleableClothing
+    clothingPrototype: N14ClothingHeadHelmetPowerArmorX02Tesla
+  - type: Reflect
+    reflectProb: 0.325
+    spread: 300

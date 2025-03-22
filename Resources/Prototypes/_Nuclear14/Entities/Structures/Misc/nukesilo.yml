@@ -3,6 +3,7 @@
   id: N14NukeSilo
   name:  Nuclear Missile Silo
   description: "a prewar missile silo. wonder whats inside"
+  suffix: Mapping
   components:
   - type: Sprite
     scale: 2,2

@@ -2,6 +2,7 @@
   parent: BaseSign
   id: N14PosterBase # For 64x64 posters
   name: Poster
+  suffix: Mapping
   abstract: true
   components:
   - type: WallMount

@@ -1,0 +1,10 @@
+- type: entity
+  parent: N14SignBase
+  id: NCFlagWallBazar
+  name: flag bazar
+  suffix: bazar
+  description: You notice something in common with this bird...
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Wallmount/flag.rsi
+    state: flag_bazar

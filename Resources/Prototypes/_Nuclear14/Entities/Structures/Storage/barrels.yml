@@ -5,6 +5,7 @@
   id: N14BaseBarrel
   name: barrel
   description: This barrel looks like it could contain something.
+  suffix: Mapping
   noSpawn: true
   components:
   - type: Sprite
