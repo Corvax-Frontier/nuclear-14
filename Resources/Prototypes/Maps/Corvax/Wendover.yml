@@ -12,7 +12,7 @@
 - type: gameMap
   id: Wendover
   mapName: 'Уэндовер'
-  mapPath: /Maps/Corvax/WendoverBetaV5.yml
+  mapPath: /Maps/Corvax/Wendover.yml
   minPlayers: 0
   stations:
     Wendover:
@@ -22,7 +22,7 @@
         mapNameTemplate: 'Уэндовер'
       - type: CP14StationAdditionalMap
         mapPaths:
-        - /Maps/Corvax/VaultBetaV1.yml
+        - /Maps/Corvax/Vault.yml
       - type: StationJobs
         overflowJobs:
         - Wastelander
