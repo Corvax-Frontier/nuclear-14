@@ -1,0 +1,86 @@
+- type: biomeTemplate
+  id: NCFloraConcrete # Рандомный спавн цветочков и прочих растений
+  layers:
+  - !type:BiomeDecalLayer
+    divisions: 2
+    threshold: 0.7
+    noise:
+      seed: 0
+      noiseType: OpenSimplex2S
+      fractalType: None
+      frequency: 2
+    allowedTiles:
+    - N14FloorConcrete
+    decals:
+    - FloraTallGrass1
+    - FloraTallGrass2
+    - FloraTallGrass3
+    - Drought12
+    - Drought13
+    - Drought14
+    - Drought15
+    - FloraDeadFerocactus
+  - !type:BiomeEntityLayer
+    threshold: 0.7
+    noise:
+      seed: 1
+      noiseType: OpenSimplex2S
+      fractalType: None
+      frequency: 10
+    allowedTiles:
+    - N14FloorConcrete
+    entities:
+    - N14WastelandFloraWildMaize
+    - N14WastelandFloraWildTato
+    - N14WastelandFloraWildRazorgrain
+    - N14WastelandFloraWildMesquite
+    - N14WastelandFloraWildStarlightBerries
+    - N14WastelandFloraWildBarrelCactus
+  - !type:BiomeDummyLayer
+    id: Loot
+  - !type:BiomeTileLayer
+    threshold: -1.0
+    variants:
+    - 1
+    - 2
+    - 5
+    - 6
+    tile: N14FloorConcrete
+
+- type: biomeTemplate
+  id: NCFloraWasteland # Рандомный спавн цветочков и прочих растений
+  layers:
+  - !type:BiomeEntityLayer
+    allowedTiles:
+    - CorvaxFloorWasteland
+    threshold: 0.7
+    noise:
+      seed: 1
+      noiseType: OpenSimplex2S
+      fractalType: None
+      frequency: 10
+    entities:
+    - N14WastelandFloraWildCarrot
+    - N14WastelandFloraWildPricklypear
+    - N14WastelandFloraWildTarberries
+    - N14WastelandFloraWildCabbage
+    - N14WastelandFloraWildXander
+    - N14WastelandFloraWildCoyote
+    - N14WastelandFloraWildBroc
+    - N14WastelandFloraWildBuffaloGourd
+    - N14WastelandFloraWildMutfruit
+    - N14WastelandFloraWildOnion
+    - N14WastelandFloraWildBlackberries
+    - N14WastelandFloraWildCotton
+  - !type:BiomeDummyLayer
+    id: Loot
+  - !type:BiomeTileLayer
+    threshold: -1.0
+    variants:
+    - 0
+    - 1
+    - 2
+    - 5
+    - 6
+    - 8
+    tile: CorvaxFloorWasteland

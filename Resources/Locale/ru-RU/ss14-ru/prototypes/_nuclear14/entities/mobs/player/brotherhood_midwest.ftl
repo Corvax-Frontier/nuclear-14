@@ -1,10 +1,10 @@
-ent-BoSMidPaladinCommander = Командир Паладинов СБС
+ent-BoSMidPaladinCommander = Командир Паладинов СЗБС
     .desc = { ent-MobHuman.desc }
-ent-N14MobHumanBoSMidKnight = Рыцарь СБС
+ent-N14MobHumanBoSMidKnight = Рыцарь СЗБС
     .desc = { ent-BoSMidPaladinCommander.desc }
-ent-N14MobHumanBoSMidPaladin = Паладин СБС
+ent-N14MobHumanBoSMidPaladin = Паладин СЗБС
     .desc = { ent-BoSMidPaladinCommander.desc }
-ent-N14MobHumanBoSMidScribe = Скриптер СБС
+ent-N14MobHumanBoSMidScribe = Скриптер СЗБС
     .desc = { ent-BoSMidPaladinCommander.desc }
-ent-N14MobHumanBoSMidSquire = Сквайр СБС
+ent-N14MobHumanBoSMidSquire = Сквайр СЗБС
     .desc = { ent-BoSMidPaladinCommander.desc }

@@ -3,6 +3,7 @@
   id: N14WreckTractor
   name: wrecked tractor
   description: an old fusion tractor
+  suffix: Mapping
   components:
   - type: Fixtures
     fixtures:

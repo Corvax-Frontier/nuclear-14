@@ -1,0 +1,10 @@
+- type: entity
+  parent: N14DecorFloorBase
+  id: NCDecorFloorPole
+  name: metal pole
+  description: Upon seeing this pole, you feel a strange urge to undress...
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Decoration/metal_pole.rsi
+    state: metal_pole
+    drawdepth: Mobs

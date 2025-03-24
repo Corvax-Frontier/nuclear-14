@@ -1,0 +1,23 @@
+- type: loadout
+  id: LoadoutBoSMidwestUnknown
+  category: Roles
+  cost: 10
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoSMidPaladin
+  items:
+    - N14ClothingOuterPowerArmorMidwest
+
+- type: loadout
+  id: LoadoutBoSMidwestUnknown2
+  category: Roles
+  cost: 10
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoSMidPaladinCommander
+  items:
+    - N14ClothingOuterPowerArmorMidwestCommander

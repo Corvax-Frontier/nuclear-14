@@ -3,6 +3,7 @@
   id: N14DecorationFlagBearerEmpty
   name: flag bearer
   description: A post for hanging flags.
+  suffix: Mapping
   placement:
     mode: SnapgridCenter
   components:
@@ -33,7 +34,7 @@
     bodyType: Static
   - type: Clickable
   - type: SpriteFade
-  
+
 # Flammable flags
 - type: entity
   parent: N14DecorationFlagBearerEmpty
@@ -81,7 +82,7 @@
           N14DecorationFlagBearerEmpty:
             min: 1
             max: 1
-  
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagNCR
@@ -90,7 +91,7 @@
   components:
   - type: Sprite
     state: ncrflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagOasis
@@ -99,7 +100,7 @@
   components:
   - type: Sprite
     state: oasisflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagBrotherhoodWashington
@@ -109,7 +110,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: bosflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagFollowers
@@ -119,7 +120,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: followersflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagEnclave
@@ -129,7 +130,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: enclaveflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagGunner
@@ -139,7 +140,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: gunnerflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagLocust
@@ -149,7 +150,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: locustflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagHighvalleyhills
@@ -159,7 +160,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: hvhflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagVaultTecCityCoalition
@@ -169,7 +170,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: vtccflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagYuma
@@ -179,7 +180,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: cornflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagKhans
@@ -189,7 +190,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/flags.rsi
     state: khanflag
-    
+
 - type: entity
   parent: N14DecorationFlagFlammable
   id: N14DecorationFlagChurch

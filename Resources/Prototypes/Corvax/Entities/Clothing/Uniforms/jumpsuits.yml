@@ -41,3 +41,14 @@
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/sheriffsuit.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/sheriffsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: NCClothingUniformJumpsuitWesternBoS
+  name: uniform western BoS
+  description: A rugged uniform of the Western Brotherhood of Steel, symbolizing strength and unity.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/westernBoS.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/westernBoS.rsi

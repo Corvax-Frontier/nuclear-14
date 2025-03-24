@@ -37,3 +37,13 @@
   - type: Sprite
     netsync: false
     sprite: Corvax/Clothing/Head/PowerArmorHelmets/x01NCR.rsi
+
+- type: entity
+  parent: N14ClothingHeadHelmetPowerArmorX02
+  id: N14ClothingHeadHelmetPowerArmorX02Tesla
+  name: X-02 tesla power armor helmet
+  description: The Enclave Mark II Powered Combat Armor helmet.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Corvax/Clothing/Head/PowerArmorHelmets/x02Tesla.rsi

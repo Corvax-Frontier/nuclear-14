@@ -1,0 +1,10 @@
+- type: entity
+  parent: N14SignBase
+  id: NCSignBarRat
+  name: " wet rat "
+  description: The sign of the Wet Rat bar
+  suffix: Mapping
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Wallmount/signs_32x32.rsi
+    state: bar_rat

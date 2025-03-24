@@ -1,8 +1,8 @@
 ent-BlastDoorBos = { ent-BlastDoor }
-    .suffix = Автолинк, СБС
+    .suffix = Автолинк, СЗБС
     .desc = { ent-BlastDoor.desc }
 ent-BlastDoorBosOpen = { ent-BlastDoor }
-    .suffix = Автолинк, СБС, Открыт
+    .suffix = Автолинк, СЗБС, Открыт
     .desc = { ent-BlastDoor.desc }
 ent-ShuttersNormalExt1 = { ent-BlastDoor }
     .suffix = Автолинк, Внеш1

@@ -11,3 +11,18 @@
   - type: Tag
     tags:
     - HidesHair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: NCClothingHeadHatBoSReaconHood
+  name: bos hood
+  description: The hood of the Brotherhood Scout
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hoods/bosReaconHood.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hoods/bosReaconHood.rsi
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - HidesHair

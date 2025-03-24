@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseSign
   id: N14SignBase # for non directional signs otherwise remove snapCardinals: true
+  suffix: Mapping
   abstract: true
   components:
   - type: WallMount

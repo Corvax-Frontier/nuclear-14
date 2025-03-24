@@ -3,6 +3,7 @@
   id: N14WreckForklift
   name: wrecked forklift
   description: an old forklift
+  suffix: Mapping
   components:
   - type: Fixtures
     fixtures:
