@@ -1,5 +1,8 @@
 namespace Content.Shared._NC.ResourceGatheringSystem;
 
+/// <summary>
+/// Component that defines gathering behavior and modifiers for resource gathering tools.
+/// </summary>
 [RegisterComponent]
 public sealed partial class SharedResourceGatheringComponent : Component
 {
@@ -7,6 +10,7 @@ public sealed partial class SharedResourceGatheringComponent : Component
     /// Base time (in seconds) required to gather resources from a node.
     /// </summary>
     [DataField("gatherTime")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float GatherTime = 5f;
 
     /// <summary>
@@ -14,6 +18,7 @@ public sealed partial class SharedResourceGatheringComponent : Component
     /// Example: { "rare": 2, "common": -1 }
     /// </summary>
     [DataField("weightModifiers")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, int> WeightModifiers = new();
 
     /// <summary>
@@ -21,5 +26,6 @@ public sealed partial class SharedResourceGatheringComponent : Component
     /// Example: { "rare": ["gold_nugget", "crystal_shard"] }
     /// </summary>
     [DataField("extraPrototypes")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, List<string>> ExtraPrototypeIds = new();
 }

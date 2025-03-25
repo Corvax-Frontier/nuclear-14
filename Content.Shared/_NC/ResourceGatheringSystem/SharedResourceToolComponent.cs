@@ -9,8 +9,10 @@ public sealed partial class SharedResourceToolComponent : Component
 {
     /// <summary>
     /// Unique tool ID used for checking compatibility with resource nodes.
+    /// Example: "pickaxe", "drill"
     /// </summary>
     [DataField("toolId")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public string ToolId = string.Empty;
 
     /// <summary>
@@ -18,6 +20,7 @@ public sealed partial class SharedResourceToolComponent : Component
     /// Example: { "rare": 5, "common": -2 }
     /// </summary>
     [DataField("weightModifiers")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, int> WeightModifiers = new();
 
     /// <summary>
@@ -25,6 +28,7 @@ public sealed partial class SharedResourceToolComponent : Component
     /// Example: { "rare": ["gold_chunk", "diamond_piece"] }
     /// </summary>
     [DataField("extraPrototypes")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, List<string>> ExtraPrototypeIds = new();
 
     /// <summary>
@@ -32,6 +36,7 @@ public sealed partial class SharedResourceToolComponent : Component
     /// Example: { "common": ["stone_chunk"] }
     /// </summary>
     [DataField("removePrototypes")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, List<string>> RemovePrototypes = new();
 
     /// <summary>
@@ -39,6 +44,7 @@ public sealed partial class SharedResourceToolComponent : Component
     /// Example: { "legendary": 10 }
     /// </summary>
     [DataField("addCategories")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, int> AddCategories = new();
 
     /// <summary>
@@ -46,5 +52,6 @@ public sealed partial class SharedResourceToolComponent : Component
     /// Example: [ "trash", "common" ]
     /// </summary>
     [DataField("removeCategories")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public List<string> RemoveCategories = new();
 }

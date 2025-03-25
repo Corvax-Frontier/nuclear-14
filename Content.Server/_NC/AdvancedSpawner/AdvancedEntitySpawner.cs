@@ -1,16 +1,17 @@
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Popups;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
 namespace Content.Server._NC.AdvancedSpawner;
 
+/// <summary>
+/// Отвечает за выбор категорий и спавн конкретных прототипов.
+/// </summary>
 public sealed class AdvancedEntitySpawner
 {
     private readonly IRobustRandom _random;
     private readonly IEntityManager _entityManager;
-    private readonly SharedPopupSystem _popupSystem;
 
     private int _spawnCount;
     private readonly List<SpawnCategory> _categories;
@@ -18,19 +19,16 @@ public sealed class AdvancedEntitySpawner
 
     private static readonly ISawmill Sawmill = Logger.GetSawmill("advancedSpawner");
 
-    private AdvancedEntitySpawner(IRobustRandom random, IEntityManager entityManager, SharedPopupSystem popupSystem, List<SpawnCategory> categories, int maxSpawnCount)
+    private AdvancedEntitySpawner(IRobustRandom random, IEntityManager entityManager, List<SpawnCategory> categories, int maxSpawnCount)
     {
         _random = random;
         _entityManager = entityManager;
-        _popupSystem = popupSystem;
         _categories = categories;
         _maxSpawnCount = maxSpawnCount;
     }
 
-    public static AdvancedEntitySpawner Create(IRobustRandom random, IEntityManager entityManager, SharedPopupSystem popupSystem, List<SpawnCategory> categories, int maxSpawnCount)
-    {
-        return new AdvancedEntitySpawner(random, entityManager, popupSystem, categories, maxSpawnCount);
-    }
+    public static AdvancedEntitySpawner Create(IRobustRandom random, IEntityManager entityManager, List<SpawnCategory> categories, int maxSpawnCount)
+        => new(random, entityManager, categories, maxSpawnCount);
 
     public List<string> SpawnEntities(EntityUid spawnerUid, EntityCoordinates spawnCoords, float offset, AdvancedRandomSpawnerConfig config)
     {
@@ -41,20 +39,20 @@ public sealed class AdvancedEntitySpawner
         {
             if (!TrySelectCategory(config, out var category))
             {
+                Sawmill.Warning("[AdvancedSpawner] Failed to select a valid category. Stopping spawn.");
                 break;
             }
 
             if (!TrySelectPrototype(category, out var prototype))
             {
+                Sawmill.Debug($"[AdvancedSpawner] No valid prototype found in category '{category.Name}'");
                 continue;
             }
 
             SpawnPrototype(prototype, spawnCoords, offset, spawnedItems);
 
             if (!ShouldContinueSpawning(category, config))
-            {
                 break;
-            }
         }
 
         LogSpawns(spawnerUid, spawnCoords, spawnedItems);
@@ -63,10 +61,11 @@ public sealed class AdvancedEntitySpawner
 
     private bool TrySelectCategory(AdvancedRandomSpawnerConfig config, out SpawnCategory selectedCategory)
     {
-        var totalWeight = _categories.Sum(c => SafeWeight(c.Weight + config.GetCategoryModifier(c.Name)));
+        var totalWeight = _categories.Sum(c => Math.Max(0, c.Weight + config.GetCategoryModifier(c.Name)));
         if (totalWeight <= 0)
         {
-            selectedCategory = _categories.First();
+            Sawmill.Warning("[AdvancedSpawner] All categories have zero or negative weight.");
+            selectedCategory = null!;
             return false;
         }
 
@@ -75,7 +74,7 @@ public sealed class AdvancedEntitySpawner
 
         foreach (var category in _categories)
         {
-            var adjustedWeight = SafeWeight(category.Weight + config.GetCategoryModifier(category.Name));
+            var adjustedWeight = Math.Max(0, category.Weight + config.GetCategoryModifier(category.Name));
             cumulative += adjustedWeight;
             if (roll < cumulative)
             {
@@ -84,6 +83,7 @@ public sealed class AdvancedEntitySpawner
             }
         }
 
+        // Fallback — теоретически не должен сработать
         selectedCategory = _categories.First();
         return true;
     }
@@ -97,13 +97,19 @@ public sealed class AdvancedEntitySpawner
             return false;
         }
 
-        var totalWeight = entries.Sum(p => SafeWeight(p.Weight));
+        var totalWeight = entries.Sum(p => Math.Max(0, p.Weight));
+        if (totalWeight <= 0)
+        {
+            prototype = null!;
+            return false;
+        }
+
         var roll = _random.Next(totalWeight);
         var cumulative = 0;
 
         foreach (var entry in entries)
         {
-            cumulative += SafeWeight(entry.Weight);
+            cumulative += Math.Max(0, entry.Weight);
             if (roll < cumulative)
             {
                 prototype = entry;
@@ -142,9 +148,7 @@ public sealed class AdvancedEntitySpawner
     private bool ShouldContinueSpawning(SpawnCategory category, AdvancedRandomSpawnerConfig config)
     {
         if (_spawnCount >= _maxSpawnCount)
-        {
             return false;
-        }
 
         var chance = CalculateSpawnChance(category, config);
         return _random.NextDouble() < chance;
@@ -152,12 +156,11 @@ public sealed class AdvancedEntitySpawner
 
     private double CalculateSpawnChance(SpawnCategory category, AdvancedRandomSpawnerConfig config)
     {
-        var adjustedWeight = SafeWeight(category.Weight + config.GetCategoryModifier(category.Name));
-        var totalWeight = _categories.Sum(c => SafeWeight(c.Weight + config.GetCategoryModifier(c.Name)));
+        var adjustedWeight = Math.Max(0, category.Weight + config.GetCategoryModifier(category.Name));
+        var totalWeight = _categories.Sum(c => Math.Max(0, c.Weight + config.GetCategoryModifier(c.Name)));
+
         if (totalWeight == 0)
-        {
             return 0.0;
-        }
 
         var baseChance = (double)adjustedWeight / totalWeight;
         var diminishingFactor = Math.Pow(1.0 - (double)_spawnCount / _maxSpawnCount, 2);
@@ -174,16 +177,6 @@ public sealed class AdvancedEntitySpawner
         }
 
         Sawmill.Debug($"[AdvancedSpawner] Spawned entities at {coords}: {string.Join(", ", spawnedItems)}");
-
-        foreach (var proto in spawnedItems)
-        {
-            _popupSystem.PopupEntity($"Spawned item: {proto}", spawnerUid);
-        }
-    }
-
-    private int SafeWeight(int weight)
-    {
-        return Math.Max(1, weight);
     }
 }
 
