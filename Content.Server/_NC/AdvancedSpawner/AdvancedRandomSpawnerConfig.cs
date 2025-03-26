@@ -104,4 +104,17 @@ public sealed class AdvancedRandomSpawnerConfig
     {
         return _categories;
     }
+
+    public bool TryRemovePrototypes(string category, List<string> prototypeIds, out int removedCount)
+    {
+        removedCount = 0;
+        if (!_prototypes.TryGetValue(category, out var entries))
+            return false;
+
+        var before = entries.Count;
+        entries.RemoveAll(entry => prototypeIds.Contains(entry.PrototypeId));
+        removedCount = before - entries.Count;
+        return removedCount > 0;
+    }
 }
+

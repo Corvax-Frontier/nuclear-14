@@ -37,7 +37,6 @@ public sealed class ResourceGatheringSystem : EntitySystem
         if (!ValidateGathering(uid, args.Target.Value, args.User))
             return;
 
-        // Блок мини-игры перед началом добычи
         if (!PlayMiniGame(args.User))
         {
             _popupSystem.PopupEntity(Loc.GetString("nc-resource-minigame-fail"), args.User, PopupType.MediumCaution);
@@ -133,7 +132,6 @@ public sealed class ResourceGatheringSystem : EntitySystem
         var totalModifiers = CalculateTotalModifiers(node, comp, toolComp);
         ApplyToolPrototypeEffects(toolComp, config);
         config.ApplyModifiers(totalModifiers);
-
         config.RebuildCategories();
 
         _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
@@ -175,28 +173,20 @@ public sealed class ResourceGatheringSystem : EntitySystem
 
     private void ApplyToolPrototypeEffects(SharedResourceToolComponent toolComp, AdvancedRandomSpawnerConfig config)
     {
-        // Удаление целых категорий вместе с весами и прототипами
         foreach (var category in toolComp.RemoveCategories)
         {
-            var weightRemoved = config.CategoryWeights.Remove(category);
-            var prototypesRemoved = config.Prototypes.Remove(category);
-            Sawmill.Debug($"[ResourceGathering] Removed category '{category}' -> Weights: {weightRemoved}, Prototypes: {prototypesRemoved}");
+            config.ClearCategory(category);
+            Sawmill.Debug($"[ResourceGathering] Removed category '{category}'");
         }
 
-        // Удаление конкретных прототипов внутри категории
         foreach (var (category, toRemove) in toolComp.RemovePrototypes)
         {
-            if (config.Prototypes.TryGetValue(category, out var list))
+            if (config.TryRemovePrototypes(category, toRemove, out var removed))
             {
-                var before = list.Count;
-                list.RemoveAll(entry => toRemove.Contains(entry.PrototypeId));
-                var removed = before - list.Count;
-                if (removed > 0)
-                    Sawmill.Debug($"[ResourceGathering] Removed {removed} prototype(s) from category '{category}'");
+                Sawmill.Debug($"[ResourceGathering] Removed {removed} prototype(s) from category '{category}'");
             }
         }
 
-        // Добавление дополнительных прототипов в категории
         foreach (var (category, protoList) in toolComp.ExtraPrototypeIds)
         {
             foreach (var protoId in protoList)
@@ -207,34 +197,22 @@ public sealed class ResourceGatheringSystem : EntitySystem
         }
     }
 
-
     private EntityCoordinates FindFreePosition(EntityUid user)
     {
         if (!EntityManager.TryGetComponent(user, out TransformComponent? userTransform))
             return new EntityCoordinates(user, Vector2.Zero);
 
         var origin = userTransform.Coordinates;
-
-        for (var i = 0;; )
-        {
-            var angle = i * (float)(Math.PI / 180.0);
-            var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
-            var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
-
-            // TODO: Проверку коллизий сделать тут через карту
-            return testCoords;
-        }
+        var angle = _random.NextFloat() * MathF.Tau;
+        var offset = new Vector2(MathF.Cos(angle), MathF.Sin(angle)) * SearchRadius;
+        return new EntityCoordinates(origin.EntityId, origin.Position + offset);
     }
 
-    /// <summary>
-    /// Мини-игра (QTE заглушка): шанс успеха. В будущем сюда нормальный интерактив.
-    /// </summary>
     private bool PlayMiniGame(EntityUid user)
     {
-        var success = _random.Prob(0.75f); // 75% успеха, можно менять
+        var success = _random.Prob(0.75f); // 75% успеха
         if (success)
             _popupSystem.PopupEntity(Loc.GetString("nc-resource-minigame-success"), user, PopupType.Medium);
         return success;
     }
 }
-
