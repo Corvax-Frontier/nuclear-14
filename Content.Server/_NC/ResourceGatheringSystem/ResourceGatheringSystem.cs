@@ -20,8 +20,6 @@ public sealed class ResourceGatheringSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
 
     private const float SearchRadius = 1.0f;
-    private const int AngleStep = 30;
-    private const int FullCircle = 360;
     private static readonly ISawmill Sawmill = Logger.GetSawmill("resourceGathering");
 
     public override void Initialize()
@@ -125,7 +123,7 @@ public sealed class ResourceGatheringSystem : EntitySystem
             return;
         }
 
-        var config = new AdvancedRandomSpawnerConfig(spawner);
+        var config = AdvancedRandomSpawnerConfig.FromComponent(spawner);
         if (!TryComp(tool, out SharedResourceToolComponent? toolComp))
         {
             Sawmill.Warning($"[ResourceGathering] Tool {tool} lost SharedResourceToolComponent during gather.");
@@ -163,10 +161,14 @@ public sealed class ResourceGatheringSystem : EntitySystem
         }
 
         foreach (var (category, mod) in toolComp.WeightModifiers)
+        {
             modifiers[category] = modifiers.GetValueOrDefault(category) + mod;
+        }
 
         foreach (var (category, weight) in toolComp.AddCategories)
+        {
             modifiers[category] = modifiers.GetValueOrDefault(category) + weight;
+        }
 
         return modifiers;
     }
@@ -213,7 +215,7 @@ public sealed class ResourceGatheringSystem : EntitySystem
 
         var origin = userTransform.Coordinates;
 
-        for (var i = 0; i < FullCircle; i += AngleStep)
+        for (var i = 0;; )
         {
             var angle = i * (float)(Math.PI / 180.0);
             var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
@@ -222,8 +224,6 @@ public sealed class ResourceGatheringSystem : EntitySystem
             // TODO: Проверку коллизий сделать тут через карту
             return testCoords;
         }
-
-        return origin;
     }
 
     /// <summary>
@@ -237,3 +237,4 @@ public sealed class ResourceGatheringSystem : EntitySystem
         return success;
     }
 }
+

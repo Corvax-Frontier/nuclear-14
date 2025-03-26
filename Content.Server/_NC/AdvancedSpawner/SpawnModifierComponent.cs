@@ -1,6 +1,7 @@
 using Robust.Shared.GameStates;
 
 namespace Content.Server._NC.AdvancedSpawner;
+
 /// <summary>
 /// Temporary component that stores dynamic spawn category weight modifiers and additional prototype injections.
 /// Can be added by any system to influence spawning logic.
@@ -17,8 +18,17 @@ public sealed partial class SpawnModifierComponent : Component
 
     /// <summary>
     /// Extra prototypes to inject into specific spawn categories during spawning.
-    /// Example: { "loot": [SpawnEntry(\"gold_proto\", 3, 1)] }
+    /// Example: { "loot": [SpawnEntry("gold_proto", 3, 1)] }
     /// </summary>
     [DataField]
     public Dictionary<string, List<SpawnEntry>> ExtraPrototypes = new();
+
+    /// <summary>
+    /// Applies this modifier to a given spawner config.
+    /// </summary>
+    public void ApplyToConfig(AdvancedRandomSpawnerConfig config)
+    {
+        config.ApplyModifiers(WeightModifiers, ExtraPrototypes);
+    }
 }
+

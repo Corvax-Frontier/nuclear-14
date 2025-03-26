@@ -2,27 +2,27 @@ namespace Content.Server._NC.AdvancedSpawner;
 
 public sealed class AdvancedRandomSpawnerConfig
 {
-    public readonly Dictionary<string, int> CategoryWeights;
-    public readonly List<SpawnCategory> Categories;
-    public readonly Dictionary<string, List<SpawnEntry>> Prototypes;
+    private readonly Dictionary<string, int> _categoryWeights;
+    private readonly Dictionary<string, List<SpawnEntry>> _prototypes;
+    private readonly List<SpawnCategory> _categories;
 
-    public readonly float Offset;
-    public readonly bool DeleteAfterSpawn;
-    public readonly int MaxSpawnCount;
+    public float Offset { get; }
+    public bool DeleteAfterSpawn { get; }
+    public int MaxSpawnCount { get; }
 
     private static readonly ISawmill Sawmill = Logger.GetSawmill("advancedSpawner");
 
-    public AdvancedRandomSpawnerConfig(AdvancedRandomSpawnerComponent comp)
+    private AdvancedRandomSpawnerConfig(AdvancedRandomSpawnerComponent comp)
     {
-        CategoryWeights = new(comp.CategoryWeights);
-        Categories = new();
-        Prototypes = new();
+        _categoryWeights = new(comp.CategoryWeights);
+        _prototypes = new();
+        _categories = new();
 
         foreach (var category in comp.CategoryWeights.Keys)
         {
             var entries = comp.PrototypeLists.GetValueOrDefault(category, new List<SpawnEntry>());
-            Prototypes[category] = new(entries);
-            Categories.Add(new SpawnCategory(category, CategoryWeights[category], Prototypes[category]));
+            _prototypes[category] = new(entries);
+            _categories.Add(new SpawnCategory(category, _categoryWeights[category], _prototypes[category]));
         }
 
         Offset = comp.Offset;
@@ -37,101 +37,71 @@ public sealed class AdvancedRandomSpawnerConfig
         return new AdvancedRandomSpawnerConfig(comp);
     }
 
-    /// <summary>
-    /// Adds a prototype to a specific category.
-    /// </summary>
+    public int GetCategoryWeight(string category)
+    {
+        return _categoryWeights.TryGetValue(category, out var weight) ? weight : 0;
+    }
+
+    private void ModifyCategoryWeight(string category, int delta)
+    {
+        if (_categoryWeights.ContainsKey(category))
+            _categoryWeights[category] = Math.Max(1, _categoryWeights[category] + delta);
+        else
+            _categoryWeights[category] = Math.Max(1, delta);
+
+        Sawmill.Debug($"[AdvancedSpawnerConfig] Modified weight of '{category}' by {delta}, new weight: {_categoryWeights[category]}");
+    }
+
     public void AddPrototype(string category, SpawnEntry entry)
     {
-        if (!Prototypes.ContainsKey(category))
-            Prototypes[category] = new();
-
-        Prototypes[category].Add(entry);
+        if (!_prototypes.ContainsKey(category))
+        {
+            _prototypes[category] = new List<SpawnEntry>();
+            _categoryWeights[category] = 1;
+        }
+        _prototypes[category].Add(entry);
         Sawmill.Debug($"[AdvancedSpawnerConfig] Added prototype '{entry.PrototypeId}' to category '{category}'");
     }
 
-    /// <summary>
-    /// Applies weight changes and extra prototypes. Supports dynamic category creation.
-    /// </summary>
-    public void ApplyModifiers(Dictionary<string, int> weightModifiers, Dictionary<string, List<SpawnEntry>>? extraPrototypes = null)
+    public void ClearCategory(string category)
     {
-        ApplyWeightModifiers(weightModifiers);
-        ApplyExtraPrototypes(extraPrototypes);
+        _prototypes.Remove(category);
+        _categoryWeights.Remove(category);
+        Sawmill.Debug($"[AdvancedSpawnerConfig] Cleared category '{category}'");
     }
 
-    private void ApplyWeightModifiers(Dictionary<string, int> weightModifiers)
+    public void ApplyModifiers(Dictionary<string, int> weightModifiers, Dictionary<string, List<SpawnEntry>>? extraPrototypes = null)
     {
         foreach (var (category, modifier) in weightModifiers)
         {
-            if (string.IsNullOrWhiteSpace(category))
-            {
-                Sawmill.Warning("[AdvancedSpawnerConfig] Skipping weight modifier with empty category name.");
-                continue;
-            }
-
-            if (CategoryWeights.TryGetValue(category, out var currentWeight))
-            {
-                CategoryWeights[category] = Math.Max(1, currentWeight + modifier);
-                Sawmill.Debug($"[AdvancedSpawnerConfig] Modified weight of '{category}' by {modifier}, new weight: {CategoryWeights[category]}");
-            }
-            else
-            {
-                // Динамически создаём новую категорию с весом из модификатора
-                var newWeight = Math.Max(1, modifier);
-                CategoryWeights[category] = newWeight;
-                Prototypes[category] = new List<SpawnEntry>();
-                Sawmill.Debug($"[AdvancedSpawnerConfig] Created new category '{category}' with weight {newWeight} via modifier");
-            }
+            ModifyCategoryWeight(category, modifier);
         }
-    }
 
-    private void ApplyExtraPrototypes(Dictionary<string, List<SpawnEntry>>? extraPrototypes)
-    {
-        if (extraPrototypes == null)
-            return;
-
-        foreach (var (category, entries) in extraPrototypes)
+        if (extraPrototypes != null)
         {
-            if (string.IsNullOrWhiteSpace(category))
+            foreach (var (category, entries) in extraPrototypes)
             {
-                Sawmill.Warning("[AdvancedSpawnerConfig] Skipping extra prototypes with empty category name.");
-                continue;
-            }
-
-            if (!Prototypes.TryGetValue(category, out var list))
-            {
-                // Если категория новая, создаём её с дефолтным весом 1
-                list = new List<SpawnEntry>();
-                Prototypes[category] = list;
-
-                if (!CategoryWeights.ContainsKey(category))
+                foreach (var entry in entries)
                 {
-                    CategoryWeights.TryAdd(category, 1);
-                    Sawmill.Debug($"[AdvancedSpawnerConfig] Auto-created category '{category}' with default weight 1 for extra prototypes");
+                    AddPrototype(category, entry);
                 }
-
-                Sawmill.Debug($"[AdvancedSpawnerConfig] Initialized prototype list for new category '{category}'");
-            }
-
-            foreach (var entry in entries)
-            {
-                list.Add(entry);
-                Sawmill.Debug($"[AdvancedSpawnerConfig] Added prototype '{entry.PrototypeId}' to category '{category}'");
             }
         }
     }
 
-    /// <summary>
-    /// Пересобирает список категорий после применения всех модификаторов и изменений.
-    /// Обязательно вызывать перед финальным спавном!
-    /// </summary>
     public void RebuildCategories()
     {
-        Categories.Clear();
-        foreach (var category in CategoryWeights.Keys)
+        _categories.Clear();
+        foreach (var category in _categoryWeights.Keys)
         {
-            var entries = Prototypes.GetValueOrDefault(category, new List<SpawnEntry>());
-            Categories.Add(new SpawnCategory(category, CategoryWeights[category], entries));
+            var entries = _prototypes.GetValueOrDefault(category, new List<SpawnEntry>());
+            _categories.Add(new SpawnCategory(category, _categoryWeights[category], entries));
         }
         Sawmill.Debug("[AdvancedSpawnerConfig] Rebuilt Categories after modifiers.");
+    }
+
+    public IReadOnlyList<SpawnCategory> GetCategories()
+    {
+        return _categories;
     }
 }

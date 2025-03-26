@@ -5,9 +5,6 @@ using Robust.Shared.Random;
 
 namespace Content.Server._NC.AdvancedSpawner;
 
-/// <summary>
-/// Отвечает за выбор категорий и спавн конкретных прототипов.
-/// </summary>
 public sealed class AdvancedEntitySpawner
 {
     private readonly IRobustRandom _random;
@@ -28,7 +25,9 @@ public sealed class AdvancedEntitySpawner
     }
 
     public static AdvancedEntitySpawner Create(IRobustRandom random, IEntityManager entityManager, List<SpawnCategory> categories, int maxSpawnCount)
-        => new(random, entityManager, categories, maxSpawnCount);
+    {
+        return new AdvancedEntitySpawner(random, entityManager, categories, maxSpawnCount);
+    }
 
     public List<string> SpawnEntities(EntityUid spawnerUid, EntityCoordinates spawnCoords, float offset, AdvancedRandomSpawnerConfig config)
     {
@@ -55,16 +54,16 @@ public sealed class AdvancedEntitySpawner
                 break;
         }
 
-        LogSpawns(spawnerUid, spawnCoords, spawnedItems);
+        LogSpawns(spawnCoords, spawnedItems);
         return spawnedItems;
     }
 
     private bool TrySelectCategory(AdvancedRandomSpawnerConfig config, out SpawnCategory selectedCategory)
     {
-        var totalWeight = _categories.Sum(c => Math.Max(0, c.Weight + config.GetCategoryModifier(c.Name)));
+        var totalWeight = _categories.Sum(c => Math.Max(0, c.Weight + config.GetCategoryWeight(c.Name)));
+
         if (totalWeight <= 0)
         {
-            Sawmill.Warning("[AdvancedSpawner] All categories have zero or negative weight.");
             selectedCategory = null!;
             return false;
         }
@@ -74,7 +73,7 @@ public sealed class AdvancedEntitySpawner
 
         foreach (var category in _categories)
         {
-            var adjustedWeight = Math.Max(0, category.Weight + config.GetCategoryModifier(category.Name));
+            var adjustedWeight = Math.Max(0, category.Weight + config.GetCategoryWeight(category.Name));
             cumulative += adjustedWeight;
             if (roll < cumulative)
             {
@@ -83,9 +82,8 @@ public sealed class AdvancedEntitySpawner
             }
         }
 
-        // Fallback — теоретически не должен сработать
-        selectedCategory = _categories.First();
-        return true;
+        selectedCategory = null!;
+        return false;
     }
 
     private bool TrySelectPrototype(SpawnCategory category, out SpawnEntry prototype)
@@ -117,8 +115,8 @@ public sealed class AdvancedEntitySpawner
             }
         }
 
-        prototype = entries.First();
-        return true;
+        prototype = null!;
+        return false;
     }
 
     private void SpawnPrototype(SpawnEntry prototype, EntityCoordinates spawnCoords, float offset, List<string> spawnedItems)
@@ -156,8 +154,8 @@ public sealed class AdvancedEntitySpawner
 
     private double CalculateSpawnChance(SpawnCategory category, AdvancedRandomSpawnerConfig config)
     {
-        var adjustedWeight = Math.Max(0, category.Weight + config.GetCategoryModifier(category.Name));
-        var totalWeight = _categories.Sum(c => Math.Max(0, c.Weight + config.GetCategoryModifier(c.Name)));
+        var adjustedWeight = Math.Max(0, category.Weight + config.GetCategoryWeight(category.Name));
+        var totalWeight = _categories.Sum(c => Math.Max(0, c.Weight + config.GetCategoryWeight(c.Name)));
 
         if (totalWeight == 0)
             return 0.0;
@@ -168,7 +166,7 @@ public sealed class AdvancedEntitySpawner
         return baseChance * diminishingFactor;
     }
 
-    private void LogSpawns(EntityUid spawnerUid, EntityCoordinates coords, List<string> spawnedItems)
+    private void LogSpawns(EntityCoordinates coords, List<string> spawnedItems)
     {
         if (spawnedItems.Count == 0)
         {
@@ -176,14 +174,6 @@ public sealed class AdvancedEntitySpawner
             return;
         }
 
-        Sawmill.Debug($"[AdvancedSpawner] Spawned entities at {coords}: {string.Join(", ", spawnedItems)}");
-    }
-}
-
-public static class SpawnerExtensions
-{
-    public static int GetCategoryModifier(this AdvancedRandomSpawnerConfig config, string category)
-    {
-        return config.CategoryWeights.TryGetValue(category, out var modifier) ? modifier : 0;
+        Sawmill.Debug($"[AdvancedSpawner] Spawned {spawnedItems.Count} entities at {coords}: {string.Join(", ", spawnedItems)}");
     }
 }
