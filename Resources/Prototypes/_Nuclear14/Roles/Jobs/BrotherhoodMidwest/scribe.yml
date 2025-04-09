@@ -35,6 +35,7 @@
 - type: startingGear
   id: BoSMidScribeGear
   equipment:
+    bandage: NCClothingBandageBoS # Corvax-Change
     jumpsuit: N14ClothingUniformJumpsuitBOSScribe
     back: N14ClothingBackpackSatchelMilitaryFilled
     shoes: N14ClothingBootsLeather

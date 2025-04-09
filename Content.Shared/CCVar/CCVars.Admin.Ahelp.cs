@@ -75,5 +75,5 @@ public sealed partial class CCVars
     ///     If either the ooc color or this is not set, uses the admin.admin_bwoink_color value.
     /// </summary>
     public static readonly CVarDef<bool> UseAdminOOCColorInBwoinks =
-        CVarDef.Create("admin.bwoink_use_admin_ooc_color", false, CVar.SERVERONLY);
+        CVarDef.Create("admin.bwoink_use_admin_ooc_color", true, CVar.SERVERONLY); // Corvax-Change
 }

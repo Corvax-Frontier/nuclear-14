@@ -33,6 +33,7 @@
 - type: startingGear
   id: NCRRangerGear
   equipment:
+    bandage: NCClothingBandageNCR # Corvax-Change
     jumpsuit: N14ClothingUniformRangerPatrol
     shoes: N14ClothingBootsCombatFilled
     ears: N14ClothingHeadsetNCR

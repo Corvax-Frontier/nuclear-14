@@ -235,7 +235,7 @@ public sealed partial class CCVars
     /// <summary>
     /// Whether the baby jail is currently enabled.
     /// </summary>
-    public static readonly CVarDef<bool> BabyJailEnabled  =
+    public static readonly CVarDef<bool> BabyJailEnabled =
         CVarDef.Create("game.baby_jail.enabled", false, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
@@ -338,19 +338,19 @@ public sealed partial class CCVars
     ///     Whether to repeat eating doafters after completion
     /// </summary>
     public static readonly CVarDef<bool> GameAutoEatFood =
-        CVarDef.Create("game.auto_eat_food", false, CVar.REPLICATED);
+        CVarDef.Create("game.auto_eat_food", true, CVar.REPLICATED); // Corvax-Change
 
     /// <summary>
     ///     Whether to repeat drinking doafters after completion
     /// </summary>
     public static readonly CVarDef<bool> GameAutoEatDrinks =
-        CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
+        CVarDef.Create("game.auto_eat_drinks", true, CVar.REPLICATED); // Corvax-Change
 
     /// <summary>
     ///     Whether item slots, such as power cell slots or AME fuel cell slots, should support quick swap if it is not otherwise specified in their YAML prototype.
     /// </summary>
     public static readonly CVarDef<bool> AllowSlotQuickSwap =
-        CVarDef.Create("game.slot_quick_swap", false, CVar.REPLICATED);
+        CVarDef.Create("game.slot_quick_swap", true, CVar.REPLICATED); // Corvax-Change
 
 #if EXCEPTION_TOLERANCE
     /// <summary>

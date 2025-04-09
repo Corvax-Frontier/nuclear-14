@@ -240,15 +240,14 @@
       components:
         - type: PassiveDamage
           allowedStates:
-          - Alive
-          - Critical
+          - Alive # Corvax-Change
           damageCap: 200
           damage:
             groups:
-              Brute: -0.035
-              Burn: -0.035
+              Brute: -0.02 # Corvax-Change
+              Burn: -0.02 # Corvax-Change
               Airloss: -0.035
-              Toxin: -0.035
+              Toxin: -0.015 # Corvax-Change
 
 - type: trait
   id: N14WorldChampion

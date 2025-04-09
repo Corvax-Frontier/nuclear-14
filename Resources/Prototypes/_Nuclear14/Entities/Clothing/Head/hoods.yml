@@ -8,11 +8,9 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHoods/leathercloak.rsi
   - type: Clothing
     sprite: _Nuclear14/Clothing/Head/FalloutHoods/leathercloak.rsi
-  - type: Tag
-    tags:
-    - HidesHair
-    - WhitelistChameleon
-
+  - type: HideLayerClothing # Corvax-Change
+    slots:
+    - Hair
 - type: entity
   parent: ClothingHeadBase
   id: N14ClothingHeadHatHoodRangerCloak
@@ -31,10 +29,9 @@
         Piercing: 0.95
         Heat: 0.9
     priceMultiplier: 0.6
-  - type: Tag
-    tags:
-    - HidesHair
-    - WhitelistChameleon
+  - type: HideLayerClothing # Corvax-Change
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -54,10 +51,9 @@
         Piercing: 0.95
         Heat: 0.9
     priceMultiplier: 0.5
-  - type: Tag
-    tags:
-    - HidesHair
-    - WhitelistChameleon
+  - type: HideLayerClothing # Corvax-Change
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -69,10 +65,9 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHoods/midwestscribetabard.rsi
   - type: Clothing
     sprite: _Nuclear14/Clothing/Head/FalloutHoods/midwestscribetabard.rsi
-  - type: Tag
-    tags:
-    - HidesHair
-    - WhitelistChameleon
+  - type: HideLayerClothing # Corvax-Change
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -85,14 +80,11 @@
   - type: Clothing
     sprite: _Nuclear14/Clothing/Head/FalloutHoods/falloutblackrobes.rsi
   - type: IdentityBlocker
-  - type: HideLayerClothing
+  - type: HideLayerClothing # Corvax-Change
+    force: true
     slots:
     - Hair
-    - Snout
-  - type: Tag
-    tags:
-    - HidesHair
-    - WhitelistChameleon
+    - FacialHair
 
 - type: entity
   parent: N14ClothingHeadHatHoodBlackRobe

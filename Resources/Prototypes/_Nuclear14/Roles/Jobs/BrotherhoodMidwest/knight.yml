@@ -35,6 +35,7 @@
 - type: startingGear
   id: BoSMidKnightGear
   equipment:
+    bandage: NCClothingBandageBoS # Corvax-Change
     jumpsuit: N14ClothingUniformJumpsuitBOSGreen
     back: N14ClothingBackpackMilitaryFilled
     shoes: N14ClothingBootsCombatFilled

@@ -140,10 +140,11 @@
     - HelmetEVA
     - PlasmamanSafe
   - type: IdentityBlocker
-  - type: HideLayerClothing
+  - type: HideLayerClothing # Corvax-Change
+    force: true
     slots:
     - Hair
-    - Snout
+    - FacialHair
 
 - type: entity
   abstract: true
@@ -187,10 +188,11 @@
     - WhitelistChameleon
     - PlasmamanSafe
   - type: IdentityBlocker
-  - type: HideLayerClothing
+  - type: HideLayerClothing # Corvax-Change
+    force: true
     slots:
     - Hair
-    - Snout
+    - FacialHair
 
 - type: entity
   abstract: true

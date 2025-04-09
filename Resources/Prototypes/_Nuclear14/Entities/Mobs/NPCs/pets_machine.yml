@@ -65,7 +65,13 @@
   - type: MobMover
   - type: Body
     prototype: Bot
-  - type: StepTriggerImmune
+  - type: StepTriggerImmune # Corvax-Change
+    whitelist:
+      types:
+      - Shard
+      - Landmine
+      - Mousetrap
+      - SlipEntity
   - type: RandomMetadata
     nameSegments: [names_N14pet_robot]
 # Let's see how much this remains functional, butchered MobSiliconBase, it is.
@@ -74,7 +80,7 @@
   name: Waster Eyebot
   id: N14MobPetEyebot #Basic Eyebot every other inherits from.
   parent: N14MobFriendlyRobot
-  description: A military Eyebot with a smiling face to look at! 
+  description: A military Eyebot with a smiling face to look at!
   components:
   - type: InputMover
   - type: MobMover
@@ -147,11 +153,17 @@
     toggleOnInteract: true
     IsSpeaker: true
   - type: UniversalLanguageSpeaker
-  - type: ReplacementAccent
-    accent: silicon
+  - type: LanguageKnowledge
+    speaks:
+    - N14BrotherBeep
+    understands:
+    - N14BrotherBeep
+    - Dog
+    - Universal
+    - English
   - type: Damageable
     damageContainer: Biological
-  - type: PassiveDamage 
+  - type: PassiveDamage
     allowedStates:
     - Alive
     - Critical
@@ -176,6 +188,18 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: icon
     - state: shadow_eyebot
+  - type: UniversalLanguageSpeaker # Corvax-Change
+    enabled: false
+  - type: LanguageSpeaker # Corvax-Change
+    currentLanguage: N14BrotherBeep
+  - type: LanguageKnowledge # Corvax-Change
+    speaks:
+    - N14BrotherBeep
+    understands:
+    - N14BrotherBeep
+    - Dog
+    - Universal
+    - English
 
 - type: entity
   name: WBoS Eyebot

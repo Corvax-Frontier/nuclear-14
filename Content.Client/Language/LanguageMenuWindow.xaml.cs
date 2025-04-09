@@ -88,7 +88,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             HorizontalExpand = true
         };
 
-        var button = new Button { Text = "Choose" };
+        var button = new Button { Text = Loc.GetString("language-menu-button") }; // Corvax-Change
         button.OnPressed += _ => OnLanguageChosen(language);
         state.Button = button;
 

@@ -9,6 +9,10 @@
     size: Small
   - type: Clothing
     slots: [mask]
+  - type: HideLayerClothing # Corvax-Change
+    force: true
+    slots:
+    - FacialHair
 
 - type: entity
   abstract: true

@@ -70,10 +70,11 @@
   - type: Clothing
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
-  - type: HideLayerClothing
+  - type: HideLayerClothing # Corvax-Change
+    force: true
     slots:
     - Hair
-    - Snout
+    - FacialHair
 
 - type: entity
   parent: ClothingHeadBase
@@ -96,6 +97,9 @@
     priceMultiplier: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.95
+  - type: HideLayerClothing # Corvax-Change
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -114,6 +118,9 @@
     priceMultiplier: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.9
+  - type: HideLayerClothing # Corvax-Change
+    slots:
+    - Hair
 
 - type: entity
   parent: N14ClothingHeadHatBaseHelmetMetal

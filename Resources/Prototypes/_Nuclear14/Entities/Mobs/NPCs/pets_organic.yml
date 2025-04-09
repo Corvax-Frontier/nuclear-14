@@ -61,7 +61,7 @@
         Blunt: 2
         Slash: 4
   - type: UniversalLanguageSpeaker
-  - type: PassiveDamage 
+  - type: PassiveDamage
     allowedStates:
     - Alive
     - Critical
@@ -71,6 +71,24 @@
         Brute: -0.25
         Burn: -0.25
         Toxin: -0.25
+  - type: Hunger # Corvax-Change
+    currentHunger: 180
+    thresholds:
+      Overfed: 200
+      Okay: 150
+      Peckish: 100
+      Starving: 50
+      Dead: 0
+    baseDecayRate: 0.0
+  - type: Thirst # Corvax-Change
+    startingThirst: 180
+    thresholds:
+      OverHydrated: 200
+      Okay: 150
+      Thirsty: 100
+      Parched: 50
+      Dead: 0
+    baseDecayRate: 0.0
 
 - type: entity
   name: Basic Mutt
@@ -87,8 +105,19 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/small_dog_bark_happy.ogg
-  - type: ReplacementAccent
-    accent: dog
+  - type: ReplacementAccent # Corvax-Change
+    replacementChance: 0.0
+  - type: UniversalLanguageSpeaker # Corvax-Change
+    enabled: false
+  - type: LanguageSpeaker # Corvax-Change
+    currentLanguage: Dog
+  - type: LanguageKnowledge # Corvax-Change
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - Universal
+    - English
 
 - type: entity
   name: MBoS Mutt
@@ -311,6 +340,9 @@
       path: /Audio/Animals/small_dog_bark_happy.ogg
   - type: ReplacementAccent
     accent: xeno
+  - type: NpcFactionMember # Corvax-Change
+    factions:
+    - Passive
 
 - type: entity
   name: Pet Ant
@@ -378,6 +410,9 @@
         Blunt: 3
         Slash: 3
         Radiation: 1
+  - type: NpcFactionMember # Corvax-Change
+    factions:
+    - Passive
 
 - type: entity
   name: Pet Rat
@@ -445,3 +480,6 @@
       path: /Audio/Animals/small_dog_bark_happy.ogg
   - type: ReplacementAccent
     accent: xeno
+  - type: NpcFactionMember # Corvax-Change
+    factions:
+    - Passive

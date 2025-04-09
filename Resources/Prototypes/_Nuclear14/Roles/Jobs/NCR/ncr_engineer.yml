@@ -29,14 +29,15 @@
 - type: startingGear
   id: NCREngineerGear
   equipment:
-    head: N14ClothingHeadHatNCRHelmetMetalSnow
+    bandage: NCClothingBandageNCR # Corvax-Change
+    head: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
     back: N14ClothingBackpackNCRFilled
-    jumpsuit: N14ClothingUniformNCRSnow
+    jumpsuit: N14ClothingUniformNCRDesert # Corvax-Change
     shoes: N14ClothingBootsLeatherFilled
     gloves: N14ClothingHandsGlovesCombat
     id: N14IDNCRDogtagEngineer
     pocket1: NCRengineerloadoutkits
-  innerClothingSkirt: N14ClothingUniformNCRSnow #placeholder
+  innerClothingSkirt: N14ClothingUniformNCRDesert # Corvax-Change
   satchel: N14ClothingBackpackSatchelNCRFilled
 
 - type: playTimeTracker

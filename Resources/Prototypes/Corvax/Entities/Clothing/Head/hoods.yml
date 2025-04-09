@@ -8,9 +8,9 @@
     sprite: Corvax/Clothing/Head/Hoods/vexillariushood.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hoods/vexillariushood.rsi
-  - type: Tag
-    tags:
-    - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -24,6 +24,6 @@
     sprite: Corvax/Clothing/Head/Hoods/bosReaconHood.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair

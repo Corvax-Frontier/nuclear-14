@@ -79,3 +79,17 @@
           - MachineLayer
     - type: Transform
       noRot: true
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterLegion
+  description: An ID printer for printing Legion IDs.
+  suffix: Legion
+  components:
+  - type: Lathe
+    staticRecipes:
+    - IDLegionaryBadge
+    - IDLegionaryMedalSilver
+    - IDLegionaryMedalSilver2
+    - IDLegionaryMedalSilver3
+    - NCClothingBandageLegion

@@ -52,12 +52,15 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
     private void TryGhostReturnToRound(EntityUid uid, INetChannel connectedClient, NetUserId userId, out string message, out string wrappedMessage)
     {
         var maxPlayers = _cfg.GetCVar(CCVars.GhostRespawnMaxPlayers);
-        if (_playerManager.PlayerCount >= maxPlayers)
+        if (_cfg.GetCVar(CCVars.GhostRespawnEnabled)) // Corvax-Change-Start
         {
-            message = Loc.GetString("ghost-respawn-max-players", ("players", maxPlayers));
-            wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
-            return;
-        }
+            if (_playerManager.PlayerCount >= maxPlayers)
+            {
+                message = Loc.GetString("ghost-respawn-max-players", ("players", maxPlayers));
+                wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+                return;
+            }
+        } // Corvax-Change-End
 
         var deathTime = EnsureComp<GhostComponent>(uid).TimeOfDeath;
         // WD EDIT START

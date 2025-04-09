@@ -11,19 +11,20 @@
     - purr
     - mrow
 
-- type: language
+- type: language # Corvax-Change
   id: Dog
+  speech:
+    color: "#927117"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 2
     replacement:
-    - woof
-    - bark
-    - ruff
-    - bork
-    - raff
-    - garr
+    - Гав-Гав!
+    - Тяв!
+    - Вуф-Вуф!
+    - Гаф.
+    - Ррррррр...
 
 - type: language
   id: Fox

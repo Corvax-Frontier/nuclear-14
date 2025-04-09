@@ -29,7 +29,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRVestSnow
+      - id: N14ClothingOuterNCRVestDesert # Corvax-Change
       - id: ClothingBeltNCRPouches
       - id: N14WeaponRifle556Service
       - id: Magazine556Rifle
@@ -57,7 +57,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRVestWoods
+      - id: N14ClothingOuterNCRVestDesert # Corvax-Change
       - id: ClothingBeltNCRPouches
       - id: N14WeaponRifle556Butchered
       - id: Magazine556Rifle
@@ -85,7 +85,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRVestSnow
+      - id: N14ClothingOuterNCRVestDesert # Corvax-Change
       - id: ClothingBeltNCRBandolier
       - id: N14WeaponSniper44LeverCarbine
       - id: MagazineBox44
@@ -114,7 +114,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponRifle556Service
       - id: Magazine556Rifle
@@ -142,7 +142,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponRifle556Butchered
       - id: Magazine556Rifle
@@ -170,7 +170,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponSniper44LeverCarbine
       - id: MagazineBox44
@@ -197,7 +197,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRVestWoods
+      - id: N14ClothingOuterNCRVestDesert # Corvax-Change
       - id: ClothingBeltNCRBandolier
       - id: N14WeaponShotgun
       - id: MagazineBox12gauge
@@ -224,7 +224,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPlateWoods
+      - id: N14ClothingOuterNCRPlateDesert # Corvax-Change
       - id: N14ClothingMaskPlate
       - id: ClothingBeltNCR
       - id: N14WastelandFlagSpear
@@ -256,7 +256,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: N14ClothingBeltUtilityFilled
       - id: N14WeaponSMG9mm
       - id: N14MagazineSMG9mm
@@ -287,7 +287,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponShotgun
       - id: MagazineBox12gauge
@@ -317,7 +317,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponShotgunAuto
       - id: N14MagazineShotgun12
@@ -384,7 +384,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: N14ClothingBeltMedicalFilled
       - id: N14ClothingHandsGlovesNitrile
       - id: N14ClothingHeadHatNCRBeretMedic
@@ -420,7 +420,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: N14ClothingBeltMedicalFilled
       - id: N14ClothingHeadHatNCRHelmetMetalMedic
       - id: N14WeaponShotgun
@@ -453,10 +453,10 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
-      - id: N14ClothingHeadHatNCRHelmetMetalWoods
-      - id: N14ClothingNeckCloakNCRWoods
+      - id: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
+      - id: N14ClothingNeckCloakNCR # Corvax-Change
       - id: N14WeaponLMG
       - id: LMGMagazine556Rifle
         amount: 3
@@ -483,10 +483,10 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
-      - id: N14ClothingHeadHatNCRHelmetMetalWoods
-      - id: N14ClothingNeckCloakNCRSnow
+      - id: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
+      - id: N14ClothingNeckCloakNCR # Corvax-Change
       - id: N14WeaponRifleGrenade
       - id: 40mmGrenadeFrag
         amount: 4
@@ -514,10 +514,10 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14ClothingHeadHatNCRBeretRecon
-      - id: N14ClothingNeckCloakNCRSnow
+      - id: N14ClothingNeckCloakNCR # Corvax-Change
       - id: N14WeaponSniper50NCRRifle
       - id: MagazineBox50
       - id: N14WeaponPistol45Colt
@@ -545,8 +545,8 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
-      - id: N14ClothingHeadHatNCRHelmetMetalSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
+      - id: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponRifle556Carbine
       - id: LongMagazine556Rifle
@@ -574,8 +574,8 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
-      - id: N14ClothingHeadHatNCRHelmetMetalSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
+      - id: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponLMGAutoRifle
       - id: Magazine308Rifle
@@ -603,7 +603,7 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestSnow
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
       - id: N14ClothingHeadHatNCRBeretRecon
       - id: ClothingBeltNCR
       - id: N14WeaponRifle308Battle
@@ -632,8 +632,8 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingOuterNCRPouchedVestWoods
-      - id: N14ClothingHeadHatNCRHelmetMetalWoods
+      - id: N14ClothingOuterNCRPouchedVestDesert # Corvax-Change
+      - id: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
       - id: ClothingBeltNCR
       - id: N14WeaponShotgunAuto
       - id: N14MagazineShotgun12
