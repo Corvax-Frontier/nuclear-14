@@ -85,7 +85,6 @@
       - N14WeaponLaserRevolverBlueprint
       - N14WeaponLaserRifleMakeshiftBlueprint
       - N14WeaponRifle556PipeBlueprint
-      - N14WeaponSniper50PipeBlueprint
       # Gun Parts
       - N14JunkGunpartsAction
       - N14JunkGunpartsBarrel
@@ -104,7 +103,6 @@
       - N14WeaponLaserRevolverBlueprint
       - N14WeaponLaserRifleMakeshiftBlueprint
       - N14WeaponRifle556PipeBlueprint
-      - N14WeaponSniper50PipeBlueprint
 
 - type: entity
   parent: N14WorkbenchBase

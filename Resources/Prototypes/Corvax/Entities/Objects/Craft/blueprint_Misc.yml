@@ -21,11 +21,3 @@
   components:
     - type: STBlueprint
       blueprint: N14WeaponRifle556Pipe
-
-- type: entity
-  parent: N14BaseBlueprintPaper
-  id: N14WeaponSniper50PipeBlueprint
-  name: blueprint .50 pipe rifle
-  components:
-    - type: STBlueprint
-      blueprint: N14WeaponSniper50Pipe

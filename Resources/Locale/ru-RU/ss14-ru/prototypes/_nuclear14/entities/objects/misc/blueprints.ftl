@@ -2,7 +2,6 @@ ent-N14ClothingOuterPowerArmorT45Blueprint = чертёж восстановле
 ent-N14WeaponLaserRevolverBlueprint = чертёж самодельного лазерного револьвера
 ent-N14WeaponLaserRifleMakeshiftBlueprint = чертёж самодельной лазерной винтовки
 ent-N14WeaponRifle556PipeBlueprint = чертёж самодельной штурмовой винтовки
-ent-N14WeaponSniper50PipeBlueprint = чертёж самодельной винтовки .50 калибра
 ent-N14ClothingOuterPowerArmorT45NCRBlueprint = чертёж удаления сервоприводов T-45
 ent-N14ClothingOuterPowerArmorT51NCRBlueprint = чертёж удаления сервоприводов T-51
 ent-N14ClothingOuterPowerArmorT60NCRBlueprint = чертёж удаления сервоприводов T-60
