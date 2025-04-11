@@ -18,7 +18,13 @@ ui-options-general-discord = Discord
 ui-options-general-cursor = Курсор
 ui-options-general-speech = Речь
 ui-options-general-storage = Инвентарь
+ui-options-general-other = Другое
 ui-options-general-accessibility = Доступность
+ui-options-chatstack = Автоматически объединять идентичные сообщения чата
+ui-options-chatstack-off = Выключено
+ui-options-chatstack-single = Только последнее сообщение
+ui-options-chatstack-double = Последние два сообщения
+ui-options-chatstack-triple = Последние три сообщения
 
 ## Audio menu
 
@@ -35,6 +41,8 @@ ui-options-restart-sounds = Звуки перезапуска раунда
 ui-options-event-music = Музыка событий
 ui-options-admin-sounds = Музыка админов
 ui-options-volume-label = Громкость
+ui-options-announcer-disable-multiple-sounds = Отключить наложение звуков анонсера
+ui-options-announcer-disable-multiple-sounds-tooltip = Некоторые объявления могут звучать неправильно, эта настройка не рекомендуется
 ui-options-volume-percent = { TOSTRING($volume, "P0") }
 
 ## Graphics menu
@@ -49,6 +57,7 @@ ui-options-fancy-speech = Показывать имена в облачках с
 ui-options-fancy-name-background = Добавить фон облачкам с текстом
 ui-options-enable-color-name = Цветные имена персонажей
 ui-options-colorblind-friendly = Режим для дальтоников
+ui-options-no-filters = Отключить фильтры зрения рас
 ui-options-reduced-motion = Снижение интенсивности визуальных эффектов
 ui-options-chat-window-opacity = Прозрачность окна чата
 ui-options-chat-window-opacity-percent = { TOSTRING($opacity, "P0") }
@@ -77,6 +86,7 @@ ui-options-hud-theme-clockwork = Механизм
 ui-options-hud-theme-retro = Ретро
 ui-options-hud-theme-minimalist = Минимализм
 ui-options-hud-theme-ashen = Пепел
+ui-options-hud-theme-fallout2 = Fallout
 ui-options-vp-stretch = Растянуть изображение для соответствия окну игры
 ui-options-vp-scale = Фиксированный масштаб окна игры: x{ $scale }
 ui-options-vp-integer-scaling = Использовать целочисленное масштабирование (может вызывать появление чёрных полос/обрезания)
@@ -108,6 +118,7 @@ ui-options-header-camera = Камера
 ui-options-header-interaction-basic = Базовые взаимодействия
 ui-options-header-interaction-adv = Продвинутые взаимодействия
 ui-options-header-ui = Интерфейс
+ui-options-header-targeting = Прицеливание
 ui-options-header-misc = Разное
 ui-options-header-hotbar = Хотбар
 ui-options-header-shuttle = Шаттл
@@ -116,6 +127,7 @@ ui-options-header-dev = Разработка
 ui-options-header-general = Основное
 ui-options-hotkey-keymap = Использовать клавиши QWERTY (США)
 ui-options-hotkey-toggle-walk = Переключать шаг\бег
+ui-options-hotkey-default-walk = Шаг по умолчанию
 ui-options-function-move-up = Двигаться вверх
 ui-options-function-move-left = Двигаться налево
 ui-options-function-move-down = Двигаться вниз
@@ -143,7 +155,9 @@ ui-options-function-rotate-stored-item = Повернуть хранящийся
 ui-options-function-offer-item = Предложить что-нибудь
 ui-options-function-save-item-location = Сохранить расположение объекта
 ui-options-function-toggle-standing = Переключить положение
+ui-options-function-toggle-crawling-under = Вкл/выкл ползание под мебелью
 ui-options-static-storage-ui = Закрепить интерфейс хранилища на хотбаре
+ui-options-modern-progress-bar = Полоска взаимодействия новая ВКЛ\ВЫКЛ
 ui-options-function-smart-equip-backpack = Умная экипировка в рюкзак
 ui-options-function-smart-equip-belt = Умная экипировка на пояс
 ui-options-function-open-backpack = Открыть рюкзак
@@ -153,6 +167,12 @@ ui-options-function-try-pull-object = Тянуть объект
 ui-options-function-move-pulled-object = Тянуть объект в сторону
 ui-options-function-release-pulled-object = Перестать тянуть объект
 ui-options-function-point = Указать на что-либо
+ui-options-function-target-head = Целиться в голову
+ui-options-function-target-torso = Целиться в торс
+ui-options-function-target-left-arm = Целиться в левую руку
+ui-options-function-target-right-arm = Целиться в правую руку
+ui-options-function-target-left-leg = Целиться в левую ногу
+ui-options-function-target-right-leg = Целиться в правую ногу
 ui-options-function-focus-chat-input-window = Писать в чат
 ui-options-function-focus-local-chat-window = Писать в чат (IC)
 ui-options-function-focus-emote = Писать в чат (Emote)
@@ -193,7 +213,9 @@ ui-options-function-editor-line-place = Размещать в линию
 ui-options-function-editor-rotate-object = Повернуть
 ui-options-function-editor-flip-object = Перевернуть
 ui-options-function-editor-copy-object = Копировать
-ui-options-function-open-abilities-menu = Открыть меню действий
+ui-options-function-mapping-enable-pick = Пипетка объект/тайл
+ui-options-function-mapping-enable-decal-pick = Пипетка декали
+ui-options-function-mapping-enable-delete = Удалить объект
 ui-options-function-show-debug-console = Открыть консоль
 ui-options-function-show-debug-monitors = Показать дебаг информацию
 ui-options-function-inspect-entity = Изучить сущность
@@ -225,8 +247,11 @@ ui-options-function-shuttle-strafe-down = Стрейф вниз
 ui-options-function-shuttle-rotate-left = Поворот налево
 ui-options-function-shuttle-rotate-right = Поворот направо
 ui-options-function-shuttle-brake = Торможение
-ui-options-net-interp-ratio = Сетевое сглаживание
+
+## Network menu
+
 ui-options-net-predict = Предугадывание на стороне клиента
+ui-options-net-interp-ratio = Сетевое сглаживание
 ui-options-net-interp-ratio-tooltip =
     Увеличение этого параметра, как правило, делает игру
     более устойчивой к потере пакетов, однако при этом
@@ -254,5 +279,14 @@ ui-options-net-pvs-leave-tooltip =
     сущности вне поля зрения. Снижение этого параметра может помочь
     уменьшить "захлёбывания" при ходьбе, но иногда может
     привести к неправильным предугадываниям и другим проблемам.
+
+## Toggle window console command
+
 cmd-options-desc = Открывает меню опций, опционально с конкретно выбранной вкладкой.
 cmd-options-help = Использование: options [tab]
+
+## Combat Options
+
+ui-options-function-look-up = Смотреть вверх/Целиться
+ui-options-function-auto-get-up = Автоматически вставать после падения
+ui-options-function-hold-look-up = Удерживать клавишу для прицеливания

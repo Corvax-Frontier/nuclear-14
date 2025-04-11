@@ -40,7 +40,31 @@ panic-bunker-account-reason-overall =
         [few] минуты
        *[other] минут
     }.
-baby-jail-account-denied = This server is a newbie server, intended for new players and those who want to help them. New connections by accounts that are too old or are not on a whitelist are not accepted. Check out some other servers and see everything Space Station 14 has to offer. Have fun!
-baby-jail-account-denied-reason = This server is a newbie server, intended for new players and those who want to help them. New connections by accounts that are too old or are not on a whitelist are not accepted. Check out some other servers and see everything Space Station 14 has to offer. Have fun! Reason: "{ $reason }"
-baby-jail-account-reason-account = Your Space Station 14 account is too old. It must be younger than { $minutes } minutes
-baby-jail-account-reason-overall = Your overall playtime on the server must be younger than { $minutes } $minutes
+
+whitelist-playtime = У вас недостаточно игрового времени для присоединения к этому серверу. Вам необходимо как минимум { $hours } минут игрового времени.
+whitelist-player-count = В настоящее время сервер не принимает новых игроков. Пожалуйста, попробуйте позже.
+whitelist-notes = У вас слишком много административных заметок для присоединения к этому серверу. Вы можете проверить свои заметки, введя /adminremarks в чате.
+whitelist-manual = Вы не в вайтлисте этого сервера.
+whitelist-blacklisted = Вы находитесь в черном списке этого сервера.
+whitelist-always-deny = Вам не разрешено присоединяться к этому серверу.
+whitelist-fail-prefix = Не в вайтлисте: { $msg }
+whitelist-misconfigured = Сервер настроен неправильно и не принимает игроков. Пожалуйста, свяжитесь с владельцем сервера и попробуйте позже.
+
+cmd-blacklistadd-desc = Добавляет игрока с указанным именем в черный список сервера.
+cmd-blacklistadd-help = Использование: blacklistadd <имя пользователя>
+cmd-blacklistadd-existing = { $username } уже в черном списке!
+cmd-blacklistadd-added = { $username } добавлен в черный список
+cmd-blacklistadd-not-found = Не удалось найти игрока '{ $username }'
+cmd-blacklistadd-arg-player = [player]
+
+cmd-blacklistremove-desc = Удаляет игрока с указанным именем из черного списка сервера.
+cmd-blacklistremove-help = Использование: blacklistremove <имя пользователя>
+cmd-blacklistremove-existing = { $username } нет в черном списке!
+cmd-blacklistremove-removed = { $username } удален из черного списка
+cmd-blacklistremove-not-found = Не удалось найти игрока '{ $username }'
+cmd-blacklistremove-arg-player = [player]
+
+baby-jail-account-denied = Этот сервер предназначен для новичков и тех, кто хочет им помочь. Новые подключения от слишком старых аккаунтов или не входящих в вайтлист не принимаются. Попробуйте другие серверы, чтобы увидеть все возможности Space Station 14. Приятной игры!
+baby-jail-account-denied-reason = Этот сервер предназначен для новичков и тех, кто хочет им помочь. Новые подключения от слишком старых аккаунтов или не входящих в вайтлист не принимаются. Попробуйте другие серверы, чтобы увидеть все возможности Space Station 14. Приятной игры! Причина: "{ $reason }"
+baby-jail-account-reason-account = Ваш аккаунт Space Station 14 слишком старый. Он должен быть младше { $hours } часов.
+baby-jail-account-reason-overall = Ваше общее игровое время на сервере должно быть меньше { $hours } часов.

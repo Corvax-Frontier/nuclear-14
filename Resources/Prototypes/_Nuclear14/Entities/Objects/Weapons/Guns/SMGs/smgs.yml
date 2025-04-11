@@ -11,6 +11,8 @@
   - type: Appearance
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 100
   - type: Craftable
 
 - type: entity
@@ -66,6 +68,8 @@
         whitelist:
           tags:
             - N14CartridgePistol10
+  - type: StaticPrice
+    price: 75
 
 - type: entity
   name: 12.7mm SMG
@@ -121,6 +125,9 @@
         whitelist:
           tags:
             - N14CartridgePistol127
+  - type: StaticPrice
+    price: 100
+
 
 - type: entity
   name: 12.7mm pipe SMG
@@ -176,6 +183,9 @@
         whitelist:
           tags:
             - N14CartridgePistol127
+  - type: StaticPrice
+    price: 10
+
 
 - type: entity
   parent: N14WeaponSMG12mmPipe
@@ -255,6 +265,9 @@
         whitelist:
           tags:
             - N14CartridgePistol10
+  - type: StaticPrice
+    price: 10
+
 
 - type: entity
   parent: N14WeaponSMG10mmPipe
@@ -334,6 +347,8 @@
         whitelist:
           tags:
             - N14CartridgePistol127
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: 9mm SMG
@@ -388,6 +403,8 @@
         whitelist:
           tags:
             - N14CartridgePistol9
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   name: .45 SMG
@@ -442,6 +459,8 @@
         whitelist:
           tags:
             - N14CartridgePistol45
+  - type: StaticPrice
+    price: 90
 
 - type: entity
   name: sten SMG
@@ -496,6 +515,8 @@
         whitelist:
           tags:
             - N14CartridgePistol9
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   name: douglas advanced SMG
@@ -551,6 +572,8 @@
         whitelist:
           tags:
             - N14CartridgePistol127
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   name: chinese advanced SMG
@@ -606,6 +629,8 @@
         whitelist:
           tags:
             - N14CartridgePistol127
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: chinese SMG
@@ -660,3 +685,5 @@
         whitelist:
           tags:
             - N14CartridgePistol10
+  - type: StaticPrice
+    price: 100

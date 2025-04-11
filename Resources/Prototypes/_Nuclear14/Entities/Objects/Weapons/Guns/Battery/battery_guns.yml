@@ -118,6 +118,10 @@
       collection: N14LaserPistolGunshot
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 80
+  - type: Cautery
+    speed: 0.3
 
 - type: entity
   name: makeshift laser revolver
@@ -160,6 +164,10 @@
       collection: N14LaserPistolGunshot
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 60
+  - type: Cautery
+    speed: 0.3
 
 - type: entity
   name: plasma pistol
@@ -197,6 +205,10 @@
     fireRate: 1.5
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 80
+  - type: Cautery
+    speed: 0.2
 
 - type: entity
   name: plasma defender
@@ -234,6 +246,10 @@
     fireRate: 2.5
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 100
+  - type: Cautery
+    speed: 0.2
 
 # MARK: Recharger
 
@@ -271,6 +287,8 @@
     fireCost: 50
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: recharger pistol
@@ -307,6 +325,10 @@
     - Sidearm
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 175
+  - type: Cautery
+    speed: 0.3
 
 # MARK: Fullauto
 
@@ -357,6 +379,8 @@
     - FullAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 225
 
 - type: entity
   name: plasma automatic rifle
@@ -405,6 +429,8 @@
     - FullAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 225
 
 - type: entity
   name: prototype AER-14 laser rifle
@@ -453,6 +479,8 @@
     - FullAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 250
 
 # MARK: Semiauto
 
@@ -503,6 +531,8 @@
     - SemiAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 250
 
 - type: entity
   name: makeshift laser rifle
@@ -551,6 +581,8 @@
     - SemiAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   name: plasma rifle
@@ -599,6 +631,8 @@
     - SemiAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 275
 
 - type: entity
   name: urban plasma rifle
@@ -647,6 +681,8 @@
     - SemiAuto
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 225
 
 # MARK: Shotguns
 
@@ -698,6 +734,8 @@
      - Burst
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 225
 
 #MARK: Focused
 # (just a different looking laser rifle until we get more options)
@@ -749,6 +787,8 @@
     - SemiAuto
   - type: FollowDistance
     backStrength: 4
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   name: wattz 2000 laser rifle
@@ -797,6 +837,8 @@
     - SemiAuto
   - type: FollowDistance
     backStrength: 4
+  - type: StaticPrice
+    price: 400
 
 #MARK: Heavy
 
@@ -855,6 +897,8 @@
   - type: HeldSpeedModifier
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   name: laser gatling gun
@@ -911,3 +955,5 @@
   - type: HeldSpeedModifier
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 400

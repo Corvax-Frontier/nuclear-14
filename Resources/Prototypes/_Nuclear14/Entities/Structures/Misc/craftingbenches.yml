@@ -28,8 +28,8 @@
     key: enum.LatheUiKey.Key
   - type: UserInterface
     interfaces:
-    - key: enum.LatheUiKey.Key
-      type: LatheBoundUserInterface
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
   - type: ExtensionCableReceiver
   - type: ApcPowerReceiver
     needsPower: false
@@ -50,10 +50,10 @@
       storagebase: !type:Container
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
-    - key: enum.LatheUiKey.Key
-      type: LatheBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
   - type: Craftable
   - type: Storage
     craft: true
@@ -80,11 +80,29 @@
       - N14BrassKnife
       - N14TrainingSword
       - N14LongSword
+      - N14Bola
       # Blueprints
       - N14WeaponLaserRevolverBlueprint
       - N14WeaponLaserRifleMakeshiftBlueprint
       - N14WeaponRifle556PipeBlueprint
-      - N14WeaponSniper50PipeBlueprint
+      # Gun Parts
+      - N14JunkGunpartsAction
+      - N14JunkGunpartsBarrel
+      - N14JunkGunpartsBolt
+      - N14JunkGunpartsFrame
+      - N14JunkGunpartsFramePistol
+      - N14JunkGunpartsReceiver
+      - N14JunkGunpartsRecoilComp
+      - N14JunkGunpartsRifleFrame
+      - N14JunkGunpartsRifleStock
+      - N14JunkGunpartsRifleScope
+      - N14JunkGunpartsStock
+      - N14JunkGunpartsStockWood
+      - N14JunkGunpartsTrigger
+      # Blueprints Corvax Forge
+      - N14WeaponLaserRevolverBlueprint
+      - N14WeaponLaserRifleMakeshiftBlueprint
+      - N14WeaponRifle556PipeBlueprint
 
 - type: entity
   parent: N14WorkbenchBase
@@ -136,6 +154,7 @@
       - MagazineBox22
       - SpeedLoader44
       - MagazineBox44
+      - N14MagazinePistol44
       - N14MagazinePistol45
       - Magazine45SubMachineGun
       - MagazineBox45
@@ -204,6 +223,11 @@
       - N14ClothingOuterTribalArmorHeavy
       - N14ClothingOuterInsectArmor
       - N14ClothingOuterMetalArmor
+      - N14ClothingOuterZealotDuster
+      - N14ClothingOuterReinforcedLeatherArmor
+      - N14ClothingOuterLightLeatherArmor
+      - N14ClothingOuterLeatherRobes
+      - N14ClothingOuterBlackRobes
       # Shield's
       - N14InsectShield
       - MakeshiftShield
@@ -267,6 +291,18 @@
         density: 500
         mask:
           - TabletopMachineMask
+  - type: ActivatableUI
+    key: enum.ChemMasterUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ChemMasterUiKey.Key:
+        type: ChemMasterBoundUserInterface
+  - type: ChemMaster
+    pillDosageLimit: 20
+  - type: ContainerContainer
+    containers:
+      beakerSlot: !type:ContainerSlot
+      outputSlot: !type:ContainerSlot
   - type: ItemSlots
     slots:
       beakerSlot:
@@ -282,17 +318,10 @@
   - type: SolutionContainerManager
     solutions:
       buffer: {}
+      pillBuffer: {}
   - type: DumpableSolution
     solution: buffer
     unlimited: true
-  - type: ActivatableUI
-    key: enum.ChemMasterUiKey.Key
-  - type: UserInterface
-    interfaces:
-    - key: enum.ChemMasterUiKey.Key
-      type: ChemMasterBoundUserInterface
-  - type: ChemMaster
-    pillDosageLimit: 20
 
 - type: entity
   parent: BaseStructure
@@ -417,6 +446,7 @@
       - N14LedLightBulb
       - N14Flare
       - N14Matchbox
+      - N14JunkComponentScrew
       # Ammo
       - ArrowRegular
       # Machine Parts
@@ -480,16 +510,10 @@
     staticRecipes:
       # Ores
       - N14IngotSilver
-      - N14IngotSilverCharcoal
       - N14IngotIron
-      - N14IngotIronCharcoal
       - N14IngotGold
-      - N14IngotGoldCharcoal
       - N14IngotCopper
-      - N14IngotCopperCharcoal
       - N14SheetSteel
-      - N14SheetSteelCharcoal
-      - N14SheetPlastic
       - N14SheetGlass
       - N14IngotLead
       - SulfurPowder
@@ -499,9 +523,11 @@
       - N14IngotCopperScrap
       - N14IngotGoldScrap
       - N14IngotSteelScrap
-      - N14N14IngotLeadScrap
+      - N14IngotIronScrap
+      - N14IngotLeadScrap
       # Other
       - Charcoal
+      - CharcoalToCoal
 
 - type: entity
   parent: N14WorkbenchBase
@@ -555,6 +581,7 @@
       tags:
         - Sheet
         - RawMaterial
+        - Ingot # Corvax-Change
   - type: Lathe
     producingSound: /Audio/Machines/circuitprinter.ogg
     idleState: icon
@@ -588,6 +615,7 @@
     - HolotagMidwestSquire
     - HolotagMidwestKnight
     - HolotagMidwestPaladin
+    - NCClothingBandageBoS # Corvax-Change
 
 - type: entity
   parent: N14WorkbenchIDPrinter
@@ -623,6 +651,7 @@
     staticRecipes:
     - DogtagNCR
     - DogtagNCRNCO
+    - NCClothingBandageNCR # Corvax-Change
 
 - type: entity
   parent: N14WorkbenchIDPrinter

@@ -1,3 +1,4 @@
+ghost-gui-return-to-round-button = Вернуться в раунд
 ghost-gui-return-to-body-button = Вернуться в тело
 ghost-gui-ghost-warp-button = Телепорт призрака
 ghost-gui-ghost-roles-button = Роли призраков ({ $count })

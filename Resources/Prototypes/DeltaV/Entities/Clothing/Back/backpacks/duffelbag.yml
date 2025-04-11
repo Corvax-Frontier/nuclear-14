@@ -1,7 +1,7 @@
 - type: entity
-  noSpawn: true
   parent: ClothingBackpackDuffelBrigmedic
   id: ClothingBackpackDuffelBrigmedicDeltaVFilled
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:

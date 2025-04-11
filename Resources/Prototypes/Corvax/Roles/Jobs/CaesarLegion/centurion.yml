@@ -29,10 +29,11 @@
           - CaesarLegion
       - type: ReplacementAccent
         accent: latin
- 
+
 - type: startingGear
   id: CaesarLegionCenturionGear
   equipment:
+    bandage: NCClothingBandageLegion
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     neck: ClothingNeckBlackScarf
     eyes: N14ClothingEyesGlassesWelding

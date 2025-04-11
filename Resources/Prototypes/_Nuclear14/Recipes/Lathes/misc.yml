@@ -141,9 +141,9 @@
     Paper: 100
 
 - type: latheRecipe
-  id: N14WeaponSniper50PipeBlueprint
-  result: N14WeaponSniper50PipeBlueprint
-  category: N14Blueprints
-  completetime: 1
+  id: N14JunkComponentScrew
+  result: N14JunkComponentScrew
+  category: N14Parts
+  completetime: 2
   materials:
-    Paper: 100
+    Steel: 50

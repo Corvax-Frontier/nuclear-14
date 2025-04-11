@@ -59,10 +59,10 @@
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
     inHandsOnly: true
-  - type: UserInterface
-    interfaces:
-      - key: enum.AgentIDCardUiKey.Key
-        type: AgentIDCardBoundUserInterface
+#  - type: UserInterface
+#    interfaces:
+#      - key: enum.AgentIDCardUiKey.Key
+#        type: AgentIDCardBoundUserInterface
 
 - type: entity
   parent: [ N14IDPassportBlank, AgentPreset ]

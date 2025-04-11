@@ -5,6 +5,8 @@
   components:
   - type: FollowDistance
     backStrength: 6
+  - type: StaticPrice
+    price: 20
   - type: Craftable
 
 - type: entity
@@ -36,6 +38,8 @@
     fireRate: 3
     soundGunshot:
       collection: N14Revolver9mmGunshot
+  - type: StaticPrice
+    price: 15
 
 - type: entity
   name: 10mm revolver
@@ -57,6 +61,8 @@
     fireRate: 3
     soundGunshot:
       collection: N14Revolver10mmGunshot
+  - type: StaticPrice
+    price: 25
 
 - type: entity
   name: webley revolver
@@ -78,6 +84,9 @@
     fireRate: 3
     soundGunshot:
       collection: N14RevolverMagnunGunshot
+  - type: StaticPrice
+    price: 75
+
 
 - type: entity
   parent: N14WeaponRevolver10mm
@@ -114,6 +123,8 @@
   - type: Gun
     soundGunshot:
       collection: N14RevolverMagnunGunshot
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   name: captain revolver
@@ -136,6 +147,8 @@
         - N14Cartridge44Magnum
         - SpeedLoader44
     proto: N14Cartridge44Magnum
+  - type: StaticPrice
+    price: 75
 
 - type: entity
   name: hunting revolver
@@ -156,6 +169,8 @@
         - N14Cartridge45-70
         - SpeedLoader45-70
     proto: N14Cartridge45-70
+  - type: StaticPrice
+    price: 90
 
 - type: entity
   name: wild whisper
@@ -178,6 +193,8 @@
         - N14Cartridge45-70
         - SpeedLoader45-70
     proto: N14Cartridge45-70
+  - type: StaticPrice
+    price: 90
 
 - type: entity
   name: ranger sequoia
@@ -200,6 +217,8 @@
         - N14Cartridge45-70
         - SpeedLoader45-70
     proto: N14Cartridge45-70
+  - type: StaticPrice
+    price: 90
 
 - type: entity
   name: tribal handgun
@@ -214,14 +233,18 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - N14Cartridge44Magnum
-        - SpeedLoader44
+      - N14Cartridge44Magnum
+      - SpeedLoader44
     proto: N14Cartridge44Magnum
+    chambers: [true, true, true, true]
+    ammoSlots: [null, null, null, null]
     capacity: 4
   - type: Gun
     soundGunshot:
       collection: N14RevolverMagnunGunshot
     fireRate: 1
+  - type: StaticPrice
+    price: 40
 
 - type: entity
   name: tribal revolver
@@ -244,6 +267,8 @@
     soundGunshot:
       collection: N14RevolverMagnunGunshot
     fireRate: 1.5
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   name: tribal revolver
@@ -261,11 +286,15 @@
         - N14Cartridge44Magnum
         - SpeedLoader44
     proto: N14Cartridge44Magnum
+    chambers: [true, true, true, true, true, true, true, true]
+    ammoSlots: [null, null, null, null, null, null, null, null]
     capacity: 8
   - type: Gun
     soundGunshot:
       collection: N14RevolverMagnunGunshot
     fireRate: 2
+  - type: StaticPrice
+    price: 60
 
 - type: entity
   name: handcannon
@@ -288,7 +317,11 @@
         - N14Cartridge45-70
         - SpeedLoader45-70
     proto: N14Cartridge45-70
+    chambers: [true, true, true, true]
+    ammoSlots: [null, null, null, null]
     capacity: 4
+  - type: StaticPrice
+    price: 75
 
 - type: entity
   name: decorated handcannon
@@ -312,3 +345,5 @@
         - SpeedLoader45-70
     proto: N14Cartridge45-70
     capacity: 6
+  - type: StaticPrice
+    price: 80

@@ -344,6 +344,7 @@
   description: An old road exit sign.
   components:
   - type: Sprite
+    snapCardinals: false
     state: exit
 
 - type: entity
@@ -692,6 +693,7 @@
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/world.rsi
+    snapCardinals: false
     state: payphone
   - type: Damageable
     damageContainer: Inorganic
@@ -745,8 +747,8 @@
     maxItemSize: Large
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

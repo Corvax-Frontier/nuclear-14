@@ -1,5 +1,4 @@
 # Legion kits
-
 - type: entity
   id: LegionCenturionloadoutkits
   name: kit
@@ -10,7 +9,6 @@
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - CenturionBestiarySet
     - CenturionVenatorSet
@@ -18,20 +16,19 @@
     key: enum.UndecidedLoadoutBackpackUIKey.Key
   - type: UserInterface
     interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
+      enum.UndecidedLoadoutBackpackUIKey.Key:
         type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
   id: LegionFrumentarialoadoutkits
   name: kit
   description: "please only take one."
-  parent: BaseItem
+  parent: LegionCenturionloadoutkits
   components:
   - type: Sprite
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - FrumentariaSpySet
     - FrumentariaNCRSpySet
@@ -39,103 +36,63 @@
 #    - FrumentariaWashingtonBoSSpySet Refactor remove
     - FrumentariaAgentSecretPoliceSet
     - FrumentariaSaboteurSet
-  - type: ActivatableUI
-    key: enum.UndecidedLoadoutBackpackUIKey.Key
-  - type: UserInterface
-    interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
-        type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
   id: LegionDeanloadoutkits
   name: kit
   description: "please only take one."
-  parent: BaseItem
+  parent: LegionCenturionloadoutkits
   components:
   - type: Sprite
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - DeanGladiatorSet
     - DeanSagitariaSet
     - DeanBerserkerSet
-  - type: ActivatableUI
-    key: enum.UndecidedLoadoutBackpackUIKey.Key
-  - type: UserInterface
-    interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
-        type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
   id: LegionVeteranloadoutkits
   name: kit
   description: "please only take one."
-  parent: BaseItem
+  parent: LegionCenturionloadoutkits
   components:
   - type: Sprite
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - VeteranFirearmSet
     - VeteranBerserkerSet
     - VeteranKebabSet
-  - type: ActivatableUI
-    key: enum.UndecidedLoadoutBackpackUIKey.Key
-  - type: UserInterface
-    interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
-        type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
   id: LegionWarriorloadoutkits
   name: kit
   description: "please only take one."
-  parent: BaseItem
+  parent: LegionCenturionloadoutkits
   components:
-  - type: Sprite
-    sprite: Corvax/Objects/Misc/kits.rsi
-    state: base
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - WarriorBaseSet
     - WarriorSlaveOwnerSet
     - WarriorHealerSet
     - WarriorFirearmSet
     - WarriorMeleeSet
-  - type: ActivatableUI
-    key: enum.UndecidedLoadoutBackpackUIKey.Key
-  - type: UserInterface
-    interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
-        type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
   id: LegionRecruitloadoutkits
   name: kit
   description: "please only take one."
-  parent: BaseItem
+  parent: LegionCenturionloadoutkits
   components:
-  - type: Sprite
-    sprite: Corvax/Objects/Misc/kits.rsi
-    state: base
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - RecruitBaseSet
     - RecruitSpearSet
     - RecruitMeleeSet
     - RecruitHealerSet
-  - type: ActivatableUI
-    key: enum.UndecidedLoadoutBackpackUIKey.Key
-  - type: UserInterface
-    interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
-        type: UndecidedLoadoutBackpackBoundUserInterface
 
 #Washington kits
 
@@ -149,7 +106,6 @@
     sprite: _Nuclear14/Objects/Misc/kits.rsi
     state: rifleman
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - BaseWashingtonBoSSet
     - WattzWashingtonBoSSet
@@ -159,7 +115,7 @@
     key: enum.UndecidedLoadoutBackpackUIKey.Key
   - type: UserInterface
     interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
+      enum.UndecidedLoadoutBackpackUIKey.Key:
         type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
@@ -172,7 +128,6 @@
     sprite: _Nuclear14/Objects/Misc/kits.rsi
     state: rifleman
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - ScribeMedicWashingtonBoSSet
     - ScribeEngineerWashingtonBoSSet
@@ -180,7 +135,7 @@
     key: enum.UndecidedLoadoutBackpackUIKey.Key
   - type: UserInterface
     interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
+      enum.UndecidedLoadoutBackpackUIKey.Key:
         type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
@@ -193,7 +148,6 @@
     sprite: _Nuclear14/Objects/Misc/kits.rsi
     state: rifleman
   - type: UndecidedLoadoutBackpack
-    transformAfterSelect: AlwaysPoweredWallLight
     possibleSets:
     - CommandBaseWashingtonBoSSet
     - CommandMultiWashingtonBoSSet
@@ -204,7 +158,7 @@
     key: enum.UndecidedLoadoutBackpackUIKey.Key
   - type: UserInterface
     interfaces:
-      - key: enum.UndecidedLoadoutBackpackUIKey.Key
+      enum.UndecidedLoadoutBackpackUIKey.Key:
         type: UndecidedLoadoutBackpackBoundUserInterface
 
 ### Sets

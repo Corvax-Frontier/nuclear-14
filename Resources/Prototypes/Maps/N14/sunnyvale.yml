@@ -1,8 +1,7 @@
 - type: gameMap
   id: Sunnyvale
   mapName: 'Саннивейл'
- # mapPath: /Maps/N14/SunnyvaleSurface.yml
-  mapPath: /Maps/N14/SunnyvaleSurfaceCorvax.yml # Corvax-Maps
+  mapPath: /Maps/N14/SunnyvaleSurface.yml
   minPlayers: 0
   stations:
     Sunnyvale:

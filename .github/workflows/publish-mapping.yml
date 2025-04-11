@@ -17,7 +17,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3.2.0
       with:
-        dotnet-version: 8.0.100
+        dotnet-version: 9.0.x
 
     - name: Get Engine Tag
       run: |
@@ -37,7 +37,7 @@ jobs:
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
     - name: Publish version
-      run: Tools/publish_multi_request.py
+      run: Tools/publish_multi_request_mapping.py
       env:
-        PUBLISH_TOKEN: ${{ secrets.PUBLISH_MAPPING_TOKEN }}
-        FORK_ID: ${{ vars.FORK_ID_MAPPING }}
+        PUBLISH_MAPPING_TOKEN: ${{ secrets.PUBLISH_MAPPING_TOKEN }}
+        FORK_ID_MAPPING: ${{ vars.FORK_ID_MAPPING }}

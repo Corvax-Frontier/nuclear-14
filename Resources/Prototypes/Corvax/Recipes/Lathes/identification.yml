@@ -1,0 +1,31 @@
+- type: latheRecipe
+  id: IDLegionaryBadge
+  result: N14IDLegionaryBadge
+  category: N14Identification
+  completetime: 5
+  materials:
+    Plastic: 100
+
+- type: latheRecipe
+  id: IDLegionaryMedalSilver
+  result: N14IDLegionaryMedalSilver
+  category: N14Identification
+  completetime: 5
+  materials:
+    N14Silver: 200
+
+- type: latheRecipe
+  id: IDLegionaryMedalSilver2
+  result: N14IDLegionaryMedalSilver2
+  category: N14Identification
+  completetime: 5
+  materials:
+    N14Silver: 200
+
+- type: latheRecipe
+  id: IDLegionaryMedalSilver3
+  result: N14IDLegionaryMedalSilver3
+  category: N14Identification
+  completetime: 5
+  materials:
+    N14Silver: 200

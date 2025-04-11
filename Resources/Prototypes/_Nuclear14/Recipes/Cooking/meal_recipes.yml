@@ -380,16 +380,16 @@
 
 #Slices Only
 
-- type: microwaveMealRecipe
-  id: N14RecipeBaguette
-  name: baguette recipe
-  result: N14CookedFoodBreadBaguette
-  time: 15
-  reagents:
-    TableSalt: 5
-    Blackpepper: 5
-  solids:
-    N14FoodDough: 1
+#- type: microwaveMealRecipe
+#  id: N14RecipeBaguette
+#  name: baguette recipe
+#  result: N14CookedFoodBreadBaguette
+#  time: 15
+#  reagents:
+#    TableSalt: 5
+#    Blackpepper: 5
+#  solids:
+#    N14FoodDough: 1
 
 - type: microwaveMealRecipe
   id: N14RecipeButteredToast
@@ -484,16 +484,6 @@
     N14FloraProduceWildCarrot: 1 #N14 change
     N14FloraProduceWildMaize: 1 #N14 change
     N14FloraProduceWildTato: 1 #N14 change
-
-- type: microwaveMealRecipe
-  id: N14RecipeHawaiianPizza
-  name: Hawaiian pizza recipe
-  result: N14CookedFoodPizzaPineapple
-  time: 30
-  solids:
-    FoodDoughFlat: 1
-    N14FoodMeatRadchicken: 3 #N14 change
-    N14FoodPineappleSlice: 5 #good fucking luck canada this placeholder is never getting added
 
 #Italian
 - type: microwaveMealRecipe
@@ -996,15 +986,6 @@
     N14FloraProduceWildCarrot: 3 #N14 change
 
 - type: microwaveMealRecipe
-  id: N14RecipeLemonCake
-  name: lemon cake recipe
-  result: N14CookedFoodCakeLemon
-  time: 5
-  solids:
-    N14CookedFoodCakePlain: 1
-    N14FoodLemon: 3
-
-- type: microwaveMealRecipe
   id: N14RecipeTarberryCake
   name: tarberry cake recipe #N14 change
   result: N14CookedFoodCakeTarberry
@@ -1289,14 +1270,14 @@
     N14FoodCheeseSlice: 1
     N14FoodMeatRadCutlet: 1 #N14 change
 
-- type: microwaveMealRecipe
-  id: N14RecipeFoodBakedChevreChaud
-  name: chevre chaud recipe
-  result: N14CookedFoodBakedChevreChaud
-  time: 5
-  solids:
-    N14FoodChevreSlice: 1
-    N14CookedFoodBreadBaguetteSlice: 1
+#- type: microwaveMealRecipe
+#  id: N14RecipeFoodBakedChevreChaud
+#  name: chevre chaud recipe
+#  result: N14CookedFoodBakedChevreChaud
+#  time: 5
+#  solids:
+#    N14FoodChevreSlice: 1
+#    N14CookedFoodBreadBaguetteSlice: 1
 
 - type: microwaveMealRecipe
   id: N14RecipeCannabisButter

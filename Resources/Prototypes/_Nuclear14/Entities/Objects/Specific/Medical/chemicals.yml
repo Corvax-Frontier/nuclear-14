@@ -587,7 +587,6 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
-        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
@@ -740,7 +739,6 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
-        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
@@ -780,7 +778,7 @@
   components:
   - type: Stack
     stackType: N14AloeSalve
-    count: 10
+    count: 3
     baseLayer: base
     layerStates:
     - aloe1

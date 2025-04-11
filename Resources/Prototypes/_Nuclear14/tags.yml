@@ -27,6 +27,9 @@
   id: Jam
 
 - type: Tag
+  id: Magazine
+
+- type: Tag
   id: Pickled
 
 - type: Tag
@@ -148,6 +151,12 @@
   id: Transistor2
 
 - type: Tag
+  id: PoliceVest
+
+- type: Tag
+  id: FollowerLabcoat
+
+- type: Tag
   id: N14Welder
 
 #MARK: Guns types.
@@ -218,6 +227,9 @@
   id: N14Cartridge308Rifle
 
 #MARK: Ammo tags(Magazines).
+- type: Tag
+  id: N14MagazinePistol44
+
 - type: Tag
   id: N14MagazinePistol22lr
 
@@ -292,6 +304,9 @@
 
 - type: Tag
   id:  SpeedLoader
+
+- type: Tag
+  id: Magazine308M60Box
 
 #MARK: Ammo tags(Battery).
 

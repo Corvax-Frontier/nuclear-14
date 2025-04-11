@@ -43,7 +43,6 @@ public sealed class DiscordAuthManager : IPostInjectInit
         _configuration.OnValueChanged(CCCVars.DiscordApiUrl, (value) => _apiUrl = value, true);
         _configuration.OnValueChanged(CCCVars.ApiKey, (value) => _apiKey = value, true);
         _sawmill = Logger.GetSawmill("discord_auth");
-        _net.RegisterNetMessage<MsgDiscordAuthRequired>();
         _net.RegisterNetMessage<MsgDiscordAuthCheck>(OnAuthCheck);
         _net.Disconnect += OnDisconnect;
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;

@@ -18,4 +18,5 @@ ent-MarkerRadiation10 = Маркер Радиации
     .suffix = Интенсивность 10
 ent-MarkerBlocker = Невидимая стена
 ent-N14SlowdownTile = Маркер Замедления
+    .desc = Зона замедления.
     .suffix = Замедляющий пол

@@ -15,6 +15,11 @@
         Slash: 0.7
         Piercing: 0.7
         Heat: 0.7
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - Hair
+    - FacialHair
 
 - type: entity
   parent: ClothingHeadBase
@@ -33,6 +38,11 @@
         Slash: 0.7
         Piercing: 0.8
         Heat: 0.8
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - Hair
+    - FacialHair
 
 - type: entity
   parent: ClothingHeadBase
@@ -51,6 +61,9 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -69,6 +82,9 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -87,6 +103,9 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadEVAHelmetBase

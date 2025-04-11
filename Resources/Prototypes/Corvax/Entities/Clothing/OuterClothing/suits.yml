@@ -8,9 +8,9 @@
     sprite: Corvax/Clothing/OuterClothing/Suits/chinastealth.rsi
   - type: Clothing
     sprite: Corvax/Clothing/OuterClothing/Suits/chinastealth.rsi
-  - type: StealthClothing
-    visibility: 1.1
-    toggleAction: ActionTogglePhaseCloak
+#  - type: StealthClothing
+#    visibility: 1.1
+#    toggleAction: ActionTogglePhaseCloak
   - type: TemperatureProtection
     coefficient: 0.01
   - type: Armor

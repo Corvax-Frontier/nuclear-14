@@ -3,6 +3,8 @@
   id: N14WeaponRifleBase
   abstract: true
   components:
+  - type: Item
+    size: Large
   - type: Clothing
     quickEquip: false
     slots:
@@ -23,6 +25,8 @@
   - type: Appearance
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 100
   - type: Craftable
 
 - type: entity
@@ -69,6 +73,8 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: chinese assault rifle
@@ -115,6 +121,8 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 125
 
 - type: entity
   name: assault carbine
@@ -164,6 +172,8 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: marksman carbine
@@ -213,6 +223,8 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 125
 
 - type: entity
   name: service rifle
@@ -236,6 +248,57 @@
   - type: Gun
     minAngle: 21
     maxAngle: 45
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 5
+    soundGunshot:
+      collection: N14ServiceGunshot
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine556Rifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine556Rifle
+      gun_chamber:
+        name: Chamber
+        startingItem: N14Cartridge556Rifle
+        priority: 1
+        whitelist:
+          tags:
+            - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  name: scoped service rifle
+  parent: N14WeaponRifleBase
+  id: N14WeaponRifle556ServiceScoped
+  description: A cheaply mass-produced post-war rifle made by the NCR, chambered in 5.56 ammo. This one features an optic mounted on the carry handle.
+  components:
+  - type: Clothing
+    sprite: _Nuclear14/Objects/Weapons/Guns/Rifles/scopedservicerifle.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Weapons/Guns/Rifles/scopedservicerifle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 24
+    maxAngle: 105
     angleIncrease: 4
     angleDecay: 16
     fireRate: 5
@@ -313,6 +376,8 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   name: battle rifle
@@ -369,6 +434,8 @@
             - N14Cartridge308Rifle
   - type: FollowDistance
     backStrength: 3
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   name: old carbine
@@ -418,6 +485,8 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: C70 rifle
@@ -467,6 +536,8 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: EM2 rifle
@@ -517,6 +588,8 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   name: FAL rifle
@@ -566,12 +639,14 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: M14 rifle
   parent: N14WeaponRifleBase
   id: N14WeaponRifle762M14
-  description: A pre-war battle rifle chambered in 7.62mm, build to remplace the old M1 garand of the US military, it didnt last for long and got remplaced by the R-91 after a few years of service.
+  description: A pre-war battle rifle chambered in 7.62mm, build to replace the old M1 garand of the US military, it didnt last for long and got remplaced by the R-91 after a few years of service.
   components:
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Rifles/m14.rsi
@@ -615,6 +690,8 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: F2 marksman rifle
@@ -667,6 +744,8 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: chinese marksman rifle
@@ -719,6 +798,8 @@
         whitelist:
           tags:
             - N14Cartridge308Rifle
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: SKS chinese carbine
@@ -768,6 +849,8 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: StaticPrice
+    price: 175
 
 - type: entity
   name: pipe assault rifle
@@ -817,6 +900,8 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 20
 
 - type: entity
   name: tribal rifle
@@ -848,6 +933,8 @@
     proto: N14Cartridge556Rifle
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   name: tribal assault rifle
@@ -879,12 +966,14 @@
     proto: N14Cartridge556Rifle
   - type: FollowDistance
     backStrength: 5
+  - type: StaticPrice
+    price: 75
 
 - type: entity
   name: butchered service rifle
   parent: N14WeaponRifleBase
   id: N14WeaponRifle556Butchered
-  description: A cheaply mass-produced post-war rifle made by the NCR, this one has been torture horribly and converted into a "carbine", chambered in 5.56 ammo.
+  description: A cheaply mass-produced post-war rifle made by the NCR, this one has been tortured horribly and converted into a "carbine", chambered in 5.56 ammo.
   components:
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Rifles/butcheredrifle.rsi
@@ -900,16 +989,19 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    minAngle: 20
-    maxAngle: 49
-    angleIncrease: 4
+    minAngle: 26
+    maxAngle: 50
+    angleIncrease: 6
     angleDecay: 16
     fireRate: 4
     soundGunshot:
       collection: N14ServiceGunshot
-    selectedMode: SemiAuto
+    selectedMode: FullAuto
     availableModes:
-    - SemiAuto
+    - FullAuto
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -40
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -928,3 +1020,5 @@
         whitelist:
           tags:
             - N14Cartridge556Rifle
+  - type: StaticPrice
+    price: 75

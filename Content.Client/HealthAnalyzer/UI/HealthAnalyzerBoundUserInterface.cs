@@ -1,6 +1,6 @@
 ﻿using Content.Shared.MedicalScanner;
+using Content.Shared._Shitmed.Targeting;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 
 namespace Content.Client.HealthAnalyzer.UI
 {
@@ -22,6 +22,7 @@ namespace Content.Client.HealthAnalyzer.UI
                 Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName,
             };
             _window.OnClose += Close;
+            _window.OnBodyPartSelected += SendBodyPartMessage;
             _window.OpenCentered();
         }
 
@@ -36,6 +37,8 @@ namespace Content.Client.HealthAnalyzer.UI
             _window.Populate(cast);
         }
 
+        private void SendBodyPartMessage(TargetBodyPart? part, EntityUid target) => SendMessage(new HealthAnalyzerPartMessage(EntMan.GetNetEntity(target), part ?? null));
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -43,7 +46,10 @@ namespace Content.Client.HealthAnalyzer.UI
                 return;
 
             if (_window != null)
+            {
                 _window.OnClose -= Close;
+                _window.OnBodyPartSelected -= SendBodyPartMessage;
+            }
 
             _window?.Dispose();
         }

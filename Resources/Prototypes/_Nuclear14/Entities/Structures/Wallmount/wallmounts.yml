@@ -8,7 +8,6 @@
   id: N14WallmountVent
   name: vent
   description: An airvent. Could be a good stash.
-  suffix: Mapping
   components:
   - type: WallMount
     arc: 360
@@ -17,13 +16,9 @@
     snapCardinals: true
     sprite: _Nuclear14/Structures/Storage/storage.rsi
     state: vent
-  - type: SecretStash
-    secretPartName: secret-stash-part-vent
-    maxItemSize: Normal
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
-  - type: PottedPlantHide # N14TODO: This needs changed to be generic stash hide?
 
 - type: entity
   parent: N14WallmountVent

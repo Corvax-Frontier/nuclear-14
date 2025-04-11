@@ -7,6 +7,5 @@ loadout-description-LoadoutCommandCapOuterWinter = Теплое пальто д�
 loadout-description-LoadoutCommandCapGloves = Великолепные перчатки капитана.
 loadout-description-LoadoutCommandCapHat = Превосходная шляпа капитана.
 loadout-description-LoadoutCommandCapHatCapcap = Кепка капитана — стильный аксессуар.
-loadout-description-LoadoutCommandCapHat = Берет капитана — символ утонченного вкуса.
 loadout-description-LoadoutCommandCapMaskGas = Зачем капитану такая маска? Но выглядит это очень круто.
 loadout-description-LoadoutCommandCapItemDrinkFlask = Лучшая фляга для самых изысканных напитков.

@@ -9,3 +9,7 @@ metabolizer-type-plant = Plant
 metabolizer-type-dwarf = Dwarf
 metabolizer-type-moth = Moth
 metabolizer-type-arachnid = Arachnid
+metabolizer-type-vampiric = Vampiric
+metabolizer-type-liquorlifeline = Liquor Lifeline
+metabolizer-type-shadowkin = Shadowkin
+metabolizer-type-plasmaman = Plasmaman

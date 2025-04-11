@@ -49,10 +49,8 @@ ent-KitRecruitHealer = набор легионера-рекрута лекаря
     .desc = { ent-KitCenturionBestiary.desc }
 
 # Washington Bos
-ent-KitBaseWashingtonBoS = стандартный набор Вашингтонского Братства Стали
-    .desc = Набор снаряжения Вашингтонского Братства Стали
 ent-KitBaseWashingtonBoS = плазменный набор Вашингтонского Братства Стали
-    .desc = { ent-KitBaseWashingtonBoS.desc }
+    .desc = Набор снаряжения Вашингтонского Братства Стали
 ent-KitWattzWashingtonBoS = плазменный набор Вашингтонского Братства Стали
     .desc = { ent-KitBaseWashingtonBoS.desc }
 ent-KitAutoWashingtonBoS = автоматический набор Вашингтонского Братства Стали

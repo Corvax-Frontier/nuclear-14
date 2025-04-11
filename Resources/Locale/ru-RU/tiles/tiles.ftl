@@ -60,7 +60,6 @@ tiles-brass-floor-reebe = гладкое латунное покрытие
 tiles-mime-floor = мимский пол
 tiles-kitchen-floor = кухонный пол
 tiles-laundry-floor = пол прачечной
-tiles-concrete-tile = бетонный пол
 tiles-concrete-slab = бетонная плита
 tiles-concrete-smooth = гладкий бетонный пол
 tiles-gray-concrete-tile = серый бетонный пол

@@ -1,0 +1,15 @@
+surgery-verb-text = Начать операцию
+surgery-verb-message = Начать хирургическое вмешательство на этой цели.
+surgery-ui-window-title = Хирургия
+surgery-ui-window-require = Требуется
+surgery-ui-window-parts = < Части тела
+surgery-ui-window-surgeries = < Операции
+surgery-ui-window-steps = < Этапы
+surgery-ui-window-steps-error-skills = У вас нет хирургических навыков.
+surgery-ui-window-steps-error-table = Для этого требуется операционный стол.
+surgery-ui-window-steps-error-armor = Необходимо снять броню!
+surgery-ui-window-steps-error-tools = Не хватает инструментов.
+surgery-error-laying = Цель должна лежать!
+surgery-error-self-surgery = Вы не можете оперировать себя!
+surgery-error-cannot-operate = Вы не можете оперировать этого персонажа!
+surgery-part-damage-evaded = {$user} едва увернулся!

@@ -1,0 +1,9 @@
+ui-tab-atmos-set-temperature-title = Температура
+ui-tab-atmos-add-atmos = Добавить атмосферу
+ui-tab-atmos-add-gas = Добавить газ
+ui-tab-atmos-fill-gas = Заполнить газом
+ui-tab-atmos-grid = Грид
+ui-tab-atmos-tileX = Плитка X
+ui-tab-atmos-tileY = Плитка Y
+ui-tab-atmos-temperature = Температура
+ui-tab-atmos-button = Применить

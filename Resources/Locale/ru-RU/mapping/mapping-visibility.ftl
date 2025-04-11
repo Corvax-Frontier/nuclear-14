@@ -1,0 +1,13 @@
+mapping-visibility-window-title = Видимость
+mapping-visibility-light = Освещение
+mapping-visibility-fov = FOV
+mapping-visibility-shadows = Тени
+mapping-visibility-entities = Объекты
+mapping-visibility-markers = Маркеры
+mapping-visibility-walls = Стены
+mapping-visibility-airlocks = Шлюзы
+mapping-visibility-decals = Декали
+mapping-visibility-subfloor = Подполье
+mapping-visibility-cables = Кабели
+mapping-visibility-disposal = Утилизация
+mapping-visibility-atmos = Атмос

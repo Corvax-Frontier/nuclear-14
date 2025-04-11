@@ -5,6 +5,10 @@ namespace Content.Server.Speech.EntitySystems;
 
 public sealed class SouthernAccentSystem : EntitySystem
 {
+    private static readonly Regex RegexIng = new(@"ing\b");
+    private static readonly Regex RegexAnd = new(@"\band\b");
+    private static readonly Regex RegexDve = new("d've");
+
     // Регулярные выражения для замены слов с учетом регистра
     private static readonly Regex RegexGood = new(@"(?<!\w)(хорошо)(?!\w)", RegexOptions.IgnoreCase);
     private static readonly Regex RegexThank = new(@"(?<!\w)(спасибо)(?!\w)", RegexOptions.IgnoreCase);
@@ -37,6 +41,10 @@ public sealed class SouthernAccentSystem : EntitySystem
         // Apply replacement rules
         message = _replacement.ApplyReplacements(message, "southern");
 
+        //They shoulda started runnin' an' hidin' from me!
+        message = RegexIng.Replace(message, "in'");
+        message = RegexAnd.Replace(message, "an'");
+        message = RegexDve.Replace(message, "da");
         // Apply specific word replacements with case preservation
         message = RegexGood.Replace(message, match => PreserveCase(match.Value, "хао"));
         message = RegexThank.Replace(message, match => PreserveCase(match.Value, "сесе"));

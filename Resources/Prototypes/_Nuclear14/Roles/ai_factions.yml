@@ -4,6 +4,7 @@
   - WastelandInsect
   - WastelandAnimal
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
 
@@ -13,6 +14,7 @@
   - WastelandInsect
   - WastelandAnimal
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
 
@@ -41,6 +43,7 @@
   - WastelandInsect
   - WastelandAnimal
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
   - HostileRobot
@@ -95,10 +98,10 @@
 - type: npcFaction
   id: NCR
   hostile:
-  - Zetan
   - WastelandInsect
   - WastelandAnimal
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
 
@@ -135,14 +138,20 @@
 - type: npcFaction
   id: Townsfolk
   hostile:
+  - WastelandAnimal
+  - WastelandInsect
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
 
 - type: npcFaction
   id: Tribal
   hostile:
+  - WastelandAnimal
+  - WastelandInsect
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
 
@@ -153,6 +162,7 @@
   - WastelandAnimal
   - WastelandInsect
   - Raider
+  - HostileRobot
   - Feral
   - CaesarLegion #Corvax-Legion
 

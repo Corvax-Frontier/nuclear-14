@@ -28,6 +28,7 @@
   - type: Transform
   - type: Physics
     bodyType: Static
+    canCollide: false
   - type: Clickable
 # No fixture on this base, inherit from further down for fixture
 
@@ -338,6 +339,7 @@
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/world.rsi
+    snapCardinals: false
 
 - type: entity
   parent: N14DecorFloorWorldBase
@@ -383,6 +385,7 @@
   suffix: 6 states
   components:
   - type: Sprite
+    snapCardinals: false
     state: woodscrap
 
 - type: entity

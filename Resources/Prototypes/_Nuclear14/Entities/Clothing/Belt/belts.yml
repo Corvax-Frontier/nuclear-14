@@ -168,7 +168,7 @@
   - type: Storage
     whitelist:
       tags:
-        - Revolver
+        - Sidearm
         - SpeedLoader
       components:
         - BallisticAmmoProvider
@@ -189,6 +189,7 @@
   id: ClothingBeltEnclave
   name: Enclave belt
   description: A leather belt designed by the Enclave.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Nuclear14/Clothing/Belt/enclavebelt.rsi

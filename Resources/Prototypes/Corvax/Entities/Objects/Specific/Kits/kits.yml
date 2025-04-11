@@ -180,9 +180,9 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14ClothingUniformNCRSnow
-      - id: N14ClothingHeadHatNCRHelmetMetalSnow
-      - id: N14ClothingOuterNCRVestSnow
+      - id: N14ClothingUniformNCRDesert
+      - id: N14ClothingHeadHatNCRHelmetMetalDesert
+      - id: N14ClothingOuterNCRVestDesert
       - id: N14ClothingBootsLeather
       - id: N14ClothingBackpackNCR
       - id: N14IDNCRDogtagAgent
