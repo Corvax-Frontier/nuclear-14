@@ -29,6 +29,10 @@ chat-emote-name-monkeyscreeches = Обезьяньи крики
 chat-emote-name-robotbeep = Робот
 chat-emote-name-yawn = Зевать
 chat-emote-name-snore = Храпеть
+chat-emote-name-flip = Сделать сальто
+chat-emote-name-spin = Крутится
+chat-emote-name-jump = Прыгать
+
 # Сообщение
 chat-emote-msg-scream = кричит!
 chat-emote-msg-laugh = смеётся
@@ -59,3 +63,6 @@ chat-emote-msg-cathisses = шипит
 chat-emote-msg-monkeyscreeches = кричит
 chat-emote-msg-yawn = зевает
 chat-emote-msg-snore = храпит
+chat-emote-msg-flip = делает сальто!
+chat-emote-msg-spin = крутится
+chat-emote-msg-jump = прыгает
