@@ -226,7 +226,7 @@
 - type: trait
   id: N14UnnaturalReg
   category: Physical
-  points: -7
+  points: -5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -244,8 +244,8 @@
           damageCap: 200
           damage:
             groups:
-              Brute: -0.02 # Corvax-Change
-              Burn: -0.02 # Corvax-Change
+              Brute: -0.035 # Corvax-Change
+              Burn: -0.035 # Corvax-Change
               Airloss: -0.035
               Toxin: -0.015 # Corvax-Change
 
