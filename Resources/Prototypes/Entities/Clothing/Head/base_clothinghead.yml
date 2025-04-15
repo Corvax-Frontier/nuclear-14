@@ -140,11 +140,41 @@
     - HelmetEVA
     - PlasmamanSafe
   - type: IdentityBlocker
-  - type: HideLayerClothing # Corvax-Change
-    force: true
+  - type: HideLayerClothing
     slots:
     - Hair
-    - FacialHair
+    - Snout
+
+- type: entity
+  abstract: true
+  parent: ClothingHeadBase
+  id: ClothingHeadEVAHelmetNoIngestionBlocker
+  name: base space helmet
+  components:
+  - type: Item
+    size: Normal
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.2
+  - type: IgniteFromGasImmunity
+    parts:
+    - Head
+  - type: Clothing
+    #Copies ClothingHeadHardsuitBase behavior
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HelmetEVA
+    - PlasmamanSafe
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
 
 - type: entity
   abstract: true
@@ -188,11 +218,17 @@
     - WhitelistChameleon
     - PlasmamanSafe
   - type: IdentityBlocker
-  - type: HideLayerClothing # Corvax-Change
-    force: true
+  - type: HideLayerClothing
     slots:
     - Hair
-    - FacialHair
+    - Snout
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.01
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
 
 - type: entity
   abstract: true
@@ -217,6 +253,7 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
+      - state: on-equipped-HELMET
   - type: IgniteFromGasImmunity
     parts:
     - Head

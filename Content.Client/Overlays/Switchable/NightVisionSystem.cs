@@ -1,4 +1,3 @@
-using System.Reflection.Metadata;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays.Switchable;
@@ -57,7 +56,7 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
         NightVisionComponent? nvComp = null;
         foreach (var comp in args.Components)
         {
-            if (!comp.IsActive && (comp.PulseTime <= 0 || _timing.CurTime < comp.PulseEndTime))
+            if (!comp.IsActive && (comp.PulseTime <= 0 || comp.PulseAccumulator >= comp.PulseTime))
                 continue;
 
             if (nvComp == null)

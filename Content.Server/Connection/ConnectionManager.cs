@@ -283,7 +283,7 @@ namespace Content.Server.Connection
             }
 
             // DeltaV - Replace existing softwhitelist implementation
-            if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)//if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)
+            if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)// Corvax-Change
             {
                 if (_whitelists is null)
                 {

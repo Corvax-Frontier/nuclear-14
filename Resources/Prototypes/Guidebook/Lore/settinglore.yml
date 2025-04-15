@@ -21,7 +21,6 @@
     - HephaestusIndustries
     - ZavodskoiInterstellar
     - PrivateMilitaryContractingGroup
-
 - type: guideEntry
   id: IdrisIncorporated
   name: guide-entry-idris-incorporated
@@ -74,4 +73,32 @@
   id: PrivateMilitaryContractingGroup
   name: guide-entry-private-military-contracting-group
   text: "/ServerInfo/Guidebook/Lore/Corporations/PrivateMilitaryContractingGroup.xml"
+  hideInMenu: true
+# Minor Corporations/Subsidiaries
+
+- type: guideEntry
+  id: Nations
+  name: guide-entry-nations
+  text: "/ServerInfo/Guidebook/Lore/Nations/Nations.xml"
+  children:
+    # Major Nations
+    - SolAlliance
+    - TCFL
+    #- BieselRepublic
+    #- CoalitionOfColonies
+    #- AdhomaiFactions
+    #- MoghesFactions
+    # Minor Nations
+  hideInMenu: true
+
+- type: guideEntry
+  id: SolAlliance
+  name: guide-entry-sol-alliance
+  text: "/ServerInfo/Guidebook/Lore/Nations/SolAlliance.xml"
+  hideInMenu: true
+
+- type: guideEntry
+  id: TCFL
+  name: guide-entry-tcfl
+  text: "/ServerInfo/Guidebook/Lore/Nations/TCFL.xml"
   hideInMenu: true

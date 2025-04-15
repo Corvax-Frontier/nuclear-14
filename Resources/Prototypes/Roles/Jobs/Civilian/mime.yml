@@ -16,6 +16,11 @@
     - type: MimePowers
     - type: FrenchAccent
   setPreference: false
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: MimeGear

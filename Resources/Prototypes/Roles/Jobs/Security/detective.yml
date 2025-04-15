@@ -7,15 +7,19 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Security
     min: 36000 # DeltaV - 10 hours
-  # - !type:CharacterTraitRequirement
-    # inverted: true
-    # traits:
-      # - Foreigner
-      # - ForeignerLight
-      # - Muted
-      # - Blindness
-      # - Pacifist
-      # - BrittleBoneDisease
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+      - Foreigner
+      - ForeignerLight
+      - Muted
+      - Blindness
+      - Pacifist
+      - BrittleBoneDisease
+  - !type:CharacterEmployerRequirement
+    inverted: true
+    employers:
+    - Unemployed
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
@@ -36,7 +40,6 @@
     charges: 6
   - !type:ModifyEnvirohelmSpecial
     powerCell: PowerCellHigh
-  setPreference: false
 
 - type: startingGear
   id: DetectiveGear
@@ -51,7 +54,7 @@
     head: ClothingHeadHatFedoraBrown
     outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltHolsterFilled
   innerClothingSkirt: ClothingUniformJumpskirtDetective
   satchel: ClothingBackpackSatchelSecurity

@@ -23,7 +23,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   hide: false
-  
+
 - type: construction
   name: bonfire
   id: N14Bonfire

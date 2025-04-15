@@ -78,7 +78,7 @@
   components:
   - type: Store
     balance:
-      Telecrystal: 20
+      Telecrystal: 100
 
 - type: entity
   parent: BaseUplinkRadio
@@ -87,7 +87,7 @@
   components:
   - type: Store
     balance:
-      Telecrystal: 25
+      Telecrystal: 125
 
 #this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
 - type: entity
@@ -97,7 +97,19 @@
   components:
   - type: Store
     balance:
-      Telecrystal: 40
+      Telecrystal: 250 # 5x TC, +cost of a tacsuit they no longer spawn with.
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio60TC
+  suffix: 60 TC, LoneOps
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 350 # 5x TC, +cost of a tacsuit they no longer spawn with.
   - type: Tag
     tags:
     - NukeOpsUplink

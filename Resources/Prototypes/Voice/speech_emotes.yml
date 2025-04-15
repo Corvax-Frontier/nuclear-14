@@ -164,7 +164,7 @@
   category: Vocal
   icon: Interface/Emotes/squish.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -186,7 +186,7 @@
   category: Vocal
   icon: Interface/Emotes/chitter.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -211,7 +211,7 @@
   category: Vocal
   icon: Interface/Emotes/squeak.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -236,7 +236,7 @@
   category: Vocal
   icon: Interface/Emotes/click.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -412,6 +412,23 @@
   - sdeathgasp
 
 - type: emote
+  id: MonkeyDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp-monkey"]
+
+- type: emote
+  id: SiliconDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  whitelist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-deathgasp-silicon"]
+  chatTriggers:
+  - sdeathgasp
+
+- type: emote
   id: Buzz
   name: chat-emote-name-buzz
   category: Vocal
@@ -450,8 +467,10 @@
   category: Vocal
   icon: Interface/Emotes/chirp.png
   whitelist:
+    requireAll: false
     components:
     - Nymph
+    tags:
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:

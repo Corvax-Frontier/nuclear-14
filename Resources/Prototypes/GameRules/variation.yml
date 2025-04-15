@@ -10,47 +10,47 @@
 
 # Actual rules
 
-# - type: entity
-  # id: BasicPoweredLightVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: PoweredLightVariationPass
+- type: entity
+  id: BasicPoweredLightVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PoweredLightVariationPass
 
-# - type: entity
-  # id: SolidWallRustingVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: WallReplaceVariationPass
-  # - type: EntityReplaceVariationPass
-    # entitiesPerReplacementAverage: 10
-    # entitiesPerReplacementStdDev: 2
-    # replacements:
-    # - id: WallSolidRust
+- type: entity
+  id: SolidWallRustingVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WallReplaceVariationPass
+  - type: EntityReplaceVariationPass
+    entitiesPerReplacementAverage: 50
+    entitiesPerReplacementStdDev: 10
+    replacements:
+    - id: WallSolidRust
 
-# - type: entity
-  # id: ReinforcedWallRustingVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: ReinforcedWallReplaceVariationPass
-  # - type: EntityReplaceVariationPass
-    # entitiesPerReplacementAverage: 12
-    # entitiesPerReplacementStdDev: 2
-    # replacements:
-    # - id: WallReinforcedRust
+- type: entity
+  id: ReinforcedWallRustingVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ReinforcedWallReplaceVariationPass
+  - type: EntityReplaceVariationPass
+    entitiesPerReplacementAverage: 50
+    entitiesPerReplacementStdDev: 10
+    replacements:
+    - id: WallReinforcedRust
 
-# - type: entity
-  # id: BasicTrashVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: EntitySpawnVariationPass
-    # tilesPerEntityAverage: 35
-    # tilesPerEntityStdDev: 4
-    # entities:
-    # - id: RandomSpawner
+- type: entity
+  id: BasicTrashVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntitySpawnVariationPass
+    tilesPerEntityAverage: 35
+    tilesPerEntityStdDev: 4
+    entities:
+    - id: RandomSpawner
 
 # - type: weightedRandomFillSolution
   # id: RandomFillTrashPuddle
@@ -102,32 +102,32 @@
     # reagents:
     # - Blood
 
-# - type: entity
-  # id: BasicPuddleMessVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: PuddleMessVariationPass
-    # randomPuddleSolutionFill: RandomFillTrashPuddle
+- type: entity
+  id: BasicPuddleMessVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PuddleMessVariationPass
+    randomPuddleSolutionFill: RandomFillTrashPuddle
 
-# - type: entity
-  # id: BloodbathPuddleMessVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: PuddleMessVariationPass
-    # tilesPerSpillAverage: 150
-    # tilesPerSpillStdDev: 10
-    # randomPuddleSolutionFill: RandomFillTrashPuddleBloodbath
+- type: entity
+  id: BloodbathPuddleMessVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PuddleMessVariationPass
+    tilesPerSpillAverage: 150
+    tilesPerSpillStdDev: 10
+    randomPuddleSolutionFill: RandomFillTrashPuddleBloodbath
 
-# - type: entity
-  # id: CutWireVariationPass
-  # parent: BaseVariationPass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: CutWireVariationPass
-    # wireCutChance: 0.01
-    # maxWiresCut: 20
-    # blacklist:
-      # components:
-      # - ParticleAcceleratorControlBox
+- type: entity
+  id: CutWireVariationPass
+  parent: BaseVariationPass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CutWireVariationPass
+    wireCutChance: 0.01
+    maxWiresCut: 20
+    blacklist:
+      components:
+      - ParticleAcceleratorControlBox

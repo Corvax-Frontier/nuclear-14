@@ -27,6 +27,11 @@
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
   setPreference: false
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: ClownGear

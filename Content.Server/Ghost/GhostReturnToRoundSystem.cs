@@ -52,6 +52,7 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
     private void TryGhostReturnToRound(EntityUid uid, INetChannel connectedClient, NetUserId userId, out string message, out string wrappedMessage)
     {
         var maxPlayers = _cfg.GetCVar(CCVars.GhostRespawnMaxPlayers);
+
         if (_cfg.GetCVar(CCVars.GhostRespawnEnabled)) // Corvax-Change-Start
         {
             if (_playerManager.PlayerCount >= maxPlayers)

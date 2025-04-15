@@ -10,7 +10,7 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Rock
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14BaseWallTallMetalWeak
@@ -19,7 +19,7 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: PerforatedMetallic
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14BaseWallTallMetal
@@ -28,7 +28,7 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14BaseWallTallMetalStrong
@@ -39,7 +39,7 @@
     damageModifierSet: StructuralMetallicStrong
   - type: RadiationBlocker
     resistance: 10
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14BaseWallTallWood
@@ -76,7 +76,7 @@
   - type: IconSmooth
     key: walls
     base: tallbrick
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallBrickAltTall
@@ -90,7 +90,7 @@
   - type: IconSmooth
     key: walls
     base: tallbrickalt
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallBrickGrayTall
@@ -104,7 +104,7 @@
   - type: IconSmooth
     key: walls
     base: tallbrickgray
-    
+
 - type: entity
   parent: N14BaseWallTallMetalStrong
   id: N14WallBunkerTall
@@ -118,7 +118,7 @@
   - type: IconSmooth
     key: walls
     base: tallbunker
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallCombTall
@@ -132,7 +132,7 @@
   - type: IconSmooth
     key: walls
     base: tallcomb
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallConcreteTall
@@ -151,7 +151,7 @@
   - type: IconSmooth
     key: walls
     base: tallconcrete
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallConcreteAltTall
@@ -165,7 +165,7 @@
   - type: IconSmooth
     key: walls
     base: tallconcretealt
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallDungeonTall
@@ -179,7 +179,7 @@
   - type: IconSmooth
     key: walls
     base: talldungeon
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallDungeonAltTall
@@ -193,7 +193,7 @@
   - type: IconSmooth
     key: walls
     base: talldungeonalt
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallMetalTall
@@ -207,7 +207,7 @@
   - type: IconSmooth
     key: walls
     base: tallmetal
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallPrisonTall
@@ -221,7 +221,7 @@
   - type: IconSmooth
     key: walls
     base: tallprison
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallReinfMetalTall
@@ -235,7 +235,7 @@
   - type: IconSmooth
     key: walls
     base: tallreinfmetal
-    
+
 - type: entity
   parent: N14BaseWallTall
   id: N14WallRockTall
@@ -265,7 +265,7 @@
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
-    
+
 - type: entity
   parent: N14WallRockTall
   id: N14WallRockDroughtTall
@@ -279,7 +279,7 @@
   - type: IconSmooth
     key: walls
     base: tallrockdrought
-    
+
 - type: entity
   parent: N14WallRockTall
   id: N14WallRockMammothTall
@@ -293,7 +293,7 @@
   - type: IconSmooth
     key: walls
     base: tallrockmammoth
-    
+
 - type: entity
   parent: N14BaseWallTallMetalWeak
   id: N14WallRoughScrapTall
@@ -307,7 +307,7 @@
   - type: IconSmooth
     key: walls
     base: tallroughscrap
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallIndustrialRustTall
@@ -321,7 +321,7 @@
   - type: IconSmooth
     key: walls
     base: tallrustindustrial
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallMetalRustTall
@@ -335,7 +335,7 @@
   - type: IconSmooth
     key: walls
     base: tallrustmetal
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallReinfMetalRustTall
@@ -349,7 +349,7 @@
   - type: IconSmooth
     key: walls
     base: tallrustreinfmetal
-    
+
 - type: entity
   parent: N14BaseWallTallMetalStrong
   id: N14WallVaultRustTall
@@ -363,7 +363,7 @@
   - type: IconSmooth
     key: walls
     base: tallrustvault
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallVaultVentsRustTall
@@ -377,7 +377,7 @@
   - type: IconSmooth
     key: walls
     base: tallrustvaultvent
-    
+
 - type: entity
   parent: N14BaseWallTallMetalWeak
   id: N14WallScrapTall
@@ -391,7 +391,7 @@
   - type: IconSmooth
     key: walls
     base: tallscrap
-    
+
 - type: entity
   parent: N14BaseWallTallMetalWeak
   id: N14WallScrapBlueTall
@@ -405,7 +405,7 @@
   - type: IconSmooth
     key: walls
     base: tallscrapblue
-    
+
 - type: entity
   parent: N14BaseWallTallMetalWeak
   id: N14WallScrapRedTall
@@ -419,7 +419,7 @@
   - type: IconSmooth
     key: walls
     base: tallscrapred
-    
+
 - type: entity
   parent: N14BaseWallTallMetalWeak
   id: N14WallScrapWhiteTall
@@ -433,7 +433,7 @@
   - type: IconSmooth
     key: walls
     base: tallscrapwhite
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallSewerTall
@@ -447,7 +447,7 @@
   - type: IconSmooth
     key: walls
     base: tallsewer
-    
+
 - type: entity
   parent: N14BaseWallTallWood
   id: N14WallSidingTall
@@ -461,7 +461,7 @@
   - type: IconSmooth
     key: walls
     base: tallsiding
-    
+
 - type: entity
   parent: N14BaseWallTallWood
   id: N14WallSidingBlueTall
@@ -475,7 +475,7 @@
   - type: IconSmooth
     key: walls
     base: tallsidingblue
-    
+
 - type: entity
   parent: N14BaseWallTallWood
   id: N14WallSidingRedTall
@@ -489,7 +489,7 @@
   - type: IconSmooth
     key: walls
     base: tallsidingred
-    
+
 - type: entity
   parent: N14BaseWallTallWood
   id: N14WallSidingGreenTall
@@ -503,7 +503,7 @@
   - type: IconSmooth
     key: walls
     base: tallsidinggreen
-    
+
 - type: entity
   parent: N14BaseWallTallMetalStrong
   id: N14WallVaultTall
@@ -517,7 +517,7 @@
   - type: IconSmooth
     key: walls
     base: tallvault
-    
+
 - type: entity
   parent: N14BaseWallTallMetal
   id: N14WallVaultVentTall
@@ -531,7 +531,7 @@
   - type: IconSmooth
     key: walls
     base: tallvaultvent
-    
+
 - type: entity
   parent: N14BaseWallTallWood
   id: N14WallWoodTall
@@ -545,7 +545,7 @@
   - type: IconSmooth
     key: walls
     base: tallwood
-    
+
 - type: entity
   parent: N14BaseWallTallWood
   id: N14WallWoodAltTall

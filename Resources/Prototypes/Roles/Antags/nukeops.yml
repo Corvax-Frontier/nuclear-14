@@ -4,6 +4,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-nuclear-operative-objective
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsMedic
@@ -11,6 +12,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-nuclear-operative-agent-objective
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsCommander
@@ -18,6 +20,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-nuclear-operative-commander-objective
+  guides: [ NuclearOperatives ]
 
 #Lone Operative Gear
 - type: startingGear
@@ -31,11 +34,10 @@
     eyes: ClothingEyesHudSyndicate
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitSyndie
     shoes: ClothingShoesBootsCombatFilled
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadio60TC
     belt: ClothingBeltMilitaryWebbing
   innerClothingSkirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperative

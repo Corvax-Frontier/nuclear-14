@@ -93,10 +93,8 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/force_preset", ActionForcePreset);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/set_motd", ActionForceMotd);
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
-
         //RegisterHandler(HttpMethod.Post, "/admin/actions/send_bwoink", ActionSendBwoink); // Frontier - Discord Ahelp Reply
     }
-
 
     public void Initialize()
     {
@@ -347,7 +345,6 @@ public sealed partial class ServerApi : IPostInjectInit
             reason += " (kicked by admin)";
 
             _netManager.DisconnectChannel(player.Channel, reason);
-
             await RespondOk(context);
 
             _sawmill.Info($"Kicked player {player.Name} ({player.UserId}) for {reason} by {FormatLogActor(actor)}");
@@ -377,9 +374,9 @@ public sealed partial class ServerApi : IPostInjectInit
             reason += " (banned by admin)";
 
             if (body.Reason != null)
-                _bans.CreateServerBan(targetId, targetUsername, new NetUserId(actor.Guid),null, targetHWid, (uint)body.Minutes, (NoteSeverity)body.Severity, body.Reason);
+                _bans.CreateServerBan(targetId, targetUsername, new NetUserId(actor.Guid), null, targetHWid, (uint) body.Minutes, (NoteSeverity) body.Severity, body.Reason);
             else
-                _bans.CreateServerBan(targetId, targetUsername, new NetUserId(actor.Guid),null, targetHWid, (uint)body.Minutes, (NoteSeverity)body.Severity, "No reason");
+                _bans.CreateServerBan(targetId, targetUsername, new NetUserId(actor.Guid), null, targetHWid, (uint) body.Minutes, (NoteSeverity) body.Severity, "No reason");
 
             await RespondOk(context);
 
@@ -403,16 +400,16 @@ public sealed partial class ServerApi : IPostInjectInit
         {
             var playerUserId = new NetUserId(data.UserId);
 
-        var senderUserId = new NetUserId(body.SenderUserId);
-        var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId, senderUserId, body.Text);
-        await RunOnMainThread(async () =>
-        {
-            if (_playerManager.TryGetSessionById(playerUserId, out var session))
+            var senderUserId = new NetUserId(body.SenderUserId);
+            var message = new SharedBwoinkSystem.BwoinkTextMessage(playerUserId, senderUserId, body.Text);
+            await RunOnMainThread(async () =>
             {
-                //bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session)); // закоменчено до переработки дс ахелпов by Sh1ntra
-                await RespondOk(context);
-            }
-        });
+                if (_playerManager.TryGetSessionById(playerUserId, out var session))
+                {
+                    //bwoinkSystem.DiscordAhelpSendMessage(message, new EntitySessionEventArgs(session)); // закоменчено до переработки дс ахелпов by Sh1ntra
+                    await RespondOk(context);
+                }
+            });
         }
     }
 
@@ -565,6 +562,7 @@ public sealed partial class ServerApi : IPostInjectInit
             GameRules = gameRules
         });
     }
+
     /// <summary>
     ///    Returns a user ckey by NetUserId.
     /// </summary>
@@ -581,7 +579,6 @@ public sealed partial class ServerApi : IPostInjectInit
         else
             await context.RespondErrorAsync(HttpStatusCode.BadRequest);
     }
-
 
     /// <summary>
     ///     Handles fetching information.
@@ -677,10 +674,10 @@ public sealed partial class ServerApi : IPostInjectInit
         }
 
         var authScheme = authHeaderValue[..spaceIndex];
-
         var authValue = authHeaderValue[spaceIndex..].Trim();
         _sawmill.Info(authScheme.Normalize());
         _sawmill.Info(authValue.Normalize());
+
         if (authScheme != SS14TokenScheme)
         {
             await RespondBadRequest(context, "Invalid Authorization scheme");

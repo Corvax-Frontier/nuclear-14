@@ -378,7 +378,7 @@ public abstract class SharedMindSystem : EntitySystem
         if (Resolve(mindId, ref mind))
         {
             var query = GetEntityQuery<T>();
-            foreach (var uid in mind.AllObjectives)
+            foreach (var uid in mind.Objectives)
             {
                 if (query.TryGetComponent(uid, out objective))
                 {
@@ -529,7 +529,7 @@ public abstract class SharedMindSystem : EntitySystem
             return ToPrettyString(mind.OwnedEntity.Value);
         if (mind.UserId != null)
             return mind.UserId.Value.ToString();
-        return "(originally " + mind.OriginalOwnerUserId + ")";
+        return "(originally " + mind.OriginalOwnedEntity + ")";
     }
 
     public string? GetCharacterName(NetUserId userId)

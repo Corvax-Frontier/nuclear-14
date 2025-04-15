@@ -13,13 +13,15 @@
           inverted: true
           species:
             - IPC
-        # - !type:CharacterTraitRequirement
-          # traits:
-            # - AnomalousPositronics
-    # - !type:CharacterTraitRequirement
-      # inverted: true
-      # traits:
-        # - ShadowkinBlackeye
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
@@ -28,6 +30,20 @@
   - Maintenance
   - Library # DeltaV - Add Library access
   setPreference: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Psionic
+      baselinePowerCost: 75
+      nextPowerCost: 75
+      removable: false
+      powerPool: PsychoHistorianPowerPool
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - XenoglossyPower
+        - TelepathyPower
+        - AssayPower
+
 
 - type: startingGear
   id: LibrarianGear

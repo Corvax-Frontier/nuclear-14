@@ -10,6 +10,7 @@
   - Robotics
   - MachineUpgrading
   - ReverseEngineering
+  - MantisGuide
 
 - type: guideEntry
   id: Technologies
@@ -74,7 +75,18 @@
   hideInMenu: true
 
 - type: guideEntry
+  id: MachineUpgrading
+  name: guide-entry-machine-upgrading
+  text: "/ServerInfo/Guidebook/Science/MachineUpgrading.xml"
+
+- type: guideEntry
   id: Cyborgs
   name: guide-entry-cyborgs
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
+  hideInMenu: true
+
+- type: guideEntry
+  id: MantisGuide
+  name: guide-entry-Psionic-Mantis
+  text: "/ServerInfo/Guidebook/Science/MantisGuide.xml"
   hideInMenu: true

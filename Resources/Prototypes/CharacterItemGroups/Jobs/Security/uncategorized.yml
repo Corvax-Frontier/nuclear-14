@@ -131,6 +131,12 @@
       id: LoadoutSecurityArgentiNonLethal
     - type: loadout
       id: LoadoutSecurityPistolEnergyRevolver
+    - type: loadout
+      id: LoadoutBSOEnergyRevolver
+    - type: loadout
+      id: LoadoutBSORifleChester
+    - type: loadout
+      id: LoadoutSecurityShotgunSawnLumen
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -152,12 +158,16 @@
       id: LoadoutClothingEyesGlassesSecurityBig
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurityVisor
+    - type: loadout
+      id: LoadoutClothingEyesGlassesCorpsman
 
-#- type: characterItemGroup
-#  id: LoadoutSecurityGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityCombatGloves
+
 - type: characterItemGroup
   id: LoadoutSecurityHead
   maxItems: 1
@@ -168,6 +178,10 @@
       id: LoadoutClothingHeadHelmetBasic
     - type: loadout
       id: LoadoutSecurityHeadHelmetInsulated
+    - type: loadout
+      id: LoadoutSecurityHeadHatSeniorTrooper
+    - type: loadout
+      id: ClothingHeadHelmetTCFLHeavy
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -185,6 +199,8 @@
   items:
     - type: loadout
       id: LoadoutSecurityMaskGasSwat
+    - type: loadout
+      id: LoadoutSecurityMaskGasSwatPaid
 
 - type: characterItemGroup
   id: LoadoutSecurityOuter
@@ -200,6 +216,8 @@
       id: LoadoutClothingOuterArmorBasic
     - type: loadout
       id: LoadoutClothingOuterArmorSlim
+    - type: loadout
+      id: ClothingOuterArmorTCFLHeavy
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
@@ -226,6 +244,8 @@
       id: LoadoutUniformJumpsuitSecFormal
     - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
+    - type: loadout
+      id: LoadoutSecurityUniformJumpsuitSeniorTrooper
     - type: loadout
       id: LoadoutSecurityUniformEnvirosuitBlue
     - type: loadout

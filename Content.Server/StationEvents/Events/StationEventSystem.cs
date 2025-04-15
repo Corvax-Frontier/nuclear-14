@@ -11,8 +11,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server.Announcements.Systems;
-using Robust.Shared.Player;
-using Content.Server.Station.Components;
 
 namespace Content.Server.StationEvents.Events;
 

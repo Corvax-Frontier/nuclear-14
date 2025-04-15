@@ -146,7 +146,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairWoodPadded
       entity: N14ChairWoodPadded
       edges:
@@ -161,7 +161,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairWoodSettler
       entity: N14ChairWoodSettler
       edges:
@@ -186,7 +186,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairStoolBarTan
       entity: N14ChairStoolBarTan
       edges:
@@ -198,7 +198,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairStoolBarRed
       entity: N14ChairStoolBarRed
       edges:
@@ -210,7 +210,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairArmchair
       entity: N14ChairArmchair
       edges:
@@ -225,7 +225,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairMetalGreen
       entity: N14ChairMetalGreen
       edges:
@@ -237,7 +237,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairMetalBlue
       entity: N14ChairMetalBlue
       edges:
@@ -276,7 +276,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairOfficeBlue
       entity: N14ChairOfficeBlue
       edges:
@@ -291,7 +291,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairOfficeGreen
       entity: N14ChairOfficeGreen
       edges:
@@ -306,7 +306,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairOfficeErgonomic
       entity: N14ChairOfficeErgonomic
       edges:
@@ -336,7 +336,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              
+
     - node: N14ChairPlastic
       entity: N14ChairPlastic
       edges:

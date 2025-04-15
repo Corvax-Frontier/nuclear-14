@@ -99,6 +99,10 @@ entities:
         nodes: []
     - type: RadiationGridResistance
     - type: GridAtmosphere
+<<<<<<< HEAD
+=======
+      simulatedTurf: false
+>>>>>>> dd7ebc5707c9b2d10727f2a073b7dbb6d7fc1aaf
       version: 2
       data:
         tiles:

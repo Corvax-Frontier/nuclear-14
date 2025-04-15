@@ -92,7 +92,7 @@ public sealed class MoodSystem : EntitySystem
     {
         if (!_config.GetCVar(CCVars.MoodEnabled)
             || !_config.GetCVar(CCVars.MoodEnabled)
-            || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
+            || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype) )
             return;
 
         var ev = new OnMoodEffect(uid, args.EffectId, args.EffectModifier, args.EffectOffset);

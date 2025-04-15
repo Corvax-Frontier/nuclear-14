@@ -26,7 +26,7 @@
     sprite: DeltaV/Clothing/Ears/Headsets/service.rsi
   - type: Clothing
     sprite: DeltaV/Clothing/Ears/Headsets/service.rsi
-    
+
 - type: entity
   parent: ClothingHeadsetAltSyndicate
   id: ClothingHeadsetAltSyndicateListening
@@ -38,6 +38,7 @@
       key_slots:
       - EncryptionKeySyndie
       - EncryptionKeyStationMaster
+      - EncryptionKeyBinarySyndicate
   - type: Sprite
     sprite: DeltaV/Clothing/Ears/Headsets/syndicate_listening.rsi
   - type: Clothing
@@ -53,7 +54,6 @@
     containers:
       key_slots:
       - EncryptionKeyJustice
-      - EncryptionKeyPrison
       - EncryptionKeySecurity
       - EncryptionKeyCommon
   - type: Sprite
@@ -72,7 +72,6 @@
     containers:
       key_slots:
       - EncryptionKeyJustice
-      - EncryptionKeyPrison
       - EncryptionKeySecurity
       - EncryptionKeyCommon
       - EncryptionKeyCommand
@@ -81,7 +80,7 @@
     state: icon_alt
   - type: Clothing
     sprite: DeltaV/Clothing/Ears/Headsets/justice.rsi
-    
+
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetPrison
@@ -114,7 +113,7 @@
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
-    
+
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetAdminAssist

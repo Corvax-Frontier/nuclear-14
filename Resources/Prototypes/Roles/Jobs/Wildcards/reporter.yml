@@ -12,6 +12,11 @@
   - Theatre # DeltaV - Add Theatre access
   - Reporter # DeltaV - Add Reporter access
   setPreference: false
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: ReporterGear

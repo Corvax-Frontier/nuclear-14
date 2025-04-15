@@ -330,7 +330,7 @@ public sealed class MindSystem : SharedMindSystem
 
         UserMinds[userId.Value] = mindId;
         mind.UserId = userId;
-        mind.OriginalOwnerUserId ??= userId;
+        mind.OriginalOwnedEntity ??= userId;
 
         // The UserId may not have a current session, but user data may still exist for disconnected players.
         // So we cannot combine this with the TryGetSessionById() check below.

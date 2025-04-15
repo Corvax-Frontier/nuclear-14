@@ -32,7 +32,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 14  
+        Blunt: 14
   - type: Item
     heldPrefix: ingot_lead
   - type: Appearance

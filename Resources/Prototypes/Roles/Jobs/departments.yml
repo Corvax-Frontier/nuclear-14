@@ -8,7 +8,7 @@
   - SalvageSpecialist
   - MailCarrier # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
   editorHidden: true
-  
+
 - type: department
   id: Civilian
   description: department-Civilian-description
@@ -35,7 +35,7 @@
   - Prisoner # Nyanotrasen - Prisoner, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/prisoner.yml
   - Gladiator # Nyanotrasen - Gladiator, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/gladiator.yml
   editorHidden: true
-  
+
 - type: department
   id: Command
   description: department-Command-description
@@ -63,7 +63,7 @@
   primary: false
   weight: 100
   editorHidden: true
-  
+
 - type: department
   id: Dignitary
   description: department-Dignitary-description
@@ -75,7 +75,18 @@
   primary: false
   weight: 101
   editorHidden: true
-  
+
+- type: department
+  id: Dignitary
+  description: department-Dignitary-description
+  color: "#33FE6D"
+  roles:
+  - BlueshieldOfficer # Goobstation
+  - NanotrasenRepresentative # Goobstation
+  - Magistrate # Goobstation
+  primary: false
+  weight: 101
+
 - type: department
   id: Engineering
   description: department-Engineering-description
@@ -87,7 +98,7 @@
   - StationEngineer
   - TechnicalAssistant
   editorHidden: true
-  
+
 - type: department
   id: Medical
   description: department-Medical-description
@@ -102,7 +113,7 @@
   - SeniorPhysician
   - MedicalBorg  # Delta V - Medical Borg, see Resources/Prototypes/DeltaV/Roles/Jobs/Medical/medicalborg.yml
   editorHidden: true
-  
+
 - type: department
   id: Security
   description: department-Security-description
@@ -118,7 +129,7 @@
   - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
   - Brigmedic # DeltaV - Brigmedic, see Resources/Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
   editorHidden: true
-  
+
 - type: department
   id: Epistemics # DeltaV - Epistemics Department replacing Science
   description: department-Science-description
@@ -133,7 +144,7 @@
   - Librarian
   - Roboticist
   editorHidden: true
-  
+
 - type: department
   id: Silicon
   description: department-Silicon-description
@@ -142,7 +153,7 @@
   - Borg
   - StationAi
   editorHidden: true
-  
+
 - type: department
   id: Specific
   description: department-Specific-description
