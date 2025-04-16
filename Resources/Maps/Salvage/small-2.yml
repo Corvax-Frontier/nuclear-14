@@ -54,7 +54,6 @@ entities:
         nodes: []
     - type: RadiationGridResistance
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:

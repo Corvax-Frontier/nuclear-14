@@ -130,7 +130,6 @@ entities:
     - type: Shuttle
     - type: GridPathfinding
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:

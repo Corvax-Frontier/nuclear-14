@@ -51,7 +51,6 @@ entities:
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:

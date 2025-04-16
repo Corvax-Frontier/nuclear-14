@@ -930,7 +930,6 @@ entities:
           decals:
             371: 20.568506,2.9319348
     - type: GridAtmosphere
-      simulatedTurf: false
       version: 2
       data:
         tiles:
