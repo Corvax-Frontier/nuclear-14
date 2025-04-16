@@ -51,7 +51,7 @@
   - type: SliceableFood
     count: 3
     slice: N14FoodMeatRadCutlet
-  - type: Construction
+  - type: Construction # Corvax-Change
     graph: FoodMeatRad
     node: start
     defaultTarget: MeatCooked
