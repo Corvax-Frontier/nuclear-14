@@ -116,10 +116,10 @@ public sealed partial class AntagSelectionSystem
         var output = new List<(EntityUid, SessionData, string)>();
         foreach (var (mind, name) in ent.Comp.SelectedMinds)
         {
-            if (!TryComp<MindComponent>(mind, out var mindComp) || mindComp.OriginalOwnedEntity == null)
+            if (!TryComp<MindComponent>(mind, out var mindComp) || mindComp.UserId == null)
                 continue;
 
-            if (!_playerManager.TryGetPlayerData(mindComp.OriginalOwnedEntity.Value, out var data))
+            if (!_playerManager.TryGetPlayerData(mindComp.UserId.Value, out var data))
                 continue;
 
             output.Add((mind, data, name));
