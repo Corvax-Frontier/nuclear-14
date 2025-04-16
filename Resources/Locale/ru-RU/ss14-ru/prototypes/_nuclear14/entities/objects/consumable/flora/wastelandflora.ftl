@@ -110,3 +110,7 @@ ent-N14FloraProduceWildWhiteHorsenettle = цветок белого паслён
     .desc = Красивый цветок белого паслёна может быть опасен - растение ядовито.
 ent-N14FloraProduceWildXander = дикий корень ксандера
     .desc = Корень ксандера используют для приготовления лекарств и стимуляторов.
+ent-N14FloraProduceWildGlowpepper = дикий светоперец
+    .desc = Дикий светоперец. Светящийся.
+ent-N14WastelandFloraWildGlowpepper = дикий светоперец
+    .desc = Светящийся дикий светоперец. ХА-ХА-ХА... он здоровый.
