@@ -26,7 +26,6 @@
 - type: startingGear
   id: CaesarLegionFrumentaryGear
   equipment:
-    bandage: NCClothingBandageLegion
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     mask: N14ClothingMaskBrownMask
     back: N14ClothingBackpackMilitaryFilled

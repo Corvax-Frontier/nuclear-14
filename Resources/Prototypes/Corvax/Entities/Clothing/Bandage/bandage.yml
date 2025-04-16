@@ -13,14 +13,6 @@
 
 - type: entity
   parent: NCClothingBandageNCRBase
-  id: NCClothingBandageNCR
-  name: bandage NCR
-  description: A bandage used by the NCR.
-  components:
-  - type: Unremoveable
-
-- type: entity
-  parent: NCClothingBandageNCRBase
   id: NCClothingBandageNCRRecruit
   name: recruit bandage NCR
   description: A bandage used by the NCR recruits.
@@ -44,14 +36,6 @@
 
 - type: entity
   parent: NCClothingBandageBoSBase
-  id: NCClothingBandageBoS
-  name: bandage BoS
-  description: A bandage used by the BoS.
-  components:
-  - type: Unremoveable
-
-- type: entity
-  parent: NCClothingBandageBoSBase
   id: NCClothingBandageBoSRecruit
   name: recruit bandage BoS
   description: A bandage used by the BoS recruits.
@@ -72,14 +56,6 @@
   - type: Clothing
     sprite: Corvax/Clothing/Bandage/bandageLegion.rsi
     slots: [ bandage ]
-
-- type: entity
-  parent: NCClothingBandageLegionBase
-  id: NCClothingBandageLegion
-  name: bandage Legion
-  description: A bandage used by the Legion.
-  components:
-  - type: Unremoveable
 
 - type: entity
   parent: NCClothingBandageLegionBase

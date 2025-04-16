@@ -34,7 +34,6 @@
 - type: startingGear
   id: BoSMidPaladinCommanderGear
   equipment:
-    bandage: NCClothingBandageBoS # Corvax-Change
     jumpsuit: N14ClothingUniformBosRecon
     back: N14ClothingBackpackMilitaryFilled
     shoes: N14ClothingBootsCombatFilled

@@ -31,7 +31,6 @@
 - type: startingGear
   id: NCRMedicGear
   equipment:
-    bandage: NCClothingBandageNCR # Corvax-Change
     jumpsuit: N14ClothingUniformNCRDesert # Corvax-Change
     back: N14ClothingBackpackNCRFilled
     shoes: N14ClothingBootsLeatherFilled

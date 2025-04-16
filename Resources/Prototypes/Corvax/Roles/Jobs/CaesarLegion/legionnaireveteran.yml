@@ -32,7 +32,6 @@
 - type: startingGear
   id: CaesarLegionLegionnaireVeteranGear
   equipment:
-    bandage: NCClothingBandageLegion
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     neck: ClothingNeckRedScarf
     eyes: N14ClothingEyesGlassesWelding
