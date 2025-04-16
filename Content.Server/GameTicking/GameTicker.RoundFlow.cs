@@ -380,7 +380,7 @@ namespace Content.Server.GameTicking
                 // TODO don't list redundant observer roles?
                 // I.e., if a player was an observer ghost, then a hamster ghost role, maybe just list hamster and not
                 // the observer role?
-                var userId = mind.UserId ?? mind.OriginalOwnedEntity;
+                var userId = mind.UserId ?? mind.Session?.UserId;
 
                 var connected = false;
                 var observer = _role.MindHasRole<ObserverRoleComponent>(mindId);

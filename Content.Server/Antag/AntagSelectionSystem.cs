@@ -60,7 +60,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnPlayerSpawning);
         SubscribeLocalEvent<RulePlayerJobsAssignedEvent>(OnJobsAssigned);
-        SubscribeLocalEvent<GameTicking.PlayerSpawnCompleteEvent>(OnSpawnComplete);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnSpawnComplete);
     }
 
     private void OnTakeGhostRole(Entity<GhostRoleAntagSpawnerComponent> ent, ref TakeGhostRoleEvent args)
@@ -114,7 +114,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
     }
 
-    private void OnSpawnComplete(GameTicking.PlayerSpawnCompleteEvent args)
+    private void OnSpawnComplete(PlayerSpawnCompleteEvent args)
     {
         if (!args.LateJoin)
             return;

@@ -240,8 +240,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     public string GetTitle(Entity<MindComponent?> mind, string name)
     {
         if (Resolve(mind, ref mind.Comp) &&
-            mind.Comp.OriginalOwnedEntity != null &&
-            _player.TryGetPlayerData(mind.Comp.OriginalOwnedEntity.Value, out var sessionData))
+            mind.Comp.UserId.HasValue &&
+            _player.TryGetPlayerData(mind.Comp.UserId.Value, out var sessionData))
         {
             var username = sessionData.UserName;
             return Loc.GetString("objectives-player-user-named", ("user", username), ("name", name));
