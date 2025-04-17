@@ -99,6 +99,19 @@
   items:
     - N14ClothingHeadHatNCRBeretRecon
 
+- type: loadout # Corvax-Change 
+  id: LoadoutNCRhatBeretRanger
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+        - NCRRangerVeteran
+  items:
+    - N14ClothingHeadHatArmyBeretRanger
+
 - type: loadout
   id: LoadoutNCRmaskDesert
   category: Roles
