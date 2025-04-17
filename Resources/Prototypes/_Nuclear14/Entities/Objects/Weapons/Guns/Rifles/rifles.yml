@@ -299,7 +299,7 @@
   - type: Gun
     minAngle: 21 # Corvax-Change
     maxAngle: 45 # Corvax-Change
-    angleIncrease: 4 # Corvax-Change
+    angleIncrease: 4
     angleDecay: 16
     fireRate: 5
     soundGunshot:
