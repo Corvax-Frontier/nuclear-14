@@ -49,7 +49,7 @@
         - N14ExtremeAugPaladin
     - !type:CharacterDepartmentRequirement
       departments:
-        - BrotherhoodWashington
+        - BrotherhoodMidwest
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
