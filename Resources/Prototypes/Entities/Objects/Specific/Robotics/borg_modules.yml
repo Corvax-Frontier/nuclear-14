@@ -11,7 +11,7 @@
     sprite: Objects/Specific/Robotics/borgmodule.rsi
   - type: BorgModule
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: no-action }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: no-action}
   - type: StaticPrice
     price: 100
   - type: Tag
@@ -19,7 +19,7 @@
     - BorgModuleGeneric
   - type: GuideHelp
     guides:
-      - Cyborgs
+    - Cyborgs
 
 - type: entity
   id: BaseProviderBorgModule
@@ -28,13 +28,13 @@
   - type: SelectableBorgModule
   - type: ContainerContainer
     containers:
-      provided_container: !type:Container { }
+      provided_container: !type:Container {}
 
 - type: entity
   id: ActionBorgSwapModule
   name: Swap Module
   description: Select this module, enabling you to use the tools it provides.
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -91,23 +91,23 @@
   parent: BaseBorgModule
   abstract: true
   components:
-    - type: Tag
-      tags:
-        - BorgModuleSyndicate
+  - type: Tag
+    tags:
+    - BorgModuleSyndicate
 
 - type: entity
   id: BaseBorgModuleSyndicateAssault
   parent: BaseBorgModule
   abstract: true
   components:
-    - type: Tag
-      tags:
-        - BorgModuleSyndicateAssault
+  - type: Tag
+    tags:
+    - BorgModuleSyndicateAssault
 
 # generic modules
 - type: entity
   id: BorgModuleCable
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: cable cyborg module
   components:
   - type: Sprite
@@ -122,11 +122,11 @@
     - Wirecutter
     - trayScanner
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: wire-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: wire-module}
 
 - type: entity
   id: BorgModuleFireExtinguisher
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: fire extinguisher cyborg module
   components:
   - type: Sprite
@@ -137,11 +137,11 @@
     items:
     - FireExtinguisher
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: extinguisher-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: extinguisher-module}
 
 - type: entity
   id: BorgModuleGPS
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: GPS cyborg module
   components:
   - type: Sprite
@@ -154,11 +154,11 @@
     - HandHeldMassScannerBorg
     - HandheldStationMapUnpowered
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: gps-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: gps-module}
 
 - type: entity
   id: BorgModuleRadiationDetection
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: radiation detection cyborg module
   components:
   - type: Sprite
@@ -169,11 +169,11 @@
     items:
     - GeigerCounter
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: geiger-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: geiger-module}
 
 - type: entity
   id: BorgModuleTool
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: tool cyborg module
   components:
   - type: Sprite
@@ -189,12 +189,12 @@
     - Multitool
     - WelderIndustrial
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: tool-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: tool-module}
 
 # cargo modules
 - type: entity
   id: BorgModuleAppraisal
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleCargo, BaseProviderBorgModule]
   name: appraisal cyborg module
   components:
   - type: Sprite
@@ -205,11 +205,11 @@
     items:
     - AppraisalTool
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: appraisal-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: appraisal-module}
 
 - type: entity
   id: BorgModuleMining
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleCargo, BaseProviderBorgModule]
   name: mining cyborg module
   components:
   - type: Sprite
@@ -224,11 +224,11 @@
     - Crowbar
     - RadioHandheld
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: mining-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: mining-module}
 
 - type: entity
   id: BorgModuleJetpack
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleCargo, BaseProviderBorgModule]
   name: jetpack cyborg module
   description: A piece of tech that gives cyborgs new abilities. Needs to be loaded by a cyborg before you can refill the jetpack.
   components:
@@ -241,11 +241,11 @@
     items:
     - JetpackMicroFilled
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: jetpack-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: jetpack-module}
 
 - type: entity
   id: BorgModulePka
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleCargo, BaseProviderBorgModule]
   name: proto kinetic accelerator cyborg module
   components:
   - type: Sprite
@@ -256,39 +256,11 @@
     items:
     - WeaponProtoKineticAccelerator
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: pka-module }
-
-- type: entity
-  id: BorgModuleJetpack
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
-  name: jetpack cyborg module
-  description: A piece of tech that gives cyborgs new abilities. Needs to be loaded by a cyborg before you can refill the jetpack.
-  components:
-  - type: Sprite
-    layers:
-    - state: cargo
-    - state: icon-jetpack
-  - type: BorgJetpack
-  - type: ItemBorgModule
-    items:
-    - JetpackMicroFilled
-
-- type: entity
-  id: BorgModulePka
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
-  name: proto kinetic accelerator cyborg module
-  components:
-  - type: Sprite
-    layers:
-    - state: cargo
-    - state: icon-pka
-  - type: ItemBorgModule
-    items:
-    - WeaponProtoKineticAccelerator
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: pka-module}
 
 - type: entity
   id: BorgModuleGrapplingGun
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleCargo, BaseProviderBorgModule]
   name: grappling gun cyborg module
   components:
   - type: Sprite
@@ -300,12 +272,12 @@
     - WeaponGrapplingGun
     - HandheldGPSBasic
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: grappling-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: grappling-module}
 
 # engineering modules
 - type: entity
   id: BorgModuleAdvancedTool
-  parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleEngineering, BaseProviderBorgModule]
   name: advanced tool cyborg module
   components:
   - type: Sprite
@@ -321,11 +293,11 @@
     - GasAnalyzer
     - GeigerCounter
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-tools-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: adv-tools-module}
 
 - type: entity
   id: BorgModuleConstruction
-  parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleEngineering, BaseProviderBorgModule]
   name: construction cyborg module
   components:
   - type: Sprite
@@ -351,11 +323,11 @@
         - StockPart
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: construction-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: construction-module}
 
 - type: entity
   id: BorgModuleRCD
-  parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleEngineering, BaseProviderBorgModule]
   name: RCD cyborg module
   components:
   - type: Sprite
@@ -367,12 +339,12 @@
     - RCDRecharging
     - RPDRecharging
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: rcd-module}
 
 # janitorial modules (this gets its own unique things because janis are epic)
 - type: entity
   id: BorgModuleLightReplacer
-  parent: [ BaseBorgModuleJanitor, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleJanitor, BaseProviderBorgModule]
   name: light replacer cyborg module
   components:
   - type: Sprite
@@ -385,11 +357,11 @@
     - Crowbar
     - Screwdriver
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: light-replacer-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: light-replacer-module}
 
 - type: entity
   id: BorgModuleCleaning
-  parent: [ BaseBorgModuleJanitor, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleJanitor, BaseProviderBorgModule]
   name: cleaning cyborg module
   components:
   - type: Sprite
@@ -403,11 +375,11 @@
     - TrashBag
     - Plunger
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: cleaning-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: cleaning-module}
 
 - type: entity
   id: BorgModuleAdvancedCleaning
-  parent: [ BaseBorgModuleJanitor, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleJanitor, BaseProviderBorgModule]
   name: advanced cleaning cyborg module
   components:
   - type: Sprite
@@ -422,12 +394,12 @@
     - Dropper
     - TrashBag
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-cleaning-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: adv-cleaning-module}
 
 # medical modules
 - type: entity
   id: BorgModuleDiagnosis # todo: reuse when med refractor is finished
-  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule]
   name: diagnosis cyborg module
   components:
   - type: Sprite
@@ -439,11 +411,11 @@
     - HandheldHealthAnalyzerUnpowered
     - ClothingNeckStethoscope
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module}
 
 - type: entity
   id: BorgModuleTreatment
-  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule]
   name: treatment cyborg module
   components:
   - type: Sprite
@@ -458,11 +430,11 @@
     - Bloodpack10Lingering
     - Syringe
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: treatment-module}
 
 - type: entity
   id: BorgModuleDefibrillator
-  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule]
   name: defibrillator cyborg module
   components:
   - type: Sprite
@@ -473,11 +445,11 @@
     items:
     - DefibrillatorOneHandedUnpowered
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: defib-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: defib-module}
 
 - type: entity
   id: BorgModuleAdvancedTreatment
-  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule]
   name: advanced treatment cyborg module
   components:
   - type: Sprite
@@ -499,13 +471,13 @@
         - FitsInDispenser
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-diagnosis-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: adv-diagnosis-module}
 
 # science modules
 # todo: if science ever gets their own custom robot, add more "sci" modules.
 - type: entity
   id: BorgModuleArtifact
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: artifact cyborg module
   components:
   - type: Sprite
@@ -516,11 +488,11 @@
     items:
     - NodeScanner
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: node-scanner-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: node-scanner-module}
 
 - type: entity
   id: BorgModuleAnomaly
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: anomaly cyborg module
   components:
   - type: Sprite
@@ -535,12 +507,12 @@
     - RemoteSignaller
     - Multitool
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: anomaly-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: anomaly-module}
 
 # service modules
 - type: entity
   id: BorgModuleService
-  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleService, BaseProviderBorgModule]
   name: service cyborg module
   components:
   - type: Sprite
@@ -563,11 +535,11 @@
         - FitsInDispenser
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: service-module}
 
 - type: entity
   id: BorgModuleMusique
-  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleService, BaseProviderBorgModule]
   name: musique cyborg module
   components:
   - type: Sprite
@@ -580,11 +552,11 @@
     - ElectricGuitarInstrument
     - SaxophoneInstrument
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: musical-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: musical-module}
 
 - type: entity
   id: BorgModuleGardening
-  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleService, BaseProviderBorgModule]
   name: gardening cyborg module
   components:
   - type: Sprite
@@ -605,11 +577,11 @@
         - Seed
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: gardening-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: gardening-module}
 
 - type: entity
   id: BorgModuleHarvesting
-  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleService, BaseProviderBorgModule]
   name: harvesting cyborg module
   components:
   - type: Sprite
@@ -622,11 +594,11 @@
     - HydroponicsToolHatchet
     - PlantBag
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: harvesting-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: harvesting-module}
 
 - type: entity
   id: BorgModuleClowning
-  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleService, BaseProviderBorgModule]
   name: clowning cyborg module
   components:
   - type: Sprite
@@ -639,12 +611,12 @@
     - ClownRecorder
     - BikeHornInstrument
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: clowning-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: clowning-module}
 
 #syndicate modules
 - type: entity
   id: BorgModuleSyndicateWeapon
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: weapon cyborg module
   components:
   - type: Sprite
@@ -656,81 +628,81 @@
     - WeaponAdvancedLaser
     - Machete
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module}
 
 - type: entity
   id: BorgModuleOperative
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleSyndicate, BaseProviderBorgModule]
   name: operative cyborg module
   description: A module that comes with a crowbar, an Emag and a syndicate pinpointer.
   components:
-    - type: Sprite
-      layers:
-      - state: syndicate
-      - state: icon-syndicate
-    - type: ItemBorgModule
-      items:
-      - Crowbar
-      - Emag
-      - PinpointerSyndicateNuclear
-    - type: BorgModuleIcon
-      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
+  - type: Sprite
+    layers:
+    - state: syndicate
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    items:
+    - Crowbar
+    - Emag
+    - PinpointerSyndicateNuclear
+  - type: BorgModuleIcon
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module}
 
 - type: entity
   id: BorgModuleEsword
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleSyndicate, BaseProviderBorgModule]
   name: energy sword cyborg module
   description: A module that comes with a double energy sword.
   components:
-    - type: Sprite
-      layers:
-      - state: syndicate
-      - state: icon-syndicate
-    - type: ItemBorgModule
-      items:
-      - EnergySwordDouble
-      - PinpointerSyndicateNuclear
-    - type: BorgModuleIcon
-      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
+  - type: Sprite
+    layers:
+    - state: syndicate
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    items:
+    - EnergySwordDouble
+    - PinpointerSyndicateNuclear
+  - type: BorgModuleIcon
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module}
 
 - type: entity
   id: BorgModuleL6C
-  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleSyndicateAssault, BaseProviderBorgModule]
   name: L6C ROW cyborg module
   description: A module that comes with a L6C.
   components:
-    - type: Sprite
-      layers:
-      - state: syndicate
-      - state: icon-syndicate
-    - type: ItemBorgModule
-      items:
-        - WeaponLightMachineGunL6C
-        - PinpointerSyndicateNuclear
-    - type: BorgModuleIcon
-      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
+  - type: Sprite
+    layers:
+    - state: syndicate
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    items:
+    - WeaponLightMachineGunL6C
+    - PinpointerSyndicateNuclear
+  - type: BorgModuleIcon
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module}
 
 - type: entity
   id: BorgModuleMartyr
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [BaseBorgModule, BaseProviderBorgModule]
   name: martyr cyborg module
   description: "A module that comes with an explosive you probably don't want to handle yourself."
   components:
-    - type: Sprite
-      layers:
-        - state: syndicateborgbomb
-        - state: icon-bomb
-    - type: ItemBorgModule
-      items:
-        - SelfDestructSeq
-    - type: BorgModuleIcon
-      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }
+  - type: Sprite
+    layers:
+    - state: syndicateborgbomb
+    - state: icon-bomb
+  - type: ItemBorgModule
+    items:
+    - SelfDestructSeq
+  - type: BorgModuleIcon
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module}
 
 # Shitmed Modules
 
 - type: entity
   id: BorgModuleSurgery
-  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule]
   name: surgery cyborg module
   components:
   - type: Sprite
@@ -757,11 +729,11 @@
         - Organ
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: surgery-module}
 
 - type: entity
   id: BorgModuleAdvancedSurgery
-  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule]
   name: advanced surgery cyborg module
   components:
   - type: Sprite
@@ -785,4 +757,4 @@
         - Organ
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
+    icon: {sprite: Interface/Actions/actions_borg.rsi, state: adv-surgery-module}

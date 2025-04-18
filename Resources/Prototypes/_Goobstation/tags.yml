@@ -2,6 +2,7 @@
   id: MagazineMagnumLeverRifle
 
 # Mechs
+- type: Tag
   id: CartridgeLightRifleSubsonic
 
 - type: Tag
@@ -102,9 +103,6 @@
 
 - type: Tag
   id: MagazineLightRifleSubsonic
-
-- type: Tag
-  id: MagazineMagnumLeverRifle
 
 - type: Tag
   id: MechAirTank

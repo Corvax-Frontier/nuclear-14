@@ -11,15 +11,14 @@
     snapCardinals: true
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
+    - trigger: !type:DamageTrigger
         damage: 5
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/poster_broken.ogg
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
       - !type:SpawnEntitiesBehavior
         spawn:
           PosterBroken:
@@ -39,15 +38,14 @@
     state: poster_broken
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
+    - trigger: !type:DamageTrigger
         damage: 5
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/poster_broken.ogg
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
 
 # Contraband
 - type: entity
@@ -69,12 +67,12 @@
     state: poster2_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-atmosia"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-atmosia"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -86,12 +84,12 @@
     state: poster3_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-funpolice"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-funpolice"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -112,12 +110,12 @@
     state: poster5_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-syndicaterecruitment"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-syndicaterecruitment"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -138,12 +136,12 @@
     state: poster7_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-contrabandsmoke"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-contrabandsmoke"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -155,12 +153,12 @@
     state: poster8_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-greytide"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-greytide"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -190,12 +188,12 @@
     state: poster11_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-ripbadger"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-ripbadger"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -243,12 +241,12 @@
     state: poster16_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-contrabandpower"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-contrabandpower"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -305,12 +303,12 @@
     state: poster22_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-KosmicheskayaStantsiya"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-KosmicheskayaStantsiya"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -322,12 +320,12 @@
     state: poster23_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-rebelsunite"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-rebelsunite"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -429,12 +427,12 @@
     state: poster35_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-freedrone"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-freedrone"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -536,12 +534,12 @@
     state: poster46_contraband
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-syndicateencryption"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-syndicateencryption"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -631,8 +629,8 @@
   name: "Syndie Moth - Nuclear Operation"
   description: "A Syndicate-commissioned poster that uses Syndie Moth™ to tell the viewer to keep the nuclear authentication disk unsecured. \"Peace was never an option!\" No good employee would listen to this nonsense."
   components:
-    - type: Sprite
-      state: poster57_contraband
+  - type: Sprite
+    state: poster57_contraband
 
 - type: entity
   parent: PosterBase
@@ -640,16 +638,16 @@
   name: "Cybersun: 600 Years Commemorative Poster"
   description: "An artistic poster commemorating 600 years of continual business for Cybersun Industries."
   components:
-    - type: Sprite
-      state: poster58_contraband
-    - type: ExtendDescription
-      descriptionList:
-        - description: "mindshield-extenddescription-poster-cybersun600"
-          fontSize: 12
-          color: "#11aaff"
-          requireDetailRange: false
-          requirements:
-          - !type:CharacterMindshieldRequirement
+  - type: Sprite
+    state: poster58_contraband
+  - type: ExtendDescription
+    descriptionList:
+    - description: "mindshield-extenddescription-poster-cybersun600"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -657,8 +655,8 @@
   name: "DONK CO. BRAND MICROWAVEABLE FOOD"
   description: "DONK CO. BRAND MICROWAVABLE FOOD: MADE BY STARVING COLLEGE STUDENTS, FOR STARVING COLLEGE STUDENTS."
   components:
-    - type: Sprite
-      state: poster59_contraband
+  - type: Sprite
+    state: poster59_contraband
 
 - type: entity
   parent: PosterBase
@@ -666,8 +664,8 @@
   name: "Enlist"
   description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
   components:
-    - type: Sprite
-      state: poster60_contraband
+  - type: Sprite
+    state: poster60_contraband
 
 - type: entity
   parent: PosterBase
@@ -675,8 +673,8 @@
   name: "Interdyne Pharmaceutics: For the Health of Humankind"
   description: "An advertisement for Interdyne Pharmaceutics' GeneClean clinics. 'Become the master of your own body!'"
   components:
-    - type: Sprite
-      state: poster61_contraband
+  - type: Sprite
+    state: poster61_contraband
 
 - type: entity
   parent: PosterBase
@@ -684,8 +682,8 @@
   name: "Make Mine a Waffle Corp: Fine Rifles, Economic Prices"
   description: "An old advertisement for Waffle Corp rifles. 'Better weapons, lower prices!'"
   components:
-    - type: Sprite
-      state: poster62_contraband
+  - type: Sprite
+    state: poster62_contraband
 
 - type: entity
   parent: PosterBase
@@ -693,8 +691,8 @@
   name: "Missing Spacepen"
   description: "This poster depicts something you will never find."
   components:
-    - type: Sprite
-      state: poster63_contraband
+  - type: Sprite
+    state: poster63_contraband
 
 # Legit
 - type: entity
@@ -707,12 +705,12 @@
     state: poster1_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-foryoursafety"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-foryoursafety"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -724,12 +722,12 @@
     state: poster2_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-nanotrasen"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-nanotrasen"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -750,12 +748,12 @@
     state: poster4_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-helpothers"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-helpothers"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -803,12 +801,12 @@
     state: poster9_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-obey"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-obey"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -874,12 +872,12 @@
     state: poster16_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-donotquestion"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-donotquestion"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -927,12 +925,12 @@
     state: poster21_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-safetyreport"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-safetyreport"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -944,12 +942,12 @@
     state: poster22_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-reportcrimes"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-reportcrimes"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -988,12 +986,12 @@
     state: poster26_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-vintagereprint50"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-vintagereprint50"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1014,12 +1012,12 @@
     state: poster28_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-pdaad"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-pdaad"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1031,12 +1029,12 @@
     state: poster29_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-enlist"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-enlist"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1075,12 +1073,12 @@
     state: poster33_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-theowl"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-theowl"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1119,12 +1117,12 @@
     state: poster37_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-nogasgiant"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-nogasgiant"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1145,12 +1143,12 @@
     state: poster39_legit
   - type: ExtendDescription
     descriptionList:
-      - description: "mindshield-extenddescription-poster-watchingyou"
-        fontSize: 12
-        color: "#11aaff"
-        requireDetailRange: false
-        requirements:
-        - !type:CharacterMindshieldRequirement
+    - description: "mindshield-extenddescription-poster-watchingyou"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1185,8 +1183,8 @@
   name: "Safety Moth - Delamination Safety Precautions"
   description: "This informational poster uses Safety Moth™ to tell the viewer to hide in lockers when the Supermatter Crystal has delaminated, to prevent hallucinations. Evacuating might be a better strategy."
   components:
-    - type: Sprite
-      state: poster43_legit
+  - type: Sprite
+    state: poster43_legit
 
 - type: entity
   parent: PosterBase
@@ -1194,8 +1192,8 @@
   name: "Safety Moth - Epinephrine"
   description: "This informational poster uses Safety Moth™ to inform the viewer to help injured/deceased crewmen with their epinephrine injectors. \"Prevent organ rot with this one simple trick!\""
   components:
-    - type: Sprite
-      state: poster44_legit
+  - type: Sprite
+    state: poster44_legit
 
 - type: entity
   parent: PosterBase
@@ -1203,8 +1201,8 @@
   name: "Safety Moth - Hardhats"
   description: "This informational poster uses Safety Moth™ to tell the viewer to wear hardhats in cautious areas. \"It's like a lamp for your head!\""
   components:
-    - type: Sprite
-      state: poster45_legit
+  - type: Sprite
+    state: poster45_legit
 
 - type: entity
   parent: PosterBase
@@ -1212,8 +1210,8 @@
   name: "Safety Moth - Methamphetamine"
   description: "This informational poster uses Safety Moth™ to tell the viewer to seek CMO approval before cooking methamphetamine. \"Stay close to the target temperature, and never go over!\" ...You shouldn't ever be making this."
   components:
-    - type: Sprite
-      state: poster46_legit
+  - type: Sprite
+    state: poster46_legit
 
 - type: entity
   parent: PosterBase
@@ -1221,8 +1219,8 @@
   name: "Safety Moth - Piping"
   description: "This informational poster uses Safety Moth™ to tell atmospheric technicians correct types of piping to be used. \"Pipes, not Pumps! Proper pipe placement prevents poor performance!\""
   components:
-    - type: Sprite
-      state: poster47_legit
+  - type: Sprite
+    state: poster47_legit
 
 - type: entity
   parent: PosterBase
@@ -1230,16 +1228,16 @@
   name: "Nanotrasen Corporate Perks: Vacation"
   description: "This informational poster provides information on some of the prizes available via the NT Corporate Perks program, including a two-week vacation for two on the resort world Idyllus."
   components:
-    - type: Sprite
-      state: poster48_legit
-    - type: ExtendDescription
-      descriptionList:
-        - description: "mindshield-extenddescription-poster-vacation"
-          fontSize: 12
-          color: "#11aaff"
-          requireDetailRange: false
-          requirements:
-          - !type:CharacterMindshieldRequirement
+  - type: Sprite
+    state: poster48_legit
+  - type: ExtendDescription
+    descriptionList:
+    - description: "mindshield-extenddescription-poster-vacation"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1247,8 +1245,8 @@
   name: "Periodic Table of the Elements"
   description: "A periodic table of the elements, from Hydrogen to Oganesson, and everything inbetween."
   components:
-    - type: Sprite
-      state: poster49_legit
+  - type: Sprite
+    state: poster49_legit
 
 - type: entity
   parent: PosterBase
@@ -1256,8 +1254,8 @@
   name: "Renault Poster"
   description: "Yap."
   components:
-    - type: Sprite
-      state: poster50_legit
+  - type: Sprite
+    state: poster50_legit
 
 - type: entity
   parent: PosterBase
@@ -1265,16 +1263,16 @@
   name: "Nanotrasen Tactical Game Cards"
   description: "An advertisement for Nanotrasen's TCG cards: BUY MORE CARDS."
   components:
-    - type: Sprite
-      state: poster51_legit
-    - type: ExtendDescription
-      descriptionList:
-        - description: "mindshield-extenddescription-poster-buycards"
-          fontSize: 12
-          color: "#11aaff"
-          requireDetailRange: false
-          requirements:
-          - !type:CharacterMindshieldRequirement
+  - type: Sprite
+    state: poster51_legit
+  - type: ExtendDescription
+    descriptionList:
+    - description: "mindshield-extenddescription-poster-buycards"
+      fontSize: 12
+      color: "#11aaff"
+      requireDetailRange: false
+      requirements:
+      - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1293,27 +1291,6 @@
   components:
   - type: Sprite
     state: poster53_legit
-
-- type: entity
-  parent: PosterBase
-  id: PosterLegitSafetyMothSSD
-  name: "Safety Moth - Space Sleep Disorder"
-  description: "This informational poster uses Safety Moth™ to tell the viewer about Space Sleep Disorder (SSD), a condition where the person stops reacting to things. \"Treat SSD crew with care! They might wake up at any time!\""
-  components:
-  - type: Sprite
-    state: poster52_legit
-
-- type: entity
-  parent: PosterBase
-  id: PosterLegitOppenhopper
-  name: "Oppenhopper"
-  description: "A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against onslaughts of the infamous Nuclear Operatives. The tagline reads: \"Nuke Ops will continue until robustness improves.\""
-  components:
-  - type: Sprite
-    state: poster53_legit
-
-
-#maps
 
 - type: entity
   parent: PosterBase

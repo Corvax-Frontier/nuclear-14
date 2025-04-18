@@ -1,6 +1,6 @@
 - type: entity
   id: BaseLathe
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [BaseMachinePowered, ConstructibleMachine]
   abstract: true
   name: lathe
   components:
@@ -9,20 +9,18 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PhysShapeAabb
+        shape: !type:PhysShapeAabb
           bounds: "-0.4,-0.4,0.4,0.4"
         density: 190
         mask:
         - MachineMask
         layer:
-          - MachineLayer
+        - MachineLayer
   - type: Lathe
   - type: MaterialStorage
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
+    - trigger: !type:DamageTrigger
         damage: 100
       behaviors:
       - !type:PlaySoundBehavior
@@ -88,40 +86,6 @@
       SpaceGlue: 5 # no change from normal lathe, overheat!!!
 
 # a lathe that can be sped up with space lube / slowed down with glue
-- type: entity
-  abstract: true
-  parent: BaseLathe
-  id: BaseLatheLube
-  components:
-  - type: ReagentSpeed
-    solution: lube
-    modifiers:
-      SpaceLube: 0.25
-      SpaceGlue: 5
-  - type: SolutionContainerManager
-    solutions:
-      lube:
-        maxVol: 250
-  - type: Spillable
-    solution: lube
-  - type: RefillableSolution
-    solution: lube
-  - type: ExaminableSolution
-    solution: lube
-
-- type: entity
-  abstract: true
-  id: BaseHyperlathe
-  components:
-  - type: Lathe
-    materialUseMultiplier: 0.5
-    timeMultiplier: 1.5
-  - type: LatheHeatProducing
-  - type: ReagentSpeed
-    modifiers:
-      SpaceLube: 0.8 # being faster means less heat so lube needs to be nerfed
-      SpaceGlue: 5 # no change from normal lathe, overheat!!!
-
 - type: entity
   id: Autolathe
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
@@ -944,248 +908,248 @@
     idleState: icon
     runningState: icon
     staticRecipes:
-      - BoxLethalshot
-      - BoxShotgunLumen
-      - BoxShotgunFlare
-      - BoxShotgunPractice
-      - BoxShotgunSlug
-      - ClothingEyesHudSecurity
-      - CombatKnife
-      - Flash
-      - ForensicPad
-      - Handcuffs
-      - ShellShotgun
-      - ShellShotgunSlug
-      - ShellShotgunLumen
-      - ShellShotgunFlare
-      - ShellTranquilizer
-      - MagazineBoxLightRifle
-      - MagazineBoxLightRiflePractice
-      - MagazineBoxMagnum
-      - MagazineBoxMagnumPractice
-      - MagazineBoxPistol
-      - MagazineBoxPistolPractice
-      - MagazineBoxRifle
-      - MagazineBoxRiflePractice
-      - MagazineBoxLightRifle
-      - MagazineLightRifle
-      - MagazineLightRifleEmpty
-      - MagazinePistol
-      - MagazinePistolEmpty
-      - MagazinePistolSubMachineGun
-      - MagazinePistolSubMachineGunEmpty
-      - MagazinePistolSubMachineGunTopMounted
-      - MagazinePistolSubMachineGunTopMountedEmpty
+    - BoxLethalshot
+    - BoxShotgunLumen
+    - BoxShotgunFlare
+    - BoxShotgunPractice
+    - BoxShotgunSlug
+    - ClothingEyesHudSecurity
+    - CombatKnife
+    - Flash
+    - ForensicPad
+    - Handcuffs
+    - ShellShotgun
+    - ShellShotgunSlug
+    - ShellShotgunLumen
+    - ShellShotgunFlare
+    - ShellTranquilizer
+    - MagazineBoxLightRifle
+    - MagazineBoxLightRiflePractice
+    - MagazineBoxMagnum
+    - MagazineBoxMagnumPractice
+    - MagazineBoxPistol
+    - MagazineBoxPistolPractice
+    - MagazineBoxRifle
+    - MagazineBoxRiflePractice
+    - MagazineBoxLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifleEmpty
+    - MagazinePistol
+    - MagazinePistolEmpty
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGunEmpty
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMountedEmpty
       # .35 Caseless Pistol
-      - MagazinePistolCaselessRiflePractice # EE
-      - MagazinePistolCaselessRifle # EE
-      - MagazinePistolCaselessRifleRubber # EE
+    - MagazinePistolCaselessRiflePractice   # EE
+    - MagazinePistolCaselessRifle   # EE
+    - MagazinePistolCaselessRifleRubber   # EE
       # .35 Caseless (Civilian) Rifle
-      - MagazineCaselessRifleShortPractice # EE
-      - MagazineCaselessRifleShort # EE
-      - MagazineCaselessRifleShortRubber # EE
+    - MagazineCaselessRifleShortPractice   # EE
+    - MagazineCaselessRifleShort   # EE
+    - MagazineCaselessRifleShortRubber   # EE
       # .35 Caseless (Military) Rifle
-      - MagazineCaselessRiflePractice # EE
-      - MagazineCaselessRifle # EE
-      - MagazineCaselessRifleRubber # EE
+    - MagazineCaselessRiflePractice   # EE
+    - MagazineCaselessRifle   # EE
+    - MagazineCaselessRifleRubber   # EE
       # .35 Caseless (Box Mag) Rifle
-      - MagazineBoxCaselessRiflePractice # EE
-      - MagazineBoxCaselessRifle # EE
-      - MagazineBoxCaselessRifleRubber # EE
-      - MagazineMagnum
-      - MagazineMagnumEmpty
-      - MagazineRifle
-      - MagazineRifleEmpty
-      - MagazineShotgun
-      - MagazineShotgunEmpty
-      - MagazineShotgunSlug
-      - RiotShield
-      - SpeedLoaderMagnum
-      - SpeedLoaderMagnumEmpty
-      - Stunbaton
-      - TargetClown
-      - ClothingOuterArmorPlateCarrier
-      - ClothingOuterArmorDuraVest
-      - TargetHuman
-      - TargetSyndicate
-      - WeaponDisablerPractice
-      - WeaponFlareGunSecurity
-      - WeaponLaserCarbinePractice
-      - Zipties
-      - GrenadeFlashBang # Goobstation
-      - ShockCollar
+    - MagazineBoxCaselessRiflePractice   # EE
+    - MagazineBoxCaselessRifle   # EE
+    - MagazineBoxCaselessRifleRubber   # EE
+    - MagazineMagnum
+    - MagazineMagnumEmpty
+    - MagazineRifle
+    - MagazineRifleEmpty
+    - MagazineShotgun
+    - MagazineShotgunEmpty
+    - MagazineShotgunSlug
+    - RiotShield
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnumEmpty
+    - Stunbaton
+    - TargetClown
+    - ClothingOuterArmorPlateCarrier
+    - ClothingOuterArmorDuraVest
+    - TargetHuman
+    - TargetSyndicate
+    - WeaponDisablerPractice
+    - WeaponFlareGunSecurity
+    - WeaponLaserCarbinePractice
+    - Zipties
+    - GrenadeFlashBang   # Goobstation
+    - ShockCollar
       # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
-      - MagazineBoxSpecial
-      - MagazineBoxSpecialPractice
-      - SpeedLoaderSpecial
-      - MagazinePistolSpecial
-      - HandheldGPSBasic
-      - HandheldStationMap
-      - MagazineNovaliteC1Empty
-      - MagazineNovaliteC1
-      - MagazineLightRifleLowCapacityEmpty
-      - MagazineLightRifleLowCapacity
-      - SpeedLoaderRifleHeavy
-      - SpeedLoaderRifleHeavyEmpty
-      - WeaponRifleNovaliteC1
-      - WeaponRifleGestio
-      - MagazineMagnumLeverRifle # Goobstation
-      - MagazineMagnumLeverRifleEmpty # Goobstation
-      - ClothingEyesGlassesSecurity
-      - TelescopicShield
-      - HoloprojectorSecurity
-      - BolaEnergy
-      - ClothingHeadHelmetBasic
-      - MagazineShotgunBeanbag
-      - ShellTranquilizer
-      - BoxBeanbag
-      - CartridgePistolRubber
-      - CartridgeMagnumRubber
-      - CartridgeLightRifleRubber
-      - CartridgeRifleRubber
-      - MagazineRifleRubber
-      - MagazinePistolRubber
-      - MagazinePistolSubMachineGunRubber
-      - MagazineMagnumRubber
-      - MagazineLightRifleRubber
-      - SpeedLoaderMagnumRubber
-      - MagazineBoxPistolRubber
-      - MagazineBoxMagnumRubber
-      - MagazineBoxLightRifleRubber
-      - MagazineBoxRifleRubber
-      - CartridgeSpecialRubber
-      - MagazineBoxSpecialRubber
-      - MagazineBoxLightRifleRubber # Frontier
-      - MagazineBoxMagnumRubber # Frontier
-      - MagazineBoxPistolRubber # Frontier
-      - MagazineBoxRifleRubber # Frontier
-      - SpeedLoaderRifleHeavyRubber
-      - BoxShotgunBirdshot
-      - BoxShotgun00Buckshot
-      - BoxShotgun0000Buckshot
+    - MagazineBoxSpecial
+    - MagazineBoxSpecialPractice
+    - SpeedLoaderSpecial
+    - MagazinePistolSpecial
+    - HandheldGPSBasic
+    - HandheldStationMap
+    - MagazineNovaliteC1Empty
+    - MagazineNovaliteC1
+    - MagazineLightRifleLowCapacityEmpty
+    - MagazineLightRifleLowCapacity
+    - SpeedLoaderRifleHeavy
+    - SpeedLoaderRifleHeavyEmpty
+    - WeaponRifleNovaliteC1
+    - WeaponRifleGestio
+    - MagazineMagnumLeverRifle   # Goobstation
+    - MagazineMagnumLeverRifleEmpty   # Goobstation
+    - ClothingEyesGlassesSecurity
+    - TelescopicShield
+    - HoloprojectorSecurity
+    - BolaEnergy
+    - ClothingHeadHelmetBasic
+    - MagazineShotgunBeanbag
+    - ShellTranquilizer
+    - BoxBeanbag
+    - CartridgePistolRubber
+    - CartridgeMagnumRubber
+    - CartridgeLightRifleRubber
+    - CartridgeRifleRubber
+    - MagazineRifleRubber
+    - MagazinePistolRubber
+    - MagazinePistolSubMachineGunRubber
+    - MagazineMagnumRubber
+    - MagazineLightRifleRubber
+    - SpeedLoaderMagnumRubber
+    - MagazineBoxPistolRubber
+    - MagazineBoxMagnumRubber
+    - MagazineBoxLightRifleRubber
+    - MagazineBoxRifleRubber
+    - CartridgeSpecialRubber
+    - MagazineBoxSpecialRubber
+    - MagazineBoxLightRifleRubber   # Frontier
+    - MagazineBoxMagnumRubber   # Frontier
+    - MagazineBoxPistolRubber   # Frontier
+    - MagazineBoxRifleRubber   # Frontier
+    - SpeedLoaderRifleHeavyRubber
+    - BoxShotgunBirdshot
+    - BoxShotgun00Buckshot
+    - BoxShotgun0000Buckshot
     dynamicRecipes:
-      - Truncheon
-      - Terminus
-      - BoxShotgunIncendiary
-      - BoxShotgunUranium
-      - EncryptionKeySyndie
-      - CartridgeLightRifleIncendiary
-      - CartridgeMagnumIncendiary
-      - CartridgePistolIncendiary
-      - CartridgeRifleIncendiary
-      - CartridgeLightRifleUranium
-      - CartridgeMagnumUranium
-      - CartridgePistolUranium
-      - CartridgeRifleUranium
-      - ExplosivePayload
-      - FlashPayload
-      - GrenadeBlast
-      - GrenadeEMP
-      - GrenadeFlash
-      - MagazineBoxLightRifleIncendiary
-      - MagazineBoxLightRifleUranium
-      - MagazineBoxMagnumIncendiary
-      - MagazineBoxMagnumUranium
-      - MagazineBoxPistolIncendiary
-      - MagazineBoxPistolUranium
-      - MagazineBoxRifleIncendiary
-      - MagazineBoxRifleUranium
-      - ShellSoulbreaker
-      - MagazineGrenadeEmpty
-      - MagazineLightRifleIncendiary
-      - MagazineLightRifleUranium
-      - MagazinePistolIncendiary
-      - MagazinePistolUranium
-      - MagazinePistolSubMachineGunIncendiary
-      - MagazinePistolSubMachineGunUranium
-      - MagazineMagnumIncendiary
-      - MagazineMagnumUranium
-      - MagazineRifleIncendiary
-      - MagazineRifleUranium
-      - MagazineShotgunIncendiary
-      - PortableRecharger
-      - PowerCageHigh
-      - PowerCageMedium
-      - PowerCageSmall
-      - ShuttleGunDusterCircuitboard
-      - ShuttleGunFriendshipCircuitboard
-      - ShuttleGunPerforatorCircuitboard
-      - ShuttleGunSvalinnMachineGunCircuitboard
-      - Signaller
-      - SignalTrigger
-      - SpeedLoaderMagnumIncendiary
-      - SpeedLoaderMagnumUranium
-      - SpeedLoaderRifleHeavyIncendiary
-      - SpeedLoaderRifleHeavyUranium
-      - TimerTrigger
-      - VoiceTrigger
-      - WeaponAdvancedLaser
-      - WeaponDisabler
-      - WeaponDisablerSMG
-      - WeaponLaserCannon
-      - WeaponLaserCarbine
-      - ClothingEyesNightVisionSecurityGoggles
-      - ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
-      - ClothingHeadCage # Nyanotrasen - Insulative headgear
-      - ShockCollar # Nyanotrasen - Shock Collar
-      - WeaponXrayCannon
-      - WeaponEnergyGun
-      - WeaponEnergyGunMini
-      - WeaponEnergyGunPistol
-      - WeaponGunLaserCarbineAutomatic
-      - CartridgeSpecialIncendiary
-      - CartridgeSpecialUranium
-      - CartridgeSpecialHoly
-      - CartridgeSpecialMindbreaker
-      - MagazineBoxSpecialIncendiary
-      - MagazineBoxSpecialUranium
-      - MagazineBoxSpecialMindbreaker
-      - SecurityCyberneticEyes
-      - MedicalCyberneticEyes
-      - ClothingOuterHardsuitCombatStandard
-      - ClothingOuterHardsuitCombatMedical
-      - ClothingOuterHardsuitCombatRiot
-      - ClothingOuterHardsuitCombatAdvanced
-      - ClothingOuterHardsuitShanlinUnpainted
-      - ClothingOuterHardsuitShiweiUnpainted
-      - ClothingOuterHardsuitJuggernautReverseEngineered
-      - WeaponMechCombatImmolationGun
-      - WeaponMechCombatSolarisLaser
-      - WeaponMechCombatFiredartLaser
-      - WeaponMechCombatUltraRifle
-      - WeaponMechCombatShotgun
-      - WeaponMechCombatShotgunIncendiary
-      - WeaponMechCombatDisabler
-      - WeaponMechCombatFlashbangLauncher
-      - WeaponMechCombatMissileRack8
-      - EnergySword
-      - EnergySwordDouble
-      - EnergyCutlass
-      - WeaponEnergyTurretAIMachineCircuitboard
-      - WeaponEnergyTurretStationMachineCircuitboard
-      - WeaponEnergyTurretAIControlPanelElectronics
-      - WeaponEnergyTurretStationControlPanelElectronics
-      - WeaponSubMachineGunFPA90
-      - WeaponSubMachineGunBRDIR25
-      - WeaponPistolMk58
-      - WeaponPistolN1984
-      - WeaponPistolViper
-      - WeaponPistolCobra
-      - MagazineRifleShrapnel
-      - MagazinePistolShrapnel
-      - MagazinePistolSubMachineGunShrapnel
-      - MagazineMagnumShrapnel
-      - MagazineLightRifleShrapnel
-      - MagazineCaselessRifleShrapnel
-      - MagazineCaselessRifleIncendiary
-      - MagazineCaselessRifleUranium
-      - MagazineBoxPistolShrapnel
-      - MagazineBoxMagnumShrapnel
-      - MagazineBoxLightRifleShrapnel
-      - MagazineBoxRifleShrapnel
-      - MagazineBoxCaselessRifleShrapnel
-      - MagazineBoxCaselessRifleIncendiary
-      - MagazineBoxCaselessRifleUranium
+    - Truncheon
+    - Terminus
+    - BoxShotgunIncendiary
+    - BoxShotgunUranium
+    - EncryptionKeySyndie
+    - CartridgeLightRifleIncendiary
+    - CartridgeMagnumIncendiary
+    - CartridgePistolIncendiary
+    - CartridgeRifleIncendiary
+    - CartridgeLightRifleUranium
+    - CartridgeMagnumUranium
+    - CartridgePistolUranium
+    - CartridgeRifleUranium
+    - ExplosivePayload
+    - FlashPayload
+    - GrenadeBlast
+    - GrenadeEMP
+    - GrenadeFlash
+    - MagazineBoxLightRifleIncendiary
+    - MagazineBoxLightRifleUranium
+    - MagazineBoxMagnumIncendiary
+    - MagazineBoxMagnumUranium
+    - MagazineBoxPistolIncendiary
+    - MagazineBoxPistolUranium
+    - MagazineBoxRifleIncendiary
+    - MagazineBoxRifleUranium
+    - ShellSoulbreaker
+    - MagazineGrenadeEmpty
+    - MagazineLightRifleIncendiary
+    - MagazineLightRifleUranium
+    - MagazinePistolIncendiary
+    - MagazinePistolUranium
+    - MagazinePistolSubMachineGunIncendiary
+    - MagazinePistolSubMachineGunUranium
+    - MagazineMagnumIncendiary
+    - MagazineMagnumUranium
+    - MagazineRifleIncendiary
+    - MagazineRifleUranium
+    - MagazineShotgunIncendiary
+    - PortableRecharger
+    - PowerCageHigh
+    - PowerCageMedium
+    - PowerCageSmall
+    - ShuttleGunDusterCircuitboard
+    - ShuttleGunFriendshipCircuitboard
+    - ShuttleGunPerforatorCircuitboard
+    - ShuttleGunSvalinnMachineGunCircuitboard
+    - Signaller
+    - SignalTrigger
+    - SpeedLoaderMagnumIncendiary
+    - SpeedLoaderMagnumUranium
+    - SpeedLoaderRifleHeavyIncendiary
+    - SpeedLoaderRifleHeavyUranium
+    - TimerTrigger
+    - VoiceTrigger
+    - WeaponAdvancedLaser
+    - WeaponDisabler
+    - WeaponDisablerSMG
+    - WeaponLaserCannon
+    - WeaponLaserCarbine
+    - ClothingEyesNightVisionSecurityGoggles
+    - ClothingHeadHelmetInsulated   # Nyanotrasen - Insulative headgear
+    - ClothingHeadCage   # Nyanotrasen - Insulative headgear
+    - ShockCollar   # Nyanotrasen - Shock Collar
+    - WeaponXrayCannon
+    - WeaponEnergyGun
+    - WeaponEnergyGunMini
+    - WeaponEnergyGunPistol
+    - WeaponGunLaserCarbineAutomatic
+    - CartridgeSpecialIncendiary
+    - CartridgeSpecialUranium
+    - CartridgeSpecialHoly
+    - CartridgeSpecialMindbreaker
+    - MagazineBoxSpecialIncendiary
+    - MagazineBoxSpecialUranium
+    - MagazineBoxSpecialMindbreaker
+    - SecurityCyberneticEyes
+    - MedicalCyberneticEyes
+    - ClothingOuterHardsuitCombatStandard
+    - ClothingOuterHardsuitCombatMedical
+    - ClothingOuterHardsuitCombatRiot
+    - ClothingOuterHardsuitCombatAdvanced
+    - ClothingOuterHardsuitShanlinUnpainted
+    - ClothingOuterHardsuitShiweiUnpainted
+    - ClothingOuterHardsuitJuggernautReverseEngineered
+    - WeaponMechCombatImmolationGun
+    - WeaponMechCombatSolarisLaser
+    - WeaponMechCombatFiredartLaser
+    - WeaponMechCombatUltraRifle
+    - WeaponMechCombatShotgun
+    - WeaponMechCombatShotgunIncendiary
+    - WeaponMechCombatDisabler
+    - WeaponMechCombatFlashbangLauncher
+    - WeaponMechCombatMissileRack8
+    - EnergySword
+    - EnergySwordDouble
+    - EnergyCutlass
+    - WeaponEnergyTurretAIMachineCircuitboard
+    - WeaponEnergyTurretStationMachineCircuitboard
+    - WeaponEnergyTurretAIControlPanelElectronics
+    - WeaponEnergyTurretStationControlPanelElectronics
+    - WeaponSubMachineGunFPA90
+    - WeaponSubMachineGunBRDIR25
+    - WeaponPistolMk58
+    - WeaponPistolN1984
+    - WeaponPistolViper
+    - WeaponPistolCobra
+    - MagazineRifleShrapnel
+    - MagazinePistolShrapnel
+    - MagazinePistolSubMachineGunShrapnel
+    - MagazineMagnumShrapnel
+    - MagazineLightRifleShrapnel
+    - MagazineCaselessRifleShrapnel
+    - MagazineCaselessRifleIncendiary
+    - MagazineCaselessRifleUranium
+    - MagazineBoxPistolShrapnel
+    - MagazineBoxMagnumShrapnel
+    - MagazineBoxLightRifleShrapnel
+    - MagazineBoxRifleShrapnel
+    - MagazineBoxCaselessRifleShrapnel
+    - MagazineBoxCaselessRifleIncendiary
+    - MagazineBoxCaselessRifleUranium
   - type: MaterialStorage
     whitelist:
       tags:
@@ -1203,77 +1167,77 @@
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
-    - type: Sprite
-      sprite: Structures/Machines/techfab.rsi
-      layers:
-        - state: icon
-          map: ["enum.LatheVisualLayers.IsRunning"]
-        - state: ammo
-        - state: unlit
-          shader: unshaded
-          map: ["enum.PowerDeviceVisualLayers.Powered"]
-        - state: inserting
-          map: ["enum.MaterialStorageVisualLayers.Inserting"]
-        - state: panel
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - type: Machine
-      board: AmmoTechFabCircuitboard
-    - type: Lathe
-      idleState: icon
-      runningState: icon
-      staticRecipes:
-        - BoxLethalshot
-        - BoxShotgunLumen
-        - BoxShotgunFlare
-        - BoxShotgunSlug
-        - MagazineBoxLightRifle
-        - MagazineBoxMagnum
-        - MagazineBoxPistol
-        - MagazineBoxRifle
-        - MagazineLightRifle
-        - MagazineLightRifleEmpty
-        - MagazinePistol
-        - MagazinePistolEmpty
-        - MagazineRifle
-        - MagazineRifleEmpty
-        - MagazineNovaliteC1
-        - MagazineNovaliteC1Empty
-        - MagazineShotgun
-        - MagazineShotgunEmpty
-        - MagazineShotgunSlug
-        - ShellTranquilizer
-        - SpeedLoaderMagnum
-        - SpeedLoaderMagnumEmpty
-        - SpeedLoaderRifleHeavy
-        - SpeedLoaderRifleHeavyEmpty
-        - CartridgeSpecial
-        - MagazineBoxSpecial
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: ammo
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: AmmoTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+    - BoxLethalshot
+    - BoxShotgunLumen
+    - BoxShotgunFlare
+    - BoxShotgunSlug
+    - MagazineBoxLightRifle
+    - MagazineBoxMagnum
+    - MagazineBoxPistol
+    - MagazineBoxRifle
+    - MagazineLightRifle
+    - MagazineLightRifleEmpty
+    - MagazinePistol
+    - MagazinePistolEmpty
+    - MagazineRifle
+    - MagazineRifleEmpty
+    - MagazineNovaliteC1
+    - MagazineNovaliteC1Empty
+    - MagazineShotgun
+    - MagazineShotgunEmpty
+    - MagazineShotgunSlug
+    - ShellTranquilizer
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnumEmpty
+    - SpeedLoaderRifleHeavy
+    - SpeedLoaderRifleHeavyEmpty
+    - CartridgeSpecial
+    - MagazineBoxSpecial
         # .35 Caseless Pistol
-        - MagazinePistolCaselessRiflePractice # EE
-        - MagazinePistolCaselessRifle # EE
-        - MagazinePistolCaselessRifleRubber # EE
+    - MagazinePistolCaselessRiflePractice     # EE
+    - MagazinePistolCaselessRifle     # EE
+    - MagazinePistolCaselessRifleRubber     # EE
         # .35 Caseless (Civilian) Rifle
-        - MagazineCaselessRifleShortPractice # EE
-        - MagazineCaselessRifleShort # EE
-        - MagazineCaselessRifleShortRubber # EE
+    - MagazineCaselessRifleShortPractice     # EE
+    - MagazineCaselessRifleShort     # EE
+    - MagazineCaselessRifleShortRubber     # EE
         # .35 Caseless (Military) Rifle
-        - MagazineCaselessRiflePractice # EE
-        - MagazineCaselessRifle # EE
-        - MagazineCaselessRifleRubber # EE
+    - MagazineCaselessRiflePractice     # EE
+    - MagazineCaselessRifle     # EE
+    - MagazineCaselessRifleRubber     # EE
         # .35 Caseless (Box Mag) Rifle
-        - MagazineBoxCaselessRiflePractice # EE
-        - MagazineBoxCaselessRifle # EE
-        - MagazineBoxCaselessRifleRubber # EE
-    - type: MaterialStorage
-      whitelist:
-        tags:
-          - Sheet
-          - RawMaterial
-          - Ingot
-          - Wooden
-          - ClothMade
-          - Gauze
-          - Metal
+    - MagazineBoxCaselessRiflePractice     # EE
+    - MagazineBoxCaselessRifle     # EE
+    - MagazineBoxCaselessRifleRubber     # EE
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
 
 - type: entity
   id: MedicalTechFab
@@ -1642,7 +1606,7 @@
     - SheetRUGlass1
     - MaterialDiamond
   - type: MaterialStorageMagnetPickup # Delta V - Summary: Adds magnet pull from Frontier
-    magnetEnabled: True
+    magnetEnabled: true
     range: 0.30 # Delta V - End Magnet Pull
   - type: MiningPoints # DeltaV - Source of mining points for miners
     transferSound:
@@ -1831,4 +1795,4 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - PrizeTicket
+      - PrizeTicket

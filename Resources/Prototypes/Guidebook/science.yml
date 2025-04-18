@@ -17,7 +17,7 @@
   name: guide-entry-technologies
   text: "/ServerInfo/Guidebook/Science/Technologies.xml"
   hideInMenu: true
-  filterEnabled: True
+  filterEnabled: true
 
 - type: guideEntry
   id: AnomalousResearch
@@ -73,11 +73,6 @@
   name: guide-entry-machine-upgrading
   text: "/ServerInfo/Guidebook/Science/MachineUpgrading.xml"
   hideInMenu: true
-
-- type: guideEntry
-  id: MachineUpgrading
-  name: guide-entry-machine-upgrading
-  text: "/ServerInfo/Guidebook/Science/MachineUpgrading.xml"
 
 - type: guideEntry
   id: Cyborgs

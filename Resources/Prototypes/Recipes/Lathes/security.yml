@@ -394,28 +394,6 @@
     Steel: 25
 
 - type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazinePistolCaselessRifle
-  result: MagazinePistolCaselessRifle
-  materials:
-    Steel: 145
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineBoxCaselessRifle
-  result: MagazineBoxCaselessRifle
-  materials:
-    Steel: 720
-
-- type: latheRecipe
-  id: MagazinePistolEmpty
-  result: MagazinePistolEmpty
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 25
-
-- type: latheRecipe
   id: MagazinePistol
   result: MagazinePistol
   category: Ammo

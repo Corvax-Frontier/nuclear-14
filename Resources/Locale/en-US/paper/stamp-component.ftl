@@ -4,7 +4,6 @@ stamp-component-stamped-name-mime = Mime
 stamp-component-stamped-name-captain = Captain
 stamp-component-stamped-name-centcom = CentCom
 stamp-component-stamped-name-chaplain = Chaplain
-stamp-component-stamped-name-lawyer = Lawyer
 stamp-component-stamped-name-clown = Clown
 stamp-component-stamped-name-cmo = Chief Medical Officer
 stamp-component-stamped-name-denied = DENIED

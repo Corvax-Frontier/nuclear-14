@@ -48,7 +48,7 @@
 
 # Uplinks
 - type: entity
-  parent: [ BaseItem, StorePresetUplink ]
+  parent: [BaseItem, StorePresetUplink]
   id: BaseUplinkRadio
   name: syndicate uplink
   description: Suspiciously looking old radio...
@@ -110,18 +110,6 @@
   - type: Store
     balance:
       Telecrystal: 350 # 5x TC, +cost of a tacsuit they no longer spawn with.
-  - type: Tag
-    tags:
-    - NukeOpsUplink
-
-- type: entity
-  parent: BaseUplinkRadio
-  id: BaseUplinkRadio60TC
-  suffix: 60 TC, LoneOps
-  components:
-  - type: Store
-    balance:
-      Telecrystal: 60
   - type: Tag
     tags:
     - NukeOpsUplink

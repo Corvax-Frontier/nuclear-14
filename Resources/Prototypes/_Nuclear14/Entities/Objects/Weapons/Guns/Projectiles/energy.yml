@@ -2,7 +2,7 @@
   name: plasma
   id: BulletPlasma
   parent: BaseBullet
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
   - type: FlyBySound
     sound:
@@ -17,8 +17,7 @@
   - type: Fixtures
     fixtures:
       projectile:
-        shape:
-          !type:PhysShapeAabb
+        shape: !type:PhysShapeAabb
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
@@ -32,7 +31,7 @@
         - MidImpassable
         - HighImpassable
         - LowImpassable
-        hard: False
+        hard: false
   - type: Projectile
     impactEffect: BulletImpactEffect
     damage:
@@ -46,7 +45,7 @@
   name: plasma
   id: BulletBigPlasma
   parent: BulletPlasma
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
   - type: Projectile
     impactEffect: BulletImpactEffect
@@ -57,46 +56,11 @@
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/energy_meat1.ogg"
 
-- type: entity #TODO: Finish Projectile Laser
-  name: laser
-  id: BulletLaser
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: FlyBySound
-    sound:
-      collection: EnergyMiss
-      params:
-        volume: 5
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-    layers:
-    - state: omnilaser_greyscale
-      shader: unshaded
-      color: red
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
-        hard: false
-        mask:
-        - Opaque
-      fly-by: *flybyfixture
-  - type: Projectile
-    impactEffect: BulletImpactEffect
-    damage:
-      types:
-        Heat: 20
-    soundHit:
-      collection: MeatLaserImpact
-
-- type: entity 
+- type: entity
   name: recharger laser
   id: BulletRechargerLaser
   parent: BaseBullet
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
   - type: FlyBySound
     sound:
@@ -112,8 +76,7 @@
   - type: Fixtures
     fixtures:
       projectile:
-        shape:
-          !type:PhysShapeAabb
+        shape: !type:PhysShapeAabb
           bounds: "-0.2,-0.2,0.2,0.2"
         hard: false
         mask:

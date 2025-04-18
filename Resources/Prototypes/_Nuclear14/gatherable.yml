@@ -50,21 +50,6 @@
   minOreYield: 1
   maxOreYield: 3
 
-- type: weightedRandomOre
-  id: RandomOreDistributionStandard
-  weights:
-    N14OreCopper: 3
-    N14OreGold : 2
-    N14OreSilver: 2
-    N14OreIron: 3
-    OreCoal: 6
-    OreSpaceQuartz: 3
-    OreUranium: 1
-    OreLead: 2
-    OreSulfur: 2
-    OreFertilizer: 3
-
-# Plants
 - type: ore
   id: WildAgave
   oreEntity: N14FloraProduceWildAgave

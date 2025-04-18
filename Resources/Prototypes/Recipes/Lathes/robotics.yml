@@ -442,17 +442,3 @@
   id: BorgModuleJetpack
   result: BorgModuleJetpack
 
-- type: latheRecipe
-  parent: BaseBorgModuleRecipe
-  id: BorgModuleAppraisal
-  result: BorgModuleAppraisal
-
-- type: latheRecipe
-  parent: BaseBorgModuleRecipe
-  id: BorgModuleMining
-  result: BorgModuleMining
-
-- type: latheRecipe
-  parent: BaseGoldBorgModuleRecipe
-  id: BorgModuleGrapplingGun
-  result: BorgModuleGrapplingGun
