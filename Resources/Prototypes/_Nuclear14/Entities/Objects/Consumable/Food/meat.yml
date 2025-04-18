@@ -356,7 +356,7 @@
   - type: Sprite
     sprite: _Nuclear14/Objects/Consumable/Food/meat.rsi
     state: morsels_roasted
-  - type: Construction
+  - type: Construction # Corvax-Change
     graph: FoodMeatRad
     node: MeatCooked
     defaultTarget: MeatCooked
