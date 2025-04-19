@@ -137,7 +137,7 @@ namespace Content.Server.Ghost
             if (HasComp<VisitingMindComponent>(uid))
                 return;
 
-            if (!_minds.TryGetMind(uid, out var mindId, out var mind) || mind.IsVisitingEntity)
+            if (!_minds.TryGetMind(uid, out var mindId, out var mind))
                 return;
 
             if (component.MustBeDead && (_mobState.IsAlive(uid) || _mobState.IsCritical(uid)))

@@ -29,14 +29,14 @@
         Blunt: 80 #if the 2 ton vault door breaking every bone in your body doesn't kill you, the suffocation will
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/FalloutDoors/vaultdoor.rsi
-    
+
 - type: entity
   parent: N14Airlock
   id: N14DoorBunker
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/FalloutDoors/bunkerdoor.rsi
-    
+
 - type: entity
   parent: N14Airlock
   id: N14DoorBunkerGlass

@@ -25,7 +25,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.Player;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 using static Content.Client.Inventory.ClientInventorySystem;
 using static Robust.Client.UserInterface.Control;
 

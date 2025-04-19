@@ -4,6 +4,7 @@ using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
 using Content.Client.DeltaV.NanoChat;
+// using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
@@ -22,13 +23,10 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
-using Content.Client.Replay;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
-using Robust.Client.GameObjects;
-
 namespace Content.Client.IoC
 {
     internal static class ClientContentIoC

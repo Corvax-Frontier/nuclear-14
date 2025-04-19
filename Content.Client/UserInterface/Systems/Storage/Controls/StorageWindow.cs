@@ -9,6 +9,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Input;
 using Content.Shared.Item;
 using Content.Shared.Storage;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -196,6 +197,26 @@ public sealed class StorageWindow : BaseWindow
         BuildGridRepresentation();
     }
 
+    private void CloseParent()
+    {
+        if (StorageEntity == null)
+            return;
+
+        var containerSystem = _entity.System<SharedContainerSystem>();
+        var uiSystem = _entity.System<UserInterfaceSystem>();
+
+        if (containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
+            _entity.TryGetComponent(container.Owner, out StorageComponent? storage) &&
+            storage.Container.Contains(StorageEntity.Value) &&
+            uiSystem
+                .TryGetOpenUi<StorageBoundUserInterface>(container.Owner,
+                    StorageComponent.StorageUiKey.Key,
+                    out var parentBui))
+        {
+            parentBui.CloseWindow(Position);
+        }
+    }
+
     private void BuildGridRepresentation()
     {
         if (!_entity.TryGetComponent<StorageComponent>(StorageEntity, out var comp) || comp.Grid.Count == 0)
@@ -218,7 +239,9 @@ public sealed class StorageWindow : BaseWindow
         };
         exitButton.OnPressed += _ =>
         {
+            // Close ourselves and all parent BUIs.
             Close();
+            CloseParent();
         };
         exitButton.OnKeyBindDown += args =>
         {
@@ -226,6 +249,7 @@ public sealed class StorageWindow : BaseWindow
             if (!args.Handled && args.Function == ContentKeyFunctions.ActivateItemInWorld)
             {
                 Close();
+                CloseParent();
                 args.Handle();
             }
         };
@@ -285,7 +309,6 @@ public sealed class StorageWindow : BaseWindow
         {
             _backButton = new TextureButton
             {
-                TextureNormal = _backTexture,
                 Scale = new Vector2(2, 2),
             };
             _backButton.OnPressed += _ =>
@@ -293,7 +316,8 @@ public sealed class StorageWindow : BaseWindow
                 var containerSystem = _entity.System<SharedContainerSystem>();
 
                 if (containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
-                    _entity.TryGetComponent(container.Owner, out StorageComponent? storage))
+                    _entity.TryGetComponent(container.Owner, out StorageComponent? storage) &&
+                    storage.Container.Contains(StorageEntity.Value))
                 {
                     Close();
 
@@ -302,7 +326,7 @@ public sealed class StorageWindow : BaseWindow
                             StorageComponent.StorageUiKey.Key,
                             out var parentBui))
                     {
-                        parentBui.Show();
+                        parentBui.Show(Position);
                     }
                 }
             };
@@ -503,6 +527,74 @@ public sealed class StorageWindow : BaseWindow
                 _pieces[ent] = (loc, gridPiece);
             }
         }
+
+        _toRemove.Clear();
+
+        // Remove entities no longer relevant / Update existing ones
+        foreach (var (ent, data) in _pieces)
+        {
+            if (storageComp.StoredItems.TryGetValue(ent, out var updated))
+            {
+                data.Control.Marked = IsMarked(ent);
+
+                if (data.Loc.Equals(updated))
+                {
+                    DebugTools.Assert(data.Control.Location == updated);
+                    continue;
+                }
+
+                // Update
+                data.Control.Location = updated;
+                var index = GetGridIndex(data.Control);
+                data.Control.Orphan();
+                _controlGrid[index].AddChild(data.Control);
+                _pieces[ent] = (updated, data.Control);
+                continue;
+            }
+
+            _toRemove.Add(ent);
+        }
+
+        foreach (var ent in _toRemove)
+        {
+            _pieces.Remove(ent, out var data);
+            data.Control.Orphan();
+        }
+
+        // Add new ones
+        foreach (var (ent, loc) in storageComp.StoredItems)
+        {
+            if (_pieces.TryGetValue(ent, out var existing))
+            {
+                DebugTools.Assert(existing.Loc == loc);
+                continue;
+            }
+
+            if (_entity.TryGetComponent<ItemComponent>(ent, out var itemEntComponent))
+            {
+                var gridPiece = new ItemGridPiece((ent, itemEntComponent), loc, _entity)
+                {
+                    MinSize = size,
+                    Marked = IsMarked(ent),
+                };
+                gridPiece.OnPiecePressed += OnPiecePressed;
+                gridPiece.OnPieceUnpressed += OnPieceUnpressed;
+                var controlIndex = loc.Position.X + loc.Position.Y * (boundingGrid.Width + 1);
+
+                _controlGrid[controlIndex].AddChild(gridPiece);
+                _pieces[ent] = (loc, gridPiece);
+            }
+        }
+    }
+
+    private ItemGridPieceMarks? IsMarked(EntityUid uid)
+    {
+        return _contained.IndexOf(uid) switch
+        {
+            0 => ItemGridPieceMarks.First,
+            1 => ItemGridPieceMarks.Second,
+            _ => null,
+        };
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -524,8 +616,9 @@ public sealed class StorageWindow : BaseWindow
         {
             if (StorageEntity != null && _entity.System<StorageSystem>().NestedStorage)
             {
+                // If parent container nests us then show back button
                 if (containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
-                    _entity.HasComponent<StorageComponent>(container.Owner))
+                    _entity.TryGetComponent(container.Owner, out StorageComponent? storageComp) && storageComp.Container.Contains(StorageEntity.Value))
                 {
                     _backButton.Visible = true;
                 }

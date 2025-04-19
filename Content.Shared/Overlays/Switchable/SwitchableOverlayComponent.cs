@@ -19,15 +19,17 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     [DataField]
     public bool IsEquipment;
 
+    /// <summary>
+    /// If it is greater than 0, overlay isn't toggled but pulsed instead
+    /// </summary>
+    [DataField]
+    public float PulseTime;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public float PulseAccumulator;
 
     [DataField]
-    public float PulseTime = 0;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan PulseAccumulator = TimeSpan.Zero;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan PulseEndTime = TimeSpan.Zero;
+    public float FlashDurationMultiplier = 1f; // ! goober
 
     [DataField]
     public virtual SoundSpecifier? ActivateSound { get; set; } =

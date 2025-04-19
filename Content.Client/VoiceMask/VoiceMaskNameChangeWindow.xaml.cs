@@ -31,6 +31,14 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
             OnVerbChange?.Invoke((string?) args.Button.GetItemMetadata(args.Id));
             SpeechVerbSelector.SelectId(args.Id);
         };
+
+        SpeechVerbSelector.OnItemSelected += args =>
+        {
+            OnVerbChange?.Invoke((string?) args.Button.GetItemMetadata(args.Id));
+            SpeechVerbSelector.SelectId(args.Id);
+        };
+
+        AddVerbs();
     }
 
     public void ReloadVerbs(IPrototypeManager proto)

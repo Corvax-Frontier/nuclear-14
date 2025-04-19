@@ -2,11 +2,9 @@ using Content.Shared.Access;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Roles
 {
@@ -65,6 +63,13 @@ namespace Content.Shared.Roles
 
         [DataField("canBeAntag")]
         public bool CanBeAntag { get; private set; } = true;
+
+        /// <summary>
+        /// Used by Contractors to determine if a given job should have a passport
+        /// This should be disabled for Borgs and Station AI, for example.
+        /// </summary>
+        [DataField("canHavePassport")]
+        public bool CanHavePassport { get; private set; } = true;
 
         /// <summary>
         /// Nyano/DV: For e.g. prisoners, they'll never use their latejoin spawner.

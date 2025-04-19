@@ -224,13 +224,10 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (inTargetHand != null && TryComp<DisarmMalusComponent>(inTargetHand, out var malus))
             chance -= malus.Malus;
 
-        if (TryComp<ShovingComponent>(disarmer, out var shoving))
-            chance += shoving.DisarmBonus;
-
         return Math.Clamp(chance
-                        * _contests.MassContest(disarmer, disarmed, false, 2f)
+                        * _contests.MassContest(disarmer, disarmed, false, 0.5f)
                         * _contests.StaminaContest(disarmer, disarmed, false, 0.5f)
-                        * _contests.HealthContest(disarmer, disarmed, false, 1f),
+                        * _contests.HealthContest(disarmer, disarmed, false, 0.5f),
                         0f, 1f);
     }
 

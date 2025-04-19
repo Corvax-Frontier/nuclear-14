@@ -20,7 +20,6 @@ using Content.Server.Players.JobWhitelist;
 using Content.Server.MoMMI;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.Players;
-using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
@@ -34,7 +33,6 @@ using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
-using Robust.Shared.Network;
 
 namespace Content.Server.IoC
 {

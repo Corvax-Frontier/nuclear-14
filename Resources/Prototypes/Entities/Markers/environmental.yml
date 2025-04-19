@@ -15,7 +15,7 @@
         state: rad
   - type: RadiationSource
     intensity: 1
-    
+
 - type: entity
   parent: MarkerRadiation1
   id: MarkerRadiation2
@@ -23,7 +23,7 @@
   components:
   - type: RadiationSource
     intensity: 2
-    
+
 - type: entity
   parent: MarkerRadiation1
   id: MarkerRadiation3
@@ -31,7 +31,7 @@
   components:
   - type: RadiationSource
     intensity: 3
-    
+
 - type: entity
   parent: MarkerRadiation1
   id: MarkerRadiation4
@@ -39,7 +39,7 @@
   components:
   - type: RadiationSource
     intensity: 4
-    
+
 - type: entity
   parent: MarkerRadiation1
   id: MarkerRadiation5
@@ -47,7 +47,7 @@
   components:
   - type: RadiationSource
     intensity: 5
-    
+
 - type: entity
   parent: MarkerRadiation1
   id: MarkerRadiation10
@@ -55,7 +55,7 @@
   components:
   - type: RadiationSource
     intensity: 10
-    
+
 # Invisible Walls
 - type: entity
   name: Marker Blocker
@@ -99,7 +99,7 @@
     state: weather
   - type: BlockWeather
   - type: IsRoof
-  
+
 - type: entity
   name: Marker Weather Blocker
   id: MarkerWeatherblockerNoRoof

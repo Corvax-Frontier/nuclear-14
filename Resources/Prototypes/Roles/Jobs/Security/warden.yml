@@ -11,15 +11,19 @@
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
     - !type:CharacterWhitelistRequirement
-    # - !type:CharacterTraitRequirement
-      # inverted: true
-      # traits:
-        # - Foreigner
-        # - ForeignerLight
-        # - Muted
-        # - Blindness
-        # - Pacifist
-        # - BrittleBoneDisease
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
@@ -55,7 +59,7 @@
     eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterCoatWarden
     id: WardenPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
   innerClothingSkirt: ClothingUniformJumpskirtWarden
   satchel: ClothingBackpackSatchelSecurity

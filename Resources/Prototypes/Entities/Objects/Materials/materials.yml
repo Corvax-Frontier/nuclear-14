@@ -47,6 +47,10 @@
     - state: cardboard_3
       map: ["base"]
   - type: Appearance
+  - type: Tag
+    tags:
+      - RawMaterial
+      - MaterialCardboard
   - type: Extractable
     grindableSolutionName: cardboard
   - type: SolutionContainerManager
@@ -199,6 +203,8 @@
     tags:
       - ClothMade
       - RawMaterial
+  - type: Item
+    heldPrefix: durathread
 
 - type: entity
   parent: MaterialDurathread
@@ -431,6 +437,8 @@
     tags:
       - ClothMade
       - RawMaterial
+  - type: Item
+    heldPrefix: cotton
 
 - type: entity
   parent: MaterialCotton

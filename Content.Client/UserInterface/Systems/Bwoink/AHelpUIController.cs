@@ -30,7 +30,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.UserInterface.Systems.Bwoink;
 
 [UsedImplicitly]
-public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSystem>, IOnStateChanged<GameplayState>, IOnStateChanged<LobbyState>
+public sealed class AHelpUIController : UIController, IOnSystemChanged<BwoinkSystem>, IOnStateChanged<GameplayState>, IOnStateChanged<LobbyState>
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -49,7 +49,6 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     public const string AHelpErrorSound = "/Audio/Admin/ahelp_error.ogg";
     public const string AHelpReceiveSound = "/Audio/Admin/adminhelp_old.ogg";
     public const string AHelpSendSound = "/Audio/Admin/adminhelp_old.ogg";
-
 
     public override void Initialize()
     {

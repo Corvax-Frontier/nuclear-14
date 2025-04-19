@@ -70,7 +70,7 @@
       map: ["enum.StorageVisualLayers.Base"]
     - state: unlocked
       shader: unshaded
-      # used to keep the unlocked light visible while open. 
+      # used to keep the unlocked light visible while open.
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
     - state: locked

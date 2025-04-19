@@ -48,6 +48,11 @@
         key: Drowsiness
         time: 10
         type: Remove
+                                  # goob edit
+      - !type:GenericStatusEffect
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -101,6 +106,11 @@
         messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
         type: Local
         probability: 0.05
+                                  # goob edit
+      - !type:GenericStatusEffect
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -127,8 +137,8 @@
         sprintSpeedModifier: 1.3
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 80 #please wait 3 minutes before using another stimpack
+        - !type:ReagentThreshold
+          min: 80   #please wait 3 minutes before using another stimpack
         damage:
           types:
             Poison: 1
@@ -164,23 +174,28 @@
         key: Drowsiness
         time: 10
         type: Remove
+                                  # goob edit
+      - !type:GenericStatusEffect
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
     Medicine:
       metabolismRate: 1.0
       effects:
-        - !type:ResetNarcolepsy
-        - !type:SatiateHunger
-          factor: 1
-        - !type:SatiateThirst
-          factor: 1
-        - !type:HealthChange
-          conditions:
-          - !type:TotalDamage
-            min: 70
-            max: 120 # you've got a chance to get out of crit
-          damage: # heals at the same rate as tricordrazine, doesn't heal poison because if you OD'd I'm not giving you a safety net
-            groups:
-              Burn: -1
-              Brute: -1
+      - !type:ResetNarcolepsy
+      - !type:SatiateHunger
+        factor: 1
+      - !type:SatiateThirst
+        factor: 1
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          min: 70
+          max: 120   # you've got a chance to get out of crit
+        damage:   # heals at the same rate as tricordrazine, doesn't heal poison because if you OD'd I'm not giving you a safety net
+          groups:
+            Burn: -1
+            Brute: -1
 
 - type: reagent
   id: THC
@@ -248,9 +263,11 @@
         type: Add
         time: 10
         refresh: false
-      - !type:ChemVomit # Vomiting is a symptom of brain damage
+                        # Vomiting is a symptom of brain damage
+      - !type:ChemVomit
         probability: 0.05
-      - !type:Drunk # Headaches and slurring are major symptoms of brain damage, this is close enough
+                    # Headaches and slurring are major symptoms of brain damage, this is close enough
+      - !type:Drunk
         boozePower: 5
 
 - type: reagent
@@ -270,7 +287,8 @@
         type: Add
         time: 5
         refresh: false
-      - !type:ChemRerollPsionic #Nyano - Summary: lets the imbiber become psionic.
+                                #Nyano - Summary: lets the imbiber become psionic.
+      - !type:ChemRerollPsionic
         conditions:
         - !type:ReagentThreshold
           reagent: SpaceDrugs
@@ -418,7 +436,7 @@
         - norepinephricacid-effect-blindness
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 5
       - !type:Emote
         emote: Scream
         probability: 0.08
@@ -427,7 +445,7 @@
         component: TemporaryBlindness
         conditions:
         - !type:ReagentThreshold
-          min: 20
+          min: 5
 
 - type: reagent
   id: Happiness
@@ -461,20 +479,53 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
-        type: Local
-        visualType: Medium
-        messages:
-        - "psicodine-effect-fearless"
-        - "psicodine-effect-anxieties-wash-away"
-        - "psicodine-effect-at-peace"
-        probability: 0.2
+
+- type: reagent
+  id: Cryanobalamin
+  name: reagent-name-cryanobalamin
+  group: Narcotics
+  desc: reagent-desc-cryanobalamin
+  flavor: sweet
+  color: "#46a6f5"
+  physicalDesc: reagent-physical-desc-sugary
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -3
+      - !type:SatiateThirst
+        factor: -1
+      - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          max: 20
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
-        type: Add
-        time: 5
-        refresh: false
+          min: 30
+        damage:
+          types:
+            Cellular: 0.2
+
+- type: reagent
+  id: LiftLoversSpecial
+  name: reagent-name-liftloversspecial
+  group: Narcotics
+  desc: reagent-desc-liftloversspecial
+  flavor: sweet
+  color: "#f73715"
+  physicalDesc: reagent-physical-desc-unhealthy
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -6
+      - !type:SatiateThirst
+        factor: -2
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 7
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Cellular: 0.3

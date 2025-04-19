@@ -6,9 +6,9 @@
   children:
     - Arachnid
     - Diona
-    - Dwarf
     - Human
     - Moth
+    - Oni
     - Reptilian
     - SlimePerson
     - IPCs
@@ -16,7 +16,9 @@
     - Shadowkin
     - Plasmaman
     - Chitinid
-    - Tajaran 
+    - Tajaran
+    # ImpStation additions
+    - Thaven
 
 - type: guideEntry
   id: Arachnid
@@ -47,6 +49,11 @@
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
   hideInMenu: true
+
+- type: guideEntry
+  id: Oni
+  name: species-name-oni
+  text: "/ServerInfo/Guidebook/Mobs/Oni.xml"
 
 - type: guideEntry
   id: Reptilian

@@ -69,7 +69,7 @@
   sprites:
     - sprite: _Nuclear14/Mobs/Customization/hair.rsi
       state: zeta_basic_braids
-      
+
 - type: marking
   id: ZetaHairQuadspike
   bodyPart: Hair

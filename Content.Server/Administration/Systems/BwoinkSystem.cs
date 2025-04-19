@@ -45,7 +45,6 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimit = default!;
         [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
-        [Dependency] private readonly IPlayerLocator _locator = default!;
 
         [GeneratedRegex(@"^https://(?:(?:canary|ptb)\.)?discord\.com/api/webhooks/(\d+)/((?!.*/).*)$")]
         private static partial Regex DiscordRegex();
@@ -111,7 +110,7 @@ namespace Content.Server.Administration.Systems
             SubscribeNetworkEvent<BwoinkClientTypingUpdated>(OnClientTypingUpdated);
             SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _activeConversations.Clear());
 
-        	_rateLimit.Register(
+            _rateLimit.Register(
                 RateLimitKey,
                 new RateLimitRegistration(
                     CCVars.AhelpRateLimitPeriod,

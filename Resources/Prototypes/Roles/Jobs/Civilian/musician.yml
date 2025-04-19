@@ -15,6 +15,11 @@
     holiday: MikuDay
     prototype: BoxPerformer
   setPreference: false
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: MusicianGear

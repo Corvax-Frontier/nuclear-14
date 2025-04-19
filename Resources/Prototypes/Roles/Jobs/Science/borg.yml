@@ -12,6 +12,7 @@
   spawnLoadout: false
   applyTraits: false
   setPreference: false
+  canHavePassport: false
 
 - type: job
   id: Borg
@@ -21,5 +22,6 @@
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
-  jobEntity: PlayerBorgGeneric
   setPreference: false
+  jobEntity: PlayerBorgBattery
+  canHavePassport: false

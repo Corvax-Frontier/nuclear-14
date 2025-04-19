@@ -26,7 +26,7 @@ namespace Content.Server.Body.Systems
 
         private void OnMapInit(Entity<StomachComponent> ent, ref MapInitEvent args)
         {
-            ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.UpdateInterval * (1+_random.NextFloat());
+            ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.UpdateInterval;
         }
 
         private void OnUnpaused(Entity<StomachComponent> ent, ref EntityUnpausedEvent args)

@@ -56,7 +56,7 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
         var lightRadius = 0f;
         foreach (var comp in args.Components)
         {
-            if (!comp.IsActive && (comp.PulseTime <= 0 || _timing.CurTime < comp.PulseEndTime))
+            if (!comp.IsActive && (comp.PulseTime <= 0 || comp.PulseAccumulator >= comp.PulseTime))
                 continue;
 
             if (tvComp == null)

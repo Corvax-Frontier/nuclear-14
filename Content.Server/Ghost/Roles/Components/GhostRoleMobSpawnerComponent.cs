@@ -11,6 +11,7 @@ namespace Content.Server.Ghost.Roles.Components
     {
         [DataField]
         public bool DeleteOnSpawn = false; /// Change for N14, needed for the ghost role follower traits.
+
         [DataField]
         public int AvailableTakeovers = 1;
 

@@ -5,4 +5,8 @@
   <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
   </Box>
 
+  # Parkstation specific species
+  <Box>
+  <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
+  </Box>
 </Document>

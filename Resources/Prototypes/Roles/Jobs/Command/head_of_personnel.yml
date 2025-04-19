@@ -3,14 +3,16 @@
   name: job-name-hop
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   setPreference: false
-  # requirements:
-    # - !type:CharacterTraitRequirement
-      # inverted: true
-      # traits:
-        # - Foreigner
-        # - ForeignerLight
   weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

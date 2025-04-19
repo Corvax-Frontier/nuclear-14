@@ -45,9 +45,13 @@ public sealed class SingerSystem : SharedSingerSystem
         SubscribeLocalEvent<SingerComponent, OpenUiActionEvent>(OnInstrumentOpen, before: [typeof(ActivatableUISystem)]);
     }
 
-    protected override SharedInstrumentComponent EnsureInstrumentComp(EntityUid uid)
+    protected override SharedInstrumentComponent EnsureInstrumentComp(EntityUid uid, SingerInstrumentPrototype singer)
     {
-        return EnsureComp<InstrumentComponent>(uid);
+        var instrumentComp = EnsureComp<InstrumentComponent>(uid);
+        instrumentComp.AllowPercussion = singer.AllowPercussion;
+        instrumentComp.AllowProgramChange = singer.AllowProgramChange;
+
+        return instrumentComp;
     }
 
     protected override void SetUpSwappableInstrument(EntityUid uid, SingerInstrumentPrototype singer)

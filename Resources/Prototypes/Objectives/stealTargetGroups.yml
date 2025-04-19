@@ -78,6 +78,13 @@
     state: base
 
 - type: stealTargetGroup
+  id: NTRepWeapon
+  name: corporate liaison's weapon
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/ccdisabler.rsi
+    state: base
+
+- type: stealTargetGroup
   id: NukeDisk
   name: nuclear authentication disk
   sprite:

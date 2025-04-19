@@ -287,6 +287,3 @@ cmd-options-help = Использование: options [tab]
 
 ## Combat Options
 
-ui-options-function-look-up = Смотреть вверх/Целиться
-ui-options-function-auto-get-up = Автоматически вставать после падения
-ui-options-function-hold-look-up = Удерживать клавишу для прицеливания

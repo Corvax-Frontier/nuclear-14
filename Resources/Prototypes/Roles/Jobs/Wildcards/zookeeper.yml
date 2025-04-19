@@ -11,6 +11,11 @@
   - Maintenance
   - Zookeeper # DeltaV - Add Zookeeper access
   setPreference: false
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: ZookeeperGear

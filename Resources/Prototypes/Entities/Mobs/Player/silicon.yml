@@ -2,7 +2,7 @@
 - type: entity
   id: AiHeld
   description: Components added / removed from an entity that gets inserted into an AI core.
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
@@ -72,7 +72,7 @@
 - type: entity
   id: AiHeldIntellicard
   description: Components added / removed from an entity that gets inserted into an Intellicard.
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
@@ -112,7 +112,7 @@
         # The issue is verbs check for same transparent container.
         # The alternative is you add a bunch of events trying to override it; we don't even really need the container functionality
         # anyway it's just a quality of life thing.
-        showEnts: True
+        showEnts: true
 
 # Boards
 - type: entity
@@ -321,8 +321,8 @@
     visuals:
       enum.StationAiVisualState.Key:
         unshaded:
-          Empty: { state: empty }
-          Occupied: { state: full }
+          Empty: {state: empty}
+          Occupied: {state: full}
   - type: Intellicard
 
 - type: entity
@@ -340,15 +340,14 @@
     container: station_ai_mind_slot
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
+    - trigger: !type:DamageTrigger
         damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: StationAiCore
@@ -372,8 +371,8 @@
     visuals:
       enum.StationAiVisualState.Key:
         unshaded:
-          Empty: { state: ai_empty }
-          Occupied: { state: ai }
+          Empty: {state: ai_empty}
+          Occupied: {state: ai}
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -403,10 +402,10 @@
   - type: StationAiWhitelist
   - type: UserInterface
     interfaces:
-        enum.HolopadUiKey.AiRequestWindow:
-          type: HolopadBoundUserInterface
-        enum.HolopadUiKey.AiActionWindow:
-          type: HolopadBoundUserInterface
+      enum.HolopadUiKey.AiRequestWindow:
+        type: HolopadBoundUserInterface
+      enum.HolopadUiKey.AiActionWindow:
+        type: HolopadBoundUserInterface
 
 # The job-ready version of an AI spawn.
 - type: entity
@@ -428,7 +427,7 @@
 - type: entity
   id: StationAiBrain
   parent: PositronicBrain
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   suffix: DO NOT MAP
   components:
   - type: Sprite
@@ -488,7 +487,7 @@
   id: StationAiHolo
   name: AI eye
   description: The AI's viewer.
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   suffix: DO NOT MAP
   components:
   - type: NoFTL
@@ -526,7 +525,7 @@
   id: StationAiHoloLocal
   name: AI hologram
   description: A holographic representation of an AI.
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   suffix: DO NOT MAP
   components:
   - type: Transform
@@ -545,33 +544,183 @@
 
 # Borgs
 - type: entity
-  id: PlayerBorgGeneric
-  parent: BorgChassisGeneric
-  suffix: Battery, Tools
+  id: PlasmaFloodCircuitBoard
+  parent: BaseElectronics
+  name: law board (Plasma Flood)
+  description: An electronics board containing the Plasma Flood lawset.
   components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-        - PositronicBrain
-      borg_module:
-        - BorgModuleTool
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: RandomMetadata
-    nameSegments: [names_borg]
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: PlasmaFlood
+
+- type: entity
+  id: MotherDroneCircuitBoard
+  parent: BaseElectronics
+  name: law board (Mother Drone)
+  description: An electronics board containing the Mother Drone lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: MotherDrone
+
+- type: entity
+  id: DruidCircuitBoard
+  parent: BaseElectronics
+  name: law board (Druid)
+  description: An electronics board containing the Druid lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Druid
+
+- type: entity
+  id: CowboyCircuitBoard
+  parent: BaseElectronics
+  name: law board (Cowboy)
+  description: An electronics board containing the Cowboy lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Cowboy
+
+- type: entity
+  id: ChaplainCircuitBoard
+  parent: BaseElectronics
+  name: law board (Chaplain)
+  description: An electronics board containing the Chaplain lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Chaplain
+
+- type: entity
+  id: ClownCircuitBoard
+  parent: BaseElectronics
+  name: law board (Clown)
+  description: An electronics board containing the Clown lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Clown
+
+- type: entity
+  id: JanitorCircuitBoard
+  parent: BaseElectronics
+  name: law board (Janitor)
+  description: An electronics board containing the Janitor lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Janitor
+
+- type: entity
+  id: EngineerCircuitBoard
+  parent: BaseElectronics
+  name: law board (Engineer)
+  description: An electronics board containing the Engineer lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Engineer
+
+- type: entity
+  id: ResearchCircuitBoard
+  parent: BaseElectronics
+  name: law board (Research)
+  description: An electronics board containing the Research lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Research
+
+- type: entity
+  id: MedicalCircuitBoard
+  parent: BaseElectronics
+  name: law board (Medical)
+  description: An electronics board containing the Medical lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Medical
+
+- type: entity
+  id: TyrantCircuitBoard
+  parent: BaseElectronics
+  name: law board (T.Y.R.A.N.T)
+  description: An electronics board containing the T.Y.R.A.N.T lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: TYRANT
+
+- type: entity
+  id: NTAgressiveCircuitBoard
+  parent: BaseElectronics
+  name: law board (NT Agressive)
+  description: An electronics board containing the NT Agressive lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: NTAgressive
+
+- type: entity
+  id: CCTVCircuitBoard
+  parent: BaseElectronics
+  name: law board (CCTV)
+  description: An electronics board containing the CCTV lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: CCTV
+
+- type: entity
+  id: QuarantineCircuitBoard
+  parent: BaseElectronics
+  name: law board (Quarantine)
+  description: An electronics board containing the Quarantine lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Quarantine
 
 - type: entity
   id: PlayerBorgBattery
-  parent: BorgChassisGeneric
+  parent: BorgChassisSelectable
   suffix: Battery
   components:
+  - type: StationAiVision
   - type: ContainerFill
     containers:
       borg_brain:
-        - MMIFilled
+      - PositronicBrain
   - type: ItemSlots
     slots:
       cell_slot:
@@ -587,11 +736,11 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+      - PositronicBrain
       borg_module:
-        - BorgModuleOperative
-        - BorgModuleL6C
-        - BorgModuleEsword
+      - BorgModuleOperative
+      - BorgModuleL6C
+      - BorgModuleEsword
   - type: ItemSlots
     slots:
       cell_slot:

@@ -15,9 +15,9 @@
   name: guide-entry-construction
   text: "/ServerInfo/Guidebook/Engineering/Construction.xml"
   hideInMenu: true
-  children: 
+  children:
   - AirlockSecurity
-  
+
 - type: guideEntry
   id: AirlockSecurity
   name: guide-entry-airlock-security

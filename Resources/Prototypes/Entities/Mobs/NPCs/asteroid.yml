@@ -37,6 +37,7 @@
   name: goliath
   description: A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions.
   components:
+  - type: Absorbable
   - type: Sprite
     sprite: Mobs/Aliens/Asteroid/goliath.rsi
     layers:
@@ -89,6 +90,7 @@
     - id: FoodMeatGoliath
       amount: 3
     - id: MaterialGoliathHide1
+  - type: Fauna # Lavaland Change
 
 - type: entity
   id: ActionGoliathTentacle
