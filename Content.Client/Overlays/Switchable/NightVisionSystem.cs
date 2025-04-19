@@ -60,6 +60,7 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
             if (!comp.IsActive && (comp.PulseTime <= 0 || _timing.CurTime < comp.PulseEndTime))
                 continue;
 
+            active = true; // Corvax-Add
             if (nvComp == null)
                 nvComp = comp;
             else if (!nvComp.DrawOverlay && comp.DrawOverlay)
