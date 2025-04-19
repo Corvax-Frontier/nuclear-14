@@ -6,6 +6,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14WeaponPistol22lr
 
@@ -16,6 +20,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14WeaponRevolver9mm
 
@@ -26,6 +34,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14WeaponPistol10mmPipe
 
@@ -36,6 +48,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14WeaponPistol9mm
 
@@ -49,6 +65,10 @@
       min: 3600
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14WeaponShotgunDoubleBarrel
 
@@ -63,6 +83,10 @@
       min: 6800
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14WeaponRifle556Pipe
 
@@ -74,6 +98,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutAmmo
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - SpeedLoader9
 
@@ -97,6 +125,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutMelee
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14BrassKnife
 
