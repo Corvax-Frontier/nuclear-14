@@ -118,6 +118,8 @@
     - Dog
     - Universal
     - English
+  - type: Speech # Corvax-Change
+    speechSounds: Dog
 
 - type: entity
   name: MBoS Mutt
@@ -154,6 +156,7 @@
     grid:
     - 0,0,3,2
     maxItemSize: Normal
+    clickInsert: false # Corvax-Change
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -273,6 +276,7 @@
     grid:
     - 0,0,4,3
     maxItemSize: Small
+    clickInsert: false # Corvax-Change
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -428,6 +432,7 @@
     grid:
     - 0,0,9,6
     maxItemSize: Large
+    clickInsert: false # Corvax-Change
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

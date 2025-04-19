@@ -34,13 +34,13 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 80
+            damage: 100 # Corvax-Change
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
-            damage: 40 #This is probably enough damage before it breaks
+            damage: 60 # Corvax-Change
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]

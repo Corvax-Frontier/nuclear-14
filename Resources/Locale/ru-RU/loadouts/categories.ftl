@@ -13,3 +13,4 @@ loadout-category-Species = Расовое
 loadout-category-Roles = Роли
 loadout-category-Uncategorized = Без кат-ии
 loadout-category-Uniform = Форма
+loadout-category-Weapons = Оружие

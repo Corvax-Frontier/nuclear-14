@@ -150,13 +150,13 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 60
+            damage: 100 # Corvax-Change
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
-            damage: 30 #Weaker shield
+            damage: 45 # Corvax-Change
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -206,13 +206,13 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 40
+            damage: 180 # Corvax-Change
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
-            damage: 20 #Very weak shield
+            damage: 90 # Corvax-Change
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]

@@ -14,7 +14,7 @@ public sealed partial class CCVars
     ///     See vote.enabled, but specific to restart votes
     /// </summary>
     public static readonly CVarDef<bool> VoteRestartEnabled =
-        CVarDef.Create("vote.restart_enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("vote.restart_enabled", false, CVar.SERVERONLY); // Corvax-Change
 
     /// <summary>
     ///     Config for when the restart vote should be allowed to be called regardless with less than this amount of players.
