@@ -65,10 +65,14 @@
   - type: MobMover
   - type: Body
     prototype: Bot
+  - type: CombatMode
   - type: StepTriggerImmune # Corvax-Change
     whitelist:
       types:
       - Shard
+      - Lava
+      - Chasm
+      - SlipTile
       - Landmine
       - Mousetrap
       - SlipEntity
@@ -82,8 +86,6 @@
   parent: N14MobFriendlyRobot
   description: A military Eyebot with a smiling face to look at!
   components:
-  - type: InputMover
-  - type: MobMover
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
@@ -118,14 +120,13 @@
             radius: 0.4
         density: 150
         mask:
-        - MobMask
+        - FlyingMobMask # Corvax-Change
         layer:
-        - MobLayer
+        - FlyingMobLayer # Corvax-Change
   - type: MovementSpeedModifier
     baseWalkSpeed : 3
     baseSprintSpeed : 6
   - type: MovementAlwaysTouching
-  - type: CombatMode
   - type: Gun
     minAngle: 8
     maxAngle: 12
