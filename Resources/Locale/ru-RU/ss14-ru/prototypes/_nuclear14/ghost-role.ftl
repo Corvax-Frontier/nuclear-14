@@ -20,6 +20,8 @@ ghost-role-information-n14pet-dog-cc-name = Сторожевой пёс
 
 ghost-role-information-n14pet-dog-ncr-name = Боевой пёс (НКР)
 
+ghost-role-information-n14pet-dog-ncrmed-name = Медицинский пёс (НКР)
+
 ghost-role-information-n14pet-generic-description = Вы — верный спутник. Подчиняйтесь своему хозяину и защищайте его. Если он погибнет, вы можете перейти на службу его фракции (если она была).
 
 ghost-role-information-n14pet-hauler-description =

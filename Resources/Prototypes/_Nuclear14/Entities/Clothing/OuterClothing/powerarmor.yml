@@ -10,6 +10,14 @@
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t45.rsi
     equipDelay: 3 # Power armour should not be easily stealable, it should take time to take off or put on.
     unequipDelay: 6
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Enter_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Enter_01.ogg
+      params:
+        volume: -12
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -33,9 +41,14 @@
   - type: Reflect
     reflectProb: 0.1
     spread: 150
-  - type: FootstepModifier
-    footstepSoundCollection:
+  - type: EmitsSoundOnMove # Corvax-Change
+    soundCollection:
       collection: N14FootstepPowerArmor
+      params:
+        volume: -6
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: N14ClothingOuterPowerArmorT45
@@ -247,9 +260,6 @@
     coefficient: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.6
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: N14FootstepPowerArmor
   - type: Reflect
     reflectProb: 0.075
     spread: 150

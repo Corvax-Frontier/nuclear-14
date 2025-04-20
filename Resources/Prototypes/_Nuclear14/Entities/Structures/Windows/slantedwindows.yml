@@ -1,11 +1,11 @@
 # These windows are now the standard window in use compatible with our slanted walls.
 
 # In order to make them, use the half wall entity as the frame then place the glass atop it.
-  
+
 - type: entity
   parent: N14WindowSmoothBaseAirtight
   id: N14WindowSlanted
-  description: A window for seeing into places. 
+  description: A window for seeing into places.
   name: window
   components:
   - type: DamageVisuals
@@ -60,7 +60,7 @@
   - type: Construction
     graph: N14WindowPane
     node: N14WindowSlanted
-    
+
 - type: entity
   id: N14WindowSlantedBroken
   name: broken glass
@@ -92,6 +92,7 @@
     damage:
       types:
         Piercing: 5
+    targetPart: All # Corvax-Change
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.5
     sprintSpeedModifier: 0.5
