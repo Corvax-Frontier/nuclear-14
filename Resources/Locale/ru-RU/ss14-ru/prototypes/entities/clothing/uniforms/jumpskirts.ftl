@@ -158,3 +158,5 @@ ent-ClothingUniformJumpskirtOldDress = старое платье
     .desc = Очень старое поношенное платье.
 ent-ClothingUniformColorRainbow = радужная юбка-комбинезон
     .desc = Носи радугу с собой.
+ent-ClothingUniformJumpskirtDressAsymmetric = асимметричное платье
+    .desc = Это платье заставило материнскую материю прекратить существование в инженерии стиля.
