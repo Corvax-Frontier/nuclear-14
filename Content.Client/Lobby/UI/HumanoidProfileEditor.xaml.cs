@@ -2154,7 +2154,7 @@ namespace Content.Client.Lobby.UI
             UpdateCharacterRequired();
         }
 
-        // Corvax-Add-start
+        // Corvax-Change-Start
         private void RemoveSuperfluousTraits()
         {
             if (Profile?.TraitPreferences == null)
@@ -2176,7 +2176,7 @@ namespace Content.Client.Lobby.UI
                 }
             }
         }
-        // Corvax-Add-end
+        // Corvax-Change-End
 
         #endregion
 
@@ -2572,7 +2572,7 @@ namespace Content.Client.Lobby.UI
             UpdateCharacterRequired();
         }
 
-        // Corvax-Add-start
+        // Corvax-Change-Start
         private void RemoveSuperfluousLoadouts()
         {
             if (Profile?.LoadoutPreferences == null)
@@ -2601,7 +2601,7 @@ namespace Content.Client.Lobby.UI
                 }
             }
         }
-        // Corvax-Add-end
+        // Corvax-Change-End
 
         #endregion
 
@@ -2610,8 +2610,8 @@ namespace Content.Client.Lobby.UI
         private void UpdateCharacterRequired()
         {
             // Removes unnecessary items if they exceed the limit /ᐠ˵- ⩊ -˵マ
-            RemoveSuperfluousTraits(); // Corvax-Add
-            RemoveSuperfluousLoadouts(); // Corvax-Add
+            RemoveSuperfluousTraits(); // Corvax-Change
+            RemoveSuperfluousLoadouts(); // Corvax-Change
 
             UpdateRoleRequirements();
             UpdateTraits(TraitsShowUnusableButton.Pressed);
