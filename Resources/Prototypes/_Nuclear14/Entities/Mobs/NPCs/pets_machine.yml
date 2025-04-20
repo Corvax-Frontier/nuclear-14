@@ -172,6 +172,10 @@
       groups:
         Brute: -0.25
         Burn: -0.25
+  - type: Speech # Corvax-Change
+    speechSounds: Borg
+  - type: TypingIndicator # Corvax-Change
+    proto: robot
 
 - type: entity
   name: MBoS Eyebot

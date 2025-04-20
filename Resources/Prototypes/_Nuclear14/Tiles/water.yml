@@ -65,6 +65,13 @@
     sprintSpeedModifier: 0.2
   - type: TileEmission
     color: "#55b240"
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
+        reagents:
+        - ReagentId: WaterDirty # Corvax-Change
+          Quantity: 9999999
 
 - type: entity
   parent: N14FloorWaterSewerDeep
@@ -150,7 +157,7 @@
       pool:
         maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
         reagents:
-        - ReagentId: Water #TODO: Add WaterSalt Reagent.
+        - ReagentId: WaterSalt # Corvax-Change
           Quantity: 9999999
 
 - type: entity

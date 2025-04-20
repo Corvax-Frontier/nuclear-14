@@ -46,11 +46,11 @@
         - TableMask
         layer:
         - TableLayer
-  
+
 - type: entity
   parent: N14WindowBase
   id: N14WindowTall
-  description: A window for seeing into places. 
+  description: A window for seeing into places.
   name: window
   categories: [ HideSpawnMenu ]
   components:
@@ -97,7 +97,7 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   id: N14WindowTallBroken
   name: broken glass
@@ -130,6 +130,7 @@
     damage:
       types:
         Piercing: 5
+    targetPart: All # Corvax-Change
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.5
     sprintSpeedModifier: 0.5
@@ -162,7 +163,7 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
-  
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowBrickTall
@@ -173,7 +174,7 @@
     state: brick
   - type: Icon
     state: brick
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowBrickTallAlt
@@ -206,7 +207,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowBrickGrayTall
@@ -272,7 +273,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowConcreteTallAlt
@@ -305,7 +306,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowDungeonTall
@@ -338,7 +339,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowDungeonTallAlt
@@ -371,7 +372,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowMetalTall
@@ -404,7 +405,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowMetalReinforcedTall
@@ -437,7 +438,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowScrapTall
@@ -503,7 +504,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowScrapRedTall
@@ -536,7 +537,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowScrapWhiteTall
@@ -569,7 +570,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowSidingTall
@@ -602,7 +603,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowSidingBlueTall
@@ -635,7 +636,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowSidingGreenTall
@@ -701,7 +702,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowVaultTall
@@ -734,7 +735,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowWoodTall
@@ -767,7 +768,7 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
   parent: N14WindowTallBase
   id: N14WindowWoodTallAlt

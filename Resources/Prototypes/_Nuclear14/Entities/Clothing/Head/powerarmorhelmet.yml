@@ -34,6 +34,14 @@
     autoRot: true
     netsync: false
   - type: Clothing
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
     quickEquip: true
     clothingVisuals:
       head:
@@ -91,6 +99,14 @@
     autoRot: true
     netsync: false
   - type: Clothing
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
     quickEquip: true
     clothingVisuals:
       head:
@@ -148,6 +164,14 @@
     autoRot: true
     netsync: false
   - type: Clothing
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
     quickEquip: true
     clothingVisuals:
       head:
@@ -205,6 +229,14 @@
     autoRot: true
     netsync: false
   - type: Clothing
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
     quickEquip: true
     clothingVisuals:
       head:
@@ -328,6 +360,14 @@
     autoRot: true
     netsync: false
   - type: Clothing
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
     quickEquip: true
     clothingVisuals:
       head:
@@ -385,6 +425,14 @@
     autoRot: true
     netsync: false
   - type: Clothing
+    equipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
+    unequipSound: # Corvax-Change
+      path: /Audio/_Nuclear14/Effects/PowerArmor/PowerArmor_Equip_Helmet_01.ogg
+      params:
+        volume: -12
     quickEquip: true
     clothingVisuals:
       head:

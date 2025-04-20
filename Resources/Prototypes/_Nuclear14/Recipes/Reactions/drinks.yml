@@ -33,7 +33,7 @@
   minTemp: 373.15 # 100 degrees Celcius.
   reactants:
     WaterSalt:
-      amount: 1
+      amount: 2 # Corvax-Change
   products:
     TableSalt: 1
 # Water vapor reaction?
