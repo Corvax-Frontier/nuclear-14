@@ -422,8 +422,8 @@
     modifiers:
      coefficients:
         Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.8
+        Slash: 0.90 # Corvax-Change
+        Piercing: 0.85 # Corvax-Change
         Heat: 0.85
     priceMultiplier: 0.5
   - type: Butcherable
@@ -530,7 +530,15 @@
     sprite: _Nuclear14/Clothing/OuterClothing/Coats/ncr_trenchcoat.rsi
   - type: Clothing
     sprite: _Nuclear14/Clothing/OuterClothing/Coats/ncr_trenchcoat.rsi
-
+  - type: Armor # Corvax-Change
+    modifiers:
+     coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.8
+        Heat: 0.85
+    priceMultiplier: 0.5
+    
 - type: entity
   parent: N14ClothingOuterBase
   id: N14ClothingOuterNCRDressJacket
@@ -649,6 +657,14 @@
     sprite: _Nuclear14/Clothing/OuterClothing/Coats/washington_bos_scribe.rsi
   - type: Clothing
     sprite: _Nuclear14/Clothing/OuterClothing/Coats/washington_bos_scribe.rsi
+  - type: Armor # Corvax-Change
+    modifiers:
+     coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.8
+        Heat: 0.85
+    priceMultiplier: 0.5
 
 - type: entity
   parent: N14ClothingOuterBrotherhoodElderCoat
