@@ -75,6 +75,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     -  N14ClothingOuterCoatFollowerLab
 
@@ -85,6 +89,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterCoatWinterArmored
 
@@ -95,6 +103,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterBattlecoatCoat
 
@@ -105,6 +117,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterBattlecoatTan
 
@@ -125,6 +141,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterCoatLeatherDuster
 
@@ -165,6 +185,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterTownMediumCoat
 
@@ -175,6 +199,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterLeatherArmor
 
@@ -185,6 +213,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterMetalArmor
 
@@ -195,6 +227,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterTribalArmor
 
@@ -205,6 +241,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterTribalArmorHeavy
 
@@ -215,6 +255,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterRaiderBadlands
 
@@ -225,6 +269,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterRaiderBlastmaster
 
@@ -235,6 +283,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingOuterHarperCoat
 
@@ -248,5 +300,9 @@
       min: 24000
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
   items:
     - N14ClothingScavengerHeavyArmor
