@@ -508,6 +508,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
   items:
     - ClothingUniformJumpskirtDressAsymmetric
 
