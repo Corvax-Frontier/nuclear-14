@@ -30,7 +30,6 @@
 - type: startingGear
   id: NCRSGTGear
   equipment:
-    bandage: NCClothingBandageNCR # Corvax-Change
     back: N14ClothingBackpackNCRFilled
     gloves: N14ClothingHandsGlovesCombat
     jumpsuit: N14ClothingOfficerUniformNCRDesert # Corvax-Change

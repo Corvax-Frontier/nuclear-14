@@ -244,4 +244,6 @@
     contents:
     - id: GasAnalyzer
     - id: trayScanner
+    - id: ToolDebug # Corvax Change
+    - id: Multitool # Corvax Change
   - type: Unremoveable

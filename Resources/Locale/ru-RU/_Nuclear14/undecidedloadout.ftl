@@ -152,6 +152,14 @@ undecided-loadout-category-bos-ranged-description =
     Содержит: винтовку Wattz 2000, лазерный пистолет, 3 микроядерных батареи,
     2 ядерных батареи, стимулятор и сухпаёк.
 
+undecided-loadout-category-bos-laser-name = Лазерный набор Братства Стали
+undecided-loadout-category-bos-laser-description =
+    Ящик, содержащий всё необходимое для члена Братства Стали,
+    чтобы обрушить на врагов лазеры и свинец.
+    Включает: 1 модифицированную винтовку AER-9, 1 пистолет калибра 12,7 мм,
+    3 микроядерные батареи, 2 магазина для пистолета калибра 12,7 мм,
+    1 стимулятор, 1 сухпаёк типа C.
+
 undecided-loadout-category-bos-carbine-name = Баллистический набор Братства Стали
 undecided-loadout-category-bos-carbine-description =
     Ящик со снаряжением, которое пригодится каждому члену Братства Стали.

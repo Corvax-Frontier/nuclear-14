@@ -2154,6 +2154,30 @@ namespace Content.Client.Lobby.UI
             UpdateCharacterRequired();
         }
 
+        // Corvax-Change-Start
+        private void RemoveSuperfluousTraits()
+        {
+            if (Profile?.TraitPreferences == null)
+                return;
+
+            var max = _cfgManager.GetCVar(CCVars.GameTraitsMax);
+            var points = _cfgManager.GetCVar(CCVars.GameTraitsDefaultPoints);
+            foreach (var trait in Profile.TraitPreferences
+                .Select(t => _prototypeManager.Index<TraitPrototype>(t))
+                .OrderByDescending(t => t?.Points))
+            {
+                if (points + trait!.Points < 0 || Profile.TraitPreferences.Count > max)
+                {
+                    Profile = Profile.WithTraitPreference(trait.ID, false);
+                }
+                else
+                {
+                    points += trait.Points;
+                }
+            }
+        }
+        // Corvax-Change-End
+
         #endregion
 
         #endregion
@@ -2548,12 +2572,47 @@ namespace Content.Client.Lobby.UI
             UpdateCharacterRequired();
         }
 
+        // Corvax-Change-Start
+        private void RemoveSuperfluousLoadouts()
+        {
+            if (Profile?.LoadoutPreferences == null)
+                return;
+
+            var points = _cfgManager.GetCVar(CCVars.GameLoadoutsPoints);
+            foreach (var pref in Profile.LoadoutPreferences
+                .Where(l => l.Selected)
+                .OrderByDescending(l => _prototypeManager.Index<LoadoutPrototype>(l.LoadoutName)?.Cost))
+            {
+                var cost = _prototypeManager.Index<LoadoutPrototype>(pref.LoadoutName)!.Cost;
+                if (points - cost < 0)
+                {
+                    Profile.LoadoutPreferences.Remove(pref);
+                    Profile.LoadoutPreferences.Add(new LoadoutPreference(
+                        pref.LoadoutName,
+                        pref.CustomName,
+                        pref.CustomDescription,
+                        pref.CustomColorTint,
+                        pref.CustomHeirloom
+                    ) { Selected = false });
+                }
+                else
+                {
+                    points -= cost;
+                }
+            }
+        }
+        // Corvax-Change-End
+
         #endregion
 
         #endregion
 
         private void UpdateCharacterRequired()
         {
+            // Removes unnecessary items if they exceed the limit /ᐠ˵- ⩊ -˵マ
+            RemoveSuperfluousTraits(); // Corvax-Change
+            RemoveSuperfluousLoadouts(); // Corvax-Change
+
             UpdateRoleRequirements();
             UpdateTraits(TraitsShowUnusableButton.Pressed);
             UpdateLoadouts(LoadoutsShowUnusableButton.Pressed);

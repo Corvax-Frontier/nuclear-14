@@ -19,3 +19,11 @@ guide-entry-zetan = Дзетанцы
 # Weapons and Ammo
 guide-entry-weaponsammo = Оружие и Боеприпасы
 guide-entry-rangedweapons = Огнестрельное оружие
+guide-entry-meleeweapons = Ближний бой
+
+# Crafting
+guide-entry-crafting = Крафтинг
+guide-entry-bartending = Напитки
+guide-entry-cooking = Готовка
+guide-entry-materials = Материалы
+guide-entry-crafting-sys = Чертежи

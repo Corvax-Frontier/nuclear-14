@@ -52,7 +52,7 @@
             # BoSWashingtonKnight: [ 2, 3 ]
             # BoSWashingtonInitiate: [ 2, 2 ]
             BoSMidPaladinCommander: [ 1, 1 ]
-            BoSMidPaladin: [ 1, 1 ]
+            BoSMidPaladin: [ 2, 2 ] # Corvax-Change
             BoSMidKnight: [ 2, 3 ]
             BoSMidScribe: [ 1, 2 ]
             BoSMidSquire: [ 2, 2 ]

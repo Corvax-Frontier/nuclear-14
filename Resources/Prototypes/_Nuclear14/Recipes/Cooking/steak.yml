@@ -162,6 +162,21 @@
       steps:
       - minTemperature: 305
   - node: MeatCooked
+    entity: N14FoodMeatSquirrelCooked # Corvax-Change
+
+- type: constructionGraph # Corvax-Change
+  id: FoodMeatRad
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: MeatCooked
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 305
+  - node: MeatCooked
     entity: N14FoodMeatCooked
 
 - type: constructionGraph

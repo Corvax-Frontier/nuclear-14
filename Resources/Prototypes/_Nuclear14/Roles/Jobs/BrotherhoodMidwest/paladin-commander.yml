@@ -11,6 +11,7 @@
     - !type:CharacterDepartmentTimeRequirement
       department: BrotherhoodMidwest
       min: 72000 # 20 hours
+    - !type:CharacterWhitelistRequirement #Corvax-Change
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -34,7 +35,6 @@
 - type: startingGear
   id: BoSMidPaladinCommanderGear
   equipment:
-    bandage: NCClothingBandageBoS # Corvax-Change
     jumpsuit: N14ClothingUniformBosRecon
     back: N14ClothingBackpackMilitaryFilled
     shoes: N14ClothingBootsCombatFilled

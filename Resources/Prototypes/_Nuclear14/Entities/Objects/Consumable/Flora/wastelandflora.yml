@@ -232,8 +232,8 @@
   - type: OreVein
     currentOre: WildCaveFungusRad
   - type: PointLight
-    radius: 1
-    energy: 1
+    radius: 1.5 # Corvax Change
+    energy: 0.7 # Corvax Change
     color: "#2CFA1F"
     castShadows: false
     netsync: false

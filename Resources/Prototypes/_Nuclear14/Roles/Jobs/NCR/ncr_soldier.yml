@@ -29,7 +29,6 @@
 - type: startingGear
   id: NCRSoldierGear
   equipment:
-    bandage: NCClothingBandageNCR # Corvax-Change
     head: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
     back: N14ClothingBackpackNCRFilled
     jumpsuit: N14ClothingUniformNCRDesert # Corvax-Change

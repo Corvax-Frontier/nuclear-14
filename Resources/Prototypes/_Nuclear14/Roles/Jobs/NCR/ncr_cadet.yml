@@ -28,7 +28,6 @@
 - type: startingGear
   id: NCRCadetGear
   equipment:
-    bandage: NCClothingBandageNCR # Corvax-Change
     head: N14ClothingHeadHatNCRSidecap
     back: N14ClothingBackpackNCRFilled
     jumpsuit: N14ClothingUniformNCRDesert # Corvax-Change

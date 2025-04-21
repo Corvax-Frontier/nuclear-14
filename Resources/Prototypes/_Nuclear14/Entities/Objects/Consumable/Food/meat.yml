@@ -51,6 +51,10 @@
   - type: SliceableFood
     count: 3
     slice: N14FoodMeatRadCutlet
+  - type: Construction # Corvax-Change
+    graph: FoodMeatRad
+    node: start
+    defaultTarget: MeatCooked
 
 - type: entity
   name: raw brahmin steak
@@ -352,6 +356,10 @@
   - type: Sprite
     sprite: _Nuclear14/Objects/Consumable/Food/meat.rsi
     state: morsels_roasted
+  - type: Construction # Corvax-Change
+    graph: FoodMeatRad
+    node: MeatCooked
+    defaultTarget: MeatCooked
   - type: SolutionContainerManager
     solutions:
       food:
