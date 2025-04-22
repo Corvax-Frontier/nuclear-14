@@ -12,7 +12,6 @@
     - !type:CharacterDepartmentTimeRequirement
       department: NCR
       min: 72000 # 20 hours
-    - !type:CharacterWhitelistRequirement # Corvax-Change
   weight: 10
   startingGear: NCRLTGear
   icon: "JobIconHeadOfSecurity"

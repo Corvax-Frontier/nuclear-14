@@ -11,7 +11,6 @@
     - !type:CharacterDepartmentTimeRequirement
       department: BrotherhoodMidwest
       min: 72000 # 20 hours
-    - !type:CharacterWhitelistRequirement #Corvax-Change
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
