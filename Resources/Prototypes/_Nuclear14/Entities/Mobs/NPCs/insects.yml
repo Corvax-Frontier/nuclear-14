@@ -347,8 +347,8 @@
   description: Pure hate with a stinger and wings. Don't get close.
   components:
   - type: MovementSpeedModifier
-    baseWalkSpeed : 2
-    baseSprintSpeed : 4.3
+    baseWalkSpeed : 3
+    baseSprintSpeed : 6
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -388,7 +388,7 @@
     wideAnimation: WeaponArcThrust
     damage:
       types:
-        Piercing: 3
+        Piercing: 6
   - type: SolutionContainerManager
     solutions:
       melee:
@@ -412,3 +412,7 @@
     - id: N14FoodCazadorAcidSac
       amount: 1
       prob: 0.75
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
