@@ -96,7 +96,7 @@
       collection: MetalThud
     activatedDamage:
         types:
-            Heat: 27
+            Heat: 40
   - type: SolutionContainerManager
     solutions:
       Welder:
@@ -197,7 +197,7 @@
       collection: MetalThud
     activatedDamage:
         types:
-            Heat: 20
+            Heat: 35
   - type: SolutionContainerManager
     solutions:
       Welder:

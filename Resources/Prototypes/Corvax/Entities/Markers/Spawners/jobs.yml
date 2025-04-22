@@ -12,16 +12,16 @@
       - state: centurion
 
 - type: entity
-  id: N14SpawnPointFrumentary
+  id: N14SpawnPointVenator
   parent: N14SpawnPointCenturion
-  name: frumentary
+  name: venator
   components:
   - type: SpawnPoint
-    job_id: CaesarLegionFrumentary
+    job_id: CaesarLegionVenator
   - type: Sprite
     layers:
       - state: green
-      - state: frumentary
+      - state: venator
 
 - type: entity
   id: N14SpawnPointDean

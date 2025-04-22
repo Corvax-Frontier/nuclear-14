@@ -7,8 +7,7 @@
   requirements:
   - !type:CharacterDepartmentTimeRequirement
       department: CaesarLegion
-      min: 0 # WL-only
-  - !type:CharacterWhitelistRequirement
+      min: 72000 # 20 hours
   - !type:CharacterSpeciesRequirement
     species:
     - Human
@@ -40,6 +39,7 @@
     shoes: N14ClothingBootsCenturion
     head: N14ClothingHeadHatCenturionHelmet
     gloves: N14ClothingHandsGlovesCenturion
+    outerClothing: N14ClothingOuterHeavyCenturionArmor
     belt: N14Gladius
     pocket1: LegionCenturionloadoutkits
     pocket2: N14WeaponPistol10mmPipe

@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadBase
-  id: N14ClothingHeadHatFrumentary
-  name: frumentary hood
+  id: N14ClothingHeadHatVenator
+  name: venator hood
   description: The hood is made of bear skin.
   components:
   - type: Sprite
