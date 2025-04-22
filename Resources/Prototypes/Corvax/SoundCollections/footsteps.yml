@@ -1,0 +1,11 @@
+- type: soundCollection
+  id: Horsestep
+  files:
+  - /Audio/_NC/Effects/Footsteps/horse-1.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-2.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-3.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-4.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-5.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-6.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-7.ogg
+  - /Audio/_NC/Effects/Footsteps/horse-8.ogg
