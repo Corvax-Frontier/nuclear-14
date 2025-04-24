@@ -43,7 +43,7 @@
 - type: radioChannel
   id: VaultCommon
   name: chat-radio-vault-common
-  keycode: 'v'
+  keycode: 'м' # Corvax-Change
   frequency: 1349
   color: "#3E7BD1"
 
