@@ -1,2 +1,16 @@
 ent-SpawnMobGorillaLargo = спавнер горилла Ларго
     .desc = { ent-MarkerBase.desc }
+ent-N14SpawnMobBrahdo = спавнер брадо
+    .desc = { ent-MarkerBase.desc }
+ent-N14SpawnMobBrahdoLight = спавнер брадо
+    .desc = { ent-MarkerBase.desc }
+    .suffix = Легкий
+ent-N14SpawnMobBrahdoArmor = спавнер брадо
+    .desc = { ent-MarkerBase.desc }
+    .suffix = Бронированный
+ent-N14SpawnMobBrahdoArmorNCR = спавнер брадо
+    .desc = { ent-MarkerBase.desc }
+    .suffix = НКР
+ent-N14SpawnMobBrahdoLightLegion = спавнер брадо
+    .desc = { ent-MarkerBase.desc }
+    .suffix = Легион
