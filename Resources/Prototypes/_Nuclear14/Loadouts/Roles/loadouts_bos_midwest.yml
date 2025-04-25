@@ -19,8 +19,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - BoSMidPaladin
-    - !type:CharacterDepartmentTimeRequirement
-      department: BrotherhoodMidwest
+    - !type:CharacterPlaytimeRequirement
+      tracker: BoSMidPaladin
       min: 54000 # 15 hours veterancy unlock
   items:
     - N14ClothingOuterMidwestReconArmor
@@ -34,8 +34,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - BoSMidPaladin
-    - !type:CharacterDepartmentTimeRequirement
-      department: BrotherhoodMidwest
+    - !type:CharacterPlaytimeRequirement
+      tracker: BoSMidPaladin
       min: 54000 # 15 hours veterancy unlock
   items:
     - N14ClothingHeadHatBrotherhoodMidwestHelmetRecon
