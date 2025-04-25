@@ -84,3 +84,5 @@ ent-N14ClothingHeadHatCombatHelmetCargo = { ent-N14ClothingHeadHatCombatHelmet }
     .desc = Старый добрый боевой шлем - пережиток довоенного мира, все ещё способный защитить своего владельца.
 ent-N14ClothingHeadHatCombatHelmetMK2Cargo = { ent-N14ClothingHeadHatCombatHelmetMK2 }
     .desc = Усовершенствованная модель боевого шлема, обеспечивающая повышенную защиту в бою.
+ent-N14ClothingHeadHatTribalPowerhelm = тяжёлый шлем старейшины
+    .desc = Реликвия прошлого, переданная вам.

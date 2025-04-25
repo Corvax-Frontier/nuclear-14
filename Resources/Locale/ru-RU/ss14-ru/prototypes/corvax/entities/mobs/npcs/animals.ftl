@@ -1,0 +1,14 @@
+ent-N14MobBrahdo = брадо
+    .desc = Ржете? У этой штуки слишком много ног... Думаете, она кусается? Может прокатиться на ней. Может съесть ее.
+ent-N14MobBrahdoLight = { ent-N14MobBrahdo }
+    .desc = { ent-N14MobBrahdo.desc }
+    .suffix = Легкий
+ent-N14MobBrahdoArmor = { ent-N14MobBrahdo }
+    .desc = { ent-N14MobBrahdo.desc }
+    .suffix = Бронированный
+ent-N14MobBrahdoArmorNCR = { ent-N14MobBrahdo }
+    .desc = { ent-N14MobBrahdo.desc }
+    .suffix = НКР
+ent-N14MobBrahdoLightLegion = { ent-N14MobBrahdo }
+    .desc = { ent-N14MobBrahdo.desc }
+    .suffix = Легион

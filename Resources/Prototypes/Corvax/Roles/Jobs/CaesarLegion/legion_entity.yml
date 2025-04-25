@@ -13,13 +13,13 @@
 
 - type: entity
   parent: MobHuman
-  id: N14MobHumanCaesarLegionFrumentary
-  name: Frumentary
+  id: N14MobHumanCaesarLegionVenator
+  name: Venator
   components:
     - type: RandomHumanoidAppearance
       randomizeName: true
     - type: Loadout
-      prototypes: [CaesarLegionFrumentaryGear]
+      prototypes: [CaesarLegionVenatorGear]
     - type: NpcFactionMember
       factions:
       - CaesarLegion

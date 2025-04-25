@@ -56,8 +56,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.85
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.90
+    walkModifier: 0.95 # Corvax-Change
+    sprintModifier: 0.95 # Corvax-Change
 
 - type: entity
   parent: [N14FalloutArmorBase, N14ClothingOuterBase]

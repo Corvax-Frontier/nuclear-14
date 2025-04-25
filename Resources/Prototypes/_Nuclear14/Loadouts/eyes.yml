@@ -37,3 +37,13 @@
       group: N14LoadoutEyes
   items:
     - ClothingEyesEyepatch
+
+- type: loadout # Corvax-Change
+  id: ClothingEyesGlassesChemist
+  category: Accessories
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutEyes
+  items:
+    - ClothingEyesGlassesChemist

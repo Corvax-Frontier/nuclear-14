@@ -508,6 +508,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
   items:
     - ClothingUniformJumpskirtDressAsymmetric
 
@@ -525,3 +529,81 @@
       departments:
         - Wastelander
         - Townsfolk
+
+#Corvax-Add Start
+- type: loadout
+  id: N14LoadoutUniformJumpskirtDressLongSleeve
+  category: Uniform
+  cost: 2
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
+  items:
+    - ClothingUniformJumpskirtDressLongSleeve
+
+- type: loadout
+  id: N14LoadoutUniformJumpskirtDressVictorianRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
+  items:
+    - ClothingUniformJumpskirtDressVictorianRed
+
+- type: loadout
+  id: N14LoadoutUniformJumpskirtDressBlackTango
+  category: Uniform
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
+  items:
+    - ClothingUniformJumpskirtDressBlackTango
+
+- type: loadout
+  id: N14LoadoutUniformJumpskirtDressBlackTangoAlt
+  category: Uniform
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
+  items:
+    - ClothingUniformJumpskirtDressBlackTangoAlt
+
+- type: loadout
+  id: N14LoadoutUniformJumpskirtDressFormalRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutUniform
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
+  items:
+    - ClothingUniformJumpskirtDressFormalRed
+#Corvax-Add End
