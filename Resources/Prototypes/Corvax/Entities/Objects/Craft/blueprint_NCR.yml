@@ -42,3 +42,12 @@
   components:
     - type: STBlueprint
       blueprint: N14ClothingOuterPowerArmorAdvanced1NCRRecipe
+
+- type: entity
+  parent: N14BaseBlueprintPaper
+  id: N14ModificationkitNCRBlueprint
+  name: blueprint NCR modification kit
+  suffix: Craft, NCR
+  components:
+    - type: STBlueprint
+      blueprint: N14ModificationkitNCRRecipe

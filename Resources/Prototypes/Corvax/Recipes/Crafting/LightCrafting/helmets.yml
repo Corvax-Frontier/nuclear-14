@@ -1,0 +1,32 @@
+# NCR
+- type: lightCraftingRecipe
+  id: N14ClothingHeadHatNCRHelmetMetalDesert
+  results:
+    - N14ClothingHeadHatNCRHelmetMetalDesert
+  steps:
+    firstIngredient: N14ClothingHeadHatCombatHelmet
+    secondIngredient: N14ModificationkitNCR
+    exactFirst: false
+    time: 7
+
+# midwest BoS
+
+- type: lightCraftingRecipe
+  id: N14ClothingHeadHatBrotherhoodMidwestHelmet
+  results:
+    - N14ClothingHeadHatBrotherhoodMidwestHelmet
+  steps:
+    firstIngredient: N14ClothingHeadHatCombatHelmet
+    secondIngredient: N14ModificationkitMidwestBoS
+    exactFirst: false
+    time: 7
+
+- type: lightCraftingRecipe
+  id: N14ClothingHeadHatBrotherhoodMidwestHelmetVeteran
+  results:
+    - N14ClothingHeadHatBrotherhoodMidwestHelmetVeteran
+  steps:
+    firstIngredient: N14ClothingHeadHatCombatHelmetMK2
+    secondIngredient: N14ModificationkitMidwestBoS
+    exactFirst: false
+    time: 7

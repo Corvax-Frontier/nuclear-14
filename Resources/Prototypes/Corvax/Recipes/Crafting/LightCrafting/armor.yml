@@ -1,0 +1,91 @@
+# Tribal
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterCombatTribal
+  results:
+    - N14ClothingOuterCombatTribal
+  steps:
+    firstIngredient: N14ClothingOuterCombatArmor
+    secondIngredient: N14ModificationkitTribal
+    exactFirst: false
+    time: 10
+
+# NCR
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterNCRCombatArmor
+  results:
+    - N14ClothingOuterNCRCombatArmor
+  steps:
+    firstIngredient: N14ClothingOuterCombatArmor
+    secondIngredient: N14ModificationkitNCR
+    exactFirst: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterNCRCombatArmorMK2
+  results:
+    - N14ClothingOuterNCRCombatArmorMK2
+  steps:
+    firstIngredient: N14ClothingOuterCombatArmorMK2
+    secondIngredient: N14ModificationkitNCR
+    exactFirst: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterNCRaiderArmor1
+  results:
+    - N14ClothingOuterNCRCombatArmor
+  steps:
+    firstIngredient: N14ClothingOuterRaiderCombat1
+    secondIngredient: N14ModificationkitNCR
+    time: 35
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterNCRaiderArmor2
+  results:
+    - N14ClothingOuterNCRCombatArmorMK2
+  steps:
+    firstIngredient: N14ClothingOuterRaiderCombat2
+    secondIngredient: N14ModificationkitNCR
+    time: 35
+
+# midwest BoS
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterMidwestArmor
+  results:
+    - N14ClothingOuterMidwestArmor
+  steps:
+    firstIngredient: N14ClothingOuterCombatArmor
+    secondIngredient: N14ModificationkitMidwestBoS
+    exactFirst: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterMidwestArmorMK2
+  results:
+    - N14ClothingOuterMidwestArmorMK2
+  steps:
+    firstIngredient: N14ClothingOuterCombatArmorMK2
+    secondIngredient: N14ModificationkitMidwestBoS
+    exactFirst: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterMidwestRaiderArmor1
+  results:
+    - N14ClothingOuterMidwestArmor
+  steps:
+    firstIngredient: N14ClothingOuterRaiderCombat1
+    secondIngredient: N14ModificationkitMidwestBoS
+    time: 35
+
+- type: lightCraftingRecipe
+  id: N14ClothingOuterMidwestRaiderArmor2
+  results:
+    - N14ClothingOuterMidwestArmorMK2
+  steps:
+    firstIngredient: N14ClothingOuterRaiderCombat2
+    secondIngredient: N14ModificationkitMidwestBoS
+    time: 35

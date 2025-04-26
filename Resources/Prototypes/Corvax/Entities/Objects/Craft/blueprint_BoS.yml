@@ -6,3 +6,12 @@
   components:
     - type: STBlueprint
       blueprint: N14ClothingOuterPowerArmorT60TeslaRecipe
+
+- type: entity
+  parent: N14BaseBlueprint
+  id: N14ModificationkitMidwestBoSBlueprint
+  name: blueprint Midwest BOS modification kit
+  suffix: Craft, BoS
+  components:
+    - type: STBlueprint
+      blueprint: N14ModificationkitMidwestBoSRecipe
