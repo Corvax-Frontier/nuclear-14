@@ -1,7 +1,7 @@
 # Corvax-Change start
 - type: entity
   abstract: true
-  parent: [Clothing, AllowSuitStorageClothing]
+  parent: [Clothing]
   id: N14FalloutHelmetBase
   components:
   - type: Clothing
