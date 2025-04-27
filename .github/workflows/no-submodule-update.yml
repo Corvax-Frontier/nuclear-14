@@ -9,7 +9,7 @@ jobs:
   this_aint_right:
     if: github.actor != 'sleepyyapril' && github.actor != 'VMSolidus' && github.actor != 'DEATHB4DEFEAT'
     name: Submodule update in pr found
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, runner-0]
     steps:
       - name: Fail
         run: exit 1
