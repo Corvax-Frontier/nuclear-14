@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_changelog:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, runner-0]
     steps:
 
     - name: checkout
