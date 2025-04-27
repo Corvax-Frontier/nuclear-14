@@ -30,7 +30,7 @@ jobs:
   build:
     name: Test Packaging
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
-    runs-on: [self-hosted, Linux, X64, username:runner-0]
+    runs-on: [self-hosted]
 
     steps:
       - name: Checkout Master
