@@ -11,7 +11,7 @@ on:
 jobs:
   validate_rsis:
     name: Validate RSIs
-    runs-on: [self-hosted, Linux, X64, runner-0]
+    runs-on: [self-hosted, Linux, X64, username:runner-0]
     steps:
       - uses: actions/checkout@v3.6.0
       - name: Setup Submodule
