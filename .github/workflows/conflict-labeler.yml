@@ -13,7 +13,7 @@ jobs:
     permissions:
       pull-requests: write
     if: ( github.event.pull_request.draft == false ) && ( github.actor != 'PJBot' && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14' )
-    runs-on: [self-hosted, Linux, X64, runner-0]
+    runs-on: [self-hosted]
     steps:
       - name: Check for Merge Conflicts
         uses: eps1lon/actions-label-merge-conflict@v3.0.0
