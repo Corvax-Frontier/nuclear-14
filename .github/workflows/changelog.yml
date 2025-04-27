@@ -11,7 +11,7 @@ env:
 
 jobs:
   changelog:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, runner-0]
     if: github.event.pull_request.merged == true
     permissions:
       contents: write
