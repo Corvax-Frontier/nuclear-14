@@ -4,7 +4,7 @@
   results:
     - N14ClothingHeadHatNCRHelmetMetalDesert
   steps:
-    firstIngredient: N14ClothingHeadHatCombatHelmet
+    firstIngredient: N14ClothingHeadHatBaseHelmetMetal
     secondIngredient: N14ModificationkitNCR
     exactFirst: false
     time: 7
@@ -16,7 +16,7 @@
   results:
     - N14ClothingHeadHatBrotherhoodMidwestHelmet
   steps:
-    firstIngredient: N14ClothingHeadHatCombatHelmet
+    firstIngredient: N14ClothingHeadHatBaseHelmetMetal
     secondIngredient: N14ModificationkitMidwestBoS
     exactFirst: false
     time: 7
@@ -26,7 +26,7 @@
   results:
     - N14ClothingHeadHatBrotherhoodMidwestHelmetVeteran
   steps:
-    firstIngredient: N14ClothingHeadHatCombatHelmetMK2
+    firstIngredient: N14ClothingHeadHatBaseHelmetMK2
     secondIngredient: N14ModificationkitMidwestBoS
     exactFirst: false
     time: 7

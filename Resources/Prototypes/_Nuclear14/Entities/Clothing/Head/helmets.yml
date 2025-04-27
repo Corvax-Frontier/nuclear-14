@@ -1,19 +1,5 @@
-# Corvax-Change start
 - type: entity
-  abstract: true
-  parent: [Clothing]
-  id: N14FalloutHelmetBase
-  components:
-  - type: Clothing
-    slots:
-    - Head
-  - type: Sprite
-    state: icon
-  - type: Craftable
-# Corvax-Change end
-
-- type: entity
-  parent: N14FalloutHelmetBase
+  parent: ClothingHeadBase
   id: ClothingHeadHatLightBase
   abstract: true
   components:
@@ -77,7 +63,7 @@
       cell_slot: !type:ContainerSlot
 
 - type: entity
-  parent: N14FalloutHelmetBase
+  parent: ClothingHeadBase
   id: N14ClothingHeadSuitbase
   abstract: true
   components:
@@ -91,10 +77,10 @@
     - FacialHair
 
 - type: entity
-  parent: N14FalloutHelmetBase
+  parent: ClothingHeadBase
   id: N14ClothingHeadHatBaseHelmetMetal
   name: metal helmet
-  abstract: true
+  #abstract: true # Corvax-Change
   description: A metal helmet offering some ballistic protection.
   components:
   - type: Sprite
@@ -114,12 +100,13 @@
   - type: HideLayerClothing # Corvax-Change
     slots:
     - Hair
+  - type: Craftable
 
 - type: entity
-  parent: N14FalloutHelmetBase
+  parent: ClothingHeadBase
   id: N14ClothingHeadHatBaseHelmetMK2
   name: MK2 metal helmet
-  abstract: true
+  #abstract: true # Corvax-Change
   description: A helmet offering advanced protection.
   components:
   - type: Armor
@@ -135,6 +122,7 @@
   - type: HideLayerClothing # Corvax-Change
     slots:
     - Hair
+  - type: Craftable
 
 - type: entity
   parent: N14ClothingHeadHatBaseHelmetMetal
@@ -197,7 +185,7 @@
     priceMultiplier: 0
 
 - type: entity
-  parent: N14FalloutHelmetBase
+  parent: ClothingHeadBase
   id: N14ClothingHeadHatBaseHelmetmarine
   name: marine helmet
   description: An extremely advanced combat helmet.
@@ -219,7 +207,7 @@
 
 # Brotherhood of Steel
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatBrotherhoodHelmet
   name: Brotherhood of Steel helmet
   description: A helmet worn by members of the Brotherhood of Steel.
@@ -230,7 +218,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/brotherhoodhelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatBrotherhoodHelmetKnight
   name: Brotherhood of Steel knight helmet
   description: A helmet worn by Knights of the Brotherhood of Steel.
@@ -241,7 +229,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/brotherhoodhelmetknight.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatBrotherhoodHelmetCaptain
   name: Brotherhood of Steel captain helmet
   description: A helmet worn by Captains of the Brotherhood of Steel.
@@ -252,7 +240,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/brotherhoodhelmetcaptain.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatBrotherhoodHelmetPaladin
   name: Brotherhood of Steel paladin helmet
   description: A helmet worn by Paladins of the Brotherhood of Steel.
@@ -263,7 +251,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/brotherhoodhelmetsenior.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatBrotherhoodHelmetOutcast
   name: Brotherhood of Steel outcast helmet
   description: A helmet worn by Outcasts of the Brotherhood of Steel.
@@ -274,7 +262,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/brotherhoodhelmetoutcast.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatBrotherhoodHelmetMK2
   name: Brotherhood of Steel helmet MK2
   description: An advanced Brotherhood of Steel combat helmet.
@@ -286,7 +274,7 @@
 
 # Enclave
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatEnclaveHelmet
   name: Enclave helmet
   description: A combat helmet worn by Enclave soldiers.
@@ -298,7 +286,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/enclavehelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatEnclaveHelmetHood
   name: Enclave hooded helmet
   description: A combat helmet worn by Enclave soldiers. This one has a hood covering it.
@@ -323,18 +311,13 @@
 
 #MARK: NCR
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatNCRHelmetMetalSnow
   name: NCR winter metal helmet
   description: A rounded NCR helmet offering some protection. This one is covered on snow-white camo.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Clothing/Head/FalloutHelmets/ncrhelmet.rsi
-  - type: Clothing
-    sprite: _Nuclear14/Clothing/Head/FalloutHelmets/ncrhelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatNCRHelmetMetalWoods
   name: NCR woods metal helmet
   description: A rounded NCR helmet offering some protection. This one is covered on green camo.
@@ -345,7 +328,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/ncrhelmet2.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatNCRHelmetMetalDesert
   name: NCR desert metal helmet
   description: A rounded NCR helmet offering some protection. This one is covered on classic desert camo.
@@ -356,7 +339,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/ncrhelmet3.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatNCRHelmetMetalMilitaryPolice
   name: NCR metal helmet
   description: A rounded NCR helmet offering some protection, worn by Military Police.
@@ -367,7 +350,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/ncrhelmetmp.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatNCRHelmetMetalMedic
   name: NCR medic helmet
   description: A rounded NCR helmet offering some protection, worn by Field Medics.
@@ -378,7 +361,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/ncrhelmetmedic.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmet
   name: ranger combat helmet
   description: A helmet offering advanced protection, this one is commonly used by Rangers.
@@ -392,7 +375,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetOld
   name: old ranger combat helmet
   description: An old combat helmet, out of use around the time of the war.
@@ -406,7 +389,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetDesert
   name: desert ranger combat helmet
   description: An U.S Marine Corps helmet, used by the legendary Desert Rangers.
@@ -420,7 +403,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetPrice
   name: spider ranger combat helmet
   description: A customised riot helmet reminiscient of the more advanced riot helmets found in the Divide, sporting purple lenses over the traditional red or green and a pair of red fangs painted over the respirator. The back of the helmet has a the face of an albino spider painted over it.
@@ -434,7 +417,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetElite
   name: elite ranger combat helmet
   description: An old combat helmet seen in the Divide, repurposed for higher-ranking Rangers.
@@ -448,7 +431,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetEliteOld
   name: worn elite ranger combat helmet
   description: Worn riot helmet from before the war. Faded by time and use, this helmet still sees use as a form of protection for the law bringers of the New California Republic.
@@ -462,7 +445,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetFox
   name: fox ranger combat helmet
   description: A customized and well-worn helmet of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck.
@@ -476,7 +459,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatRangerHelmetModif
   name: modified ranger combat helmet
   description: A thicker than average helmet worn by rangers out in the field.
@@ -491,7 +474,7 @@
 
 # midwest BoS
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatBrotherhoodMidwestHelmet
   name: midwest BoS helmet
   description: A modified combat helmet to adapt to the Midwest Brotherhood's needs.
@@ -502,7 +485,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/midwest-brotherhood/boshelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatBrotherhoodMidwestHelmetVeteran
   name: veteran midwest BoS helmet
   description: A modified combat helmet with extra metal plates to cover the face.
@@ -513,7 +496,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/midwest-brotherhood/boshelmetV2.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatBrotherhoodMidwestHelmetRecon
   name: midwest BoS recon helmet
   description: A helmet made by the Midwest Brotherhood, expertly designed for both protection and stealth.
@@ -545,7 +528,7 @@
 # Washington BoS
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatBrotherhoodHelmetMK3
   name: BoS helmet MK3
   description: A helmet continuosly upgraded by the Washington Brotherhood, any pre-war components barely remaining.
@@ -560,7 +543,7 @@
 
 # Canadian mounties
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatHelmetRCMP
   name: RCMP combat helmet
   description: An simple combat helmet painted in black.
@@ -574,7 +557,7 @@
     - HidesHair
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatSpecHelmetRCMP
   name: RCMP specialist helmet
   description: An simple combat helmet painted in black, this one comes with built-in comms.
@@ -590,7 +573,7 @@
 # Chinese renmants
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatChineseHelmet
   name: chinese helmet
   description: A chinese rounded green helmet, basic and cheap.
@@ -601,7 +584,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/chinesehelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatChineseHelmetMk2
   name: special ops chinese helmet
   description: A chinese rounded black helmet with integrated night vision.
@@ -612,7 +595,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/chinesespecialhelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatPressHelmet
   name: prewar reporter helmet
   description: An old piece of armor once used by the Free Press before the war. Should still offer some protection.
@@ -623,7 +606,7 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/reporterhelmet.rsi
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmet
+  parent: N14ClothingHeadHatBaseHelmetMetal
   id: N14ClothingHeadHatPrewarMilitaryHelmet
   name: prewar military helmet
   description: An old piece of armor once used by the US Army before the end.
@@ -731,7 +714,7 @@
 
 
 - type: entity
-  parent: N14ClothingHeadHatCombatHelmetMK2
+  parent: N14ClothingHeadHatBaseHelmetMK2
   id: N14ClothingHeadHatTribalPowerhelm
   name: Elders Heavy Helmet
   description: A relic of the past. handed down to you
