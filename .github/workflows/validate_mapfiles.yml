@@ -10,7 +10,7 @@ jobs:
   yaml-schema-validation:
     name: YAML map schema validator
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
-    runs-on: [self-hosted, username:runner-0]
+    runs-on: [self-hosted, Linux, X64, username:runner-0]
     steps:
     - uses: actions/checkout@v3.6.0
     - name: Setup Submodule
