@@ -30,7 +30,7 @@ jobs:
   build:
     name: Test Packaging
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
-    runs-on: [self-hosted, Linux, X64, runner-0]
+    runs-on: [self-hosted, Linux, X64, username:runner-0]
 
     steps:
       - name: Checkout Master
@@ -48,10 +48,22 @@ jobs:
           cd RobustToolbox/
           git submodule update --init --recursive
 
+       #Forge-setup .NET start
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v3.2.0
+        uses: actions/setup-dotnet@v4.1.0
         with:
           dotnet-version: 9.0.x
+        env:
+          DOTNET_INSTALL_DIR: ${{ runner.temp }}/.dotnet
+
+      - name: Set DOTNET_ROOT and PATH
+        run: |
+          echo "DOTNET_ROOT=${{ runner.temp }}/.dotnet" >> $GITHUB_ENV
+          echo "${{ runner.temp }}/.dotnet" >> $GITHUB_PATH
+
+      - name: Check .NET installation
+        run: dotnet --info
+      #Forge-setup .NET end
 
       - name: Install dependencies
         run: dotnet restore
