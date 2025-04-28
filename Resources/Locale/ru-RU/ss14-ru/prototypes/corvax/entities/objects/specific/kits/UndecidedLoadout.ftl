@@ -1,6 +1,6 @@
 ent-LegionCenturionloadoutkits = неразобранный набор центуриона
     .desc = Пожалуйста, выберите только 1.
-ent-LegionFrumentarialoadoutkits = неразобранный набор фрументария
+ent-LegionVenatorloadoutkits = неразобранный набор вентора
     .desc = { ent-LegionCenturionloadoutkits.desc }
 ent-LegionDeanloadoutkits = неразобранный набор декана
     .desc = { ent-LegionCenturionloadoutkits.desc }

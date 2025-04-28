@@ -120,6 +120,7 @@
     - English
   - type: Speech # Corvax-Change
     speechSounds: Dog
+  - type: DogVision # Corvax-Change
 
 - type: entity
   name: MBoS Mutt

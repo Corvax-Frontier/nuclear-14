@@ -7,48 +7,23 @@ undecided-loadout-category-bestiary-description =
     Включает: 1 термокопье, 1 церемониальный меч, 2 болы,
     3 грязных стимулятора, 1 суперстимулятор, 1 стандартный набор пропитания.
 
-undecided-loadout-category-venator-name = Набор центуриона-венатора
-undecided-loadout-category-venator-description =
+undecided-loadout-category-sagitaria-name = Набор центуриона-венатора
+undecided-loadout-category-sagitaria-description =
     Ящик со всем необходимым для главенства над центурией.
-    Включает: 1 продвинутый пистолет-пулемёт 'Дуглас', 3 магазина ПП 12.7, 1 чай брокка,
+    Включает: 1 китайский пулемёт, 2 магазинных ленты 7.62mm, 1 чай брокка,
     2 грязных стимпака, 1 стандартный набор пропитания.
 
-undecided-loadout-category-spy-name = Набор фрументария-шпиона
-undecided-loadout-category-spy-description =
-    Ящик со всем необходимым для организации тайного шпионажа выглядя как ничем не подозрительным обитателем пустоши.
-    Включает: 1 набор маскировочной одежды, 1 наплечную кобуру, 1 пистолет с глушителем,
-    2 магазина 22lr под пистолет, 1 стандартный набор пропитания.
+undecided-loadout-category-ventor-sagitaria-name = Набор вентора-сагитария
+undecided-loadout-category-ventor-sagitaria-description =
+    Ящик со всем необходимым...
+    Включает: 1 Анти-Материальная винтовка, 3 магазина (.50 BMG), 1 коробку патронов (.50 анти-материальные),
+    1 ПНВ, 2 грязных стимпака, 1 стандартный набор пропитания.
 
-undecided-loadout-category-ncr-spy-name = Набор фрументария-шпиона НКР
-undecided-loadout-category-ncr-spy-description =
-    Ящик со всем необходимым для организации тайного шпионажа выглядя как солдат Новой Калифорнийской Республики.
-    Включает: 1 набор маскировочной одежды, 1 боевую винтовку, 2 магазина 5.56mm,
-    1 пистолет с глушителем, 2 магазина 22lr под пистолет, 1 боевой нож, 1 стандартный набор пропитания.
-
-undecided-loadout-category-spy-bos-name = Набор фрументария-шпиона СЗБС
-undecided-loadout-category-spy-bos-description =
-    Ящик со всем необходимым для организации тайного шпионажа выглядя как оруженосец Среднезападного Братства Стали.
-    Включает: 1 набор маскировочной одежды, 1 карабин, 3 магазина 5.56mm,
-    1 пистолет с глушителем, 2 магазина 22lr под пистолет, 1 сухой паёк.
-
-undecided-loadout-category-spy-washington-bos-name = Набор фрументария-шпиона ВБС
-undecided-loadout-category-spy-washington-bos-description =
-    Ящик со всем необходимым для организации тайного шпионажа выглядя как оруженосец Среднезападного Братства Стали.
-    Включает: 1 набор маскировочной одежды, 1 пистолет с глушителем, 4 магазина 22lr под пистолет,
-    1 сухой паёк.
-
-undecided-loadout-category-agent-secret-police-name = Набор фрументария-агента тайной полиции
-undecided-loadout-category-agent-secret-police-description =
-    Ящик со всем необходимым для организации поддержания стабильной ситуации в Легионе и подкотрольных территориях.
-    Включает: 1 шок-палку, 2 пары наручников, 1 дробовик,
-    1 коробку патронов 12 калибра, 1 стандартный набор пропитания.
-
-
-undecided-loadout-category-saboteur-name = Набор фрументария-саботажника
-undecided-loadout-category-saboteur-description =
-    Ящик со всем необходимым для огранизации тайных деверсий на вражеские территории.
-    Включает: 1 карабин стрелка, 3 магазина 7.62mm, 1 коробка патронов 7.62mm,
-    1 пояс инструментов, 1 стандартный набор пропитания.
+undecided-loadout-category-ventor-triaria-name = Набор вентора-триария
+undecided-loadout-category-ventor-triaria-description =
+    Ящик со всем необходимым...
+    Включает: 1 штурмовой дробовик, 2 коробки патронов (12 gauge), 1 церемониальный меч,
+    1 ПНВ, 2 грязных стимпака, 1 стандартный набор пропитания.
 
 undecided-loadout-category-dean-gladiator-name = Набор декана-гладиатора
 undecided-loadout-category-dean-gladiator-description =
@@ -71,8 +46,8 @@ undecided-loadout-category-dean-berserker-description =
 undecided-loadout-category-veteran-firearm-name = Огнестрельный набор легионера-ветерана
 undecided-loadout-category-veteran-firearm-description =
     Ящик со всем необходимым для ведения дальнего боя.
-    Включает: 1 гладиус, 2 грязных стимпака, 1 охотничью винтовку,
-    1 дымовую гранату, 1 коробку патронов .308, 1 стандартный набор пропитания.
+    Включает: 1 гладиус, 2 грязных стимпака, 1 штурмовую винтовку,
+    1 дымовую гранату, 1 коробку патронов 7.62mm, 2 магазина 7.62mm, 1 стандартный набор пропитания.
 
 undecided-loadout-category-veteran-berserker-name = Набор легионера-ветерана берсерка
 undecided-loadout-category-veteran-berserker-description =
@@ -107,8 +82,8 @@ undecided-loadout-category-warrior-healer-description =
 undecided-loadout-category-warrior-firearm-name = Огнестрельный набор легионера-воина
 undecided-loadout-category-warrior-firearm-description =
     Ящик со всем необходимым для перестрелок на открытой местности.
-    Включает: 1 легионерскую броню, 1 мачете, 1 племенную винтовку,
-    1 коробку патронов 5.56 калибра, 1 грязный стимпак, 1 стандартный набор пропитания.
+    Включает: 1 легионерскую броню, 1 мачете, 1 пистолет-пулемёт 10 мм,
+    1 коробка патронов (10mm), 2 магазина ПП (10mm), 1 грязный стимпак, 1 стандартный набор пропитания.
 
 undecided-loadout-category-warrior-melee-name = Рукопашный набор легионера-воина
 undecided-loadout-category-warrior-melee-description =

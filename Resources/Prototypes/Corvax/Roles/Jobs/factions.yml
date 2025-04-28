@@ -4,7 +4,7 @@
   color: "#950202"
   roles:
   - CaesarLegionCenturion
-  - CaesarLegionFrumentary
+  - CaesarLegionVenator
   - CaesarLegionDean
   - CaesarLegionLegionnaireVeteran
   - CaesarLegionLegionnaireWarrior

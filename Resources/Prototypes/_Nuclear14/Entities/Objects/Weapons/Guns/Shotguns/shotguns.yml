@@ -131,7 +131,7 @@
     - 0,1,0,1
     sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/sawed_off.rsi
   - type: Gun
-    fireRate: 6
+    fireRate: 3
     soundGunshot:
       collection: N14DoubleBarrelShotgunGunshot
   - type: BallisticAmmoProvider
@@ -522,6 +522,30 @@
       path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg
   - type: StaticPrice
     price: 60
+  - type: MeleeWeapon
+    attackRate: 1.5
+    range: 1.75
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    damage:
+      types:
+        Blunt: 12
+    animation: WeaponArcThrust
+    wideAnimationRotation: -135
+    soundHit:
+      path: /Audio/Weapons/smash.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 12
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 12
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
 
 - type: entity
   name: bloody stick
@@ -555,6 +579,35 @@
       path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg
   - type: StaticPrice
     price: 60
+  - type: MeleeWeapon
+    attackRate: 1.5
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    range: 1.75
+    damage:
+      types:
+        Piercing: 6
+        Slash: 5
+    animation: WeaponArcThrust
+    wideAnimationRotation: -135
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 6
+        Slash: 4
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
+        Slash: 3
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
 
 - type: entity
   name: pipe shotgun

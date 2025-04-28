@@ -1,0 +1,169 @@
+- type: entity
+  parent: SimpleMobBase
+  id: N14MobBrahdo
+  name: brahdo
+  description: "Neigh? That thing has too many legs... Think it bites? Might ride it. Might eat it."
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: base
+      sprite: _Corvax/Mobs/Animals/brahdo.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: true
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.75
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+      Dead:
+        Base: base-dead
+  - type: Stamina
+    critThreshold: 200
+  - type: Strap
+    buckleSound:
+      path: /Audio/_NC/Effects/lift-saddle.ogg
+      params:
+        volume: 20 # It's normal
+    unbuckleSound:
+      path: /Audio/_NC/Effects/dismount-saddle.ogg
+      params:
+        volume: 20 # It's normal
+  - type: Mountable
+  - type: Tag
+    tags:
+    - FootstepSound
+    - Brahdo
+  - type: Butcherable
+    spawned:
+    - id: N14FoodMeatRadRaw
+      amount: 4
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: WastelandAnimal
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4.5
+    baseSprintSpeed : 4.5
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: Horsestep
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+      - N14Dung
+    chance: 0.4
+    intervalSeconds: 300
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: Reproductive
+    breedChance: 0.005 # Low
+    birthPopup: reproductive-birth-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - Brahdo
+    offspring:
+    - id: N14MobBrahdo
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: MobPrice
+    price: 300
+
+- type: entity
+  parent: N14MobBrahdo
+  id: N14MobBrahdoLight
+  name: brahdo
+  description: "Neigh? That thing has too many legs... Think it bites? Might ride it. Might eat it."
+  suffix: Light
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: light
+      sprite: _Corvax/Mobs/Animals/brahdo.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: light
+      Dead:
+        Base: light-dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 5.5
+    baseSprintSpeed : 5.5
+
+- type: entity
+  parent: N14MobBrahdo
+  id: N14MobBrahdoArmor
+  name: brahdo
+  description: "Neigh? That thing has too many legs... Think it bites? Might ride it. Might eat it."
+  suffix: Armor
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: armor
+      sprite: _Corvax/Mobs/Animals/brahdo.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: armor
+      Dead:
+        Base: armor-dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: WastelandArmoredAnimal
+
+- type: entity
+  parent: N14MobBrahdoArmor
+  id: N14MobBrahdoArmorNCR
+  name: brahdo
+  description: "Neigh? That thing has too many legs... Think it bites? Might ride it. Might eat it."
+  suffix: NCR
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: ncr
+      sprite: _Corvax/Mobs/Animals/brahdo.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: ncr
+      Dead:
+        Base: ncr-dead
+
+- type: entity
+  parent: N14MobBrahdoLight
+  id: N14MobBrahdoLightLegion
+  name: brahdo
+  description: "Neigh? That thing has too many legs... Think it bites? Might ride it. Might eat it."
+  suffix: Legion
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: legion
+      sprite: _Corvax/Mobs/Animals/brahdo.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: legion
+      Dead:
+        Base: legion-dead

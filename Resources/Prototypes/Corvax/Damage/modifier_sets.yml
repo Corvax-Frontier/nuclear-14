@@ -1,0 +1,14 @@
+- type: damageModifierSet
+  id: WastelandArmoredAnimal
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.6
+    Cold: 0.5
+    Poison: 0.5
+    Radiation: 0.5
+    Asphyxiation: 0.0
+    Bloodloss: 1
+    Cellular: 1
+  flatReductions:
+    Radiation: 100

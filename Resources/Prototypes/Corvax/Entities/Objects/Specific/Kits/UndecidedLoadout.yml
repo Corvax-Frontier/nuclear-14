@@ -11,7 +11,7 @@
   - type: UndecidedLoadoutBackpack
     possibleSets:
     - CenturionBestiarySet
-    - CenturionVenatorSet
+    - CenturionSagitariaSet
   - type: ActivatableUI
     key: enum.UndecidedLoadoutBackpackUIKey.Key
   - type: UserInterface
@@ -20,7 +20,7 @@
         type: UndecidedLoadoutBackpackBoundUserInterface
 
 - type: entity
-  id: LegionFrumentarialoadoutkits
+  id: LegionVenatorloadoutkits
   name: kit
   description: "please only take one."
   parent: LegionCenturionloadoutkits
@@ -30,12 +30,8 @@
     state: base
   - type: UndecidedLoadoutBackpack
     possibleSets:
-    - FrumentariaSpySet
-    - FrumentariaNCRSpySet
-    - FrumentariaBoSSpySet
-#    - FrumentariaWashingtonBoSSpySet Refactor remove
-    - FrumentariaAgentSecretPoliceSet
-    - FrumentariaSaboteurSet
+    - VenatorSagitariaSet
+    - VenatorTriariaSet
 
 - type: entity
   id: LegionDeanloadoutkits
@@ -176,74 +172,34 @@
   - KitCenturionBestiary
 
 - type: UndecidedLoadoutBackpackSet
-  id: CenturionVenatorSet
-  name: undecided-loadout-category-venator-name
-  description: undecided-loadout-category-venator-description
+  id: CenturionSagitariaSet
+  name: undecided-loadout-category-sagitaria-name
+  description: undecided-loadout-category-sagitaria-description
   sprite:
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   content:
-  - KitCenturionVenator
+  - KitCenturionSagitaria
 
 - type: UndecidedLoadoutBackpackSet
-  id: FrumentariaSpySet
-  name: undecided-loadout-category-spy-name
-  description: undecided-loadout-category-spy-description
+  id: VenatorSagitariaSet
+  name: undecided-loadout-category-ventor-sagitaria-name
+  description: undecided-loadout-category-ventor-sagitaria-description
   sprite:
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   content:
-  - KitFrumentariaSpy
+  - KitVenatorSagitaria
 
 - type: UndecidedLoadoutBackpackSet
-  id: FrumentariaNCRSpySet
-  name: undecided-loadout-category-ncr-spy-name
-  description: undecided-loadout-category-ncr-spy-description
+  id: VenatorTriariaSet
+  name: undecided-loadout-category-ventor-triaria-name
+  description: undecided-loadout-category-ventor-triaria-description
   sprite:
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   content:
-  - KitFrumentariaNCRSpy
-
-- type: UndecidedLoadoutBackpackSet
-  id: FrumentariaBoSSpySet
-  name: undecided-loadout-category-spy-bos-name
-  description: undecided-loadout-category-spy-bos-description
-  sprite:
-    sprite: Corvax/Objects/Misc/kits.rsi
-    state: base
-  content:
-  - KitFrumentariaBoSSpy
-
-- type: UndecidedLoadoutBackpackSet
-  id: FrumentariaWashingtonBoSSpySet
-  name: undecided-loadout-category-spy-washington-bos-name
-  description: undecided-loadout-category-spy-washington-bos-description
-  sprite:
-    sprite: Corvax/Objects/Misc/kits.rsi
-    state: base
-  content:
-  - KitFrumentariaWashingtonBoSSpy
-
-- type: UndecidedLoadoutBackpackSet
-  id: FrumentariaAgentSecretPoliceSet
-  name: undecided-loadout-category-agent-secret-police-name
-  description: undecided-loadout-category-agent-secret-police-description
-  sprite:
-    sprite: Corvax/Objects/Misc/kits.rsi
-    state: base
-  content:
-  - KitFrumentariaAgentSecretPolice
-
-- type: UndecidedLoadoutBackpackSet
-  id: FrumentariaSaboteurSet
-  name: undecided-loadout-category-saboteur-name
-  description: undecided-loadout-category-saboteur-description
-  sprite:
-    sprite: Corvax/Objects/Misc/kits.rsi
-    state: base
-  content:
-  - KitFrumentariaSaboteur
+  - KitVenatorTriaria
 
 - type: UndecidedLoadoutBackpackSet
   id: DeanGladiatorSet

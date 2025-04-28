@@ -1,7 +1,7 @@
 - type: trait
   id: LanguageChinese
   category: Speech
-  points: -5
+  points: -3
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

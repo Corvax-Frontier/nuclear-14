@@ -1,50 +1,110 @@
 - type: loadout
-  id: LoadoutLegionCenturionBaseArmor
+  id: LoadoutLegionVenatorLightReconnaissanceArmor
   category: Roles
   cost: 8
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
-        - CaesarLegionCenturion
-  items:
-    - N14ClothingOuterBaseCenturionArmor
-
-- type: loadout
-  id: LoadoutLegionCenturionHeavyArmor
-  category: Roles
-  cost: 8
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - CaesarLegionCenturion
-  items:
-    - N14ClothingOuterHeavyCenturionArmor
-
-- type: loadout
-  id: LoadoutLegionFrumentaryLightReconnaissanceArmor
-  category: Roles
-  cost: 8
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - CaesarLegionFrumentary
+        - CaesarLegionVenator
   items:
     - N14ClothingOuterLegionnaireLightReconnaissanceArmor
 
 - type: loadout
-  id: LoadoutLegionFrumentaryReconnaissanceArmor
+  id: LoadoutLegionVenatorReconnaissanceArmor
   category: Roles
   cost: 8
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
-        - CaesarLegionFrumentary
+        - CaesarLegionVenator
     - !type:CharacterPlaytimeRequirement
-      tracker: CaesarLegionFrumentary
+      tracker: CaesarLegionVenator
       min: 36000 # 10 hours veterancy unlock
   items:
     - N14ClothingOuterLegionnaireReconnaissanceArmor
+
+- type: loadout
+  id: LoadoutLegionDeadVeteranHelmet
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionDean
+    - !type:CharacterPlaytimeRequirement
+      tracker: CaesarLegionDean
+      min: 3200
+  items:
+    - N14ClothingHeadHatDeanPrimeHelmet
+
+- type: loadout
+  id: LoadoutLegionDeadPrimeHelmet
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionDean
+    - !type:CharacterPlaytimeRequirement
+      tracker: CaesarLegionDean
+      min: 1200
+  items:
+    - N14ClothingHeadHatDeanPrimeHelmet
+
+- type: loadout
+  id: LoadoutLegionDeadRecruitHelmet
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionDean
+  items:
+    - N14ClothingHeadHatDeanRecruitHelmet
+
+- type: loadout
+  id: LoadoutLegionDeadVeteranArmor
+  category: Roles
+  cost: 6
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionDean
+    - !type:CharacterPlaytimeRequirement
+      tracker: CaesarLegionDean
+      min: 3200
+  items:
+    - N14ClothingOuterDeanLegionnaireVeteranArmor
+
+- type: loadout
+  id: LoadoutLegionDeadPrimeArmor
+  category: Roles
+  cost: 6
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionDean
+    - !type:CharacterPlaytimeRequirement
+      tracker: CaesarLegionDean
+      min: 1200
+  items:
+    - N14ClothingOuterDeanLegionnairePrimeArmor
+
+- type: loadout
+  id: LoadoutLegionDeadRecruitArmor
+  category: Roles
+  cost: 6
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionDean
+  items:
+    - N14ClothingOuterDeanLegionnaireRecruitArmor

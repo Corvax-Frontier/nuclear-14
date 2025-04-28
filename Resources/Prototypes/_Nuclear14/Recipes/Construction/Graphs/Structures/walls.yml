@@ -58,6 +58,7 @@
             - !type:GivePrototype
               prototype: MaterialWoodPlank1
               amount: 1
+            - !type:DeleteEntity # Corvax-Change
           steps:
             - tool: Prying
               doAfter: 10
@@ -119,6 +120,7 @@
             - !type:GivePrototype
               prototype: N14Scrap
               amount: 1
+            - !type:DeleteEntity # Corvax-Change
           steps:
             - tool: Welding
               doAfter: 10
@@ -131,6 +133,7 @@
             - !type:GivePrototype
               prototype: N14Scrap
               amount: 1
+            - !type:DeleteEntity # Corvax-Change
           steps:
             - tool: Welding
               doAfter: 10
@@ -143,6 +146,7 @@
             - !type:GivePrototype
               prototype: N14Scrap
               amount: 3
+            - !type:DeleteEntity # Corvax-Change
           steps:
             - tool: Welding
               doAfter: 25

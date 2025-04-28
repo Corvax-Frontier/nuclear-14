@@ -1,0 +1,69 @@
+# Brahdo
+- type: entity
+  name: Brahdo Spawner
+  id: N14SpawnMobBrahdo
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobBrahdo
+
+- type: entity
+  name: Brahdo Spawner
+  id: N14SpawnMobBrahdoLight
+  parent: MarkerBase
+  suffix: LeLight
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobBrahdoLight
+
+- type: entity
+  name: Brahdo Spawner
+  id: N14SpawnMobBrahdoArmor
+  parent: MarkerBase
+  suffix: Armor
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobBrahdoArmor
+
+- type: entity
+  name: Brahdo Spawner
+  id: N14SpawnMobBrahdoArmorNCR
+  parent: MarkerBase
+  suffix: NCR
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobBrahdoArmorNCR
+
+- type: entity
+  name: Brahdo Spawner
+  id: N14SpawnMobBrahdoLightLegion
+  parent: MarkerBase
+  suffix: Legion
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - N14MobBrahdoLightLegion

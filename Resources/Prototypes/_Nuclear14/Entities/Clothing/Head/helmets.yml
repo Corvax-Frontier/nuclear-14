@@ -503,6 +503,8 @@
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/midwest-brotherhood/bosreconhelmet.rsi
   - type: Clothing
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/midwest-brotherhood/bosreconhelmet.rsi
+  - type: NightVision # Corvax-Change
+    isEquipment: true
   - type: Tag
     tags:
     - HidesHair

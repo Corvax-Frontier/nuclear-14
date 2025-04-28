@@ -94,7 +94,7 @@
   maxCount: 30
 
 - type: stack
-  id: Gunpowder
+  id: MaterialGunpowder # Corvax-Change
   name: gunpowder
   icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
   spawn: MaterialGunpowder

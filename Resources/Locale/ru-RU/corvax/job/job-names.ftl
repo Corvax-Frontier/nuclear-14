@@ -5,8 +5,8 @@ JobPilot = пилот
 # Corvax N14
 job-name-caesar-legion-centurion = центурион
 job-description-caesar-legion-centurion = Наиболее доверенные командиры армии Цезаря — центурионы. Эти закалённые на передовой офицеры носят броню, составленную из частей снаряжения павших врагов.
-job-name-caesar-legion-frumentary = фрументарий
-job-description-caesar-legion-frumentary = Для них нет четких рамок. Они подолгу действуют в тылу врага, подражают его обычаям, но их это не пятнает.
+job-name-caesar-legion-venator = венатор
+job-description-caesar-legion-venator = Для них нет четких рамок. Они подолгу действуют в тылу врага, подражают его обычаям, но их это не пятнает.
 job-name-caesar-legion-dean = декан
 job-description-caesar-legion-dean = Младший командир Легиона.
 job-name-caesar-legion-legionnaire-veteran = легионер-ветеран

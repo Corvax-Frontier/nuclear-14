@@ -2587,13 +2587,6 @@ namespace Content.Client.Lobby.UI
                 if (points - cost < 0)
                 {
                     Profile.LoadoutPreferences.Remove(pref);
-                    Profile.LoadoutPreferences.Add(new LoadoutPreference(
-                        pref.LoadoutName,
-                        pref.CustomName,
-                        pref.CustomDescription,
-                        pref.CustomColorTint,
-                        pref.CustomHeirloom
-                    ) { Selected = false });
                 }
                 else
                 {
