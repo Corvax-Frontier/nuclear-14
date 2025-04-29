@@ -28,6 +28,8 @@
           - CaesarLegion
       - type: ReplacementAccent
         accent: latin
+  - !type:AddTraitSpecial
+    traits: [ LanguageLatin ]
 
 - type: startingGear
   id: CaesarLegionCenturionGear

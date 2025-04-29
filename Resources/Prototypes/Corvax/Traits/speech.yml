@@ -1,0 +1,15 @@
+- type: trait
+  id: LanguageLatin
+  category: Speech
+  points: -3
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - CaesarLegion
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Latin
+      languagesUnderstood:
+        - Latin
