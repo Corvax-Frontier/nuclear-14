@@ -13,3 +13,18 @@
         - Latin
       languagesUnderstood:
         - Latin
+
+- type: trait
+  id: LanguageNerd # NerdCat
+  category: Speech
+  points: -6
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Chinese
+        - Tribal
+        - Latin
+      languagesUnderstood:
+        - Chinese
+        - Tribal
+        - Latin
