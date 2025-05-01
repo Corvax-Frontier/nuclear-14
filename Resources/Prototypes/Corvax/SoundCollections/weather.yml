@@ -1,0 +1,9 @@
+- type: soundCollection
+  id: NCRadioactiveParticles
+  files:
+  - /Audio/Effects/Weather/wind_2_1.ogg
+  - /Audio/Effects/Weather/wind_2_2.ogg
+  - /Audio/Effects/Weather/wind_3_1.ogg
+  - /Audio/Effects/Weather/wind_4_1.ogg
+  - /Audio/Effects/Weather/wind_4_2.ogg
+  - /Audio/Effects/Weather/wind_5_1.ogg
