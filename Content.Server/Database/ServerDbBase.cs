@@ -75,45 +75,53 @@ namespace Content.Server.Database
 
         public async Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot)
         {
-            await using var db = await GetDb();
-
-            if (profile is null)
+            try
             {
-                await DeleteCharacterSlot(db.DbContext, userId, slot);
+                await using var db = await GetDb();
+
+                if (profile is null)
+                {
+                    await DeleteCharacterSlot(db.DbContext, userId, slot);
+                    await db.DbContext.SaveChangesAsync();
+                    return;
+                }
+
+                if (profile is not HumanoidCharacterProfile humanoid)
+                {
+                    // TODO: Handle other ICharacterProfile implementations properly
+                    throw new NotImplementedException();
+                }
+
+                var oldProfile = db.DbContext.Profile
+                    .Include(p => p.Preference)
+                    .Where(p => p.Preference.UserId == userId.UserId)
+                    .Include(p => p.Jobs)
+                    .Include(p => p.Antags)
+                    .Include(p => p.Traits)
+                    .Include(p => p.Loadouts)
+                    .AsSplitQuery()
+                    .SingleOrDefault(h => h.Slot == slot);
+
+                var newProfile = ConvertProfiles(humanoid, slot, oldProfile);
+                if (oldProfile == null)
+                {
+                    var prefs = await db.DbContext
+                        .Preference
+                        .Include(p => p.Profiles)
+                        .SingleAsync(p => p.UserId == userId.UserId);
+
+                    prefs.Profiles.Add(newProfile);
+                }
+
                 await db.DbContext.SaveChangesAsync();
-                return;
             }
 
-            if (profile is not HumanoidCharacterProfile humanoid)
+            catch (Exception ex)
             {
-                // TODO: Handle other ICharacterProfile implementations properly
-                throw new NotImplementedException();
+                _opsLog.Error($"Error saving character slot {slot} for {userId}: {ex}");
+                throw;
             }
-
-            var oldProfile = db.DbContext.Profile
-                .Include(p => p.Preference)
-                .Where(p => p.Preference.UserId == userId.UserId)
-                .Include(p => p.Jobs)
-                .Include(p => p.Antags)
-                .Include(p => p.Traits)
-                .Include(p => p.Loadouts)
-                .AsSplitQuery()
-                .SingleOrDefault(h => h.Slot == slot);
-
-            var newProfile = ConvertProfiles(humanoid, slot, oldProfile);
-            if (oldProfile == null)
-            {
-                var prefs = await db.DbContext
-                    .Preference
-                    .Include(p => p.Profiles)
-                    .SingleAsync(p => p.UserId == userId.UserId);
-
-                prefs.Profiles.Add(newProfile);
-            }
-
-            await db.DbContext.SaveChangesAsync();
         }
-
         private static async Task DeleteCharacterSlot(ServerDbContext db, NetUserId userId, int slot)
         {
             var profile = await db.Profile.Include(p => p.Preference)
@@ -258,6 +266,8 @@ namespace Content.Server.Database
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
         {
+            if (humanoid == null)
+                throw new ArgumentNullException(nameof(humanoid));
             profile ??= new Profile();
             var appearance = (HumanoidCharacterAppearance) humanoid.CharacterAppearance;
             List<string> markingStrings = new();
