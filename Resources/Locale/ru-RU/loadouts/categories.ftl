@@ -14,3 +14,7 @@ loadout-category-Roles = Роли
 loadout-category-Uncategorized = Без кат-ии
 loadout-category-Uniform = Форма
 loadout-category-Weapons = Оружие
+loadout-category-Bags = Сумки
+loadout-category-Backpacks = Рюкзаки
+loadout-category-Duffel = Вещмешки
+loadout-category-Satchel = Ранцы

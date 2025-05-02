@@ -24,7 +24,7 @@
   id: RangerRecruitGear
   equipment:
     head: N14ClothingHeadHatCowboyBrown
-    back: N14ClothingBackpackMilitaryFilled
+    back: N14ClothingBackpackMilitary # Corvax-Change
     jumpsuit: N14ClothingUniformRangerV1
     ears: N14ClothingHeadsetNCR
     shoes: N14ClothingBootsLeather
@@ -37,6 +37,9 @@
   innerClothingSkirt: N14ClothingUniformRangerV1 #placeholder
   satchel: N14ClothingBackpackSatchelMilitaryFilled
   duffelbag: N14ClothingBackpackDuffelMilitaryFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
 
 - type: playTimeTracker
   id: RangerRecruit

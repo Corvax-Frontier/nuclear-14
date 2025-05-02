@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Creared by zekins3366, sprites taked https://github.com/Foundation-19/Big-Iron",
+  "copyright": "Creared by zekins3366, sprites taked https://github.com/Foundation-19/Big-Iron, raider by Mr_Lop_Lop",
   "size": {
     "x": 32,
     "y": 32
@@ -27,6 +27,9 @@
     },
     {
       "name": "recruit"
+    },
+    {
+        "name": "raider"
     }
   ]
 }

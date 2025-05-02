@@ -33,10 +33,15 @@
   equipment:
     head: N14ClothingHeadHatCaravanSuit
     jumpsuit: N14ClothingUniformJumpsuitCaravanSuit
-    back: N14ClothingBackpackCaravanLeaderFilled
+    back: N14ClothingBackpackHiking # Corvax-Change
     shoes: N14ClothingShoesBlack
     pocket1: N14WeaponPistol12mm
     id: N14IDPassportCaravanLeader
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledWastelander
+    - N14MagazinePistol12mm
+    - N14MagazinePistol12mm
 
 - type: playTimeTracker
   id: CaravanLeader

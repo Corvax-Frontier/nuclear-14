@@ -9,3 +9,10 @@
   - CaesarLegionLegionnaireVeteran
   - CaesarLegionLegionnaireWarrior
   - CaesarLegionLegionnaireRecruit
+
+- type: department
+  id: Raider
+  description: department-Raider-description
+  color: "#093f09"
+  roles:
+  - Raider

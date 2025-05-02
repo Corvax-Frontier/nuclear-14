@@ -30,7 +30,7 @@
   id: NCREngineerGear
   equipment:
     head: N14ClothingHeadHatNCRHelmetMetalDesert # Corvax-Change
-    back: N14ClothingBackpackNCRFilled
+    back: N14ClothingBackpackNCR # Corvax-Change
     jumpsuit: N14ClothingUniformNCRDesert # Corvax-Change
     shoes: N14ClothingBootsLeatherFilled
     gloves: N14ClothingHandsGlovesCombat
@@ -38,6 +38,9 @@
     pocket1: NCRengineerloadoutkits
   innerClothingSkirt: N14ClothingUniformNCRDesert # Corvax-Change
   satchel: N14ClothingBackpackSatchelNCRFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitaryNCR
 
 - type: playTimeTracker
   id: NCREngineer

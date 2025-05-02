@@ -31,13 +31,18 @@
   id: OverseerGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitVault14
-    back: N14ClothingBackpackVaultOverseerFilled
+    back: N14ClothingBackpackVaultBlue # Corvax-Change
     shoes: N14ClothingBootsBlack
     eyes: ClothingEyesGlassesSunglasses
     id: N14VaultOverseerPDA
     ears: N14ClothingHeadsetVaultDweller
     pocket1: N14WeaponPistol10mm
   innerClothingSkirt: N14ClothingUniformJumpsuitVault14
+  storage: # Corvax-Change
+    back:
+    - N14Bandage
+    - N14CurrencyPrewarMoney500
+    - N14CurrencyPrewarMoney500
 
 - type: playTimeTracker
   id: Overseer

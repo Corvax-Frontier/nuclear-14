@@ -17,7 +17,7 @@
   supervisors: job-supervisors-townsfolk
   access:
   - WastelandBartender
-  special: 
+  special:
   - !type:AddComponentSpecial
     components:
       - type: NpcFactionMember
@@ -31,12 +31,15 @@
     head: ClothingHeadHatTophat
     jumpsuit: N14ClothingUniformJumpsuitBartenderAlt
     outerClothing: N14ClothingOuterLeatherArmor
-    back: N14ClothingBackpackWastelanderFilled
+    back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingBootsLeather
     id: N14IDBartenderTown
   innerClothingSkirt: N14ClothingUniformJumpsuitBartenderAlt #placeholder
   satchel: N14ClothingBackpackSatchelWastelanderFilled
   duffelbag: N14ClothingBackpackDuffelFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledWastelander
 
 - type: playTimeTracker
   id: WastelandBartender

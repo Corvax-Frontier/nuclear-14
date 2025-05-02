@@ -31,13 +31,19 @@
   equipment:
     head: N14ClothingHeadHatCaravanUniform
     jumpsuit: N14ClothingUniformJumpsuitCaravanShirt
-    back: N14ClothingBackpackCaravanTraderFilled
+    back: N14ClothingBackpackHiking # Corvax-Change
     shoes: N14ClothingShoesBrown
     id: N14IDPassportCaravanTrader
     outerClothing: ClothingOuterVest
+    suitstorage: N14WeaponSMG45 # Corvax-Change
   innerClothingSkirt: N14ClothingUniformJumpsuitTrader #placeholder
   satchel: N14ClothingBackpackSatchelCaravanFilled
   duffelbag: N14ClothingBackpackDuffelCaravanFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledWastelander
+    - Magazine45SubMachineGun
+    - Magazine45SubMachineGun
 
 - type: playTimeTracker
   id: CaravanTrader

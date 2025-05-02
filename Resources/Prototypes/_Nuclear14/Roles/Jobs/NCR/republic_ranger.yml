@@ -44,10 +44,13 @@
     outerClothing: N14ClothingOuterRangerArmor
     head: N14ClothingHeadHatRanger
     id: N14IDBadgeNCRRanger
-    back: N14ClothingBackpackMilitaryFilled
+    back: N14ClothingBackpackMilitary # Corvax-Change
   innerClothingSkirt: N14ClothingUniformRangerV3 #placeholder
   satchel: N14ClothingBackpackSatchelMilitaryFilled
   duffelbag: N14ClothingBackpackDuffelMilitaryFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
 
 - type: playTimeTracker
   id: NCRRanger

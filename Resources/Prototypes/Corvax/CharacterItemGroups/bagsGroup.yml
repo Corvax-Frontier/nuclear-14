@@ -1,0 +1,41 @@
+- type: characterItemGroup
+  id: N14LodaoutBags
+  items:
+    - type: loadout
+      id: N14ClothingBackpackTrekker
+    - type: loadout
+      id: N14ClothingBackpackHiking
+    - type: loadout
+      id: N14ClothingBackpackExplorer
+    - type: loadout
+      id: N14ClothingBackpackMilitary
+    - type: loadout
+      id: N14ClothingBackpackTribal
+    - type: loadout
+      id: N14ClothingBackpackVaultBlueDark
+    - type: loadout
+      id: N14ClothingBackpackVaultOrange
+    - type: loadout
+      id: N14ClothingBackpackVaultGreen
+    - type: loadout
+      id: N14ClothingBackpackVaultGreenDark
+    - type: loadout
+      id: N14ClothingBackpackVaultPurple
+    - type: loadout
+      id: N14ClothingBackpackVaultRed
+    - type: loadout
+      id: N14ClothingBackpackDuffel
+    - type: loadout
+      id: N14ClothingBackpackDuffelSalvage
+    - type: loadout
+      id: N14ClothingBackpackDuffelMilitary
+    - type: loadout
+      id: N14ClothingBackpackDuffelMilitaryMedical
+    - type: loadout
+      id: N14ClothingBackpackSatchelTrekker
+    - type: loadout
+      id: N14ClothingBackpackSatchelExplorer
+    - type: loadout
+      id: N14ClothingBackpackSatchelTribal
+    - type: loadout
+      id: N14ClothingBackpackSatchelMilitary

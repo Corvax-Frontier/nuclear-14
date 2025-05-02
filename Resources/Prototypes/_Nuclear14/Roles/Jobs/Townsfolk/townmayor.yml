@@ -28,7 +28,7 @@
   id: TownMayorGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitCheckered
-    back: N14ClothingBackpackMayorFilled
+    back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingShoesBrown
     id: N14IDBadgeTownMayor
     pocket1: RadioHandheld
@@ -36,6 +36,9 @@
   innerClothingSkirt: N14ClothingUniformJumpskirtFalloutBlack
   satchel: N14ClothingBackpackSatchelMayorFilled
   duffelbag: N14ClothingBackpackDuffelMayorFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledWastelander
 
 - type: playTimeTracker
   id: TownMayor

@@ -24,19 +24,26 @@
         factions:
           - Vault
       - type: CPRTraining
-  
+
 
 - type: startingGear
   id: VaultDoctorGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitVault14
-    back: N14ClothingBackpackVaultOverseerFilled
+    back: N14ClothingBackpackVaultBlue # Corvax-Change
     shoes: N14ClothingBootsBlack
     outerClothing: N14ClothingOuterCoatLab
     id: N14VaultDoctorPDA
     ears: N14ClothingHeadsetVaultDweller
     belt: ClothingBeltMedicalFilled
   innerClothingSkirt: N14ClothingUniformJumpsuitVault14
+  storage: # Corvax-Change
+    back:
+    - N14Bandage
+    - N14Antidote
+    - Portafib
+    - N14CurrencyPrewarMoney100
+    - N14CurrencyPrewarMoney100
 
 - type: playTimeTracker
   id: VaultDoctor

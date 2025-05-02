@@ -25,7 +25,7 @@
   id: RangerGear
   equipment:
     head: N14ClothingHeadHatRangerHelmetDesert
-    back: N14ClothingBackpackMilitaryFilled
+    back: N14ClothingBackpackMilitary # Corvax-Chande
     jumpsuit: N14ClothingUniformRangerV2
     ears: N14ClothingHeadsetNCR
     shoes: N14ClothingBootsCombatFilled
@@ -40,6 +40,9 @@
   innerClothingSkirt: N14ClothingUniformRangerV1 #placeholder
   satchel: N14ClothingBackpackSatchelMilitaryFilled
   duffelbag: N14ClothingBackpackDuffelMilitaryFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
 
 - type: playTimeTracker
   id: Ranger

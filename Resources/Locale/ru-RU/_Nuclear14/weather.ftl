@@ -14,3 +14,5 @@ weather-snowfall-heavy = Надвигается сильный снегопад.
 weather-storm = Надвигается шторм.
 weather-sandstorm-extreme = Надвигается экстремальная песчаная буря.
 weather-snowfall-extreme = Надвигается экстремальный снегопад.
+weather-radioactive-particles = Надвигаются радиоактивные осадки. [color=red]Внимание найдите укрытие![/color]
+weather-radioactive-rain = Надвигается радиоактивный дождь. [color=red]Внимание найдите укрытие![/color]

@@ -35,7 +35,7 @@
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     neck: ClothingNeckBlackScarf
     eyes: N14ClothingEyesGlassesWelding
-    back: N14ClothingBackpackMilitaryFilled
+    back: N14ClothingBackpackMilitary
     shoes: N14ClothingBootsCenturion
     head: N14ClothingHeadHatCenturionHelmet
     gloves: N14ClothingHandsGlovesCenturion
@@ -45,6 +45,9 @@
     pocket2: N14WeaponPistol10mmPipe
     id: N14IDLegionaryMedalGold
   innerClothingSkirt: N14ClothingUniformJumpsuitLegionnaireOther
+  storage:
+    back:
+    - N14BoxPlasticFilledMilitary
 
 - type: playTimeTracker
   id: CaesarLegionCenturion

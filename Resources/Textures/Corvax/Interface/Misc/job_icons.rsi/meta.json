@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/Civ13/Civ13",
+  "copyright": "Taken from https://github.com/Civ13/Civ13, Raider made by Mr_Lop_Lop",
   "size": {
     "x": 8,
     "y": 8
@@ -9,6 +9,9 @@
   "states": [
     {
       "name": "Legioner"
+    },
+    {
+        "name": "Raider"
     }
   ]
 }

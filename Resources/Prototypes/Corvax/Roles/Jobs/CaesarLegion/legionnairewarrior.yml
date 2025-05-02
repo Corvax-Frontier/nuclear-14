@@ -35,13 +35,16 @@
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     neck: ClothingNeckRedScarf
     eyes: N14ClothingEyesGlassesWelding
-    back: N14ClothingBackpackMilitaryFilled
+    back: N14ClothingBackpackMilitary
     shoes: N14ClothingShoesKaligi
     head: N14ClothingHeadHatLightBaseballHelmet
     gloves: N14ClothingHandsGlovesTribal
     pocket1: LegionWarriorloadoutkits
     id: N14IDLegionaryMedalSilver
   innerClothingSkirt: N14ClothingUniformJumpsuitLegionnaireOther
+  storage:
+    back:
+    - N14BoxPlasticFilledMilitary
 
 - type: playTimeTracker
   id: CaesarLegionLegionnaireWarrior

@@ -124,3 +124,5 @@ character-whitelist-requirement =
         [true] не следует быть
        *[other] следует быть
     } включённым в белый список
+
+character-minPlayers-requirement = Данная роль доступна только от {$min} человек в сети.

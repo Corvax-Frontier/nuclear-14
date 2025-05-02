@@ -31,13 +31,16 @@
   id: BoSMidSquireGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitBOSGreen
-    back: N14ClothingBackpackMilitaryFilled
+    back: N14ClothingBackpackMilitary # Corvax-Change
     shoes: N14ClothingBootsCombatFilled
     head: N14ClothingHeadHatArmyCap
     outerClothing: N14ClothingOuterMidwestArmor
     pocket1: NCRBoSMidwestkits
     id: N14IDBrotherhoodHolotagSquire
     belt: ClothingBeltMilitary
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
 
 - type: playTimeTracker
   id: BoSMidSquire

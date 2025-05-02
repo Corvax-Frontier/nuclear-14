@@ -1,0 +1,12 @@
+- type: entity
+  parent: MobHuman
+  id: N14MobHumanRaider
+  name: Raider
+  components:
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: Loadout
+      prototypes: [RaiderGear]
+    - type: NpcFactionMember
+      factions:
+      - Raider

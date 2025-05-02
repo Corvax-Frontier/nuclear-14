@@ -1,0 +1,59 @@
+- type: loadout
+  id: N14ClothingBackpackSatchelTrekker
+  category: Satchel
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterItemGroupRequirement
+      group: N14LodaoutBags
+  items:
+    - N14ClothingBackpackSatchelTrekker
+
+- type: loadout
+  id: N14ClothingBackpackSatchelExplorer
+  category: Satchel
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterItemGroupRequirement
+      group: N14LodaoutBags
+  items:
+    - N14ClothingBackpackSatchelExplorer
+
+- type: loadout
+  id: N14ClothingBackpackSatchelTribal
+  category: Satchel
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterItemGroupRequirement
+      group: N14LodaoutBags
+  items:
+    - N14ClothingBackpackSatchelTribal
+
+- type: loadout
+  id: N14ClothingBackpackSatchelMilitary
+  category: Satchel
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterItemGroupRequirement
+      group: N14LodaoutBags
+  items:
+    - N14ClothingBackpackSatchelMilitary

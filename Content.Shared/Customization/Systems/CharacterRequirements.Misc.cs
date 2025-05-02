@@ -2,6 +2,7 @@ using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
+using Robust.Shared.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -9,7 +10,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Customization.Systems;
 
 /// <summary>
-///     Requires the server to have a specific CVar value. 
+///     Requires the server to have a specific CVar value.
 /// </summary>
 [UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CVarRequirement : CharacterRequirement
@@ -51,5 +52,34 @@ public sealed partial class CVarRequirement : CharacterRequirement
             ("value", RequiredValue));
 
         return isValid;
+    }
+}
+
+[UsedImplicitly, Serializable, NetSerializable]
+public sealed partial class MinPlayersRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public int Min;
+
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
+    {
+        var playerManager = IoCManager.Resolve<ISharedPlayerManager>();
+        var playerCount = playerManager.PlayerCount;
+
+        reason = Loc.GetString(
+            "character-minPlayers-requirement",
+            ("min", Min));
+
+        return playerCount >= Min;
     }
 }

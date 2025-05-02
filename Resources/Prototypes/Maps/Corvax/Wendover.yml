@@ -78,3 +78,4 @@
           CaesarLegionLegionnaireVeteran: [ 0, 3 ] # Corvax-Legion
           CaesarLegionLegionnaireWarrior: [ 0, 4 ] # Corvax-Legion
           CaesarLegionLegionnaireRecruit: [ 0, 6 ] # Corvax-Legion
+          Raider: [3,3]

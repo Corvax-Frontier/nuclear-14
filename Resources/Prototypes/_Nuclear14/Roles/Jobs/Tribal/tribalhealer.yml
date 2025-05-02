@@ -35,11 +35,21 @@
     outerClothing: N14ClothingOuterTribalArmor
     shoes: N14ClothingShoesTribal
     gloves: N14ClothingHandsGlovesTribal
-    back: N14ClothingBackpackTribalHealerFilled
+    back: N14ClothingBackpackTrekker # Corvax-Change
     pocket1: N14TribalKnife
     id: N14IDTribeSawbonePendant
   innerClothingSkirt: N14ClothingUniformJumpskirtTribal
   satchel: N14ClothingBackpackSatchelTribalHealerFilled
+  storage: # Corvax-Change
+    back:
+    - Torch
+    - Torch
+    - Torch
+    - N14Bandage
+    - N14Bandage
+    - Ointment
+    - N14HealingPowder
+    - N14HealingPowder
 
 - type: playTimeTracker
   id: TribalHealer

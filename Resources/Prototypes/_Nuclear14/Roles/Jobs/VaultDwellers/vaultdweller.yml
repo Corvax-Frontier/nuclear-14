@@ -24,11 +24,15 @@
   id: VaultDwellerGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitVault14
-    back: N14ClothingBackpackVaultDwellerFilled
+    back: N14ClothingBackpackVaultBlue # Corvax-Change
     shoes: N14ClothingBootsBlack
     id: N14VaultPDA
     ears: N14ClothingHeadsetVaultDweller
   innerClothingSkirt: N14ClothingUniformJumpsuitVault14
+  storage: # Corvax-Change
+    back:
+    - N14Bandage
+    - N14CurrencyPrewarMoney100
 
 - type: playTimeTracker
   id: VaultDweller

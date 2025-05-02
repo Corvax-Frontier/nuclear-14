@@ -70,3 +70,16 @@
     layers:
       - state: green
       - state: recruit
+
+- type: entity
+  parent: SpawnPointJobBase
+  id: N14SpawnPointRaider
+  name: raider
+  components:
+  - type: SpawnPoint
+    job_id: Raider
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: raider

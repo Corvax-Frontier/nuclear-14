@@ -30,7 +30,7 @@
 - type: startingGear
   id: NCRSGTGear
   equipment:
-    back: N14ClothingBackpackNCRFilled
+    back: N14ClothingBackpackNCR # Corvax-Change
     gloves: N14ClothingHandsGlovesCombat
     jumpsuit: N14ClothingOfficerUniformNCRDesert # Corvax-Change
     shoes: N14ClothingBootsCombatFilled
@@ -42,6 +42,9 @@
     id: N14IDNCRDogtagNCO
   innerClothingSkirt: N14ClothingOfficerUniformNCRDesert # Corvax-Change
   satchel: N14ClothingBackpackSatchelNCRFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitaryNCR
 
 - type: playTimeTracker
   id: NCRNCO

@@ -1,0 +1,45 @@
+- type: job
+  id: Raider
+  setPreference: true
+  name: job-name-raider
+  description: job-description-raider
+  playTimeTracker: Raider
+  requirements:
+  - !type:CharacterWhitelistRequirement
+  # - !type:MinPlayersRequirement
+  #   min: 40
+  - !type:CharacterOverallTimeRequirement
+    min: 90000 # 25 hours
+  startingGear: RaiderGear
+  alwaysUseSpawner: true
+  icon: "JobIconRaider"
+  supervisors: job-supervisors-raider
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - Raider
+
+- type: startingGear
+  id: RaiderGear
+  equipment:
+    bandage: NCClothingBandageRaiders
+    jumpsuit: N14ClothingUniformJumpsuitBrahminFarmer
+    outerClothing: N14ClothingOuterRaiderBlastmaster
+    shoes: N14ClothingShoesRaider
+    neck: ClothingNeckBlackScarf
+    head: N14ClothingHeadHatBeanie
+    back: N14ClothingBackpackMilitary
+    suitstorage: N14WeaponSMG45
+    belt: ClothingBeltMilitary
+  storage:
+    back:
+    - N14BoxPlasticFilledWastelander
+    belt:
+    - Magazine45SubMachineGun
+    - Magazine45SubMachineGun
+
+- type: playTimeTracker
+  id: Raider

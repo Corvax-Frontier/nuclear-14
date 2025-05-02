@@ -1,0 +1,18 @@
+# See the following file for existing categories: Resources\Prototypes\Loadouts\categories.yml
+
+- type: loadoutCategory
+  id: Bags
+  root: true
+  subCategories:
+  - Backpacks
+  - Duffel
+  - Satchel
+
+- type: loadoutCategory
+  id: Backpacks
+
+- type: loadoutCategory
+  id: Duffel
+
+- type: loadoutCategory
+  id: Satchel

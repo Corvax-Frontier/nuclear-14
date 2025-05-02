@@ -35,7 +35,7 @@
   id: NCRLTGear
   equipment:
     head: N14ClothingHeadHatNCRBeretOfficer
-    back: N14ClothingBackpackNCRFilled
+    back: N14ClothingBackpackNCR # Corvax-Change
     jumpsuit: N14ClothingOfficerUniformNCRDesert # Corvax-Change
     shoes: N14ClothingBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
@@ -45,6 +45,9 @@
     id: N14IDNCRDogtagOfficer
   innerClothingSkirt: N14ClothingOfficerUniformNCRDesert # Corvax-Change
   satchel: N14ClothingBackpackSatchelNCRFilled
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitaryNCR
 
 - type: playTimeTracker
   id: NCROfficer

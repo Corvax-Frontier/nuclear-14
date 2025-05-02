@@ -29,7 +29,7 @@
   id: TownDoctorGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitWastelandDoc
-    back: N14ClothingBackpackWastelanderFilled # N14TODO: Doctors Bag
+    back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingShoesBlack
     gloves: N14ClothingHandsGlovesNitrile
     id: N14IDDoctorTown
@@ -37,7 +37,9 @@
   innerClothingSkirt: N14ClothingUniformJumpskirtFalloutBlack
   satchel: N14ClothingBackpackSatchelWastelanderFilled
   duffelbag: N14ClothingBackpackDuffelFilled  # N14TODO: Doctors Bag
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledWastelander
 
 - type: playTimeTracker
   id: TownDoctor
-  
