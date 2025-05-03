@@ -6,8 +6,8 @@
   playTimeTracker: Raider
   requirements:
   - !type:CharacterWhitelistRequirement
-  # - !type:MinPlayersRequirement
-  #   min: 40
+  - !type:MinPlayersRequirement
+    min: 40
   - !type:CharacterOverallTimeRequirement
     min: 90000 # 25 hours
   startingGear: RaiderGear
