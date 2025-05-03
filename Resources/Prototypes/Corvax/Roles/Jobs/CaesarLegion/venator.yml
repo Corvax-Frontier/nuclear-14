@@ -23,6 +23,10 @@
       - type: NpcFactionMember
         factions:
           - CaesarLegion
+      - type: ReplacementAccent
+        accent: latin
+  - !type:AddTraitSpecial
+    traits: [ LanguageLatin ]
 
 - type: startingGear
   id: CaesarLegionVenatorGear
