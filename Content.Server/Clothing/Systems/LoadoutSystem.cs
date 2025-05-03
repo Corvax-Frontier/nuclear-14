@@ -4,16 +4,20 @@ using Content.Server.Paint;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
+using Content.Shared.Mind.Components;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Jobs;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Traits.Assorted.Components;
+using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -35,6 +39,8 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly SharedJobSystem _job = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -141,4 +147,55 @@ public sealed class LoadoutSystem : EntitySystem
             foreach (var special in jobProto.AfterLoadoutSpecial)
                 special.AfterEquip(uid);
     }
+
+    // Corvax-Change-Start
+    public void InsertBack(EntityUid uid, EntityUid loadout)
+    {
+        if (!TryComp(loadout, out ClothingComponent? clothing) ||
+            clothing.Slots != SlotFlags.BACK)
+            return;
+
+        if (!TryComp(uid, out MindContainerComponent? mind) || mind.Mind == null)
+            return;
+
+        if (!_job.MindTryGetJob(mind.Mind.Value, out _, out var jobPrototype) || jobPrototype.StartingGear == null)
+            return;
+
+        if (!_protoMan.TryIndex(jobPrototype.StartingGear, out StartingGearPrototype? gear))
+            return;
+
+        if (!TryComp(uid, out InventoryComponent? inventoryComp))
+            return;
+
+        if (gear.Storage.Count > 0)
+        {
+            var coords = _xform.GetMapCoordinates(uid);
+            var ents = new ValueList<EntityUid>();
+            foreach (var (slot, entProtos) in gear.Storage)
+            {
+                if (slot != "back")
+                    continue;
+
+                if (entProtos.Count == 0)
+                    continue;
+
+                foreach (var ent in entProtos)
+                {
+                    ents.Add(Spawn(ent, coords));
+                }
+
+                if (inventoryComp != null &&
+                    _inventory.TryGetSlotEntity(uid, slot, out var slotEnt, inventoryComponent: inventoryComp) &&
+                    TryComp(slotEnt, out StorageComponent? storageComp))
+                {
+                    foreach (var ent in ents)
+                    {
+                        _storage.Insert(slotEnt.Value, ent, out _, storageComp: storageComp, playSound: false);
+                    }
+                }
+                ents.Clear();
+            }
+        }
+    }
+    // Corvax-Change-End
 }

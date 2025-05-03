@@ -11,3 +11,4 @@ character-item-group-N14LoadoutNeck = Аксессуары для шеи
 character-item-group-N14LoadoutOuter = Верхняя одежда
 character-item-group-N14LoadoutShoes = Обувь
 character-item-group-N14LoadoutUniform = Униформа
+character-item-group-N14LodaoutBags = Сумки

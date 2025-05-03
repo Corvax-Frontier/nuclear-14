@@ -28,3 +28,22 @@ public sealed partial class LoadoutMakeFollower : LoadoutFunction
         htn.Replan(hTNComponent);
     }
 }
+
+// Corvax-Change-Start
+/// <summary>
+/// Данная функция позволяет перенести вещи из StratingGear.Storage в новый рюкзак.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class LoadoutFiledStorage : LoadoutFunction
+{
+    public override void OnPlayerSpawn(EntityUid uid,
+        EntityUid loadout,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var loadoutSys = entityManager.System<LoadoutSystem>();
+        loadoutSys.InsertBack(uid, loadout);
+    }
+}
+// Corvax-Change-End

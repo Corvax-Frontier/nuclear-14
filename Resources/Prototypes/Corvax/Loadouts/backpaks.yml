@@ -3,6 +3,8 @@
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -12,12 +14,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackTrekker
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackHiking
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -27,12 +33,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackHiking
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackExplorer
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -42,12 +52,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackExplorer
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackMilitary
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -57,12 +71,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackMilitary
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackTribal
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -72,12 +90,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackTribal
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackVaultBlueDark
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -86,12 +108,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackVaultBlueDark
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackVaultOrange
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -100,12 +126,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackVaultOrange
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackVaultGreen
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -114,12 +144,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackVaultGreen
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackVaultGreenDark
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -128,12 +162,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackVaultGreenDark
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackVaultPurple
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -142,12 +180,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackVaultPurple
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackVaultRed
   category: Backpacks
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -156,3 +198,5 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackVaultRed
+  functions:
+  - !type:LoadoutFiledStorage

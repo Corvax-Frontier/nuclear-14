@@ -31,6 +31,9 @@
   - type: Stamina
     critThreshold: 200
   - type: Strap
+    whitelist:
+      components:
+      - HumanoidAppearance
     buckleSound:
       path: /Audio/_NC/Effects/lift-saddle.ogg
       params:

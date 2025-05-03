@@ -3,6 +3,8 @@
   category: Duffel
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -12,12 +14,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackDuffel
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackDuffelSalvage
   category: Duffel
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -27,12 +33,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackDuffelSalvage
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackDuffelMilitary
   category: Duffel
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -42,12 +52,16 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackDuffelMilitary
+  functions:
+  - !type:LoadoutFiledStorage
 
 - type: loadout
   id: N14ClothingBackpackDuffelMilitaryMedical
   category: Duffel
   cost: 2
   exclusive: true
+  customName: false
+  customDescription: false
   requirements:
     - !type:CharacterDepartmentRequirement
       inverted: true
@@ -57,3 +71,5 @@
       group: N14LodaoutBags
   items:
     - N14ClothingBackpackDuffelMilitaryMedical
+  functions:
+  - !type:LoadoutFiledStorage
