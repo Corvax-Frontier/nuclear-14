@@ -7,7 +7,7 @@
       contents:
         - id: N14BoxPlasticFilledWastelander
 
-- type: entity
+- type: entity # test
   categories: [ HideSpawnMenu ]
   parent: N14ClothingBackpackTrekker
   id: N14ClothingBackpackChaplainFilled

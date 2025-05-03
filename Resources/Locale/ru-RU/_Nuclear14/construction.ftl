@@ -13,4 +13,4 @@ lathe-category-weapons-pistols = Пистолеты
 lathe-category-weapons-rifles = Винтовки
 lathe-category-weapons-smgs = Пистолеты-пулемёты
 lathe-category-identification = Идентификация
-lathe-category-blueprints = Чертежи
+# lathe-category-blueprints = Чертежи

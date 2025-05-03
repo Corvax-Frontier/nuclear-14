@@ -7,7 +7,7 @@ on:
 
 jobs:
   diff:
-    name: Diff
+    name: Diff # test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,7 +18,7 @@ jobs:
         uses: Ana06/get-changed-files@v2.3.0
         with:
           format: 'space-delimited'
-          filter: | 
+          filter: |
             **.rsi
             **.png
 
