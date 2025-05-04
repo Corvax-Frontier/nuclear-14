@@ -239,7 +239,7 @@
   - type: Sprite
     sprite: _Nuclear14/Objects/Weapons/Guns/Snipers/brushgun.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 2.5 # Corvax-Change
     soundGunshot:
       collection: N14BrushGunGunshot
   - type: BallisticAmmoProvider
