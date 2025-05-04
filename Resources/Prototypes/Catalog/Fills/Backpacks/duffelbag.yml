@@ -12,6 +12,7 @@
       - id: Cautery
       - id: Retractor
       - id: Scalpel
+      - id: ClothingMaskSterile # Corvax-Change
       - id: BoneGel # Shitmed Change
 
 - type: entity
