@@ -1102,6 +1102,9 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponLaserPistol
+      - id: N14WeaponRifle556CarbineOld
+      - id: Magazine556Rifle
+        amount: 3
       - id: N14PowerCellSmall
         amount: 2
       - id: Gauze

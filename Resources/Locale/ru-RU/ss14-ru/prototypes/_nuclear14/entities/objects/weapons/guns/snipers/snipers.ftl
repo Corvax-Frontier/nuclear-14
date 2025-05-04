@@ -26,5 +26,5 @@ ent-N14WeaponSniper308TribalUpgraded = { ent-N14WeaponSniper308Tribal }
     .desc = Винтовка с рычажным механизмом, украшенная племенными-узорами. Использует патроны калибра .308.
 ent-N14WeaponSniper308Canadian = F1
     .desc = Довоенная Канадская снайперская винтовка. Использует патроны калибра .308.
-ent-N14WeaponSniper308Ross = винтовка
+ent-N14WeaponSniper308Ross = винтовка Росса
     .desc = Хорошо сохранившаяся канадская винтовка. Использует патроны калибра .308.

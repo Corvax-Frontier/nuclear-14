@@ -155,3 +155,10 @@ ent-N14ClothingOuterNCRPouchedVestSnow = кожаный жилет НКР с к�
     .desc = Кожаный жилет с лёгкой баллистической пластиной внутри, дополненный набором карманов для хранения различных вещей. В нём неудобно двигаться.
 ent-N14ClothingOuterLightLeatherArmor = лёгкая кожаная броня
     .desc = Базовая кожаная броня. Тщательно изготовлена из выделанной шкуры браминов.
+ent-N14ClothingOuterDeanLegionnairePrimeArmor = тяжелая легионерская броня
+    .desc = Тяжёлая версия легионерской брони, обеспечивает хорошую защиту от внешних угроз.
+ent-N14ClothingOuterDeanLegionnaireVeteranArmor = {ent-N14ClothingOuterDeanLegionnairePrimeArmor}
+    .desc = {ent-N14ClothingOuterDeanLegionnairePrimeArmor.desc}
+ent-N14ClothingOuterDeanLegionnaireRecruitArmor = {ent-N14ClothingOuterDeanLegionnairePrimeArmor}
+    .desc = {ent-N14ClothingOuterDeanLegionnairePrimeArmor.desc}
+

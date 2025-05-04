@@ -193,8 +193,8 @@ undecided-loadout-category-bos-scribe-medic-description =
 undecided-loadout-category-bos-scribe-field-name = Полевой набор Скриптера Братства Стали
 undecided-loadout-category-bos-scribe-field-description =
     Ящик со снаряжением, необходимым для поддержки вашего подразделения из тыла.
-    Включает: винтовку "Варминт", коробку патронов калибра 5,56 мм, медицинский пояс,
-    полевую форму скриптера, нож, стимулятор и сухпаёк.
+    Включает: карабин, 3 магазина калибра 5,56 мм, разгрузочный жилет,
+    пальто писца, нож, стимулятор, мазь из алоэ, бинты и сухпаёк
 
 undecided-loadout-category-bos-scribe-engineer-name = Инженерный набор Скриптера Братства Стали
 undecided-loadout-category-bos-scribe-engineer-description =
