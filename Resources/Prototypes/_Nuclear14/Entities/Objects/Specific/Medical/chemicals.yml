@@ -743,14 +743,47 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: Gauze
-  id: N14Bandage
+  parent: BaseHealingItem
+  id: N14Bandage #! Corvax-Change
   name: bandage
   description: A long strip of cloth which can stop bleeding. Mostly sterile.
+  suffix: full
   components:
+  - type: Tag
+    tags:
+    - N14Bandage
   - type: Sprite
     sprite: _Nuclear14/Objects/Specific/Medical/drugs.rsi
     state: bandage
+  - type: Construction
+    graph: Bandage
+    node: bandage
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -10 # Was 5
+        Piercing: -15 # Was 10, Buffed due to limb damage changes
+    bloodlossModifier: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: N14Bandage
+    count: 15 #Was 10, Buffed due to limb damage changes
+  - type: StackPrice
+    price: 20 #Was 10, Buffed due to limb damage changes
+
+- type: entity
+  parent: N14Bandage
+  id: N14Bandage1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
 
 - type: entity
   parent: DrinkBottleGlassBaseFull
