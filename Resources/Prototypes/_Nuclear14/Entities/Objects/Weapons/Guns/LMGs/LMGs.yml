@@ -19,8 +19,8 @@
   - type: Wieldable
   - type: GunRequiresWield
   - type: GunWieldBonus
-    minAngle: -22
-    maxAngle: -59
+    minAngle: -18 # Corvax-Change
+    maxAngle: -52 # Corvax-Change
   - type: Gun
     minAngle: 24
     maxAngle: 60
@@ -182,6 +182,9 @@
         whitelist:
           tags:
             - N14Cartridge762Rifle
+  - type: ClothingSpeedModifier # Corvax-Add
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: MagazineVisuals
     magState: mag
@@ -278,6 +281,9 @@
     size: Huge
     sprite: _Nuclear14/Objects/Weapons/Guns/LMGs/bren.rsi
   - type: Wieldable
+  - type: ClothingSpeedModifier # Corvax-Add
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: GunRequiresWield
   - type: GunWieldBonus
     minAngle: -22
