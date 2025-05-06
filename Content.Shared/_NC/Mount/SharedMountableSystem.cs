@@ -6,6 +6,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NPC;
 
 namespace Content.Shared._NC.Mountable;
 
@@ -69,6 +70,7 @@ public sealed class SharedMountSystem : EntitySystem
         if (!TryComp<MovementSpeedModifierComponent>(ent, out var move))
             return;
 
+        RemComp<ActiveNPCComponent>(ent);
         var walk = move.BaseWalkSpeed * ent.Comp.MountedSpeed;
         var sprint = move.BaseSprintSpeed * ent.Comp.MountedSpeed;
         _movement.ChangeBaseSpeed(ent, walk, sprint, move.Acceleration, move);
@@ -84,6 +86,7 @@ public sealed class SharedMountSystem : EntitySystem
 
         RemComp<RiderComponent>(args.Buckle.Owner);
         ent.Comp.Rider = null;
+        AddComp(ent, new ActiveNPCComponent());
 
         if (!TryComp<MovementSpeedModifierComponent>(ent, out var move))
             return;

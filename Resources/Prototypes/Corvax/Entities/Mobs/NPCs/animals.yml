@@ -79,6 +79,11 @@
     - id: N14MobBrahdo
       maxAmount: 1
   - type: ReproductivePartner
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: Body
+    prototype: AnimalRuminant
   - type: MobPrice
     price: 300
 

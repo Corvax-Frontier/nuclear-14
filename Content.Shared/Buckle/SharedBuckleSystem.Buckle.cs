@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._NC.Mountable.Components;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Cuffs.Components;
@@ -217,6 +218,9 @@ public abstract partial class SharedBuckleSystem
     {
         strapComp = null;
         if (!Resolve(strapUid, ref strapComp, false))
+            return false;
+
+        if (HasComp<MountableComponent>(buckleUid)) // Corvax-Change Костыль чтоб не могли пристегнуть брадо
             return false;
 
         // Does it pass the Whitelist
