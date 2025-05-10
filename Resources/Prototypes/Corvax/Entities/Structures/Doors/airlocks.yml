@@ -1,0 +1,41 @@
+- type: entity
+  id: N14DoorBunker3X
+  parent: N14Airlock
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Door/bunkerdoor.rsi
+  - type: Occluder
+    boundingBox: "-1.5,-0.5,1.5,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-0.5,1.5,0.5"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+
+- type: entity
+  id: N14DoorBunkerGlass3X
+  parent: N14Airlock
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Door/glassbunkerdoor.rsi
+  - type: Door
+    occludes: false
+  - type: Occluder
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-0.5,1.5,0.5"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "copyright": "Taken from https://github.com/SeeminglyTypicalUsername/Nukapop13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "combat_off"
+    },
+    {
+      "name": "combat"
+    }
+  ]
+}
