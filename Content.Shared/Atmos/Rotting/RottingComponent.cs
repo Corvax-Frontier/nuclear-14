@@ -45,8 +45,8 @@ public sealed partial class RottingComponent : Component
     {
         DamageDict = new()
         {
-            { "Blunt", 0.06 },
-            { "Cellular", 0.06 }
+            { "Blunt", 0.00 }, /// Corvax-Fallout 0.06 -> 0
+            { "Cellular", 0.00 } /// Corvax-Fallout 0.06 -> 0
         }
     };
 }
