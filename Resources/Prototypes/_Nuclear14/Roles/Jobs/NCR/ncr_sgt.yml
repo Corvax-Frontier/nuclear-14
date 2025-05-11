@@ -13,7 +13,7 @@
       department: NCR
       min: 36000 # 10 hours
   startingGear: NCRSGTGear
-  icon: "JobIconSecurityOfficer"
+  icon: "JobIconNcrSerg" # Corvax-Change
   supervisors: job-supervisors-ncr-sgt
   canBeAntag: false
   alwaysUseSpawner: true

@@ -13,7 +13,7 @@
       department: Townsfolk
       min: 7200
   startingGear: TownDoctorGear
-  icon: "JobIconPassenger"
+  icon: "JobIconTownMedic" # Corvax-Change
   supervisors: job-supervisors-townsfolk
   access:
   - TownieDoctor

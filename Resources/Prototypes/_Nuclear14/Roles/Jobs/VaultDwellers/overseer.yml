@@ -13,7 +13,7 @@
   weight: 20
   startingGear: OverseerGear
   alwaysUseSpawner: true
-  icon: "JobIconCaptain"
+  icon: "JobIconVaultOverseer" # Corvax-Change
   requireAdminNotify: true
   joinNotifyCrew: true
   canBeAntag: false

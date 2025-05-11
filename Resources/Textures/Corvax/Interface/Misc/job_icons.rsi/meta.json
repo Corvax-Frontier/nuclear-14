@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/Civ13/Civ13, Raider made by Mr_Lop_Lop",
+  "copyright": "Legioner Taken from https://github.com/Civ13/Civ13, Raider made by Mr_Lop_Lop, NCR and BOS made by kubertyantr discord, other made by mars33_2.0 discord",
   "size": {
     "x": 8,
     "y": 8
@@ -11,7 +11,115 @@
       "name": "Legioner"
     },
     {
-        "name": "Raider"
+      "name": "Raider"
+    },
+    {
+      "name": "bosMCommander"
+    },
+    {
+      "name": "bosMKnight"
+    },
+    {
+      "name": "bosMPaladin"
+    },
+    {
+      "name": "bosMScriptor"
+    },
+    {
+      "name": "bosMSquire"
+    },
+    {
+      "name": "caravanGuard"
+    },
+    {
+      "name": "caravanLeader"
+    },
+    {
+      "name": "caravanTrader"
+    },
+    {
+      "name": "ncrCadet"
+    },
+    {
+      "name": "ncrLeader"
+    },
+    {
+      "name": "ncrMedic"
+    },
+    {
+      "name": "ncrSerg"
+    },
+    {
+      "name": "ncrSoldier"
+    },
+    {
+      "name": "ncrSpec"
+    },
+    {
+      "name": "ncrRanger"
+    },
+    {
+      "name": "ncrVeteranRanger"
+    },
+    {
+      "name": "townDeputy"
+    },
+    {
+      "name": "townMayor"
+    },
+    {
+      "name": "townMechanic"
+    },
+    {
+      "name": "townMedic"
+    },
+    {
+      "name": "townPerson"
+    },
+    {
+      "name": "townReporter"
+    },
+    {
+      "name": "townSheriff"
+    },
+    {
+      "name": "townShopKeeper"
+    },
+    {
+      "name": "tribal"
+    },
+    {
+      "name": "tribalFarmer"
+    },
+    {
+      "name": "tribalLeader"
+    },
+    {
+      "name": "tribalMedic"
+    },
+    {
+      "name": "vaulDweller"
+    },
+    {
+      "name": "vaultEngineer"
+    },
+    {
+      "name": "vaultMedic"
+    },
+    {
+      "name": "vaultOverseer"
+    },
+    {
+      "name": "vaultSecurity"
+    },
+    {
+      "name": "wastelandChaplain"
+    },
+    {
+      "name": "wastelander"
+    },
+    {
+      "name": "wastelandFarmer"
     }
   ]
 }

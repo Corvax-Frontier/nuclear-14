@@ -20,7 +20,7 @@
             - Ghoul
   startingGear: BoSMidKnightGear
   alwaysUseSpawner: true
-  icon: "JobIconPassenger"
+  icon: "JobIconBosMKnight" # Corvax-Change
   supervisors: job-supervisors-bos-mid-knight
   canBeAntag: false
   access:

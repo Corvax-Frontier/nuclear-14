@@ -15,7 +15,7 @@
       min: 3600
   startingGear: BoSMidSquireGear
   alwaysUseSpawner: true
-  icon: "JobIconPassenger"
+  icon: "JobIconBosMSquire" # Corvax-Change
   supervisors: job-supervisors-bos-mid-initiate
   canBeAntag: false
   access:

@@ -13,7 +13,7 @@
       department: Townsfolk
       min: 28800 # 8 hours
   startingGear: TownSheriffGear
-  icon: "JobIconPassenger"
+  icon: "JobIconTownSheriff" # Corvax-Change
   supervisors: job-supervisors-townsfolk
   access:
   - TownieLaw

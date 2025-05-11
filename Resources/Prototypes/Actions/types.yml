@@ -206,8 +206,8 @@
   - type: InstantAction
     checkCanInteract: false
     checkConsciousness: false
-    icon: Corvax/Interface/Actions/combat_mode.rsi/combat_off.png # Corvax-Change
-    iconOn: Corvax/Interface/Actions/combat_mode.rsi/combat.png # Corvax-Change
+    icon: { sprite: Corvax/Interface/Actions/combat_mode.rsi, state: combat_off } # Corvax-Change
+    iconOn: { sprite: Corvax/Interface/Actions/combat_mode.rsi, state: combat } # Corvax-Change
     event: !type:ToggleCombatActionEvent
     priority: -100
 

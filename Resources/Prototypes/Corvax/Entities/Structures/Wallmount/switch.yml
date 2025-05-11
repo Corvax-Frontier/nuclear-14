@@ -1,0 +1,7 @@
+- type: entity
+  parent: LockableButton
+  id: N14LockableButtonVault
+  suffix: Overserver, Guard
+  components:
+  - type: AccessReader
+    access: [["VaultSecurity"], ["VaultOverseer"]]

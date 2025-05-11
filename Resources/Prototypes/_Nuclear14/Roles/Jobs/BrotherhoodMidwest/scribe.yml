@@ -20,7 +20,7 @@
             - Ghoul
   startingGear: BoSMidScribeGear
   alwaysUseSpawner: true
-  icon: "JobIconPassenger"
+  icon: "JobIconBosMScriptor" # Corvax-Change
   supervisors: job-supervisors-bos-mid
   access:
   - BoSMidwest

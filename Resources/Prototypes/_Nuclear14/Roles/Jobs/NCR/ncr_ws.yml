@@ -13,7 +13,7 @@
       department: NCR
       min: 18000 # 5 hours
   startingGear: NCRWSGear
-  icon: "JobIconWarden"
+  icon: "JobIconNcrSpec" # Corvax-Change
   supervisors: job-supervisors-ncr
   canBeAntag: false
   alwaysUseSpawner: true

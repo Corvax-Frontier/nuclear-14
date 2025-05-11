@@ -12,7 +12,7 @@
   playTimeTracker: VaultDoctor
   startingGear: VaultDoctorGear
   alwaysUseSpawner: true
-  icon: "JobIconMedicalDoctor"
+  icon: "JobIconVaultMedic" # Corvax-Change
   supervisors: job-supervisors-vault
   access:
   - VaultDweller

@@ -5,7 +5,7 @@
   description: job-description-farmer
   playTimeTracker: Farmer
   startingGear: FarmerGear
-  icon: "JobIconBotanist"
+  icon: "JobIconWastelandFarmer" # Corvax-Change
   supervisors: job-supervisors-wastelander
   access:
   - WastelandFarmer

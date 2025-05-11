@@ -11,3 +11,255 @@
   icon:
     sprite: Corvax/Interface/Misc/job_icons.rsi
     state: Raider
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBosMCommander
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: bosMCommander
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBosMKnight
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: bosMKnight
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBosMPaladin
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: bosMPaladin
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBosMScriptor
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: bosMScriptor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBosMSquire
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: bosMSquire
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCaravanGuard
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: caravanGuard
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCaravanLeader
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: caravanLeader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCaravanTrader
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: caravanTrader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrCadet
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrCadet
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrLeader
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrLeader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrMedic
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrMedic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrSerg
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrSerg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrSoldier
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrSoldier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrSpec
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrSpec
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrRanger
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrRanger
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNcrVeteranRanger
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: ncrVeteranRanger
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownDeputy
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townDeputy
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownMayor
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townMayor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownMechanic
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townMechanic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownMedic
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townMedic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownPerson
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townPerson
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownReporter
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townReporter
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownSheriff
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townSheriff
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTownShopKeeper
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: townShopKeeper
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTribal
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: tribal
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTribalFarmer
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: tribalFarmer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTribalLeader
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: tribalLeader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTribalMedic
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: tribalMedic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVaulDweller
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: vaulDweller
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVaultEngineer
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: vaultEngineer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVaultMedic
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: vaultMedic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVaultOverseer
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: vaultOverseer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVaultSecurity
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: vaultSecurity
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWastelandChaplain
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: wastelandChaplain
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWastelander
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: wastelander
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWastelandFarmer
+  icon:
+    sprite: Corvax/Interface/Misc/job_icons.rsi
+    state: wastelandFarmer

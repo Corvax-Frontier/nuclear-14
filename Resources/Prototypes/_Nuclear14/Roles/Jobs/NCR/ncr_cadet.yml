@@ -12,7 +12,7 @@
     - !type:CharacterOverallTimeRequirement
       min: 3600
   startingGear: NCRCadetGear
-  icon: "JobIconSecurityCadet"
+  icon: "JobIconNcrCadet" # Corvax-Change
   supervisors: job-supervisors-ncr
   canBeAntag: false
   alwaysUseSpawner: true

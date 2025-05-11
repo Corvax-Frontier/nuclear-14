@@ -14,8 +14,8 @@
       min: 216000 # 60 hours as NCR
     - !type:CharacterWhitelistRequirement
   startingGear: NCRRangerVeteranGear
-  icon: "JobIconHeadOfSecurity"
-  supervisors: ent-job-supervisors-ncr # Corvax-Nuclear
+  icon: "JobIconNcrVeteranRanger" # Corvax-Change
+  supervisors: ent-job-supervisors-ncr # Corvax-Change
   requireAdminNotify: true
   canBeAntag: false
   access:

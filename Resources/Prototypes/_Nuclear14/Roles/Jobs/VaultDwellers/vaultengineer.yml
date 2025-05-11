@@ -12,7 +12,7 @@
   playTimeTracker: VaultEngineer
   startingGear: VaultEngineerGear
   alwaysUseSpawner: true
-  icon: "JobIconStationEngineer"
+  icon: "JobIconVaultEngineer" # Corvax-Change
   supervisors: job-supervisors-vault
   access:
   - VaultDweller

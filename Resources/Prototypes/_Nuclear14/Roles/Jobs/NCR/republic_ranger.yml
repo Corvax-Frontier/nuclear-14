@@ -14,7 +14,7 @@
       min: 7200 # 20 hours as NCR
     - !type:CharacterWhitelistRequirement
   startingGear: NCRRangerGear
-  icon: JobIconSecurityOfficer
+  icon: "JobIconNcrRanger" # Corvax-Change
   supervisors: job-supervisors-ncr-ranger
   requireAdminNotify: true
   canBeAntag: false

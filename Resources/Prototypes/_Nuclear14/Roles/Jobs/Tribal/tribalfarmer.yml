@@ -14,7 +14,7 @@
       min: 7200 # 2 hours
   startingGear: TribalFarmerGear
   alwaysUseSpawner: true
-  icon: "JobIconBotanist"
+  icon: "JobIconTribalFarmer" # Corvax-Change
   supervisors: job-supervisors-tribal
   access:
   - TribeMember

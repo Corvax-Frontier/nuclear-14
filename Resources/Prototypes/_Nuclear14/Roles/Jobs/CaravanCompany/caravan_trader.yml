@@ -12,7 +12,7 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200
   startingGear: CaravanTraderGear
-  icon: "JobIconCargoTechnician"
+  icon: "JobIconCaravanTrader" # Corvax-Change
   supervisors: job-supervisors-caravan
   alwaysUseSpawner: true
   access:

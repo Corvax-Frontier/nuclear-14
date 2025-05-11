@@ -19,7 +19,7 @@
             - Ghoul
   startingGear: BoSMidPaladinCommanderGear
   alwaysUseSpawner: true
-  icon: "JobIconPassenger"
+  icon: "JobIconBosMCommander" # Corvax-Change
   supervisors: job-supervisors-bos-mid-commander
   canBeAntag: false
   accessGroups:

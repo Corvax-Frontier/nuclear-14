@@ -13,7 +13,7 @@
       min: 3600 # 1 hour
   startingGear: TribalGear
   alwaysUseSpawner: true
-  icon: "JobIconBotanist"
+  icon: "JobIconTribal" # Corvax-Change
   supervisors: job-supervisors-tribal
   access:
   - TribeMember

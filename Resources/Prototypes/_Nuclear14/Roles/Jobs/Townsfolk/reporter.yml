@@ -13,7 +13,7 @@
       department: Townsfolk
       min: 7200 # 2 hours
   startingGear: WastelandReporterGear
-  icon: "JobIconReporter"
+  icon: "JobIconTownReporter" # Corvax-Change
   supervisors: job-supervisors-townsfolk
   access:
   - WastelandReporter

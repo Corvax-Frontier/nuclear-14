@@ -14,7 +14,7 @@
       min: 7200 # 2 hours
   startingGear: TribalHealerGear
   alwaysUseSpawner: true
-  icon: "JobIconBotanist"
+  icon: "JobIconTribalMedic" # Corvax-Change
   supervisors: job-supervisors-tribal
   access:
   - TribeMember
