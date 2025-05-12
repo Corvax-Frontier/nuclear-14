@@ -11,7 +11,7 @@
       - Ghoul
     - !type:CharacterDepartmentTimeRequirement
       department: NCR
-      min: 3600 # 1 hour
+      min: 10800 # 3 hours Corvax-Change
   startingGear: NCRMedicGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-ncr

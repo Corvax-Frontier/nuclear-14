@@ -11,7 +11,10 @@
       - Ghoul
     - !type:CharacterDepartmentTimeRequirement
       department: NCR
-      min: 72000 # 20 hours
+      min: 216000 # 60 hours Corvax-Change
+    - !type:CharacterPlaytimeRequirement # Corvax-Add
+      tracker: NCRNCO
+      min: 43200 # 12 hours
   weight: 10
   startingGear: NCRLTGear
   icon: "JobIconHeadOfSecurity"

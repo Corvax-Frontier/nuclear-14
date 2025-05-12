@@ -12,8 +12,8 @@
     sex: Male
   - !type:CharacterGenderRequirement
     gender: Male
-  #  - !type:OverallPlaytimeRequirement
-  #    time: 7200 # 2 hour
+  - !type:CharacterOverallTimeRequirement
+    time: 3600 # 1 hour
   startingGear: CaesarLegionLegionnaireRecruitGear
   alwaysUseSpawner: true
   icon: "JobIconLegioner"

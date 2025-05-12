@@ -10,7 +10,10 @@
       - Human
     - !type:CharacterDepartmentTimeRequirement
       department: BrotherhoodMidwest
-      min: 72000 # 20 hours
+      min: 216000 # 60 hours Corvax-Change
+    - !type:CharacterPlaytimeRequirement # Corvax-Add
+      tracker: BoSMidPaladin
+      min: 43200 # 12 hours
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

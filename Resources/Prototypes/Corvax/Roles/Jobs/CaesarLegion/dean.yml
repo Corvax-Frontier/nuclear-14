@@ -7,7 +7,10 @@
   requirements:
   - !type:CharacterDepartmentTimeRequirement
     department: CaesarLegion
-    min: 36000 #10 hours
+    min: 72000 # 20 hours
+  - !type:CharacterPlaytimeRequirement
+      tracker: CaesarLegionLegionnaireVeteran
+      min: 18000 # 5 hours
   - !type:CharacterSpeciesRequirement
     species:
     - Human
