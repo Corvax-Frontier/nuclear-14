@@ -328,7 +328,7 @@
     state: table_wood_wide_square
 
 - type: entity
-  parent: N14TableCasinoCards
+  parent: N14TableDeskMetal # Corvax-Change
   id: N14TableMetalWide
   name: metal table
   description: A wide metal table.
@@ -477,7 +477,7 @@
 
 - type: entity
   id: N14TableWoodSettler
-  parent: Table
+  parent: TableWood # Corvax-Change
   name: wooden table
   description: A wooden table used by settlers.
   components:
