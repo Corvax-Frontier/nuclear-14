@@ -1,0 +1,22 @@
+- type: craftRecipe
+  id: N14ModificationkitTribalRecipe
+  resultProtos:
+  - N14ModificationkitTribal
+  requiredWorkbench: N14WorkbenchWeaponbench
+  availableFaction:
+    - Tribal
+  craftTime: 10
+  items:
+    N14ModificationkitTribalBlueprint:
+      amount: 1
+      catalyzer: true
+    N14JunkAbraxoCleaner:
+      amount: 1
+    MaterialWoodPlank1:
+      amount: 3
+    N14MortarpestleGrinder:
+      amount: 1
+    N14MaterialLeather1:
+      amount: 2
+    N14FloraProduceWildBrocFlower:
+      amount: 4

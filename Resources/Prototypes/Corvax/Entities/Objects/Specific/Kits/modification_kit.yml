@@ -33,3 +33,30 @@
     layers:
     - state: box
     - state: gun
+
+- type: entity
+  id: N14ModificationkitTribal
+  parent: N14ModificationkitBase
+  name: tribal modification kit
+  components:
+  - type: Sprite
+    layers:
+    - state: box
+
+- type: entity
+  id: N14ModificationkitNCR
+  parent: N14ModificationkitBase
+  name: NCR modification kit
+  components:
+  - type: Sprite
+    layers:
+    - state: box
+
+- type: entity
+  id: N14ModificationkitMidwestBoS
+  parent: N14ModificationkitBase
+  name: midwest BOS modification kit
+  components:
+  - type: Sprite
+    layers:
+    - state: box

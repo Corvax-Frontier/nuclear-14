@@ -14,3 +14,6 @@ ent-N14ModificationkitRevolver44TribalUpgradedBlueprint = чертёж расш�
 ent-N14WeaponSniper556TribalBlueprint = чертёж племенной винтовки
 ent-N14WeaponSniper556TribalUpgradedBlueprint = чертёж племенной штурмовой винтовки
 ent-N14ClothingOuterPowerArmorT60TeslaBlueprint = чертёж модификации силовой брони Т-60
+ent-N14ModificationkitTribalBlueprint = чертёж племенного набора для модификаций
+ent-N14ModificationkitNCRBlueprint = чертёж набора для модификаций НКР
+ent-N14ModificationkitMidwestBoSBlueprint = чертёж набора для модификаций СЗБС

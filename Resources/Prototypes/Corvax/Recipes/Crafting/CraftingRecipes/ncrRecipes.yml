@@ -154,3 +154,26 @@
     N14Wrench:
       amount: 1
       catalyzer: true
+
+- type: craftRecipe
+  id: N14ModificationkitNCRRecipe
+  resultProtos:
+  - N14ModificationkitNCR
+  requiredWorkbench: N14WorkbenchWeaponbench
+  availableFaction:
+    - NCR
+  craftTime: 10
+  items:
+    N14ModificationkitNCRBlueprint:
+      amount: 1
+      catalyzer: true
+    N14JunkAbraxoCleaner:
+      amount: 1
+    MaterialWoodPlank1:
+      amount: 3
+    SheetSteel1:
+      amount: 5
+    N14JunkComponentScrew:
+      amount: 2
+    SprayPainter:
+      amount: 1
