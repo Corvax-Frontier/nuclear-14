@@ -1,0 +1,43 @@
+- type: construction
+  id: FloorTilesItemMS13WoodCommon
+  name: wood common
+  graph: N14TilesWood
+  startNode: start
+  targetNode: WoodCommon
+  icon: /Textures/_Nuclear14/Tiles/ms13/Wood/wood_common.png
+  category: construction-category-tiles
+  objectType: Item
+  hide: false
+
+- type: construction
+  id: FloorTilesItemMS13WoodFancy
+  name: wood fancy
+  graph: N14TilesWood
+  startNode: start
+  targetNode: WoodFancy
+  icon: /Textures/_Nuclear14/Tiles/ms13/Wood/wood_fancy.png
+  category: construction-category-tiles
+  objectType: Item
+  hide: false
+
+- type: construction
+  id: FloorTilesItemMS13WoodMosaic
+  name: wood mosaic
+  graph: N14TilesWood
+  startNode: start
+  targetNode: WoodMosaic
+  icon: /Textures/_Nuclear14/Tiles/ms13/Wood/wood_mosaic.png
+  category: construction-category-tiles
+  objectType: Item
+  hide: false
+
+- type: construction
+  id: FloorTilesItemMS13WoodWide
+  name: wood wide
+  graph: N14TilesWood
+  startNode: start
+  targetNode: WoodWide
+  icon: /Textures/_Nuclear14/Tiles/ms13/Wood/wood_wide.png
+  category: construction-category-tiles
+  objectType: Item
+  hide: false

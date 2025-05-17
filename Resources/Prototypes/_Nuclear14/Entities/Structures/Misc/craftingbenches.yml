@@ -447,6 +447,10 @@
       - N14Flare
       - N14Matchbox
       - N14JunkComponentScrew
+      - FloorTileItemMetalIndustrial
+      - FloorTileItemMetalMS13
+      - FloorTileItemMetalGrate
+      - FloorTileItemMetalSolid
       # Ammo
       - ArrowRegular
       # Machine Parts

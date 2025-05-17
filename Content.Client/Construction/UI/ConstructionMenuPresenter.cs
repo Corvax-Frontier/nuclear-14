@@ -229,8 +229,8 @@ namespace Content.Client.Construction.UI
             _constructionView.ClearRecipeInfo();
 
             // Corvax-Change-start
-            var localizedName = Loc.TryGetString($"recipe-{prototype.ID}-name", out var name) ? name : prototype.Name;
-            var localizedDescription = Loc.TryGetString($"recipe-{prototype.ID}-desc", out var desc) ? desc : prototype.Description;
+            var localizedName = Loc.TryGetString($"ent-{prototype.ID}", out var name) ? name : prototype.Name;
+            var localizedDescription = Loc.TryGetString($"ent-{prototype.ID}.desc", out var desc) ? desc : prototype.Description;
 
             _constructionView.SetRecipeInfo(localizedName, localizedDescription, spriteSys.Frame0(prototype.Icon), prototype.Type != ConstructionType.Item);
             // Corvax-Change-end
@@ -266,7 +266,7 @@ namespace Content.Client.Construction.UI
 
         private static ItemList.Item GetItem(ConstructionPrototype recipe, ItemList itemList)
         {
-            var localizedName = Loc.TryGetString($"recipe-{recipe.ID}-name", out var name) ? name : recipe.Name; // Corvax-Change
+            var localizedName = Loc.TryGetString($"ent-{recipe.ID}", out var name) ? name : recipe.Name; // Corvax-Change
 
             return new(itemList)
             {

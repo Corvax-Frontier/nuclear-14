@@ -682,11 +682,16 @@
   name: circuit board
   description: A silver looking circuit board.
   components:
+  - type: Tag # Corvax-Change
+    tags:
+    - N14Board
+    - JunkItem
+    - Trash
   - type: Sprite
     state: board_1
 
 - type: entity
-  parent: N14JunkItemBasePlastic
+  parent: N14JunkComponentBoard1 # Corvax-Change
   id: N14JunkComponentBoard2
   name: circuit board
   description: A gold looking circuit board.
@@ -695,7 +700,7 @@
     state: board_2
 
 - type: entity
-  parent: N14JunkItemBasePlastic
+  parent: N14JunkComponentBoard1 # Corvax-Change
   id: N14JunkComponentBoard3
   name: circuit board
   description: A green looking circuit board.
@@ -745,23 +750,25 @@
   name: capacitor
   description: An electrolytic capacitor.
   components:
+  - type: Tag # Corvax-Change
+    tags:
+    - N14Capacitor
+    - JunkItem
+    - Trash
   - type: Sprite
     state: capacitor_1
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentCapacitor1 # Corvax-Change
   id: N14JunkComponentCapacitor2
   name: capacitor
   description: A ceramic type capacitor.
   components:
   - type: Sprite
     state: capacitor_2
-  - type: Tag
-    tags:
-    - Capacitor2
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentCapacitor1 # Corvax-Change
   id: N14JunkComponentCapacitor3
   name: capacitor
   description: A paper type capacitor.
@@ -777,21 +784,23 @@
   components:
   - type: Sprite
     state: diode_1
+  - type: Tag # Corvax-Change
+    tags:
+    - JunkItem
+    - Trash
+    - N14Diode
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentDiode1 # Corvax-Change
   id: N14JunkComponentDiode2
   name: diode
   description: A more advanced zener diode.
   components:
   - type: Sprite
     state: diode_2
-  - type: Tag
-    tags:
-    - Diode2
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentDiode1 # Corvax-Change
   id: N14JunkComponentDiode3
   name: diode
   description: A standard diode.
@@ -819,9 +828,14 @@
   components:
   - type: Sprite
     state: fuse_1
+  - type: Tag # Corvax-Change
+    tags:
+    - JunkItem
+    - Trash
+    - N14Fuse
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentFuse1 # Corvax-Change
   id: N14JunkComponentFuse2
   name: fuse
   description: A small capacity, fast blow fuse.
@@ -889,21 +903,23 @@
   components:
   - type: Sprite
     state: resistor_1
+  - type: Tag # Corvax-Change
+    tags:
+    - JunkItem
+    - Trash
+    - N14Resistor
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentResistor1 # Corvax-Change
   id: N14JunkComponentResistor2
   name: resistor
   description: A medium resistance resistor.
   components:
   - type: Sprite
     state: resistor_2
-  - type: Tag
-    tags:
-    - Resistor2
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentResistor1 # Corvax-Change
   id: N14JunkComponentResistor3
   name: resistor
   description: A high resistance resistor.
@@ -966,21 +982,23 @@
   components:
   - type: Sprite
     state: transistor_1
+  - type: Tag # Corvax-Change
+    tags:
+    - JunkItem
+    - Trash
+    - N14Transistor
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentTransistor1 # Corvax-Change
   id: N14JunkComponentTransistor2
   name: transistor
   description: A bipolar junction transistor.
   components:
   - type: Sprite
     state: transistor_2
-  - type: Tag
-    tags:
-    - Transistor2
 
 - type: entity
-  parent: N14JunkComponentElectronic
+  parent: N14JunkComponentTransistor1 # Corvax-Change
   id: N14JunkComponentTransistor3
   name: transistor
   description: A junction FET.

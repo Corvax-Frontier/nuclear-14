@@ -1,0 +1,27 @@
+- type: construction
+  id: N14APCBreaker
+  graph: N14APC
+  startNode: start
+  targetNode: apc
+  icon: {sprite: _Nuclear14/Structures/Power/breakerbox.rsi, state: base}
+  category: construction-category-machines
+  objectType: Structure
+  canBuildInImpassable: true
+  placementMode: SnapgridCenter
+  conditions:
+  - !type:WallmountCondition
+  hide: false
+
+- type: construction
+  id: N14SubstationBasicEmpty
+  graph: N14Substation
+  startNode: start
+  targetNode: substation
+  icon: {sprite: _Nuclear14/Structures/Power/32x48_machines.rsi, state: substation}
+  category: construction-category-machines
+  objectType: Structure
+  canBuildInImpassable: false
+  placementMode: SnapgridCenter
+  conditions:
+  - !type:TileNotBlocked
+  hide: false

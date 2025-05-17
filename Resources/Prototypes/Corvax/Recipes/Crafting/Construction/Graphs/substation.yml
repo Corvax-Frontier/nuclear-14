@@ -1,0 +1,82 @@
+- type: constructionGraph
+  id: N14Substation
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: substationFrame
+          steps:
+            - material: N14Iron
+              amount: 5
+
+    - node: substationFrame
+      entity: N14BaseSubstationFrame
+      edges:
+        - to: substationCable
+          steps:
+            - tag: N14Board
+              name: машинная плата
+              icon: {sprite: _Nuclear14/Objects/Misc/crafting_junk.rsi, state: board_1}
+            - tool: Screwing
+              doAfter: 0.5
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: N14IngotIron1
+              amount: 5
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: substationCable
+      entity: N14BaseSubstationFrame
+      edges:
+      - to: substation
+        steps:
+        - material: CableMV
+          amount: 2
+        - material: CableHV
+          amount: 2
+        - tag: N14Capacitor
+          name: конденсатор
+          icon: {sprite: _Nuclear14/Objects/Misc/crafting_junk.rsi, state: capacitor_1}
+        - tag: N14Fuse
+          name: предохранитель
+          icon: {sprite: _Nuclear14/Objects/Misc/crafting_junk.rsi, state: fuse_1}
+        - tool: Welding
+          doAfter: 2
+      - to: substationFrame
+        steps:
+        - tool: Prying
+          doAfter: 0.5
+        completed:
+        - !type:GivePrototype
+          prototype: N14JunkComponentBoard1
+          amount: 1
+
+    - node: substation
+      entity: N14SubstationBasicEmpty
+      edges:
+        - to: substationCable
+          completed:
+            - !type:GivePrototype
+              prototype: CableMVStack1
+              amount: 2
+            - !type:GivePrototype
+              prototype: CableHVStack1
+              amount: 2
+            - !type:GivePrototype
+              prototype: N14JunkComponentFuse1
+              amount: 1
+            - !type:GivePrototype
+              prototype: N14JunkComponentCapacitor1
+              amount: 1
+          conditions:
+            - !type:WirePanel
+              open: true
+          steps:
+            - tool: Cutting
+              doAfter: 0.5
+            - tool: Welding
+              doAfter: 2

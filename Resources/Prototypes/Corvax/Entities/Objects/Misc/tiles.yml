@@ -1,0 +1,75 @@
+- type: entity
+  name: wood common
+  parent: FloorTileItemBase
+  id: FloorTilesItemMS13WoodCommon
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wood
+  - type: FloorTile
+    outputs:
+      - FloorWasteland
+      - FloorMS13WoodCommon
+  - type: Stack
+    stackType: FloorTilesItemMS13WoodCommon
+  - type: Construction
+    graph: N14TilesWood
+    node: WoodCommon
+
+- type: entity
+  name: wood fancy
+  parent: FloorTileItemBase
+  id: FloorTilesItemMS13WoodFancy
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wood
+  - type: FloorTile
+    outputs:
+      - FloorWasteland
+      - FloorMS13WoodFancy
+  - type: Stack
+    stackType: FloorTilesItemMS13WoodFancy
+  - type: Construction
+    graph: N14TilesWood
+    node: WoodFancy
+
+- type: entity
+  name: wood mosaic
+  parent: FloorTileItemBase
+  id: FloorTilesItemMS13WoodMosaic
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wood
+  - type: FloorTile
+    outputs:
+      - FloorWasteland
+      - FloorMS13WoodMosaic
+  - type: Stack
+    stackType: FloorTilesItemMS13WoodMosaic
+  - type: Construction
+    graph: N14TilesWood
+    node: WoodMosaic
+
+- type: entity
+  name: wood wide
+  parent: FloorTileItemBase
+  id: FloorTilesItemMS13WoodWide
+  components:
+  - type: Sprite
+    state: wood
+  - type: Item
+    heldPrefix: wood
+  - type: FloorTile
+    outputs:
+      - FloorWasteland
+      - FloorMS13WoodWide
+  - type: Stack
+    stackType: FloorTilesItemMS13WoodWide
+  - type: Construction
+    graph: N14TilesWood
+    node: WoodWide

@@ -1,0 +1,31 @@
+- type: latheRecipe
+  id: FloorTileItemMetalIndustrial
+  result: FloorTileItemMetalIndustrial
+  category: N14Misc
+  completetime: 2
+  materials:
+    N14Iron: 50
+
+- type: latheRecipe
+  id: FloorTileItemMetalMS13
+  result: FloorTileItemMetalMS13
+  category: N14Misc
+  completetime: 2
+  materials:
+    N14Iron: 50
+
+- type: latheRecipe
+  id: FloorTileItemMetalGrate
+  result: FloorTileItemMetalGrate
+  category: N14Misc
+  completetime: 2
+  materials:
+    N14Iron: 50
+
+- type: latheRecipe
+  id: FloorTileItemMetalSolid
+  result: FloorTileItemMetalSolid
+  category: N14Misc
+  completetime: 2
+  materials:
+    N14Iron: 50

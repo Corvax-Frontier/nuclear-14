@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: Bandage
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bandage
+      steps:
+      - material: Cloth
+        amount: 2
+        doAfter: 0.5
+  - node: bandage
+    entity: N14Bandage1

@@ -1,0 +1,46 @@
+- type: constructionGraph
+  id: N14TilesWood
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: WoodCommon
+          completed:
+            - !type:SetStackCount
+              amount: 2
+          steps:
+            - material: WoodPlank
+              amount: 2
+        - to: WoodFancy
+          completed:
+            - !type:SetStackCount
+              amount: 2
+          steps:
+            - material: WoodPlank
+              amount: 2
+        - to: WoodMosaic
+          completed:
+            - !type:SetStackCount
+              amount: 2
+          steps:
+            - material: WoodPlank
+              amount: 2
+        - to: WoodWide
+          completed:
+            - !type:SetStackCount
+              amount: 2
+          steps:
+            - material: WoodPlank
+              amount: 2
+
+    - node: WoodCommon
+      entity: FloorTilesItemMS13WoodCommon
+
+    - node: WoodFancy
+      entity: FloorTilesItemMS13WoodFancy
+
+    - node: WoodMosaic
+      entity: FloorTilesItemMS13WoodMosaic
+
+    - node: WoodWide
+      entity: FloorTilesItemMS13WoodWide

@@ -1,0 +1,23 @@
+- type: stack
+  id: FloorTilesItemMS13WoodCommon
+  name: wood common
+  spawn: FloorTilesItemMS13WoodCommon
+  maxCount: 30
+
+- type: stack
+  id: FloorTilesItemMS13WoodFancy
+  name: wood fancy
+  spawn: FloorTilesItemMS13WoodFancy
+  maxCount: 30
+
+- type: stack
+  id: FloorTilesItemMS13WoodMosaic
+  name: wood mosaic
+  spawn: FloorTilesItemMS13WoodMosaic
+  maxCount: 30
+
+- type: stack
+  id: FloorTilesItemMS13WoodWide
+  name: wood wide
+  spawn: FloorTilesItemMS13WoodWide
+  maxCount: 30

@@ -1,0 +1,63 @@
+- type: constructionGraph
+  id: N14APC
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: apcFrame
+          steps:
+            - material: N14Iron
+              amount: 2
+
+    - node: apcFrame
+      entity: N14APCBreakerFrame
+      edges:
+        - to: apcCable
+          steps:
+            - tag: Mainboard
+              name: электронная плата
+              icon: {sprite: _Nuclear14/Objects/Misc/crafting_junk.rsi, state: frame}
+            - tool: Screwing
+              doAfter: 0.5
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: N14IngotIron1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: apcCable
+      entity: N14APCBreakerFrame
+      edges:
+      - to: apc
+        steps:
+        - material: Cable
+          amount: 2
+        - tool: Welding
+          doAfter: 2
+      - to: apcFrame
+        steps:
+        - tool: Prying
+          doAfter: 0.5
+        completed:
+        - !type:GivePrototype
+          prototype: N14JunkComponentMainboard
+          amount: 1
+
+    - node: apc
+      entity: N14APCBreakerConstructed
+      edges:
+        - to: apcCable
+          completed:
+            - !type:GivePrototype
+              prototype: CableApcStack1
+              amount: 2
+          conditions:
+            - !type:WirePanel
+              open: true
+          steps:
+            - tool: Cutting
+              doAfter: 0.5

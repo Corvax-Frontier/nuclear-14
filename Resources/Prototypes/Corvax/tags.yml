@@ -6,3 +6,21 @@
 
 - type: Tag
   id: N14Bandage
+
+- type: Tag
+  id: N14Board
+
+- type: Tag
+  id: N14Capacitor
+
+- type: Tag
+  id: N14Diode
+
+- type: Tag
+  id: N14Fuse
+
+- type: Tag
+  id: N14Resistor
+
+- type: Tag
+  id: N14Transistor
