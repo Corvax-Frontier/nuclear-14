@@ -474,13 +474,13 @@
   suffix: slanted
   components:
   - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageContainer: StructuralInorganic # Corvax-Change
+    damageModifierSet: Rock # Corvax-Change
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 400
+          damage: 400 # Corvax-Change
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
