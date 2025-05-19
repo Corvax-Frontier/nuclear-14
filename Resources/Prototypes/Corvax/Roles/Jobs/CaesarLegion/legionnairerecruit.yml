@@ -13,7 +13,7 @@
   - !type:CharacterGenderRequirement
     gender: Male
   - !type:CharacterOverallTimeRequirement
-    time: 3600 # 1 hour
+    min: 3600 # 1 hour
   startingGear: CaesarLegionLegionnaireRecruitGear
   alwaysUseSpawner: true
   icon: "JobIconLegioner"
