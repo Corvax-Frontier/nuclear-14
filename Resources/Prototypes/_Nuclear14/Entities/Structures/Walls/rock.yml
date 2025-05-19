@@ -165,6 +165,17 @@
   - type: OreVein
     oreChance: 0.44
     oreRarityPrototypeId: RandomOreDistributionStandard
+  - type: Damageable # Corvax-Change
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible # Corvax-Change
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: ["Destruction"]
 
 - type: entity
   id: SteelRock

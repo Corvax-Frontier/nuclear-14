@@ -24,7 +24,7 @@
     zeroVisible: true
   - type: Appearance
   - type: FollowDistance
-    backStrength: 5
+    backStrength: 4 # Corvax-Change
   - type: StaticPrice
     price: 100
   - type: Craftable

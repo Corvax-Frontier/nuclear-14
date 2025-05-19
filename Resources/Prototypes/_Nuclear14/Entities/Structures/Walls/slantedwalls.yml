@@ -473,19 +473,14 @@
   name: rock wall
   suffix: slanted
   components:
-  - type: SoundOnGather
-  - type: Gatherable
-    toolWhitelist:
-      tags:
-        - Pickaxe
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 150
+          damage: 400
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
