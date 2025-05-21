@@ -844,6 +844,8 @@
     graph: MeatRadCutlet
     node: start
     defaultTarget: CutletCooked
+  - type: StaticPrice # Corvax-Add
+    price: -10
 
 - type: entity
   name: raw brahmin cutlet
@@ -984,6 +986,8 @@
     graph: MeatRadCutlet
     node: CutletCooked
     defaultTarget: CutletCooked
+  - type: StaticPrice # Corvax-Add
+    price: -10
 
 - type: entity
   name: cooked brahmin cutlet
