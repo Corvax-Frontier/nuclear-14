@@ -44,7 +44,7 @@
     stackType: Ointment
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 10 #Was 5, Buffed due to surgery changes
+    price: 5 # Corvax-Change
 
 - type: entity
   id: Ointment1
@@ -95,7 +95,7 @@
     stackType: RegenerativeMesh
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 40 #Was 20, Buffed due to limb damage changes
+    price: 15 # Corvax-Change
 
 - type: entity
   id: OintmentAdvanced1
@@ -132,7 +132,7 @@
     stackType: Brutepack
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 10 #Was 5, Buffed due to limb damage changes
+    price: 5 # Corvax-Change
 
 - type: entity
   id: Brutepack1
@@ -182,7 +182,7 @@
     stackType: MedicatedSuture
     count: 15 #Was 10, Buffed due to surgery changes
   - type: StackPrice
-    price: 40 #Was 20, Buffed due to limb damage changes
+    price: 15 # Corvax-Change
 
 - type: entity
   id: BrutepackAdvanced1
@@ -220,7 +220,7 @@
     stackType: Bloodpack
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 20 #Was 10, Buffed due to limb damage changes
+    price: 10 # Corvax-Change
 
 - type: entity
   parent: Bloodpack
@@ -317,7 +317,7 @@
     state: cream
   - type: Stack
     stackType: AloeCream
-    count: 5 #Corvax-Change
+    count: 15 #Was 10, Buffed due to limb damage changes
 
 - type: entity
   parent: BaseHealingItem
