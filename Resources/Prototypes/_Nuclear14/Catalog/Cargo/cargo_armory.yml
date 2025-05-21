@@ -95,7 +95,7 @@
     sprite: _Nuclear14/Objects/Weapons/Guns/LMGs/canadianhmg.rsi
     state: base
   product: N14CrateBreakPlainFilledHMG
-  cost: 775
+  cost: 1005 # Corvax-Change
   category: Armory
   group: market
 
@@ -155,7 +155,7 @@
     sprite: _Nuclear14/Clothing/OuterClothing/Armor/falloutcombatmk2.rsi
     state: icon
   product: N14CrateRedFilledMk2
-  cost: 700
+  cost: 800 #Corvax-Change
   category: Armory
   group: market
 

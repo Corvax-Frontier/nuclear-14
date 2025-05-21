@@ -287,7 +287,7 @@
     stackType: Gauze
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 20 #Was 10, Buffed due to limb damage changes
+    price: 5 # Corvax-Change
 
 - type: entity
   id: Gauze1
@@ -317,7 +317,7 @@
     state: cream
   - type: Stack
     stackType: AloeCream
-    count: 15 #Was 10, Buffed due to limb damage changes
+    count: 5 #Corvax-Change
 
 - type: entity
   parent: BaseHealingItem
