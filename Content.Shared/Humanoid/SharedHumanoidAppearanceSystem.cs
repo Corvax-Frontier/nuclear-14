@@ -7,6 +7,8 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared._Shitmed.Humanoid.Events; // Shitmed Change
 using Content.Shared.IdentityManagement;
+using Content.Shared._NC.Speech.Synthesis; // Corvax-Fallout-Barks
+using Content.Shared._NC.Speech.Synthesis.Components; // Corvax-Fallout-Barks
 using Content.Shared.Preferences;
 using Content.Shared.HeightAdjust;
 using Microsoft.Extensions.Configuration;
@@ -44,6 +46,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
+    // Corvax-Fallout-Barks-start
+    [ValidatePrototypeId<BarkPrototype>]
+    public const string DefaultBarkVoice = "BarksGoonSpeak1";
+    // Corvax-Fallout-Barks-end
 
     public override void Initialize()
     {
@@ -423,6 +429,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
+        SetBarkVoice(uid, profile.BarkVoice, humanoid); // Corvax-Fallout-Barks
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -487,6 +494,17 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             return;
         humanoid.MarkingSet.EnsureDefault(humanoid.SkinColor, humanoid.EyeColor, _markingManager);
     }
+
+    // Corvax-Fallout-Barks-start
+    public void SetBarkVoice(EntityUid uid, string? barkvoiceId, HumanoidAppearanceComponent humanoid)
+    {
+        if (!TryComp<SpeechSynthesisComponent>(uid, out var comp))
+            return;
+
+        humanoid.BarkVoice = barkvoiceId ?? DefaultBarkVoice;
+        comp.VoicePrototypeId = barkvoiceId;
+    }
+    // Corvax-Fallout-Barks-end
 
     /// <summary>
     ///

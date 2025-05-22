@@ -34,6 +34,8 @@ public abstract class SharedChatSystem : EntitySystem
     [ValidatePrototypeId<SpeechVerbPrototype>]
     public const string DefaultSpeechVerb = "Default";
 
+    public const int VoiceRange = 10; // Corvax-Fallout-Barks
+
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 

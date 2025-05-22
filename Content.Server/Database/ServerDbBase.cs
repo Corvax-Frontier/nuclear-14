@@ -219,6 +219,8 @@ namespace Content.Server.Database
                 }
             }
 
+            var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Corvax-Fallout-Barks
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
@@ -252,7 +254,8 @@ namespace Content.Server.Database
                 {
                     CustomName = l.CustomName, CustomDescription = l.CustomDescription,
                     CustomColorTint = l.CustomColorTint, CustomHeirloom = l.CustomHeirloom, Selected = true,
-                }).ToHashSet()
+                }).ToHashSet(),
+                barkVoice // Corvax-Fallout-Barks
             );
         }
 
@@ -314,6 +317,8 @@ namespace Content.Server.Database
             profile.Loadouts.Clear();
             profile.Loadouts.AddRange(humanoid.LoadoutPreferences
                 .Select(l => new Loadout(l.LoadoutName, l.CustomName, l.CustomDescription, l.CustomColorTint, l.CustomHeirloom)));
+
+            profile.BarkVoice = humanoid.BarkVoice; // Corvax-Fallout-Barks
 
             return profile;
         }

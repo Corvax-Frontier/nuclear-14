@@ -117,6 +117,14 @@
                                 <Control HorizontalExpand="True"/>
                                 <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                             </BoxContainer>
+                            <!-- Corvax-Fallout-Barks-Start -->
+                            <BoxContainer HorizontalExpand="True" Visible="False" Name="BarksContainer">
+                                <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                <Control HorizontalExpand="True"/>
+                                <OptionButton Name="BarkVoiceButton" HorizontalAlignment="Right" />
+                                <Button Name="BarkVoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
+                            </BoxContainer>
+                            <!-- Corvax-Fallout-Barks-End -->
 						    <!-- Height -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Name="HeightLabel" MinWidth="110" />

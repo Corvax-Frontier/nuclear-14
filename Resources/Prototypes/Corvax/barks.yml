@@ -1,0 +1,357 @@
+#region Undertale
+
+- type: bark
+  id: BarksUndertaleAlphys
+  name: Alphys (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_alphys.ogg"
+
+- type: bark
+  id: BarksUndertaleAsgore
+  name: Asgore (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_asgore.ogg"
+
+- type: bark
+  id: BarksUndertaleFlowey
+  name: Flowey (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_flowey_1.ogg"
+
+- type: bark
+  id: BarksUndertaleFloweyEvil
+  name: Evil Flowey (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_flowey_2.ogg"
+
+- type: bark
+  id: BarksUndertaleGaster
+  name: Gaster (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_gaster_1.ogg"
+    - "/Audio/_NC/Voice/Barks/voice_gaster_2.ogg"
+    - "/Audio/_NC/Voice/Barks/voice_gaster_3.ogg"
+    - "/Audio/_NC/Voice/Barks/voice_gaster_4.ogg"
+    - "/Audio/_NC/Voice/Barks/voice_gaster_5.ogg"
+    - "/Audio/_NC/Voice/Barks/voice_gaster_6.ogg"
+    - "/Audio/_NC/Voice/Barks/voice_gaster_7.ogg"
+
+- type: bark
+  id: BarksUndertaleMettaton
+  name: Mettaton (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_metta_1.ogg"
+
+- type: bark
+  id: BarksUndertaleMonster1
+  name: Monster 1 (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_monster1.ogg"
+
+- type: bark
+  id: BarksUndertaleMonster2
+  name: Monster 2 (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_monster2.ogg"
+
+- type: bark
+  id: BarksUndertalePapyrus
+  name: Papyrus (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_papyrus.ogg"
+
+- type: bark
+  id: BarksUndertaleSans
+  name: Sans (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_sans.ogg"
+
+- type: bark
+  id: BarksUndertaleTemmie
+  name: Temmie (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_temmie.ogg"
+
+- type: bark
+  id: BarksUndertaleToriel
+  name: Toriel (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_toriel.ogg"
+
+- type: bark
+  id: BarksUndertaleUndyne
+  name: Undyne (Undertale)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_undyne.ogg"
+
+#region Deltarune
+
+- type: bark
+  id: BarksUndertaleRalsei
+  name: Ralsei (Deltarune)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_ralsei.ogg"
+
+- type: bark
+  id: BarksUndertaleSusie
+  name: Susie (Deltarune)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/voice_susie.ogg"
+
+#region Don't Starve
+
+- type: bark
+  id: BarksDontStarveWilson
+  name: Wilson (Don't Starve)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/wilson_bark.ogg"
+
+- type: bark
+  id: BarksDontStarveWolfgang
+  name: Wolfgang (Don't Starve)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/wolfgang_bark.ogg"
+
+- type: bark
+  id: BarksDontStarveWoodie
+  name: Woodie (Don't Starve)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/woodie_bark.ogg"
+
+- type: bark
+  id: BarksDontStarveWurt
+  name: Wurt (Don't Starve)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/wurt_bark.ogg"
+
+- type: bark
+  id: BarksDontStarveWX78
+  name: WX-78 (Don't Starve)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/wx78_bark.ogg"
+
+#region Goon Station
+
+- type: bark
+  id: BarksGoonBlub
+  name: Blub (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/blub.ogg"
+
+- type: bark
+  id: BarksGoonBottalk1
+  name: Bottalk 1 (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/bottalk_1.ogg"
+
+- type: bark
+  id: BarksGoonBottalk2
+  name: Bottalk 2 (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/bottalk_2.ogg"
+
+- type: bark
+  id: BarksGoonBottalk3
+  name: Bottalk 3 (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/bottalk_3.ogg"
+
+- type: bark
+  id: BarksGoonBottalk4
+  name: Bottalk 4 (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/bottalk_4.ogg"
+
+- type: bark
+  id: BarksGoonBuwoo
+  name: Buwoo (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/buwoo.ogg"
+
+- type: bark
+  id: BarksGoonLizard
+  name: Lizard (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/lizard.ogg"
+
+- type: bark
+  id: BarksGoonPug
+  name: Pug (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/pug.ogg"
+
+- type: bark
+  id: BarksGoonPugg
+  name: Pugg (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/pugg.ogg"
+
+- type: bark
+  id: BarksGoonRadio1
+  name: Radio 1 (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/radio.ogg"
+
+- type: bark
+  id: BarksGoonRadio2
+  name: Radio 2 (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/radio2.ogg"
+
+- type: bark
+  id: BarksGoonRadio3
+  name: Radio (AI) (Goon Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/radio_ai.ogg"
+
+- type: bark
+  id: BarksGoonSkelly
+  name: Skelly (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/skelly.ogg"
+
+- type: bark
+  id: BarksGoonSpeak1
+  name: Speak 1 (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/speak_1.ogg"
+
+- type: bark
+  id: BarksGoonSpeak2
+  name: Speak 2 (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/speak_2.ogg"
+
+- type: bark
+  id: BarksGoonSpeak3
+  name: Speak 3 (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/speak_3.ogg"
+
+- type: bark
+  id: BarksGoonSpeak4
+  name: Speak 4 (Goon Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/speak_4.ogg"
+
+#region Ace Attorney
+
+- type: bark
+  id: BarksAceAttorneyTalk4
+  name: Ace Typewriter (Ace Attorney)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/aa_blip_typewriter.ogg"
+
+#region Banjo-Kazooie
+
+- type: bark
+  id: BarksBanjoKazooieFaucet1
+  name: Faucet 1 (Banjo-Kazooie)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/faucet.ogg"
+
+- type: bark
+  id: BarksBanjoKazooieFaucet2
+  name: Faucet 2 (Banjo-Kazooie)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/faucet2.ogg"
+
+#region Citadel Station
+
+- type: bark
+  id: BarksCitadelMutedString1
+  name: Muted String Low (Citadel Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/c2.ogg"
+
+- type: bark
+  id: BarksCitadelMutedString2
+  name: Muted String Medium (Citadel Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/c3.ogg"
+
+- type: bark
+  id: BarksCitadelMutedString3
+  name: Muted String High (Citadel Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/c4.ogg"
+
+- type: bark
+  id: BarksCitadelBanjo1
+  name: Banjo Medium (Citadel Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/cn3.ogg"
+
+- type: bark
+  id: BarksCitadelBanjo2
+  name: Banjo High (Citadel Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/cn4.ogg"
+
+- type: bark
+  id: BarksCitadelWindy
+  name: Windy (Citadel Station)
+  roundStart: true
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/bulletflyby.ogg"
+
+- type: bark
+  id: BarksCitadelBark
+  name: Bark (Citadel Station)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/bark1.ogg"
+
+#region Other
+
+- type: bark
+  id: BarksOtherMoffSqueak
+  name: Moff Squeak (Other)
+  roundStart: false
+  soundFiles:
+    - "/Audio/_NC/Voice/Barks/mothsqueak.ogg"

@@ -7,6 +7,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Roles;
+using Content.Shared._NC.Speech.Synthesis; // Corvax-Fallout-Barks
 using Content.Shared.Traits;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -81,6 +82,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
 
+    [DataField] // Corvax-Fallout-Barks
+    public string BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Corvax-Fallout-Barks
+
     [DataField]
     public string? DisplayPronouns { get; set; }
 
@@ -141,7 +145,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
-        HashSet<LoadoutPreference> loadoutPreferences)
+        HashSet<LoadoutPreference> loadoutPreferences,
+        string barkVoice) // Corvax-Fallout-Barks
     {
         Name = name;
         FlavorText = flavortext;
@@ -164,6 +169,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
         _loadoutPreferences = loadoutPreferences;
+        BarkVoice = barkVoice; // Corvax-Fallout-Barks
     }
 
     /// <summary>Copy constructor</summary>
@@ -189,7 +195,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
-            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
+            new HashSet<LoadoutPreference>(other.LoadoutPreferences),
+            other.BarkVoice) // Corvax-Fallout-Barks
     {
     }
 
@@ -253,6 +260,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
         }
 
+        // Corvax-Fallout-Barks-start
+        var barkvoiceId = random.Pick(prototypeManager
+            .EnumeratePrototypes<BarkPrototype>()
+            .ToArray()
+        ).ID;
+        // Corvax-Fallout-Barks-end
+
         var gender = Gender.Epicene;
 
         switch (sex)
@@ -301,6 +315,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         new(this) { SpawnPriority = spawnPriority };
     public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<string, JobPriority>> jobPriorities) =>
         new(this) { _jobPriorities = new Dictionary<string, JobPriority>(jobPriorities) };
+
+    public HumanoidCharacterProfile WithBarkVoice(string barkVoice) => // Corvax-Fallout-Barks
+        new(this) { BarkVoice = barkVoice }; // Corvax-Fallout-Barks
 
     public HumanoidCharacterProfile WithJobPriority(string jobId, JobPriority priority)
     {
@@ -381,7 +398,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
-            && FlavorText == other.FlavorText;
+            && FlavorText == other.FlavorText
+            && BarkVoice == other.BarkVoice; // Corvax-Fallout-Barks
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
@@ -574,6 +592,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add((int) Sex);
         hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
+        hashCode.Add(BarkVoice); // Corvax-Fallout-Barks
         hashCode.Add((int) SpawnPriority);
         hashCode.Add((int) PreferenceUnavailable);
         hashCode.Add(Customspeciename);

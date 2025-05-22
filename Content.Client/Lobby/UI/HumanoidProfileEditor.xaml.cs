@@ -12,6 +12,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
+using Content.Shared._NC.CorvaxVars; // Corvax-Fallout-Barks
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.GameTicking;
@@ -198,6 +199,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Gender
+
+            // Corvax-Fallout-Barks-start
+            #region Barks
+
+            if (_cfgManager.GetCVar(CorvaxVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                InitializeBarkVoice();
+            }
+
+            #endregion
+            // Corvax-Fallout-Barks-end
 
             #region Cosmetic Pronouns
 
@@ -734,6 +747,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoicesControls(); // Corvax-Fallout-Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1327,6 +1341,14 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
             ReloadProfilePreview();
         }
+
+        // Corvax-Fallout-Barks-start
+        private void SetBarkVoice(string newVoice)
+        {
+            Profile = Profile?.WithBarkVoice(newVoice);
+            IsDirty = true;
+        }
+        // Corvax-Fallout-Barks-end
 
         private bool IsDirty
         {
