@@ -115,7 +115,7 @@
     sprite: Objects/Weapons/Bombs/c4.rsi
     state: icon
   product: N14CrateBreakPlainFilledC4
-  cost: 400
+  cost: 500 # Corvax-Change
   category: Armory
   group: market
 
@@ -185,6 +185,6 @@
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: frag
   product: N14CrateBreakPlainFilledGrenadier
-  cost: 150
+  cost: 250 # Corvax-Change
   category: Armory
   group: market
