@@ -38,7 +38,7 @@ public sealed partial record PolymorphConfiguration
     /// must be in here because it makes no sense if it isn't
     /// </summary>
     [DataField(serverOnly: true)] // Corvax-Change
-    public EntProtoId Entity;
+    public EntProtoId? Entity; // Corvax-Change
 
     // Corvax-Change-Start
     [DataField("random", serverOnly: true)]

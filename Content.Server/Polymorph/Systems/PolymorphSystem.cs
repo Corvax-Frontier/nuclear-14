@@ -393,10 +393,10 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (target.Comp.PolymorphActions.ContainsKey(id))
             return;
 
-        if (!_proto.TryIndex(id, out var polyProto))
+        if (!_proto.TryIndex(id, out var polyProto) || polyProto.Configuration.Entity == null) // Corvax-Change
             return;
 
-        var entProto = _proto.Index(polyProto.Configuration.Entity);
+        var entProto = _proto.Index(polyProto.Configuration.Entity.Value); // Corvax-Change
 
         EntityUid? actionId = default!;
         if (!_actions.AddAction(target, ref actionId, RevertPolymorphId, target))
