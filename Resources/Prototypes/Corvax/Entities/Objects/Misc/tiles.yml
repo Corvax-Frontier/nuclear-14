@@ -9,7 +9,6 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-      - FloorWasteland
       - FloorMS13WoodCommon
   - type: Stack
     stackType: FloorTilesItemMS13WoodCommon
@@ -28,7 +27,6 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-      - FloorWasteland
       - FloorMS13WoodFancy
   - type: Stack
     stackType: FloorTilesItemMS13WoodFancy
@@ -47,7 +45,6 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-      - FloorWasteland
       - FloorMS13WoodMosaic
   - type: Stack
     stackType: FloorTilesItemMS13WoodMosaic
@@ -66,7 +63,6 @@
     heldPrefix: wood
   - type: FloorTile
     outputs:
-      - FloorWasteland
       - FloorMS13WoodWide
   - type: Stack
     stackType: FloorTilesItemMS13WoodWide

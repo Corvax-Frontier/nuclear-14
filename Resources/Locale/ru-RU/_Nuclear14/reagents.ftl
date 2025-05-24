@@ -227,6 +227,8 @@ reagent-name-cateye = кошеглаз
 reagent-desc-cateye = Употребление этого реагента позволяет вам лучше видеть в темноте.
 reagent-name-daytripper = глюконавт
 reagent-desc-daytripper = Этот довоенный препарат любят те, кому нужно уйти в мир сладких грёз.
+reagent-name-fev = ВРЭ
+reagent-desc-fev = Это мегавирус, защищённый белковой оболочкой, укрепленной ионизированными молекулами водорода.
 # Meta
 reagent-name-movespeedmod-mixture = джет
 reagent-desc-movespeedmod-mixture = Смесь реагентов, которая заставляет вас двигаться быстро.

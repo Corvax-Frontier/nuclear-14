@@ -1,0 +1,12 @@
+- type: entity
+  parent: N14DoctorSyringe
+  id: N14DoctorSyringeFEV
+  name: syringe FEV
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: N14Fev
+          Quantity: 15

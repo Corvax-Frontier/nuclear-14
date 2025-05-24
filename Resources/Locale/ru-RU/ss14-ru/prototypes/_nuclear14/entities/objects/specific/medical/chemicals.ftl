@@ -86,3 +86,5 @@ ent-N14AloeSalve = мазь из алоэ
 ent-N14AloeSalve1 = { ent-N14AloeSalve }
    .suffix = Один
    .desc = { ent-N14AloeSalve.desc }
+ent-N14DoctorSyringeFEV = шприц ВРЭ
+    .desc = { ent-N14ChemicalSyringe.desc }

@@ -7,6 +7,7 @@ using Robust.Client.Timing;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Prototypes; // Corvax-Change
 using Robust.Shared.Timing;
 
 namespace Content.Client.Administration.UI.ManageSolutions
@@ -20,6 +21,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IClientGameTiming _timing = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Corvax-Change
 
         private NetEntity _target = NetEntity.Invalid;
         private string? _selectedSolution;
@@ -190,11 +192,14 @@ namespace Content.Client.Administration.UI.ManageSolutions
             var box = new BoxContainer();
             var spin = new FloatSpinBox(1, 2);
 
+            if (!_prototypeManager.TryIndex(reagentQuantity.Reagent.Prototype, out ReagentPrototype? reagent)) // Corvax-Change
+                return;
+
             spin.Value = reagentQuantity.Quantity.Float();
             spin.OnValueChanged += (args) => SetReagent(args, reagentQuantity.Reagent.Prototype);
             spin.HorizontalExpand = true;
 
-            box.AddChild(new Label() { Text = reagentQuantity.Reagent.Prototype , HorizontalExpand = true});
+            box.AddChild(new Label() { Text = reagent.LocalizedName, HorizontalExpand = true }); // Corvax-Change
             box.AddChild(spin);
 
             ReagentList.AddChild(box);

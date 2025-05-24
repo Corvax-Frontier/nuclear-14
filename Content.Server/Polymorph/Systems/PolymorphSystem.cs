@@ -1,3 +1,4 @@
+using System.Linq; // Corvax-Change
 using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Server.Inventory;
@@ -9,17 +10,20 @@ using Content.Shared.Buckle;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid; // Corvax-Change
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Polymorph;
 using Content.Shared.Popups;
+using Content.Shared.Storage; // Corvax-Change
 using Robust.Server.Audio;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random; // Corvax-Change
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -47,6 +51,7 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Corvax-Change
 
     private const string RevertPolymorphId = "ActionRevertPolymorph";
 
@@ -200,8 +205,20 @@ public sealed partial class PolymorphSystem : EntitySystem
         _buckle.TryUnbuckle(uid, uid, true);
 
         var targetTransformComp = Transform(uid);
-
-        var child = Spawn(configuration.Entity, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
+        // Corvax-Change-Start
+        EntityUid child;
+        if (configuration.RandomEnt != null)
+        {
+            var ent = EntitySpawnCollection.GetSpawns(configuration.RandomEnt, _random).First();
+            child = Spawn(ent, _transform.GetMapCoordinates(uid, targetTransformComp),
+                rotation: _transform.GetWorldRotation(uid));
+        }
+        else
+        {
+            child = Spawn(configuration.Entity, _transform.GetMapCoordinates(uid, targetTransformComp),
+                rotation: _transform.GetWorldRotation(uid));
+        }
+        // Corvax-Change-End
 
         // Copy specified components over
         foreach (var compName in configuration.CopiedComponents)
@@ -271,8 +288,16 @@ public sealed partial class PolymorphSystem : EntitySystem
             _humanoid.CloneAppearance(uid, child);
         }
 
+        // Corvax-Change-Start
         if (_mindSystem.TryGetMind(uid, out var mindId, out var mind))
-            _mindSystem.TransferTo(mindId, child, mind: mind);
+        {
+            if (!HasComp<HumanoidAppearanceComponent>(child))
+                _mindSystem.TransferTo(mindId, null, createGhost: true, mind: mind);
+
+            else
+                _mindSystem.TransferTo(mindId, child, mind: mind);
+        }
+        // Corvax-Change-End
 
         //Ensures a map to banish the entity to
         EnsurePausedMap();

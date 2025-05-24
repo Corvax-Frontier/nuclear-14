@@ -100,7 +100,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
 
             AddButton.Text = Loc.GetString("admin-add-reagent-window-add",
                 ("quantity", _quantitySpin.Value.ToString("F2")),
-                ("reagent", _selectedReagent.ID));
+                ("reagent", _selectedReagent.LocalizedName));
 
             AddButton.Disabled = false;
         }
@@ -114,7 +114,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
             foreach (var reagent in _prototypeManager.EnumeratePrototypes<ReagentPrototype>())
             {
                 if (!string.IsNullOrEmpty(filter) &&
-                   !reagent.ID.ToLowerInvariant().Contains(filter.Trim().ToLowerInvariant()))
+                   !reagent.LocalizedName.ToLowerInvariant().Contains(filter.Trim().ToLowerInvariant())) // Corvax-Change
                 {
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
                 ItemList.Item regentItem = new(ReagentList)
                 {
                     Metadata = reagent,
-                    Text = reagent.ID
+                    Text = reagent.LocalizedName // Corvax-Change
                 };
 
                 ReagentList.Add(regentItem);

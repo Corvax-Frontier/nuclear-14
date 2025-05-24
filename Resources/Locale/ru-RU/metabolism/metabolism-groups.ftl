@@ -6,3 +6,4 @@ metabolism-group-food = Пища
 metabolism-group-drink = Напитки
 metabolism-group-gas = Газы
 metabolism-group-plant-metabolisms = Метаболизм растений
+metabolism-group-N14Virus = Вирусы

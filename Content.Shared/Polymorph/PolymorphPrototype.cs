@@ -1,3 +1,4 @@
+using Content.Shared.Storage; // Corvax-Change
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
@@ -36,8 +37,13 @@ public sealed partial record PolymorphConfiguration
     /// What entity the polymorph will turn the target into
     /// must be in here because it makes no sense if it isn't
     /// </summary>
-    [DataField(required: true, serverOnly: true)]
+    [DataField(serverOnly: true)] // Corvax-Change
     public EntProtoId Entity;
+
+    // Corvax-Change-Start
+    [DataField("random", serverOnly: true)]
+    public List<EntitySpawnEntry> RandomEnt;
+    // Corvax-Change-End
 
     /// <summary>
     /// The delay between the polymorph's uses in seconds

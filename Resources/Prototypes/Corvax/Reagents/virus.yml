@@ -1,0 +1,19 @@
+- type: reagent
+  id: N14Fev
+  name: reagent-name-fev
+  group: Chems
+  desc: reagent-desc-fev
+  flavor: metallic
+  color: "#518a5b"
+  physicalDesc: reagent-physical-desc-murky
+  metabolisms:
+    N14Virus:
+      metabolismRate: 5
+      effects:
+      - !type:Polymorph
+        prototype: N14FEV
+        conditions:
+        - !type:OrganType
+          type: Human
+        - !type:ReagentThreshold
+          min: 5

@@ -179,6 +179,7 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+    - id: N14Virus # Corvax-Change
 
 - type: entity
   id: OrganHumanStomach
