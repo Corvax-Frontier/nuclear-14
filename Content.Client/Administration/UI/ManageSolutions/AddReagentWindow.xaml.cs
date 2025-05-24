@@ -100,7 +100,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
 
             AddButton.Text = Loc.GetString("admin-add-reagent-window-add",
                 ("quantity", _quantitySpin.Value.ToString("F2")),
-                ("reagent", _selectedReagent.LocalizedName));
+                ("reagent", _selectedReagent.LocalizedName)); // Corvax-Change
 
             AddButton.Disabled = false;
         }
