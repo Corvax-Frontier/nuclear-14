@@ -27,3 +27,7 @@ guide-entry-bartending = Напитки
 guide-entry-cooking = Готовка
 guide-entry-materials = Материалы
 guide-entry-crafting-sys = Чертежи
+
+# Survival
+guide-entry-survivalindex = Выживание
+guide-entry-basics = Основы Выживания
