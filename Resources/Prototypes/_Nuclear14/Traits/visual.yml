@@ -3,6 +3,22 @@
   category: Visual
   points: 10
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - WastelandReporter
+        - TribalElder
+        - TownMayor
+        - TownSheriff
+        - NCRLT
+        - NCRRangerVeteran
+        - NCRRanger
+        - NCRSGT
+        - CaravanLeader
+        - BoSMidPaladinCommander
+        - BoSMidPaladin
+        - Overseer
+        - VaultSecurity
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

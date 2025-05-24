@@ -36,9 +36,9 @@
         - CaesarLegionDean
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionDean
-      min: 3200
+      min: 216000 # 60 hours veterancy unlock
   items:
-    - N14ClothingHeadHatDeanPrimeHelmet
+    - N14ClothingHeadHatDeanVeteranHelmet 
 
 - type: loadout
   id: LoadoutLegionDeadPrimeHelmet
@@ -51,7 +51,7 @@
         - CaesarLegionDean
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionDean
-      min: 1200
+      min: 72000 # 20 hours veterancy unlock
   items:
     - N14ClothingHeadHatDeanPrimeHelmet
 
@@ -78,7 +78,7 @@
         - CaesarLegionDean
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionDean
-      min: 3200
+      min: 216000 # 60 hours veterancy unlock
   items:
     - N14ClothingOuterDeanLegionnaireVeteranArmor
 
@@ -93,7 +93,7 @@
         - CaesarLegionDean
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionDean
-      min: 1200
+      min: 72000 # 20 hours veterancy unlock
   items:
     - N14ClothingOuterDeanLegionnairePrimeArmor
 

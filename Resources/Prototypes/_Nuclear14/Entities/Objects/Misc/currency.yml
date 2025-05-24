@@ -299,6 +299,9 @@
   name: aureus
   description: A gold coin used by the legion and tribes as currency.
   components:
+  - type: PhysicalComposition
+    materialComposition:
+      LegionAurei: 1
   - type: Stack
     stackType: LegionAureus
     count: 1
@@ -354,7 +357,15 @@
     state: aurelius3
   - type: Stack
     count: 100
-    
+
+- type: material
+  id: LegionAurei
+  name: legionAurei
+  unit: materials-unit-bill
+  stackEntity: N14CurrencyLegionAureus
+  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/currency.rsi, state: aurelius3 }
+  price: 100    
+
 # Legion Denarius
 - type: entity
   parent: N14CurrencyCap
@@ -417,3 +428,4 @@
     state: denarius3
   - type: Stack
     count: 100
+

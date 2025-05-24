@@ -4,7 +4,7 @@
     sprite: _Nuclear14/Objects/Specific/Medical/drugs.rsi
     state: stimpak
   product: N14CrateBreakPlainFilledStimpak
-  cost: 300
+  cost: 250 # Corvax-Change
   category: Medical / Aid
   group: market
 
