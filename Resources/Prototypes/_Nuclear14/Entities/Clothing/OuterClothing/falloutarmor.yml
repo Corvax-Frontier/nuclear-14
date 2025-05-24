@@ -581,7 +581,7 @@
     walkModifier: 1.2
     sprintModifier: 1.2
   - type: Reflect
-    reflectProb: 0.5
+    reflectProb: 0.2 # Corvax-Change
     spread: 150
 
 - type: entity
