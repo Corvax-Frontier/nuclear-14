@@ -1,39 +1,48 @@
-using System.Threading;
-using Content.Server.Spawners.Components;
+// Corvax-Change-Start
 using Content.Shared.Humanoid;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.SSDIndicator;
+using Robust.Server.GameObjects;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Server.Spawners.EntitySystems;
 
 public sealed class SpawnerSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
 
     private const float SpawnBlockRange = 15f;
-    private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
     public override void Initialize()
     {
         base.Initialize();
-        _metaQuery = GetEntityQuery<MetaDataComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
-        SubscribeLocalEvent<TimedSpawnerComponent, ComponentInit>(OnSpawnerInit);
-        SubscribeLocalEvent<TimedSpawnerComponent, ComponentShutdown>(OnTimedSpawnerShutdown);
     }
 
-    private void OnSpawnerInit(EntityUid uid, TimedSpawnerComponent component, ComponentInit args)
+    public override void Update(float frameTime)
     {
-        component.TokenSource = new CancellationTokenSource();
-        uid.SpawnRepeatingTimer(
-            TimeSpan.FromSeconds(component.IntervalSeconds),
-            () => OnTimerFired(uid, component),
-            component.TokenSource.Token
-        );
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<TimedSpawnerComponent>();
+        while (query.MoveNext(out var uid, out var component))
+        {
+            component.TimeElapsed += frameTime;
+
+            if (component.TimeElapsed < component.IntervalSeconds)
+                continue;
+
+            var intervalsPassed = (int) (component.TimeElapsed / component.IntervalSeconds);
+            component.TimeElapsed -= intervalsPassed * component.IntervalSeconds;
+
+            for (var i = 0; i < intervalsPassed; i++)
+            {
+                OnTimerFired(uid, component);
+            }
+        }
     }
 
     private void OnTimerFired(EntityUid uid, TimedSpawnerComponent component)
@@ -47,7 +56,8 @@ public sealed class SpawnerSystem : EntitySystem
         var xform = _xformQuery.GetComponent(uid);
         var coordinates = xform.Coordinates;
 
-        for (var i = 0; i < _random.Next(component.MinimumEntitiesSpawned, component.MaximumEntitiesSpawned); i++)
+        var spawnCount = _random.Next(component.MinimumEntitiesSpawned, component.MaximumEntitiesSpawned + 1);
+        for (var i = 0; i < spawnCount; i++)
         {
             var entity = _random.Pick(component.Prototypes);
             SpawnAtPosition(entity, coordinates);
@@ -59,38 +69,34 @@ public sealed class SpawnerSystem : EntitySystem
         if (!_xformQuery.TryGetComponent(uid, out var xform) || xform.MapUid == null)
             return true;
 
-        // Проверка активных игроков
-        foreach (var entity in _lookup.GetEntitiesInRange<HumanoidAppearanceComponent>(xform.MapPosition, SpawnBlockRange))
-        {
-            if (!Exists(entity.Owner)) continue; // Важная проверка
-            if (entity.Owner == uid) continue;
+        var mapPos = _transform.GetMapCoordinates(uid, xform: xform);
 
-            if (TryComp<SSDIndicatorComponent>(entity.Owner, out var ssd) && ssd.IsSSD)
-                continue;
-
-            return true;
-        }
-
-        // Проверка существующих мобов с защитой
-        foreach (var entity in _lookup.GetEntitiesInRange(xform.MapPosition, SpawnBlockRange))
+        foreach (var entity in _lookup.GetEntitiesInRange(mapPos, SpawnBlockRange))
         {
             if (!Exists(entity)) continue;
             if (entity == uid) continue;
 
-            if (!_metaQuery.TryGetComponent(entity, out var meta) ||
-                meta.EntityPrototype?.ID is not { } prototypeId)
-                continue;
+            if (TryComp(entity, out MobStateComponent? mob) &&
+                (mob.CurrentState == MobState.Alive || mob.CurrentState == MobState.Critical))
+            {
+                if (HasComp<HumanoidAppearanceComponent>(entity))
+                {
+                    if (!TryComp<SSDIndicatorComponent>(entity, out var ssd) || !ssd.IsSSD)
+                        return true;
+                    continue;
+                }
 
-            if (component.Prototypes.Contains(prototypeId))
-                return true;
+                if (TryComp(entity, out MetaDataComponent? meta) &&
+                    meta.EntityPrototype?.ID is { } prototypeId &&
+                    component.Prototypes.Contains(prototypeId))
+                    return true;
+            }
+
+            else
+                continue;
         }
 
         return false;
     }
-
-    private void OnTimedSpawnerShutdown(EntityUid uid, TimedSpawnerComponent component, ComponentShutdown args)
-    {
-        component.TokenSource?.Cancel();
-        component.TokenSource = null;
-    }
 }
+// Corvax-Change-End

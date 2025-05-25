@@ -1,3 +1,4 @@
+// Corvax-Change-Start
 using System.Threading;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -10,5 +11,6 @@ public sealed partial class TimedSpawnerComponent : Component
     [DataField] public int IntervalSeconds = 60;
     [DataField] public int MinimumEntitiesSpawned = 1;
     [DataField] public int MaximumEntitiesSpawned = 1;
-    public CancellationTokenSource? TokenSource;
+    public float TimeElapsed;
 }
+// Corvax-Change-End
