@@ -48,7 +48,7 @@
       - ReagentId: Blood
         Quantity: 10
   - type: StaticPrice # Corvax-Add
-    price: 25
+    price: 15
 
 - type: entity
   id: LeftArmHuman

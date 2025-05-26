@@ -95,7 +95,7 @@
     stackType: RegenerativeMesh
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 15 # Corvax-Change
+    price: 3 # Corvax-Change
 
 - type: entity
   id: OintmentAdvanced1
@@ -182,7 +182,7 @@
     stackType: MedicatedSuture
     count: 15 #Was 10, Buffed due to surgery changes
   - type: StackPrice
-    price: 15 # Corvax-Change
+    price: 3 # Corvax-Change
 
 - type: entity
   id: BrutepackAdvanced1

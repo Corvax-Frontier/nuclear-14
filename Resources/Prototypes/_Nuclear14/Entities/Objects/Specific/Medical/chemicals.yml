@@ -774,7 +774,7 @@
     stackType: N14Bandage
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 20 #Was 10, Buffed due to limb damage changes
+    price: 2 # Corvax-Change
 
 - type: entity
   parent: N14Bandage

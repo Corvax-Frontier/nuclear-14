@@ -14,7 +14,7 @@
       bodypart: !type:Container
         ents: []
   - type: StaticPrice
-    price: 100
+    price: 0 # Corvax-Change
 
 - type: entity
   id: N14TorsoGhoul
@@ -56,6 +56,8 @@
   - type: Tag
     tags:
       - Head
+  - type: StaticPrice # Corvax-Add
+    price: 15
 
 - type: entity
   id: N14LeftArmGhoul

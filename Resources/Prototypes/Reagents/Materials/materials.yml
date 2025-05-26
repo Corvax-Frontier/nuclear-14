@@ -22,7 +22,7 @@
   unit: materials-unit-roll
   icon: { sprite: /Textures/Objects/Materials/materials.rsi, state: cloth }
   color: "#e7e7de"
-  price: 0.05
+  price: 0.02 # Corvax-Change
 
 - type: material
   id: Durathread
