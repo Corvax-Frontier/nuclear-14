@@ -44,7 +44,7 @@
     stackType: Ointment
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 5 # Corvax-Change
+    price: 2 # Corvax-Change
 
 - type: entity
   id: Ointment1
@@ -220,7 +220,7 @@
     stackType: Bloodpack
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 10 # Corvax-Change
+    price: 6 # Corvax-Change
 
 - type: entity
   parent: Bloodpack

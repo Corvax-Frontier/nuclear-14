@@ -353,6 +353,8 @@
     contents:
       - id: N14WeaponHMGcanadian
         amount: 1
+      - id: Magazine762AmmoBelt # Corvax-Add
+        amount: 1
 
 - type: entity
   parent: N14CrateBreakPlain

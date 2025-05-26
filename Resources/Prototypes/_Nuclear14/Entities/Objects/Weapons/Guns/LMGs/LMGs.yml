@@ -85,8 +85,8 @@
   - type: Wieldable
   - type: GunRequiresWield
   - type: GunWieldBonus
-    minAngle: -22
-    maxAngle: -59
+    minAngle: -21 # Corvax-Change
+    maxAngle: -48 # Corvax-Change
   - type: Gun
     minAngle: 24
     maxAngle: 60
@@ -151,8 +151,8 @@
   - type: Wieldable
   - type: GunRequiresWield
   - type: GunWieldBonus
-    minAngle: -22
-    maxAngle: -59
+    minAngle: -22 # Corvax-Change
+    maxAngle: -49 # Corvax-Change
   - type: Gun
     minAngle: 24
     maxAngle: 60

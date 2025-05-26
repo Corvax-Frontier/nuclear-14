@@ -473,4 +473,4 @@
   - type: FollowDistance
     backStrength: 3
   - type: StaticPrice
-    price: 75
+    price: 50 # Corvax-Change

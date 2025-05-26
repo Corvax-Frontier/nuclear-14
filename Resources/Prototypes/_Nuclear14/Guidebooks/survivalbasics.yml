@@ -11,5 +11,4 @@
 - type: guideEntry
   id: N14Basics
   name: guide-entry-basics
-  text: "/ServerInfo/_Nuclear14/Guidebooks/Survival/basics.xml"
-  filterEnabled: True
+  text: "/ServerInfo/_Nuclear14/Guidebooks/Survival/Basics.xml"
