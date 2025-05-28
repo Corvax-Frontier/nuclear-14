@@ -373,6 +373,9 @@
   name: denarius
   description: A silver coin used by the legion and tribes as currency.
   components:
+  - type: PhysicalComposition
+    materialComposition:
+      LegionDenarius: 1
   - type: Stack
     stackType: LegionDenarius
     count: 1
@@ -429,3 +432,10 @@
   - type: Stack
     count: 100
 
+- type: material 
+  id: LegionDenarius
+  name: legiondenarius
+  unit: materials-unit-bill
+  stackEntity: N14CurrencyLegionDenarius
+  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/currency.rsi, state: denarius3 }
+  price: 4    

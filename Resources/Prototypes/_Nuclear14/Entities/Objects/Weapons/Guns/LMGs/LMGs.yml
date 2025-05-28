@@ -20,7 +20,7 @@
   - type: GunRequiresWield
   - type: GunWieldBonus
     minAngle: -18 # Corvax-Change
-    maxAngle: -52 # Corvax-Change
+    maxAngle: -50 # Corvax-Change
   - type: Gun
     minAngle: 24
     maxAngle: 60
@@ -85,8 +85,8 @@
   - type: Wieldable
   - type: GunRequiresWield
   - type: GunWieldBonus
-    minAngle: -21 # Corvax-Change
-    maxAngle: -48 # Corvax-Change
+    minAngle: -19 # Corvax-Change
+    maxAngle: -44 # Corvax-Change
   - type: Gun
     minAngle: 24
     maxAngle: 60
@@ -286,14 +286,14 @@
     sprintModifier: 0.85
   - type: GunRequiresWield
   - type: GunWieldBonus
-    minAngle: -22
-    maxAngle: -59
+    minAngle: -20 # Corvax-Change
+    maxAngle: -45 # Corvax-Change
   - type: Gun
     minAngle: 24
     maxAngle: 60
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 4
+    fireRate: 3.5 # Corvax-Change
     soundGunshot:
       collection: N14AutoRifleGunshot
     selectedMode: FullAuto

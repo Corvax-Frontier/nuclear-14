@@ -147,6 +147,6 @@
     mask: N14ClothingMaskBrownBalaclava
     outerClothing: N14ClothingOuterRaiderBadlands
     pocket1: N14CurrencyCap
-    pocket2: Brutepack
+    pocket2: Brutepack1 # Corvax-Change
   inhand:
   - N14KitchenKnife

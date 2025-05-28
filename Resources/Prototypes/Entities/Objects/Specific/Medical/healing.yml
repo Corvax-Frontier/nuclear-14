@@ -220,7 +220,7 @@
     stackType: Bloodpack
     count: 15 #Was 10, Buffed due to limb damage changes
   - type: StackPrice
-    price: 6 # Corvax-Change
+    price: 4 # Corvax-Change
 
 - type: entity
   parent: Bloodpack

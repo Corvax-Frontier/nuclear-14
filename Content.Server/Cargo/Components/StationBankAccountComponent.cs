@@ -9,7 +9,7 @@ namespace Content.Server.Cargo.Components;
 public sealed partial class StationBankAccountComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("balance")]
-    public int Balance = 100; // Corvax-Change
+    public int Balance = 50; // Corvax-Change
 
     /// <summary>
     /// How much the bank balance goes up per second, every Delay period. Rounded down when multiplied.

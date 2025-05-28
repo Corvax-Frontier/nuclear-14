@@ -38,3 +38,7 @@ ent-N14CrateBreakPlainFilledOintment = ящик мази от ожогов
     .desc = Ящик, содержащий 6 тюбиков мази от ожогов
 ent-N14CrateBreakPlainFilledAntidote = ящик с антидотами
     .desc = Ящик, содержащий 2 бутылки антидота
+ent-N14CrateBreakPlainFilledC4 = Ящик с C4
+    .desc = Ящик, содержащий 3 заряда C4
+ent-N14CrateBreakPlainFilledFuelTank = Ящик с топливным баком
+    .desc = Ящик, содержащий топливный бак

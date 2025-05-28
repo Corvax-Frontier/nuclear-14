@@ -514,12 +514,12 @@
   parent: N14CrateBreakPlain
   id: N14CrateBreakPlainFilledC4
   name: C4 crate
-  description: Crate containing 2 bundles of C4 .
+  description: Crate containing 3 bundles of C4 . 
   components:
   - type: StorageFill
     contents:
       - id: C4
-        amount: 2
+        amount: 3 # Corvax-Change
 
 - type: entity
   parent: N14CrateBreakPlain
