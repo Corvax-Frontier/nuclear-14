@@ -20,6 +20,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player; // Nuclear-14
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility; // Corvax-Change
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -229,16 +230,19 @@ public sealed class RadioDeviceSystem : EntitySystem
 
     private void OnReceiveRadio(EntityUid uid, RadioSpeakerComponent component, ref RadioReceiveEvent args)
     {
-        var parent = Transform(uid).ParentUid;
-        if (TryComp(parent, out ActorComponent? actor))
-        {
-            var canUnderstand = _language.CanUnderstand(parent, args.Language.ID);
-            var msg = new MsgChatMessage
-            {
-                Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
-            };
-            _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
-        }
+        // Corvax-Change-Start
+        var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
+        RaiseLocalEvent(args.MessageSource, nameEv);
+
+        var name = Loc.GetString("speech-name-relay", ("speaker", args.Channel.LocalizedName),
+            ("originalName", nameEv.Sender));
+
+        // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
+        var message = args.OriginalChatMsg.Message; // The chat system will handle the rest and re-obfuscate if needed.
+        var chatType = component.IsSpeaker ? InGameICChatType.Speak : InGameICChatType.Whisper;
+        _chat.TrySendInGameICMessage(uid, message, chatType, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false, languageOverride: args.Language);
+        // Corvax-Change-End
+
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)

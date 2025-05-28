@@ -1,0 +1,11 @@
+- type: entity
+  id: N14IntercomVault
+  parent: Intercom
+  suffix: Vault
+  components:
+  - type: ContainerFill
+    containers:
+      board:
+      - IntercomElectronics
+      key_slots:
+      - EncryptionKeyVault

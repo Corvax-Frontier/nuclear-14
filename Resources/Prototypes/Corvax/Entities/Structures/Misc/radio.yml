@@ -1,0 +1,53 @@
+- type: entity
+  parent: N14RadioTable
+  id: N14RadioTableBazar
+  suffix: Bazar
+  components:
+  - type: RadioSpeaker
+    channels:
+    - Bazar
+  - type: ActiveRadio
+    channels:
+    - Bazar
+  - type: RadioMicrophone
+    broadcastChannel: Bazar
+    frequency: 6996
+
+- type: entity
+  parent: N14RadioTable
+  id: N14RadioTableWasteland
+  suffix: Wasteland
+  components:
+  - type: RadioSpeaker
+    channels:
+    - Wasteland
+  - type: ActiveRadio
+    channels:
+    - Wasteland
+  - type: RadioMicrophone
+    broadcastChannel: Wasteland
+    frequency: 1728
+
+- type: entity
+  parent: RadioDJMicrophone
+  id: RadioDJMicrophoneBazar
+  suffix: Bazar
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: Bazar
+    frequency: 6996
+  - type: ActiveRadio
+    channels:
+    - Bazar
+
+- type: entity
+  parent: RadioDJMicrophone
+  id: RadioDJMicrophoneWasteland
+  suffix: Wasteland
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: Wasteland
+    frequency: 1728
+  - type: ActiveRadio
+    channels:
+    - Wasteland

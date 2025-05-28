@@ -14,3 +14,5 @@ chat-radio-enclave = Анклав
 chat-radio-ncr = НКР
 announcer-Fallout-name = Пустошь
 chat-radio-pbs = Радио «Новости Галактики»
+chat-radio-bazar = Радио «Ржавый Гвоздь»
+chat-radio-wasteland = Радио «Голос Пустоши»
