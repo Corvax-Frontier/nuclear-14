@@ -118,6 +118,8 @@
     - type: Construction
       graph: N14Bed
       node: bedroll
+    - type: StaticPrice
+      price: 6 # Corvax-Change
 
 - type: entity
   parent: N14Bedroll

@@ -29,6 +29,8 @@
     slots:
     - Snout
     hideOnToggle: true
+  - type: StaticPrice
+    price: 2 # Corvax-Change
 
 - type: entity
   parent: ClothingMaskBandanaBase
@@ -54,7 +56,7 @@
   - type: Construction
     graph: blackbandana
     node: bandanablack
-
+  
 - type: entity
   parent: ClothingMaskBandanaBase
   id: ClothingMaskBandBlue

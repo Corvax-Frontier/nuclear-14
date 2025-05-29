@@ -64,7 +64,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 30
+    price: 2 # Corvax-Change
   # Shitmed Change
   - type: Retractor
     speed: 0.35
@@ -146,7 +146,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 30
+    price: 3 # Corvax-Change
   # Shitmed Change
   - type: Retractor
     speed: 0.45
@@ -213,7 +213,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 22
+    price: 2 # Corvax-Change
 
 - type: entity
   name: crowbar
@@ -270,7 +270,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 22
+    price: 2 # Corvax-Change
   - type: Prying
   # Shitmed Change
   - type: Tweezers
@@ -355,7 +355,7 @@
       Steel: 100
       Plastic: 100
   - type: StaticPrice
-    price: 56
+    price: 8 # Corvax-Change
 
 - type: entity
   name: network configurator
@@ -403,7 +403,7 @@
         enum.NetworkConfiguratorUiKey.Link:
           type: NetworkConfiguratorBoundUserInterface
     - type: StaticPrice
-      price: 56
+      price: 2 # Corvax-Change
     - type: GuideHelp
       guides:
         - NetworkConfigurator
@@ -456,7 +456,7 @@
 #  - type: DynamicPrice
 #    price: 100
   - type: StaticPrice
-    price: 100
+    price: 8 # Corvax-Change
   - type: MeleeWeapon
     wideAnimationRotation: -90
     attackRate: 1.1
