@@ -3,7 +3,7 @@
   category: Visual
   points: 10
   requirements:
-    - !type:CharacterJobRequirement
+    - !type:CharacterJobRequirement # Corvax-Change
       inverted: true
       jobs:
         - WastelandReporter
