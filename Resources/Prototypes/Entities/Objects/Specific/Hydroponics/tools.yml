@@ -105,7 +105,7 @@
     slots:
     - back
   - type: StaticPrice
-    price: 40
+    price: 2 # Corvax-Change
 
 - type: entity
   name: hatchet
