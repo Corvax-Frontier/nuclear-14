@@ -32333,7 +32333,13 @@ entities:
       parent: 2
 - proto: ChemistryEmptyBottle01
   entities:
-  - uid: 4186
+  - uid: 4211
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -49.44659,-32.19596
+      parent: 2
+  - uid: 6957
     components:
     - type: Transform
       parent: 20187
@@ -32341,12 +32347,6 @@ entities:
       angularDamping: 0
       linearDamping: 0
       canCollide: False
-  - uid: 4211
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -49.44659,-32.19596
-      parent: 2
   - uid: 7766
     components:
     - type: Transform
@@ -52185,11 +52185,6 @@ entities:
       parent: 2
 - proto: IntercomCommon
   entities:
-  - uid: 6957
-    components:
-    - type: Transform
-      pos: 31.5,-8.5
-      parent: 2
   - uid: 6958
     components:
     - type: Transform
@@ -52819,6 +52814,11 @@ entities:
     - type: Transform
       pos: -95.5,64.5
       parent: 2
+    - type: Warper
+      id: VaultAnklav
+    - type: WarpPoint
+      id: VaultAnklav1
+      location: '[Vault] Выход из бункера анклава'
   - uid: 6971
     components:
     - type: Transform
@@ -52909,8 +52909,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -48.5,71.5
       parent: 2
+    - type: Warper
+      id: VaultAnklav1
     - type: Fixtures
       fixtures: {}
+    - type: WarpPoint
+      id: VaultAnklav
+      location: '[Vault] Вход в бункер анклава'
 - proto: Lamp
   entities:
   - uid: 6981
@@ -55806,7 +55811,7 @@ entities:
       pos: -40.5,56.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -178135.19
+      secondsUntilStateChange: -182648.52
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 3
@@ -58834,7 +58839,7 @@ entities:
     - type: Transform
       pos: -188.43358,-14.556467
       parent: 2
-  - uid: 4182
+  - uid: 4183
     components:
     - type: Transform
       pos: -93.44653,-35.634354
@@ -62287,7 +62292,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-  - uid: 9472
+  - uid: 9628
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -63123,7 +63128,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-  - uid: 9628
+  - uid: 10032
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -69158,7 +69163,7 @@ entities:
       pos: -92.5,67.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -197687.08
+      secondsUntilStateChange: -202200.4
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -69182,7 +69187,7 @@ entities:
       pos: -1.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -942676.1
+      secondsUntilStateChange: -947189.44
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -69386,7 +69391,7 @@ entities:
       pos: 2.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -84634.01
+      secondsUntilStateChange: -89147.336
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -73208,7 +73213,7 @@ entities:
     - type: InsideEntityStorage
 - proto: N14IDKeyBronze
   entities:
-  - uid: 4181
+  - uid: 4182
     components:
     - type: Transform
       pos: -95.60835,-47.590397
@@ -73362,6 +73367,13 @@ entities:
     components:
     - type: Transform
       pos: -112.257126,-32.657013
+      parent: 2
+- proto: N14IntercomVault
+  entities:
+  - uid: 4181
+    components:
+    - type: Transform
+      pos: 31.5,-8.5
       parent: 2
 - proto: N14IronOre1
   entities:
@@ -74078,7 +74090,7 @@ entities:
       pos: -80.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -200068.27
+      secondsUntilStateChange: -204581.6
       state: Closing
   - uid: 9716
     components:
@@ -76399,13 +76411,6 @@ entities:
     - type: Transform
       pos: -95.744385,71
       parent: 2
-- proto: N14MachineRackCameraRouterVault
-  entities:
-  - uid: 10032
-    components:
-    - type: Transform
-      pos: 34.5,40.5
-      parent: 2
 - proto: N14MachineRackElectronics
   entities:
   - uid: 10033
@@ -77455,24 +77460,24 @@ entities:
     - type: InsideEntityStorage
 - proto: N14RadioTable
   entities:
-  - uid: 9471
+  - uid: 9472
     components:
     - type: Transform
       pos: -70.5,-24.5
       parent: 2
 - proto: N14RadioTableBazar
   entities:
-  - uid: 4183
+  - uid: 4184
     components:
     - type: Transform
       pos: -97.5,-49.5
       parent: 2
-  - uid: 8457
+  - uid: 9192
     components:
     - type: Transform
       pos: -110.5,-21.5
       parent: 2
-  - uid: 9192
+  - uid: 9471
     components:
     - type: Transform
       pos: -86.5,8.5
@@ -82750,7 +82755,7 @@ entities:
       parent: 2
 - proto: N14TableWoodRound
   entities:
-  - uid: 4786
+  - uid: 8457
     components:
     - type: Transform
       pos: -110.5,-21.5
@@ -82977,7 +82982,7 @@ entities:
       linearDamping: 0
 - proto: N14Torch
   entities:
-  - uid: 4184
+  - uid: 4186
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -82985,7 +82990,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-  - uid: 4185
+  - uid: 4786
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -134101,7 +134106,7 @@ entities:
         outputSlot: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 4186
+          ent: 6957
   - uid: 20188
     components:
     - type: Transform
@@ -142857,6 +142862,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -29.5,67.5
+      parent: 2
+- proto: SurveillanceCameraRouterSecurity
+  entities:
+  - uid: 4185
+    components:
+    - type: Transform
+      pos: 34.5,41.5
       parent: 2
 - proto: SurveillanceCameraSecurity
   entities:
