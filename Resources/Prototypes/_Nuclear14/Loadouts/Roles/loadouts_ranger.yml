@@ -71,6 +71,165 @@
   items:
     - ClothingMaskGasCombat
 
+#MARK: Corvax-Add
+
+- type: loadout
+  id: LoadoutNCRRangerCoat
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingOuterRangerCoat
+
+- type: loadout
+  id: LoadoutNCRuniformMaskDesertR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRangerDesert
+
+- type: loadout
+  id: LoadoutNCRuniformMaskOldR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRangerOld
+
+- type: loadout
+  id: LoadoutNCRuniformMaskPriceR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRangerPrice
+
+- type: loadout
+  id: LoadoutNCRuniformMaskEliteR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRangerElite
+
+- type: loadout
+  id: LoadoutNCRuniformMaskModifR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRangerModif
+
+- type: loadout
+  id: LoadoutNCRuniformMaskWeatheredR
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRangerWeathered
+
+- type: loadout
+  id: LoadoutNCRDesertHelmetR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingHeadHatRangerHelmetDesert
+
+- type: loadout
+  id: LoadoutNCROldHelmetR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingHeadHatRangerHelmetOld
+
+- type: loadout
+  id: LoadoutNCRPriceHelmetR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingHeadHatRangerHelmetPrice
+
+- type: loadout
+  id: LoadoutNCRFoxHelmetR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingHeadHatRangerHelmetFox
+
+- type: loadout
+  id: LoadoutNCRModifHelmetR
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingHeadHatRangerHelmetModif
+
+- type: loadout
+  id: LoadoutNCRNeckCloakRanger
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - N14ClothingNeckCloakRanger
+
+
 # MARK: Ranger + Vet
 
 - type: loadout
@@ -98,19 +257,6 @@
         - NCRRangerVeteran
   items:
     - N14ClothingHeadHatNCRBeretRecon
-
-- type: loadout # Corvax-Change 
-  id: LoadoutNCRhatBeretRanger
-  category: Roles
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - NCRRanger
-        - NCRRangerVeteran
-  items:
-    - N14ClothingHeadHatArmyBeretRanger
 
 - type: loadout
   id: LoadoutNCRmaskDesert
@@ -217,43 +363,7 @@
   items:
     - N14MedkitCombatFilled
 
-# MARK: Ranger Vet
-
-- type: loadout
-  id: LoadoutNCRuniformModif
-  category: Roles
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - NCRRangerVeteran
-  items:
-    - N14ClothingUniformRangerModif
-
-- type: loadout
-  id: LoadoutNCRuniformBlue
-  category: Roles
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - NCRRangerVeteran
-  items:
-    - N14ClothingUniformRangerBlue
-
-- type: loadout
-  id: LoadoutNCRuniformBlack
-  category: Roles
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - NCRRangerVeteran
-  items:
-    - N14ClothingUniformRangerVeteranBlack
+# MARK: Corvax-Add
 
 - type: loadout
   id: LoadoutNCRuniformRed
@@ -263,9 +373,64 @@
   requirements:
     - !type:CharacterJobRequirement
       jobs:
+        - NCRRanger
         - NCRRangerVeteran
   items:
     - N14ClothingUniformRangerVeteranRed
+
+- type: loadout
+  id: LoadoutNCRuniformVeteran
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+        - NCRRangerVeteran
+  items:
+    - N14ClothingUniformRangerVeteran
+
+- type: loadout
+  id: LoadoutNCRuniformBlack
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+        - NCRRangerVeteran
+  items:
+    - N14ClothingUniformRangerVeteranBlack
+
+- type: loadout
+  id: LoadoutNCRuniformBlue
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+        - NCRRangerVeteran
+  items:
+    - N14ClothingUniformRangerBlue
+
+- type: loadout
+  id: LoadoutNCRuniformModif
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+        - NCRRangerVeteran
+  items:
+    - N14ClothingUniformRangerModif
+
+# MARK: Ranger Vet
 
 - type: loadout
   id: LoadoutNCRuniformHelmetDesert
@@ -332,3 +497,140 @@
       min: 216000 # 60 hours veterancy unlock "First Tour"
   items:
     - N14ClothingHeadHatRangerHelmetEliteOld
+
+# MARK: Corvax-Add
+
+- type: loadout
+  id: LoadoutNCRuniformMaskEliteVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+    - !type:CharacterPlaytimeRequirement
+      tracker: NCRRangerVeteran
+      min: 216000 # 60 hours veterancy unlock "First Tour"
+  items:
+    - ClothingMaskGasRangerElite
+
+- type: loadout
+  id: LoadoutNCRuniformMaskPriceVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - ClothingMaskGasRangerPrice
+
+- type: loadout
+  id: LoadoutNCRuniformMaskModifVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - ClothingMaskGasRangerModif
+
+- type: loadout
+  id: LoadoutNCRuniformHelmetFoxVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingHeadHatRangerHelmetFox
+
+- type: loadout
+  id: LoadoutNCRuniformHelmetPriceVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingHeadHatRangerHelmetPrice
+
+- type: loadout
+  id: LoadoutNCRuniformHelmetModifVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingHeadHatRangerHelmetModif
+
+- type: loadout
+  id: LoadoutNCRuniformHelmetVR
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingHeadHatRangerHelmet
+
+- type: loadout
+  id: LoadoutNCRuniformWeathered
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingOuterRangerWeathered
+
+- type: loadout
+  id: LoadoutNCRuniformFox
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingOuterRangerFox
+
+- type: loadout
+  id: LoadoutNCRuniformPrice
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingOuterRangerPrice
+
+- type: loadout
+  id: LoadoutNCRNeckCloakRangerPoncho
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - N14ClothingNeckCloakRangerPoncho
