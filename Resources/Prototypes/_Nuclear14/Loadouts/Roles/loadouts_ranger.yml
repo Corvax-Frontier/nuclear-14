@@ -430,6 +430,19 @@
   items:
     - N14ClothingUniformRangerModif
 
+- type: loadout
+  id: LoadoutNCRClothingNeckOldMantle
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+        - NCRRangerVeteran
+  items:
+    - ClothingNeckOldMantle
+
 # MARK: Ranger Vet
 
 - type: loadout
