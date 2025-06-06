@@ -205,6 +205,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _dialogManager,
             _playerManager,
             _prototypeManager,
+            _resourceCache, // Corvax-Change
             _requirements,
             _markings,
             _random);

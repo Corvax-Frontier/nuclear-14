@@ -5,6 +5,7 @@ using Content.Client.Administration.UI;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Message;
+using Content.Client.Sprite; // Corvax-Change
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -38,6 +39,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using Robust.Shared.ContentPack; // Corvax-Change
 
 namespace Content.Client.Lobby.UI
 {
@@ -52,6 +54,7 @@ namespace Content.Client.Lobby.UI
         private readonly IClientPreferencesManager _preferencesManager;
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
+        private readonly IResourceManager _resManager; // Corvax-Change
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
         private readonly IRobustRandom _random;
@@ -63,6 +66,7 @@ namespace Content.Client.Lobby.UI
 
         /// If we're attempting to save
         public event Action? Save;
+        private bool _imaging; // Corvax-Change
         private bool _exporting;
         private bool _isDirty;
 
@@ -109,6 +113,7 @@ namespace Content.Client.Lobby.UI
             IFileDialogManager dialogManager,
             IPlayerManager playerManager,
             IPrototypeManager prototypeManager,
+            IResourceManager resManager, // Corvax-Change
             JobRequirementsManager requirements,
             MarkingManager markings,
             IRobustRandom random
@@ -122,12 +127,24 @@ namespace Content.Client.Lobby.UI
             _prototypeManager = prototypeManager;
             _markingManager = markings;
             _preferencesManager = preferencesManager;
+            _resManager = resManager; // Corvax-Change
             _requirements = requirements;
             _random = random;
 
             _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
+            // Corvax-Change-Start
+            ExportImageButton.OnPressed += args =>
+            {
+                ExportImage();
+            };
+
+            OpenImagesButton.OnPressed += args =>
+            {
+                _resManager.UserData.OpenOsWindow(ContentSpriteSystem.Exports);
+            };
+            // Corvax-Change-End
             ImportButton.OnPressed += args => { ImportProfile(); };
             ExportButton.OnPressed += args => { ExportProfile(); };
             SaveButton.OnPressed += args => { Save?.Invoke(); };
@@ -1779,6 +1796,21 @@ namespace Content.Client.Lobby.UI
             SetName(name);
             UpdateNameEdit();
         }
+
+        // Corvax-Change-Start
+        private async void ExportImage()
+        {
+            if (_imaging)
+                return;
+
+            var dir = SpriteView.OverrideDirection ?? Direction.South;
+
+            // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
+            _imaging = true;
+            await _entManager.System<ContentSpriteSystem>().Export(PreviewDummy, dir, includeId: false);
+            _imaging = false;
+        }
+        // Corvax-Change-End
 
         private async void ImportProfile()
         {

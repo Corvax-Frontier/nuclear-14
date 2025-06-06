@@ -37,6 +37,8 @@
                         <Button Name="ExportButton" Text="{Loc 'humanoid-profile-editor-export-button'}"/>
                         <Button Name="SaveButton" Text="{Loc 'humanoid-profile-editor-save-button'}" />
                         <Button Name="ResetButton" Disabled="True" Text="{Loc 'humanoid-profile-editor-reset-button'}"/>
+                        <Button Name="ExportImageButton" Text="{Loc 'humanoid-profile-editor-export-image-button'}"/> <!-- Corvax-Change -->
+                        <Button Name="OpenImagesButton" Text="{Loc 'humanoid-profile-editor-open-image-button'}"/> <!-- Corvax-Change -->
                     </BoxContainer>
                 </prefUi:HighlightedContainer>
             </BoxContainer>
