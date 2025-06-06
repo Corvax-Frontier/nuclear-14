@@ -72,7 +72,6 @@
     - ClothingMaskGasCombat
 
 #Corvax-Add Start
-
 - type: loadout
   id: LoadoutNCRRangerCoat
   category: Roles
@@ -228,11 +227,7 @@
         - NCRRanger
   items:
     - N14ClothingNeckCloakRanger
-
 # Corvax-Add End
-
-
-# MARK: Ranger + Vet
 
 - type: loadout
   id: LoadoutNCRhatB
@@ -366,7 +361,6 @@
     - N14MedkitCombatFilled
 
 # Corvax-Add Start
-
 - type: loadout
   id: LoadoutNCRN14ClothingUniformRangerVeteranRed
   category: Roles
@@ -444,10 +438,7 @@
         - NCRRangerVeteran
   items:
     - ClothingNeckOldMantle
-
 # Corvax-Add End
-
-# MARK: Ranger Vet
 
 - type: loadout
   id: LoadoutNCRuniformHelmetDesert
@@ -516,7 +507,6 @@
     - N14ClothingHeadHatRangerHelmetEliteOld
 
 # Corvax-Add Start
-
 - type: loadout
   id: LoadoutNCRClothingMaskGasRangerElite2
   category: Roles
@@ -651,5 +641,4 @@
         - NCRRangerVeteran
   items:
     - N14ClothingNeckCloakRangerPoncho
-
 # Corvax-Add End
