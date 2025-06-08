@@ -1,13 +1,18 @@
-﻿using Content.Shared.Store;
-using Robust.Shared.Prototypes;
+﻿using Content.Shared.Eui;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._NC.Trade;
 
-[Serializable, NetSerializable,]
-public sealed class StoreBuyListingMessage(ProtoId<ListingPrototype> listing, EntityUid actor)
-    : BoundUserInterfaceMessage
+/// <summary>
+/// Сообщение клиента на сервер с запросом покупки.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class StoreBuyListingEuiMessage : EuiMessageBase
 {
-    public ProtoId<ListingPrototype> Listing { get; } = listing;
-    public new EntityUid Actor { get; } = actor;
+    public string ListingId;
+
+    public StoreBuyListingEuiMessage(string listingId)
+    {
+        ListingId = listingId;
+    }
 }

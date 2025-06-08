@@ -1,7 +1,7 @@
 namespace Content.Shared._NC.Trade;
 
 [RegisterComponent]
-public sealed partial class StoreComponent : Component
+public sealed partial class NcStoreComponent : Component
 {
     [DataField("preset")]
     public string Preset = string.Empty;

@@ -9,7 +9,7 @@ public sealed class StorePresetStructuredPrototype : IPrototype
     [IdDataField]
     public string ID { get; set; } = null!;
 
-    [DataField("currency", customTypeSerializer: typeof(PrototypeIdSerializer<CurrencyPrototype>))]
+    [DataField("currency", customTypeSerializer: typeof(PrototypeIdSerializer<NcCurrencyPrototype>))]
     public string Currency = "CapCoin";
 
     [DataField("catalog")]

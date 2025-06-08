@@ -3,8 +3,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._NC.Trade;
 
-[Prototype("currency")]
-public sealed class CurrencyPrototype : IPrototype
+[Prototype("nccurrency")]
+public sealed class NcCurrencyPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = string.Empty;
 

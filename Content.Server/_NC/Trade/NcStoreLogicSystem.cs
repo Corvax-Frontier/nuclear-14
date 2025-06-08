@@ -33,27 +33,38 @@ public sealed class NcStoreLogicSystem : EntitySystem
         return total;
     }
 
-    public bool TryPurchase(string listingId, EntityUid machine, StoreComponent store, EntityUid user)
+    public bool TryPurchase(string listingId, EntityUid machine, NcStoreComponent? store, EntityUid user)
     {
+        if (store == null)
+            return false;
+
+        if (store.Listings.Count == 0)
+            return false;
+
         var listing = store.Listings.FirstOrDefault(x => x.ID == listingId);
-        if (listing == null)
+        if (listing == null || listing.Cost.Count == 0 || string.IsNullOrEmpty(listing.ProductEntity))
             return false;
 
         var price = (int) listing.Cost.First().Value;
-        var mode = price < 0 ? StoreMode.Sell : StoreMode.Buy;
+        var isSell = price < 0;
+
+        if (store.CurrencyWhitelist.Count == 0)
+            return false;
+
         var currency = store.CurrencyWhitelist.First();
 
-        if (mode == StoreMode.Buy)
+        if (!isSell) // Покупка
         {
             if (GetBalance(user, currency) < price)
                 return false;
 
             RemoveCurrency(user, currency, price);
-            SpawnProduct(listing.ProductEntity!, _xform.GetMapCoordinates(machine));
+            SpawnProduct(listing.ProductEntity, _xform.GetMapCoordinates(machine));
             return true;
         }
 
-        if (!RemoveItem(user, listing.ProductEntity!))
+        // Продажа
+        if (!RemoveItem(user, listing.ProductEntity))
             return false;
 
         AddCurrency(user, currency, -price);
@@ -62,7 +73,7 @@ public sealed class NcStoreLogicSystem : EntitySystem
 
     private void AddCurrency(EntityUid user, string currency, int amount)
     {
-        var proto = _prototypes.Index<CurrencyPrototype>(currency);
+        var proto = _prototypes.Index<NcCurrencyPrototype>(currency);
 
         for (var i = 0; i < amount; i++)
         {

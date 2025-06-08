@@ -7,9 +7,9 @@ public sealed class StoreSystemStructuredLoader : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypes = null!;
 
-    public override void Initialize() => SubscribeLocalEvent<StoreComponent, MapInitEvent>(OnMapInit);
+    public override void Initialize() => SubscribeLocalEvent<NcStoreComponent, MapInitEvent>(OnMapInit);
 
-    private void OnMapInit(EntityUid uid, StoreComponent comp, MapInitEvent args)
+    private void OnMapInit(EntityUid uid, NcStoreComponent comp, MapInitEvent args)
     {
         if (!_prototypes.TryIndex<StorePresetStructuredPrototype>(comp.Preset, out var preset))
             return;

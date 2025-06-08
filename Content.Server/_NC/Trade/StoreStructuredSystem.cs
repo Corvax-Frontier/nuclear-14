@@ -12,9 +12,9 @@ public sealed class StoreStructuredSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = null!;
     [Dependency] private readonly NcStoreLogicSystem _logic = null!;
 
-    public override void Initialize() => SubscribeLocalEvent<StoreComponent, ActivateInWorldEvent>(OnActivate);
+    public override void Initialize() => SubscribeLocalEvent<NcStoreComponent, ActivateInWorldEvent>(OnActivate);
 
-    private void OnActivate(EntityUid uid, StoreComponent comp, ActivateInWorldEvent args)
+    private void OnActivate(EntityUid uid, NcStoreComponent comp, ActivateInWorldEvent args)
     {
         if (!_ui.HasUi(uid, StoreUiKey.Key))
             return;
@@ -28,7 +28,7 @@ public sealed class StoreStructuredSystem : EntitySystem
     /// <summary>
     /// Обновляет интерфейс магазина: баланс и список доступных товаров.
     /// </summary>
-    private void UpdateUiState(EntityUid uid, StoreComponent comp, EntityUid user)
+    private void UpdateUiState(EntityUid uid, NcStoreComponent comp, EntityUid user)
     {
         var currency = comp.CurrencyWhitelist.FirstOrDefault() ?? string.Empty;
         var balance = currency != string.Empty ? _logic.GetBalance(user, currency) : 0;

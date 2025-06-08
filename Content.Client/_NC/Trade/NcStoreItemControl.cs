@@ -60,7 +60,7 @@ public sealed partial class NcStoreItemControl : Control
         DiscountSubText.Text = _discount;
         StoreItemPrice.Text = _price;
 
-        if (_prototype.TryIndex<CurrencyPrototype>(_data.CurrencyId, out var currency))
+        if (_prototype.TryIndex<NcCurrencyPrototype>(_data.CurrencyId, out var currency))
         {
             if (currency.Icon is SpriteSpecifier.Texture tex)
                 CurrencyIcon.Texture = _res.GetTexture(tex.TexturePath);
