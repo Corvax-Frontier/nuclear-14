@@ -134,4 +134,4 @@ public sealed class NcStoreLogicSystem : EntitySystem
 
     private void SpawnProduct(string protoId, MapCoordinates coords) => _entMan.SpawnEntity(protoId, coords);
 }
-ё
+

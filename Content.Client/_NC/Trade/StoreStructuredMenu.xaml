@@ -2,8 +2,8 @@
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="Торговый автомат"
-    MinSize="512 512"
-    SetSize="512 512">
+    MinSize="512,512"
+    SetSize="512,512">
 
     <BoxContainer Orientation="Vertical">
         <!-- Верхняя панель: баланс и вкладки -->
@@ -26,7 +26,7 @@
 
                 <BoxContainer Orientation="Horizontal" VerticalExpand="True">
                     <!-- Категории -->
-                    <PanelContainer VerticalExpand="True" MinSize="100">
+                    <PanelContainer VerticalExpand="True" MinSize="100,0">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#80808005" />
                         </PanelContainer.PanelOverride>
@@ -39,13 +39,13 @@
                         Name="StoreListingsScroll"
                         HScrollEnabled="False"
                         HorizontalExpand="True"
-                        MinSize="100 256"
+                        MinSize="100,256"
                         SizeFlagsStretchRatio="2"
                         VerticalExpand="True">
 
                         <BoxContainer
                             Name="ItemList"
-                            MinSize="100 256"
+                            MinSize="100,256"
                             Orientation="Vertical"
                             SizeFlagsStretchRatio="2"
                             VerticalExpand="True" />
@@ -57,10 +57,10 @@
         <!-- Нижняя панель -->
         <BoxContainer Orientation="Vertical" Name="TraitorFooter">
             <PanelContainer StyleClasses="LowDivider" />
-            <BoxContainer Orientation="Horizontal" Margin="10 2 5 0" VerticalAlignment="Bottom">
+            <BoxContainer Orientation="Horizontal" Margin="10,2,5,0" VerticalAlignment="Bottom">
                 <Label Text="Описание магазина" StyleClasses="WindowFooterText" />
                 <Label Text="Внимание: цены могут меняться!" StyleClasses="WindowFooterText"
-                       HorizontalAlignment="Right" HorizontalExpand="True" Margin="0 0 5 0" />
+                       HorizontalAlignment="Right" HorizontalExpand="True" Margin="0,0,5,0" />
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
