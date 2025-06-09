@@ -6,19 +6,25 @@
     SetSize="512,512">
 
     <BoxContainer Orientation="Vertical">
-        <!-- Верхняя панель: баланс и вкладки -->
+        <!-- Верхняя панель: вкладки + баланс -->
         <BoxContainer Orientation="Vertical" VerticalExpand="True">
-            <!-- Вкладки "Купить / Продать" -->
+            <!-- Вкладки "Купить / Продать" + Баланс -->
             <BoxContainer Margin="4,4,4,0" Orientation="Horizontal">
                 <Button Name="BuyTab" Text="Купить" MinWidth="80"/>
                 <Button Name="SellTab" Text="Продать" MinWidth="80"/>
-                <Label Name="BalanceLabel" Text="Баланс: 0" HorizontalExpand="True" HorizontalAlignment="Right"/>
+                <Control HorizontalExpand="True" />
+                <Label Name="BalanceLabel"
+                       Text="Баланс: 0"
+                       HorizontalAlignment="Right"
+                       MinWidth="180"
+                       Margin="5,0,5,0"
+                       StyleClasses="labelHeading"/>
             </BoxContainer>
 
             <!-- Поиск -->
             <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Поиск..." HorizontalExpand="True" />
 
-            <!-- Центр: категории слева, товары справа -->
+            <!-- Категории и товары -->
             <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
                     <gfx:StyleBoxFlat BackgroundColor="#000000FF" />

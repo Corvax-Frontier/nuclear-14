@@ -23,7 +23,6 @@ public sealed partial class NcStoreItemControl : Control
     private readonly bool _hasBalance;
     private readonly string _price;
     private readonly string _discount;
-    private readonly int _balance;
 
     public NcStoreItemControl(
         ClientListingData data,
@@ -31,7 +30,8 @@ public sealed partial class NcStoreItemControl : Control
         string discount,
         bool hasBalance,
         int balance,
-        Texture? texture = null)
+        Texture? texture = null
+    )
     {
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
@@ -40,13 +40,14 @@ public sealed partial class NcStoreItemControl : Control
         _hasBalance = hasBalance;
         _price = price;
         _discount = discount;
-        _balance = balance;
 
         StoreItemName.Text = data.Name;
         StoreItemDescription.SetMessage(data.Description);
         StoreItemTexture.Texture = texture;
 
         var isSell = data.CategoryMode == StoreMode.Sell;
+
+        // Назначение цветов кнопки
         var defaultColor = isSell ? StyleNano.ButtonColorDangerDefault : StyleNano.ButtonColorGoodDefault;
         var hoverColor = isSell ? StyleNano.ButtonColorDangerHovered : StyleNano.ButtonColorGoodHovered;
         var pressedColor = isSell ? StyleNano.ButtonColorDangerPressed : StyleNano.ButtonColorPressed;
@@ -55,9 +56,10 @@ public sealed partial class NcStoreItemControl : Control
         StoreItemBuyButton.Text = isSell ? "Продать" : "Купить";
         StoreItemBuyButton.ToolTip = isSell ? "Продать предмет" : "Купить товар";
 
-        StoreItemBuyButton.Disabled = !CanBuy();
-        StoreItemBuyButton.Modulate = StoreItemBuyButton.Disabled ? disabledColor : defaultColor;
+        StoreItemBuyButton.Disabled = !_hasBalance;
+        StoreItemBuyButton.Modulate = _hasBalance ? defaultColor : disabledColor;
 
+        // Эффекты при наведении и нажатии
         StoreItemBuyButton.OnMouseEntered += _ =>
         {
             if (!StoreItemBuyButton.Disabled)
@@ -81,16 +83,12 @@ public sealed partial class NcStoreItemControl : Control
         UpdateBuyButtonText();
     }
 
-    private bool CanBuy()
-    {
-        return _hasBalance;
-    }
-
     private void UpdateBuyButtonText()
     {
-        DiscountSubText.Text = $"Баланс: {_balance}";
+        DiscountSubText.Text = _discount;
         StoreItemPrice.Text = _price;
 
+        // Показываем иконку валюты, если задана
         if (_prototype.TryIndex<NcCurrencyPrototype>(_data.CurrencyId, out var currency))
         {
             if (currency.Icon is SpriteSpecifier.Texture tex)
@@ -104,4 +102,3 @@ public sealed partial class NcStoreItemControl : Control
         }
     }
 }
-

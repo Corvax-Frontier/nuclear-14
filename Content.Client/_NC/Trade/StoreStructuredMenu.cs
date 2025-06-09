@@ -49,7 +49,7 @@ public sealed partial class StoreStructuredMenu : DefaultWindow
     public void UpdateBalance(int newBalance)
     {
         _currentBalance = newBalance;
-        BalanceLabel.Text = $"💰 {_currentBalance}";
+        BalanceLabel.Text = $"💰 {_currentBalance:N0} Капкойн"; // ← красиво
         RefreshItems();
     }
 
@@ -101,59 +101,65 @@ public sealed partial class StoreStructuredMenu : DefaultWindow
     }
 
     private void RefreshItems()
+{
+    ItemList.Children.Clear();
+    Logger.Debug($"[NcStoreUI] RefreshItems: всего {_allListings.Count} товаров");
+
+    foreach (var listing in _allListings)
     {
-        ItemList.Children.Clear();
-        Logger.Debug($"[NcStoreUI] RefreshItems: всего {_allListings.Count} товаров");
+        Logger.Debug($"[NcStoreUI] Обработка: {listing.Id}, Цена: {listing.Price}, Категория: {listing.Category}, Mode: {listing.CategoryMode}");
 
-        foreach (var listing in _allListings)
+        if (listing.CategoryMode != _currentMode)
+            continue;
+
+        if (_selectedCategory != "Все" && listing.Category != _selectedCategory)
+            continue;
+
+        if (!string.IsNullOrEmpty(_searchText) &&
+            !listing.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase) &&
+            !listing.Description.Contains(_searchText, StringComparison.OrdinalIgnoreCase))
+            continue;
+
+        var data = new ClientListingData
         {
-            Logger.Debug($"[NcStoreUI] Обработка: {listing.Id}, Цена: {listing.Price}, Категория: {listing.Category}, Mode: {listing.CategoryMode}");
+            Id = listing.Id,
+            Name = listing.Name,
+            Description = listing.Description,
+            Icon = listing.Icon,
+            Price = listing.Price,
+            Category = listing.Category,
+            CategoryMode = listing.CategoryMode,
+            CurrencyId = listing.CurrencyId
+        };
 
-            if (listing.CategoryMode != _currentMode)
-                continue;
+        Logger.Debug($"[NcStoreUI] Создаётся UI для: {data.Name}");
 
-            if (_selectedCategory != "Все" && listing.Category != _selectedCategory)
-                continue;
+        Texture? texture = null;
+        if (data.Icon is SpriteSpecifier.Texture tex)
+            texture = IoCManager.Resolve<IResourceCache>().GetTexture(tex.TexturePath);
 
-            if (!string.IsNullOrEmpty(_searchText) &&
-                !listing.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase) &&
-                !listing.Description.Contains(_searchText, StringComparison.OrdinalIgnoreCase))
-                continue;
+        var priceText = listing.Price >= 0
+            ? $"-{listing.Price:N0} Капкойн"
+            : $"+{-listing.Price:N0} Капкойн";
 
-            var data = new ClientListingData
-            {
-                Id = listing.Id,
-                Name = listing.Name,
-                Description = listing.Description,
-                Icon = listing.Icon,
-                Price = listing.Price,
-                Category = listing.Category,
-                CategoryMode = listing.CategoryMode,
-                CurrencyId = listing.CurrencyId
-            };
+        var balanceSubText = listing.CategoryMode == StoreMode.Sell
+            ? string.Empty
+            : $"Ваш баланс: {_currentBalance:N0}";
 
-            Logger.Debug($"[NcStoreUI] Создаётся UI для: {data.Name}");
+        var control = new NcStoreItemControl(
+            data,
+            price: priceText,
+            discount: balanceSubText,
+            hasBalance: listing.CategoryMode == StoreMode.Sell || _currentBalance >= listing.Price,
+            balance: _currentBalance,
+            texture: texture
+        );
 
-            Texture? texture = null;
-            if (data.Icon is SpriteSpecifier.Texture tex)
-                texture = IoCManager.Resolve<IResourceCache>().GetTexture(tex.TexturePath);
+        control.OnBuyPressed += id => _onBuy?.Invoke(id);
+        ItemList.AddChild(control);
 
-            var priceText = listing.Price.ToString();
-            var balanceSubText = listing.CategoryMode == StoreMode.Sell ? string.Empty : $"Ваш баланс: {_currentBalance}";
-
-            var control = new NcStoreItemControl(
-                data,
-                price: priceText,
-                discount: balanceSubText,
-                hasBalance: listing.CategoryMode == StoreMode.Sell || _currentBalance >= listing.Price,
-                balance: _currentBalance,
-                texture: texture
-            );
-
-            control.OnBuyPressed += id => _onBuy?.Invoke(id);
-            ItemList.AddChild(control);
-
-            Logger.Debug($"[NcStoreUI] UI добавлен в список: {data.Name}");
-        }
+        Logger.Debug($"[NcStoreUI] UI добавлен в список: {data.Name}");
     }
+}
+
 }
