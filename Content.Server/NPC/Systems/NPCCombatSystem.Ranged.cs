@@ -200,6 +200,7 @@ public sealed partial class NPCCombatSystem
                 return;
             }
 
+            _gun.ChangeTarget(comp.Target, gun); // Corvax-Add
             _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
         }
     }
