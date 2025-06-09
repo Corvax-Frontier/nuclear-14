@@ -1,44 +1,42 @@
-using Content.Server.EUI;
 using Content.Shared._NC.Trade;
-using Content.Shared.Eui;
+using Robust.Server.GameObjects;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Player;
 
 namespace Content.Server._NC.Trade;
 
-public sealed class TraderEui : BaseEui
+/// <summary>
+/// Серверная система обработки Bound UI взаимодействия с магазином.
+/// </summary>
+public sealed class NcStoreSystem : EntitySystem
 {
-    [Dependency] private readonly IEntitySystemManager _entitySys = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly IEntitySystemManager _sysMan = default!;
 
-    public override void HandleMessage(EuiMessageBase msg)
+    public override void Initialize()
     {
-        if (msg is not StoreBuyListingEuiMessage buy)
+        // Подписка на событие от Bound UI
+        SubscribeLocalEvent<NcStoreComponent, StoreBuyListingBoundUiMessage>(OnBuyRequest);
+    }
+
+    private void OnBuyRequest(EntityUid uid, NcStoreComponent comp, StoreBuyListingBoundUiMessage msg)
+    {
+        // Проверка сессии игрока
+        var actor = msg.Actor;
+        if (!_entMan.EntityExists(actor))
             return;
 
-        if (Player.AttachedEntity is not { Valid: true } user)
+        if (!_entMan.TryGetComponent(uid, out TransformComponent? storeXform) ||
+            !_entMan.TryGetComponent(actor, out TransformComponent? userXform))
             return;
 
-        // Найдём ближайший магазин с компонентом NcStoreComponent (например, радиус 3 тайла)
-        NcStoreComponent? foundComp = null;
-        EntityUid machine = EntityUid.Invalid;
-
-        foreach (var (uid, comp) in _entMan.EntityQuery<NcStoreComponent>())
-        {
-            if (!_entMan.TryGetComponent(uid, out TransformComponent? xform) ||
-                !_entMan.TryGetComponent(user, out TransformComponent? userXform))
-                continue;
-
-            if (!xform.Coordinates.InRange(_entMan, userXform.Coordinates, 3f))
-                continue;
-
-            foundComp = comp;
-            machine = uid;
-            break;
-        }
-
-        if (foundComp == null || !_entMan.EntityExists(machine))
+        // Проверка дистанции между пользователем и магазином
+        if (!_transform.InRange(storeXform.Coordinates, userXform.Coordinates, 3f))
             return;
 
-        var logic = _entitySys.GetEntitySystem<NcStoreLogicSystem>();
-        logic.TryPurchase(new(buy.ListingId), machine, foundComp, user);
+        // Попытка покупки
+        var logic = _sysMan.GetEntitySystem<NcStoreLogicSystem>();
+        logic.TryPurchase(msg.ListingId, uid, comp, actor);
     }
 }

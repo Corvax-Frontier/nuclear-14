@@ -18,4 +18,12 @@ public sealed partial class NcStoreComponent : Component
     [DataField("listings")]
     public List<StoreListingPrototype> Listings = new();
 
+    /// <summary>
+    /// Позволяет использовать деструктуризацию в foreach (var (uid, comp) in ...)
+    /// </summary>
+    public void Deconstruct(out EntityUid uid, out NcStoreComponent comp)
+    {
+        uid = Owner;
+        comp = this;
+    }
 }

@@ -1,4 +1,3 @@
-using Content.Client.Eui;
 using Content.Shared._NC.Trade;
 using Robust.Client.Player;
 
@@ -35,5 +34,8 @@ public sealed class StoreStructuredBoundUi : BoundUserInterface
 
     public void SetupFromState(StoreUiState state) => _menu?.Setup(state.Listings, state.Balance, OnBuy);
 
-    private void OnBuy(string listingId) => IoCManager.Resolve<EuiManager>().SendEuiMessage(new StoreBuyListingEuiMessage(listingId));
+    private void OnBuy(string listingId)
+    {
+        SendMessage(new StoreBuyListingBoundUiMessage(listingId));
+    }
 }

@@ -1,5 +1,4 @@
-﻿using Content.Shared.Eui;
-using Robust.Shared.Serialization;
+﻿using Robust.Shared.Serialization;
 
 namespace Content.Shared._NC.Trade;
 
@@ -7,11 +6,11 @@ namespace Content.Shared._NC.Trade;
 /// Сообщение клиента на сервер с запросом покупки.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class StoreBuyListingEuiMessage : EuiMessageBase
+public sealed class StoreBuyListingBoundUiMessage : BoundUserInterfaceMessage
 {
     public string ListingId;
 
-    public StoreBuyListingEuiMessage(string listingId)
+    public StoreBuyListingBoundUiMessage(string listingId)
     {
         ListingId = listingId;
     }
