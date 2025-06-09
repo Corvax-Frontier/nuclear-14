@@ -5,7 +5,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     public static readonly CVarDef<int> NPCMaxUpdates =
-        CVarDef.Create("npc.max_updates", 256); // Corvax-Change
+        CVarDef.Create("npc.max_updates", 1024); // Corvax-Change
 
     public static readonly CVarDef<bool> NPCEnabled = CVarDef.Create("npc.enabled", true);
 
