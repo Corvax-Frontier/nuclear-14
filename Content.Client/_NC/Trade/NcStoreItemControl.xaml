@@ -50,8 +50,7 @@
                        Text="Купить"
                        MinWidth="64"
                        HorizontalAlignment="Right"
-                       Access="Public"
-                       StyleClasses="OpenBoth" />
+                       Access="Public" />
     </controls:BoxContainer>
 
     <!-- Разделитель -->

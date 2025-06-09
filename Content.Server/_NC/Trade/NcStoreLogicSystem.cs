@@ -4,30 +4,42 @@ using Content.Shared.Hands.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Containers;
-
+using Content.Server.Stack;
+using Content.Shared.Stacks;
 
 namespace Content.Server._NC.Trade;
 
 public sealed class NcStoreLogicSystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager _entMan = null!;
-    [Dependency] private readonly IPrototypeManager _prototypes = null!;
-    [Dependency] private readonly SharedTransformSystem _xform = null!;
-
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly StackSystem _stack = default!;
 
     public int GetBalance(EntityUid user, string currencyId)
     {
         var total = 0;
 
+        if (!_prototypes.TryIndex<NcCurrencyPrototype>(currencyId, out var currencyProto)
+            || !_prototypes.TryIndex<EntityPrototype>(currencyProto.Entity, out var entityProto)
+            || !entityProto.TryGetComponent(out StackComponent? protoStack, IoCManager.Resolve<IComponentFactory>()))
+        {
+            return 0;
+        }
+
+        var expectedStackType = protoStack.StackTypeId;
+
         foreach (var item in GetAllInventoryAndHands(user))
         {
-            if (!_entMan.TryGetComponent<CurrencyItemComponent>(item, out var currencyComp))
-                continue;
-
-            if (currencyComp.Currency != currencyId)
-                continue;
-
-            total += currencyComp.Amount;
+            if (_entMan.TryGetComponent(item, out CurrencyItemComponent? currencyComp) && currencyComp.Currency == currencyId)
+            {
+                total += currencyComp.Amount;
+            }
+            else if (_entMan.TryGetComponent(item, out StackComponent? stack) && stack.StackTypeId == expectedStackType)
+            {
+                total += stack.Count;
+            }
         }
 
         return total;
@@ -35,10 +47,7 @@ public sealed class NcStoreLogicSystem : EntitySystem
 
     public bool TryPurchase(string listingId, EntityUid machine, NcStoreComponent? store, EntityUid user)
     {
-        if (store == null)
-            return false;
-
-        if (store.Listings.Count == 0)
+        if (store == null || store.Listings.Count == 0)
             return false;
 
         var listing = store.Listings.FirstOrDefault(x => x.ID == listingId);
@@ -53,7 +62,7 @@ public sealed class NcStoreLogicSystem : EntitySystem
 
         var currency = store.CurrencyWhitelist.First();
 
-        if (!isSell) // Покупка
+        if (!isSell)
         {
             if (GetBalance(user, currency) < price)
                 return false;
@@ -63,7 +72,6 @@ public sealed class NcStoreLogicSystem : EntitySystem
             return true;
         }
 
-        // Продажа
         if (!RemoveItem(user, listing.ProductEntity))
             return false;
 
@@ -71,53 +79,79 @@ public sealed class NcStoreLogicSystem : EntitySystem
         return true;
     }
 
-    private void AddCurrency(EntityUid user, string currency, int amount)
+    private void AddCurrency(EntityUid user, string currencyId, int amount)
     {
-        var proto = _prototypes.Index<NcCurrencyPrototype>(currency);
-        var entityProto = _prototypes.Index<EntityPrototype>(proto.Entity);
+        if (amount <= 0)
+            return;
 
+        if (!_prototypes.TryIndex<NcCurrencyPrototype>(currencyId, out var currencyProto))
+            return;
 
-        var compFactory = IoCManager.Resolve<IComponentFactory>();
-        entityProto.TryGetComponent(out CurrencyItemComponent? currencyData, compFactory);
+        var entityProtoId = currencyProto.Entity;
+        var coords = Transform(user).Coordinates;
 
-        var maxStack = currencyData?.MaxAmount > 0 ? currencyData.MaxAmount : 1;
-
-        while (amount > 0)
+        if (_prototypes.TryIndex<EntityPrototype>(entityProtoId, out var proto) &&
+            proto.TryGetComponent(out StackComponent? protoStack, IoCManager.Resolve<IComponentFactory>()) &&
+            _prototypes.TryIndex<StackPrototype>(protoStack.StackTypeId, out var stackProto))
         {
-            var stack = Math.Min(amount, maxStack);
-            amount -= stack;
+            var stackSys = EntitySystem.Get<StackSystem>();
+            stackSys.Spawn(amount, stackProto, coords);
+            return;
+        }
 
-            var ent = _entMan.SpawnEntity(proto.Entity, _xform.GetMapCoordinates(user));
-
-            if (_entMan.TryGetComponent(ent, out CurrencyItemComponent? currencyComp))
-                currencyComp.Amount = stack;
-
-            _entMan.System<SharedHandsSystem>().PickupOrDrop(user, ent);
+        // Fallback: spawn обычные предметы с CurrencyItemComponent
+        for (int i = 0; i < amount; i++)
+        {
+            var ent = _entMan.SpawnEntity(entityProtoId, coords);
+            _hands.PickupOrDrop(user, ent);
         }
     }
-
-    private void RemoveCurrency(EntityUid user, string currency, int amount)
+    private void RemoveCurrency(EntityUid user, string currencyId, int amount)
     {
+        if (amount <= 0)
+            return;
+
+        if (!_prototypes.TryIndex<NcCurrencyPrototype>(currencyId, out var currencyProto)
+            || !_prototypes.TryIndex<EntityPrototype>(currencyProto.Entity, out var proto)
+            || !proto.TryGetComponent(out StackComponent? protoStack, IoCManager.Resolve<IComponentFactory>()))
+        {
+            return;
+        }
+
+        var expectedStackType = protoStack.StackTypeId;
+
         foreach (var item in GetAllInventoryAndHands(user))
         {
-            if (!_entMan.TryGetComponent(item, out CurrencyItemComponent? currencyComp))
-                continue;
-
-            if (currencyComp.Currency != currency)
-                continue;
-
             if (amount <= 0)
                 break;
 
-            if (currencyComp.Amount <= amount)
+            if (_entMan.TryGetComponent(item, out CurrencyItemComponent? currencyComp)
+                && currencyComp.Currency == currencyId)
             {
-                amount -= currencyComp.Amount;
-                _entMan.DeleteEntity(item);
+                if (currencyComp.Amount <= amount)
+                {
+                    amount -= currencyComp.Amount;
+                    _entMan.DeleteEntity(item);
+                }
+                else
+                {
+                    currencyComp.Amount -= amount;
+                    amount = 0;
+                }
             }
-            else
+            else if (_entMan.TryGetComponent(item, out StackComponent? stack)
+                && stack.StackTypeId == expectedStackType)
             {
-                currencyComp.Amount -= amount;
-                amount = 0;
+                if (stack.Count <= amount)
+                {
+                    amount -= stack.Count;
+                    _entMan.DeleteEntity(item);
+                }
+                else
+                {
+                    stack.Count -= amount;
+                    amount = 0;
+                }
             }
         }
     }
@@ -125,11 +159,13 @@ public sealed class NcStoreLogicSystem : EntitySystem
     private bool RemoveItem(EntityUid user, string protoId)
     {
         foreach (var item in GetAllInventoryAndHands(user))
+        {
             if (_entMan.GetComponent<MetaDataComponent>(item).EntityPrototype?.ID == protoId)
             {
                 _entMan.DeleteEntity(item);
                 return true;
             }
+        }
 
         return false;
     }
@@ -161,10 +197,10 @@ public sealed class NcStoreLogicSystem : EntitySystem
         foreach (var container in containerManager.Containers.Values)
         {
             foreach (var inner in container.ContainedEntities)
-                AddWithNestedContainers(inner, result); // рекурсия
+                AddWithNestedContainers(inner, result);
         }
     }
 
-    private void SpawnProduct(string protoId, MapCoordinates coords) => _entMan.SpawnEntity(protoId, coords);
+    private void SpawnProduct(string protoId, MapCoordinates coords)
+        => _entMan.SpawnEntity(protoId, coords);
 }
-

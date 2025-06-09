@@ -17,11 +17,19 @@ public sealed class StoreStructuredBoundUi : BoundUserInterface
     protected override void Open()
     {
         base.Open();
-        Logger.Debug("[NcStoreUI] UI открылся (Open()) вызван");
 
-        _menu?.Close(); // гарантированно закрыть предыдущее
+        if (_menu != null)
+        {
+            _menu.OpenCentered();
+            return;
+        }
+
         _menu = new StoreStructuredMenu();
-        _menu.OnClose += Close;
+        _menu.OnClose += () =>
+        {
+            Close();
+            _menu = null;
+        };
         _menu.OpenCentered();
     }
 

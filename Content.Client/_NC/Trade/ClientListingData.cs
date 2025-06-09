@@ -15,5 +15,5 @@ public sealed class ClientListingData
     public int Price;
     public string Category = "Разное";
     public StoreMode CategoryMode = StoreMode.Buy;
-    public string CurrencyId = "CapCoin"; // не readonly
+    public string CurrencyId = "CapCoin";
 }

@@ -1,3 +1,6 @@
+using Robust.Shared.Audio;
+
+
 namespace Content.Shared._NC.Trade;
 
 [RegisterComponent]
@@ -18,6 +21,8 @@ public sealed partial class NcStoreComponent : Component
     [DataField("listings")]
     public List<StoreListingPrototype> Listings = new();
 
+    [DataField("confirmSound")]
+    public SoundSpecifier? ConfirmSound = new SoundPathSpecifier("/Audio/Effects/Cargo/ping.ogg");
     /// <summary>
     /// Позволяет использовать деструктуризацию в foreach (var (uid, comp) in ...)
     /// </summary>

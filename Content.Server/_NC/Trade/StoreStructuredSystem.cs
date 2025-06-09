@@ -25,18 +25,30 @@ public sealed class StoreStructuredSystem : EntitySystem
             return;
         }
 
-        Logger.Debug($"[NcStoreServer] Открытие UI {StoreUiKey.Key} для {ToPrettyString(args.User)}");
+        Logger.Debug($"[NcStoreServer] Попытка открыть UI {StoreUiKey.Key} для {ToPrettyString(args.User)}");
 
-        if (!_ui.IsUiOpen(uid, StoreUiKey.Key, args.User))
-            _ui.OpenUi(uid, StoreUiKey.Key, args.User);
+        // Если уже открыт — закрыть
+        if (_ui.IsUiOpen(uid, StoreUiKey.Key, args.User))
+        {
+            _ui.CloseUi(uid, StoreUiKey.Key, args.User);
+        }
 
+        // Затем открыть заново
+        _ui.OpenUi(uid, StoreUiKey.Key, args.User);
         UpdateUiState(uid, comp, args.User);
     }
 
+
     public void UpdateUiState(EntityUid uid, NcStoreComponent comp, EntityUid user)
     {
-        var currency = comp.CurrencyWhitelist.FirstOrDefault() ?? string.Empty;
-        var balance = currency != string.Empty ? _logic.GetBalance(user, currency) : 0;
+        if (comp.CurrencyWhitelist.Count == 0)
+        {
+            Logger.Warning($"[NcStore] Магазин {ToPrettyString(uid)} не имеет валюты.");
+            return;
+        }
+
+        var currency = comp.CurrencyWhitelist.First();
+        var balance = _logic.GetBalance(user, currency);
 
         var data = comp.Listings
             .Where(x => x.Name != null)
@@ -55,11 +67,11 @@ public sealed class StoreStructuredSystem : EntitySystem
                     currency
                 );
             })
-
             .ToList();
 
-        Logger.Debug($"[NcStoreServer] Отправка UI состояния: {data.Count} товаров, Баланс: {balance}");
+        Logger.Debug($"[NcStoreServer] UI для {ToPrettyString(user)}: {data.Count} товаров, Валюта: {currency}, Баланс: {balance}");
 
         _ui.SetUiState(uid, StoreUiKey.Key, new StoreUiState(balance, data));
     }
+
 }

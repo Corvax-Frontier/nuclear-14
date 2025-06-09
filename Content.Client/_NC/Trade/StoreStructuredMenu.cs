@@ -106,12 +106,16 @@ public sealed partial class StoreStructuredMenu : DefaultWindow
         {
             Logger.Debug($"[NcStoreUI] Обработка: {listing.Id}, Цена: {listing.Price}, Категория: {listing.Category}, Mode: {listing.CategoryMode}");
 
-            // 🔧 Временно убраны все фильтры:
-            // if (listing.CategoryMode != _currentMode) continue;
-            // if (_selectedCategory != "Все" && listing.Category != _selectedCategory) continue;
-            // if (!string.IsNullOrEmpty(_searchText) &&
-            //     !listing.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase) &&
-            //     !listing.Description.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) continue;
+            if (listing.CategoryMode != _currentMode)
+                continue;
+
+            if (_selectedCategory != "Все" && listing.Category != _selectedCategory)
+                continue;
+
+            if (!string.IsNullOrEmpty(_searchText) &&
+                !listing.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase) &&
+                !listing.Description.Contains(_searchText, StringComparison.OrdinalIgnoreCase))
+                continue;
 
             var data = new ClientListingData
             {
@@ -122,7 +126,7 @@ public sealed partial class StoreStructuredMenu : DefaultWindow
                 Price = listing.Price,
                 Category = listing.Category,
                 CategoryMode = listing.CategoryMode,
-                CurrencyId = "CapCoin" // временно зашито!
+                CurrencyId = listing.CurrencyId
             };
 
             Logger.Debug($"[NcStoreUI] Создаётся UI для: {data.Name}");
@@ -131,11 +135,15 @@ public sealed partial class StoreStructuredMenu : DefaultWindow
             if (data.Icon is SpriteSpecifier.Texture tex)
                 texture = IoCManager.Resolve<IResourceCache>().GetTexture(tex.TexturePath);
 
+            var priceText = listing.Price.ToString();
+            var balanceSubText = listing.CategoryMode == StoreMode.Sell ? string.Empty : $"Ваш баланс: {_currentBalance}";
+
             var control = new NcStoreItemControl(
                 data,
-                price: (listing.CategoryMode == StoreMode.Sell ? "+" : "-") + listing.Price.ToString(),
-                discount: string.Empty,
-                hasBalance: true, // временно игнорируем баланс
+                price: priceText,
+                discount: balanceSubText,
+                hasBalance: listing.CategoryMode == StoreMode.Sell || _currentBalance >= listing.Price,
+                balance: _currentBalance,
                 texture: texture
             );
 
