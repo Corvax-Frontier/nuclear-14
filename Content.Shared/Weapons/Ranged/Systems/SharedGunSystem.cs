@@ -591,6 +591,13 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     protected abstract void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null);
 
+    // Corvax-Change-Start
+    public void ChangeTarget(EntityUid target, GunComponent gun)
+    {
+        gun.Target = target;
+    }
+    // Corvax-Change-End
+
     /// <summary>
     /// Used for animated effects on the client.
     /// </summary>
