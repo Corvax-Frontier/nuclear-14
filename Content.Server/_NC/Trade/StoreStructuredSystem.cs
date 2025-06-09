@@ -12,12 +12,20 @@ public sealed class StoreStructuredSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = null!;
     [Dependency] private readonly NcStoreLogicSystem _logic = null!;
 
-    public override void Initialize() => SubscribeLocalEvent<NcStoreComponent, ActivateInWorldEvent>(OnActivate);
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<NcStoreComponent, ActivateInWorldEvent>(OnActivate);
+    }
 
     private void OnActivate(EntityUid uid, NcStoreComponent comp, ActivateInWorldEvent args)
     {
         if (!_ui.HasUi(uid, StoreUiKey.Key))
+        {
+            Logger.Warning($"[NcStoreServer] Нет интерфейса StoreUiKey.Key на {ToPrettyString(uid)}.");
             return;
+        }
+
+        Logger.Debug($"[NcStoreServer] Открытие UI {StoreUiKey.Key} для {ToPrettyString(args.User)}");
 
         if (!_ui.IsUiOpen(uid, StoreUiKey.Key, args.User))
             _ui.OpenUi(uid, StoreUiKey.Key, args.User);
@@ -25,18 +33,14 @@ public sealed class StoreStructuredSystem : EntitySystem
         UpdateUiState(uid, comp, args.User);
     }
 
-    /// <summary>
-    /// Обновляет интерфейс магазина: баланс и список доступных товаров.
-    /// </summary>
-    private void UpdateUiState(EntityUid uid, NcStoreComponent comp, EntityUid user)
+    public void UpdateUiState(EntityUid uid, NcStoreComponent comp, EntityUid user)
     {
         var currency = comp.CurrencyWhitelist.FirstOrDefault() ?? string.Empty;
         var balance = currency != string.Empty ? _logic.GetBalance(user, currency) : 0;
 
         var data = comp.Listings
             .Where(x => x.Name != null)
-            .Select(
-                x =>
+            .Select(x =>
             {
                 var cost = x.Cost.FirstOrDefault().Value;
 
@@ -44,13 +48,17 @@ public sealed class StoreStructuredSystem : EntitySystem
                     x.ID,
                     x.Name!,
                     x.Description ?? string.Empty,
-                    x.Icon ?? new SpriteSpecifier.Texture(new("/Textures/Interface/Nano/item-default.png")),
+                    x.Icon ?? new SpriteSpecifier.Rsi(new("/Textures/_Nuclear14/Objects/Misc/currency.rsi"), "caps"),
                     (int)cost,
                     x.Categories.FirstOrDefault() ?? "Разное",
-                    cost < 0 ? StoreMode.Sell : StoreMode.Buy
+                    cost < 0 ? StoreMode.Sell : StoreMode.Buy,
+                    currency
                 );
             })
+
             .ToList();
+
+        Logger.Debug($"[NcStoreServer] Отправка UI состояния: {data.Count} товаров, Баланс: {balance}");
 
         _ui.SetUiState(uid, StoreUiKey.Key, new StoreUiState(balance, data));
     }

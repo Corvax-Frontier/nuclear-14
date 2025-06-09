@@ -74,10 +74,24 @@ public sealed class NcStoreLogicSystem : EntitySystem
     private void AddCurrency(EntityUid user, string currency, int amount)
     {
         var proto = _prototypes.Index<NcCurrencyPrototype>(currency);
+        var entityProto = _prototypes.Index<EntityPrototype>(proto.Entity);
 
-        for (var i = 0; i < amount; i++)
+
+        var compFactory = IoCManager.Resolve<IComponentFactory>();
+        entityProto.TryGetComponent(out CurrencyItemComponent? currencyData, compFactory);
+
+        var maxStack = currencyData?.MaxAmount > 0 ? currencyData.MaxAmount : 1;
+
+        while (amount > 0)
         {
+            var stack = Math.Min(amount, maxStack);
+            amount -= stack;
+
             var ent = _entMan.SpawnEntity(proto.Entity, _xform.GetMapCoordinates(user));
+
+            if (_entMan.TryGetComponent(ent, out CurrencyItemComponent? currencyComp))
+                currencyComp.Amount = stack;
+
             _entMan.System<SharedHandsSystem>().PickupOrDrop(user, ent);
         }
     }
@@ -86,7 +100,7 @@ public sealed class NcStoreLogicSystem : EntitySystem
     {
         foreach (var item in GetAllInventoryAndHands(user))
         {
-            if (!_entMan.TryGetComponent<CurrencyItemComponent>(item, out var currencyComp))
+            if (!_entMan.TryGetComponent(item, out CurrencyItemComponent? currencyComp))
                 continue;
 
             if (currencyComp.Currency != currency)
@@ -95,8 +109,16 @@ public sealed class NcStoreLogicSystem : EntitySystem
             if (amount <= 0)
                 break;
 
-            _entMan.DeleteEntity(item);
-            amount -= currencyComp.Amount;
+            if (currencyComp.Amount <= amount)
+            {
+                amount -= currencyComp.Amount;
+                _entMan.DeleteEntity(item);
+            }
+            else
+            {
+                currencyComp.Amount -= amount;
+                amount = 0;
+            }
         }
     }
 

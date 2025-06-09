@@ -3,6 +3,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._NC.Trade;
 
+/// <summary>
+/// Клиентская копия информации о товаре.
+/// </summary>
 public sealed class ClientListingData
 {
     public string Id = string.Empty;
@@ -12,5 +15,5 @@ public sealed class ClientListingData
     public int Price;
     public string Category = "Разное";
     public StoreMode CategoryMode = StoreMode.Buy;
-    public readonly string CurrencyId = "CapCoin";
+    public string CurrencyId = "CapCoin"; // не readonly
 }

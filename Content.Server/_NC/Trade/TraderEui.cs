@@ -1,7 +1,5 @@
 using Content.Shared._NC.Trade;
 using Robust.Server.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Player;
 
 namespace Content.Server._NC.Trade;
 
@@ -10,33 +8,52 @@ namespace Content.Server._NC.Trade;
 /// </summary>
 public sealed class NcStoreSystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly IEntitySystemManager _sysMan = default!;
+    [Dependency] private readonly IEntityManager _entMan = null!;
+    [Dependency] private readonly TransformSystem _transform = null!;
+    [Dependency] private readonly IEntitySystemManager _sysMan = null!;
 
-    public override void Initialize()
-    {
-        // Подписка на событие от Bound UI
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("ncstore");
+
+    public override void Initialize() =>
         SubscribeLocalEvent<NcStoreComponent, StoreBuyListingBoundUiMessage>(OnBuyRequest);
-    }
 
     private void OnBuyRequest(EntityUid uid, NcStoreComponent comp, StoreBuyListingBoundUiMessage msg)
     {
-        // Проверка сессии игрока
         var actor = msg.Actor;
         if (!_entMan.EntityExists(actor))
+        {
+            Sawmill.Warning($"[Buy] Actor entity {actor} does not exist.");
             return;
+        }
 
-        if (!_entMan.TryGetComponent(uid, out TransformComponent? storeXform) ||
-            !_entMan.TryGetComponent(actor, out TransformComponent? userXform))
+        if (!_entMan.TryGetComponent(uid, out TransformComponent? storeXform))
+        {
+            Sawmill.Warning($"[Buy] No TransformComponent on store entity {ToPrettyString(uid)}.");
             return;
+        }
 
-        // Проверка дистанции между пользователем и магазином
+        if (!_entMan.TryGetComponent(actor, out TransformComponent? userXform))
+        {
+            Sawmill.Warning($"[Buy] No TransformComponent on actor {ToPrettyString(actor)}.");
+            return;
+        }
+
         if (!_transform.InRange(storeXform.Coordinates, userXform.Coordinates, 3f))
+        {
+            Sawmill.Warning($"[Buy] User too far from store: {ToPrettyString(actor)} -> {ToPrettyString(uid)}.");
             return;
+        }
 
-        // Попытка покупки
         var logic = _sysMan.GetEntitySystem<NcStoreLogicSystem>();
-        logic.TryPurchase(msg.ListingId, uid, comp, actor);
+        var success = logic.TryPurchase(msg.ListingId, uid, comp, actor);
+
+        if (success)
+        {
+            Sawmill.Info($"[Buy] {ToPrettyString(actor)} купил '{msg.ListingId}' у {ToPrettyString(uid)}.");
+            var uiSys = _sysMan.GetEntitySystem<StoreStructuredSystem>();
+            uiSys.UpdateUiState(uid, comp, actor);
+        }
+        else
+            Sawmill.Warning($"[Buy] Покупка не удалась: listingId={msg.ListingId}, user={ToPrettyString(actor)}.");
     }
 }

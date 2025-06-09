@@ -3,7 +3,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._NC.Trade;
 
-[Serializable, NetSerializable,]
+[Serializable, NetSerializable]
 public sealed record StoreListingData(
     string Id,
     string Name,
@@ -11,5 +11,6 @@ public sealed record StoreListingData(
     SpriteSpecifier Icon,
     int Price,
     string Category,
-    StoreMode CategoryMode
+    StoreMode CategoryMode,
+    string CurrencyId
 );
