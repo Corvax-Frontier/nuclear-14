@@ -43,10 +43,13 @@ public sealed partial class StoreStructuredMenu : DefaultWindow
 
         _allListings = listings;
         _onBuy = onBuyCallback;
-        _currentBalance = balance;
-        BalanceLabel.Text = $"💰 {balance}";
+        UpdateBalance(balance);
+    }
 
-        GenerateCategories();
+    public void UpdateBalance(int newBalance)
+    {
+        _currentBalance = newBalance;
+        BalanceLabel.Text = $"💰 {_currentBalance}";
         RefreshItems();
     }
 

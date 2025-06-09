@@ -68,7 +68,7 @@ public sealed class NcStoreLogicSystem : EntitySystem
                 return false;
 
             RemoveCurrency(user, currency, price);
-            SpawnProduct(listing.ProductEntity, _xform.GetMapCoordinates(machine));
+            SpawnProduct(listing.ProductEntity, user);
             return true;
         }
 
@@ -94,18 +94,17 @@ public sealed class NcStoreLogicSystem : EntitySystem
             proto.TryGetComponent(out StackComponent? protoStack, IoCManager.Resolve<IComponentFactory>()) &&
             _prototypes.TryIndex<StackPrototype>(protoStack.StackTypeId, out var stackProto))
         {
-            var stackSys = EntitySystem.Get<StackSystem>();
-            stackSys.Spawn(amount, stackProto, coords);
+            _stack.Spawn(amount, stackProto, coords);
             return;
         }
 
-        // Fallback: spawn обычные предметы с CurrencyItemComponent
         for (int i = 0; i < amount; i++)
         {
             var ent = _entMan.SpawnEntity(entityProtoId, coords);
             _hands.PickupOrDrop(user, ent);
         }
     }
+
     private void RemoveCurrency(EntityUid user, string currencyId, int amount)
     {
         if (amount <= 0)
@@ -201,6 +200,10 @@ public sealed class NcStoreLogicSystem : EntitySystem
         }
     }
 
-    private void SpawnProduct(string protoId, MapCoordinates coords)
-        => _entMan.SpawnEntity(protoId, coords);
+    private void SpawnProduct(string protoId, EntityUid user)
+    {
+        var coords = Transform(user).Coordinates;
+        var ent = _entMan.SpawnEntity(protoId, coords);
+        _hands.PickupOrDrop(user, ent);
+    }
 }
