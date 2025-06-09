@@ -51,6 +51,7 @@
       - Currency
   - type: Stack
     stackType: Caps
+    maxCount: 99999999
     count: 1
     baseLayer: base
     layerStates:
@@ -146,6 +147,19 @@
     currency: CapCoin
     amount: 500
 
+- type: entity
+  parent: N14CurrencyCap
+  id: N14CurrencyCap999999999
+  suffix: 999999999
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Objects/Misc/storage.rsi
+    state: moneybag
+  - type: Stack
+    count: 999999999
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 999999999
 # Pre-War
 - type: entity
   parent: N14CurrencyCap

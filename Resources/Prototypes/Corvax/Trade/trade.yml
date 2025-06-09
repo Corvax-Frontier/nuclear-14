@@ -1,6 +1,5 @@
 - type: entity
-  id:
-
+  id: Trademachine
   name: Nuka-Cola Machine
   description: A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
   suffix: vendor, normal
