@@ -14,7 +14,7 @@
 - type: loadout
   id: LoadoutNCRRangerArmorB
   category: Roles
-  cost: 6
+  cost: 4
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -26,7 +26,7 @@
 - type: loadout
   id: LoadoutNCRRangerDuster
   category: Roles
-  cost: 8
+  cost: 6
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -227,6 +227,30 @@
         - NCRRanger
   items:
     - N14ClothingNeckCloakRanger
+
+- type: loadout
+  id: LoadoutNCRClothingMaskGasRanger1
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRanger
+
+- type: loadout
+  id: LoadoutNCRClothingMaskGasRiot1
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRanger
+  items:
+    - ClothingMaskGasRiot
 # Corvax-Add End
 
 - type: loadout
@@ -641,4 +665,28 @@
         - NCRRangerVeteran
   items:
     - N14ClothingNeckCloakRangerPoncho
+
+- type: loadout
+  id: LoadoutNCRClothingMaskGasRanger2
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - ClothingMaskGasRanger
+
+- type: loadout
+  id: LoadoutNCRClothingMaskGasRiot2
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRangerVeteran
+  items:
+    - ClothingMaskGasRiot
 # Corvax-Add End
