@@ -20,4 +20,7 @@ public sealed class CorvaxVars
     /// </summary>
     public static readonly CVarDef<float> BarksVolume =
         CVarDef.Create("voice.barks_volume", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> MinPlayersRequirement =
+        CVarDef.Create("game.min_players_req", true, CVar.SERVER | CVar.REPLICATED);
 }

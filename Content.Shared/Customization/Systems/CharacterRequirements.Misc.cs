@@ -6,6 +6,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Content.Shared._NC.CorvaxVars;
 
 namespace Content.Shared.Customization.Systems;
 
@@ -75,10 +76,14 @@ public sealed partial class MinPlayersRequirement : CharacterRequirement
     {
         var playerManager = IoCManager.Resolve<ISharedPlayerManager>();
         var playerCount = playerManager.PlayerCount;
+        var cvar = configManager.GetCVar(CorvaxVars.MinPlayersRequirement);
 
         reason = Loc.GetString(
             "character-minPlayers-requirement",
             ("min", Min));
+
+        if (!cvar)
+            return true;
 
         return playerCount >= Min;
     }
