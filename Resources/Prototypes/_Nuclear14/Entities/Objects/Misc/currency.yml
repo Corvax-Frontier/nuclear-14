@@ -51,6 +51,7 @@
       - Currency
   - type: Stack
     stackType: Caps
+    maxCount: 99999999
     count: 1
     baseLayer: base
     layerStates:
@@ -80,6 +81,9 @@
   - type: Appearance
   - type: Item
     size: Tiny
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 1
 
 - type: stack
   id: Caps
@@ -97,6 +101,9 @@
     state: caps3
   - type: Stack
     count: 10
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 10
 
 - type: entity
   parent: N14CurrencyCap
@@ -108,7 +115,10 @@
     state: moneypouch
   - type: Stack
     count: 50
-    
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 50
+
 - type: entity
   parent: N14CurrencyCap
   id: N14CurrencyCap100
@@ -119,7 +129,10 @@
     state: moneybag
   - type: Stack
     count: 100
-    
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 100
+
 - type: entity
   parent: N14CurrencyCap
   id: N14CurrencyCap500
@@ -130,7 +143,23 @@
     state: moneybag
   - type: Stack
     count: 500
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 500
 
+- type: entity
+  parent: N14CurrencyCap
+  id: N14CurrencyCap999999999
+  suffix: 999999999
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Objects/Misc/storage.rsi
+    state: moneybag
+  - type: Stack
+    count: 999999999
+  - type: CurrencyItem
+    currency: CapCoin
+    amount: 999999999
 # Pre-War
 - type: entity
   parent: N14CurrencyCap
@@ -155,7 +184,7 @@
     layers:
     - state: prewar
       map: ["base"]
-      
+
 - type: stack
   id: PrewarMoney
   name: pre-war money
@@ -184,7 +213,7 @@
     state: prewar3
   - type: Stack
     count: 50
-    
+
 - type: entity
   parent: N14CurrencyPrewar
   id: N14CurrencyPrewarMoney100
@@ -195,7 +224,7 @@
     state: prewar3
   - type: Stack
     count: 100
-    
+
 - type: entity
   parent: N14CurrencyPrewar
   id: N14CurrencyPrewarMoney500
@@ -240,7 +269,7 @@
     layers:
     - state: prewar
       map: ["base"]
-      
+
 - type: stack
   id: NCRDollar
   name: NCR dollars
@@ -269,7 +298,7 @@
     state: ncr3
   - type: Stack
     count: 50
-    
+
 - type: entity
   parent: N14CurrencyNCRDollar
   id: N14CurrencyNCRDollar100
@@ -280,7 +309,7 @@
     state: ncr3
   - type: Stack
     count: 100
-    
+
 - type: entity
   parent: N14CurrencyNCRDollar
   id: N14CurrencyNCRDollar500
@@ -291,7 +320,7 @@
     state: ncr3
   - type: Stack
     count: 500
-    
+
 # Legion Aureus
 - type: entity
   parent: N14CurrencyCap
@@ -317,7 +346,7 @@
     layers:
     - state: aurelius3
       map: ["base"]
-      
+
 - type: stack
   id: LegionAureus
   name: legion aurei
@@ -346,7 +375,7 @@
     state: aurelius3
   - type: Stack
     count: 50
-    
+
 - type: entity
   parent: N14CurrencyLegionAureus
   id: N14CurrencyLegionAureus100
@@ -364,7 +393,7 @@
   unit: materials-unit-bill
   stackEntity: N14CurrencyLegionAureus
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/currency.rsi, state: aurelius3 }
-  price: 100    
+  price: 100
 
 # Legion Denarius
 - type: entity
@@ -391,7 +420,7 @@
     layers:
     - state: denarius3
       map: ["base"]
-      
+
 - type: stack
   id: LegionDenarius
   name: legion denarii
@@ -420,7 +449,7 @@
     state: denarius3
   - type: Stack
     count: 50
-    
+
 - type: entity
   parent: N14CurrencyLegionDenarius
   id: N14CurrencyLegionDenarius100
@@ -432,10 +461,10 @@
   - type: Stack
     count: 100
 
-- type: material 
+- type: material
   id: LegionDenarius
   name: legiondenarius
   unit: materials-unit-bill
   stackEntity: N14CurrencyLegionDenarius
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/currency.rsi, state: denarius3 }
-  price: 4    
+  price: 4

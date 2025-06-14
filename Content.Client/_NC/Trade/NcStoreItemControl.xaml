@@ -1,0 +1,67 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:controls="clr-namespace:Robust.Client.UserInterface.Controls;assembly=Robust.Client">
+
+  <controls:BoxContainer Margin="8" Orientation="Vertical">
+
+    <!-- Верхняя панель: иконка, название, цена и кнопка -->
+    <controls:BoxContainer Orientation="Horizontal" SeparationOverride="4">
+
+      <!-- Иконка товара -->
+      <controls:TextureRect Name="StoreItemTexture"
+                            MinSize="32,32"
+                            Stretch="KeepAspectCentered"
+                            Margin="0,0,8,0"
+                            Access="Public" />
+
+      <!-- Название, скидка, цена и иконка валюты -->
+      <controls:BoxContainer HorizontalExpand="True" Orientation="Vertical">
+
+        <!-- Название -->
+        <controls:Label Name="StoreItemName"
+                        StyleClasses="labelHeading"
+                        HorizontalExpand="True"
+                        Access="Public" />
+
+        <!-- Скидка, иконка валюты, цена -->
+        <controls:BoxContainer Orientation="Horizontal">
+          <controls:Label Name="DiscountSubText"
+                          StyleClasses="labelSubText"
+                          HorizontalExpand="True"
+                          Access="Public" />
+
+          <!-- Иконка валюты -->
+          <controls:TextureRect Name="CurrencyIcon"
+                                MinSize="16,16"
+                                Stretch="KeepAspectCentered"
+                                Margin="0,0,4,0"
+                                Access="Public" />
+
+          <!-- Цена -->
+          <controls:Label Name="StoreItemPrice"
+                          StyleClasses="labelPrice"
+                          Margin="4,0,4,0"
+                          HorizontalAlignment="Right"
+                          Access="Public" />
+        </controls:BoxContainer>
+      </controls:BoxContainer>
+
+      <!-- Кнопка купить/продать -->
+      <controls:Button Name="StoreItemBuyButton"
+                       Text="Купить"
+                       MinWidth="64"
+                       HorizontalAlignment="Right"
+                       Access="Public" />
+    </controls:BoxContainer>
+
+    <!-- Разделитель -->
+    <controls:PanelContainer StyleClasses="HighDivider" Margin="0,4,0,4" />
+
+    <!-- Описание товара -->
+    <controls:BoxContainer HorizontalExpand="True" Orientation="Horizontal">
+      <controls:RichTextLabel Name="StoreItemDescription"
+                              HorizontalExpand="True"
+                              Access="Public" />
+    </controls:BoxContainer>
+
+  </controls:BoxContainer>
+</Control>

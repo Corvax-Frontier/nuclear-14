@@ -1,0 +1,79 @@
+- type: entity
+  id: Trademachine
+  name: Nuka-Cola Machine
+  description: A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
+  suffix: vendor, normal
+  components:
+  - type: NcStore
+    preset: nuka_store
+  - type: UserInterface
+    interfaces:
+     enum.StoreUiKey.Key:
+      type: StoreStructuredBoundUi
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 300
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/VendingMachines/nukacola.rsi
+    layers:
+      - state: "off"
+        map: ["enum.VendingMachineVisualLayers.Base"]
+      - state: "off"
+        map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+        shader: unshaded
+      - state: panel
+        map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 2.5
+    energy: 1
+    color: "#b34747"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: storePresetStructured
+  id: nuka_store
+  currency: CapCoin
+  catalog:
+    Buy:
+      Оружие:
+        - proto: N14WeaponSMG10mmPipe
+          price: 75
+          name: "ПП 10мм (труба)"
+          description: "Самодельный пистолет-пулемёт под патрон 10мм."
+        - proto: N14WeaponLMGAutoRifle
+          price: 150
+          name: "Автоматическая винтовка"
+          description: "Старое, но надёжное автоматическое оружие."
+    Sell:
+      Оружие:
+        - proto: N14WeaponSMG10mmPipe
+          price: -30
+          name: "ПП 10мм (труба)"
+          description: "Можно сдать по низкой цене."
+        - proto: N14WeaponLMGAutoRifle
+          price: -60
+          name: "Автоматическая винтовка"
+          description: "Вторичный рынок для старого оружия."
+
+- type: nccurrency
+  id: CapCoin
+  name: Капкойн
+  icon:
+    sprite: _Nuclear14/Objects/Misc/currency.rsi
+    state: caps3
+  entity: N14CurrencyCap
