@@ -97,7 +97,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     minAngle: 24
-    maxAngle: 47
+    maxAngle: 47 # Corvax-Change
     angleIncrease: 4
     angleDecay: 16
     fireRate: 4

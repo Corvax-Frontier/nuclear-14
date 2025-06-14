@@ -15,6 +15,7 @@
     items:
       - id: N14WeaponThermospear
       - id: N14CeremonialSword
+      - id: ClothingBeltRope
       - id: Bola
         amount: 2
       - id: N14StimpakDirty
@@ -42,6 +43,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponLMGchinese
+      - id: ClothingBeltRope
       - id: Magazine762AmmoBelt
         amount: 2
       - id: N14DrinkTeaBroc
@@ -68,6 +70,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponSniper50AntiMateriel
+      - id: ClothingBeltRope
       - id: N14Magazine50AMR
         amount: 3
       - id: MagazineBox50
@@ -95,6 +98,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponBlowback
+      - id: ClothingBeltRope
       - id: MagazineBox12gauge
         amount: 2
       - id: N14CeremonialSword
@@ -122,6 +126,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14LegionnaireShield
+      - id: ClothingBeltRope
       - id: N14PoliceBaton
       - id: Bola
         amount: 2
@@ -150,6 +155,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponLMGAutoRifle
+      - id: ClothingBeltRope
       - id: Magazine308Rifle
         amount: 2
       - id: MagazineBox308
@@ -177,6 +183,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14SledgeHammer
+      - id: ClothingBeltRope
       - id: ThrowingKnife
         amount: 3
       - id: N14Stimpak
@@ -203,6 +210,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireVeteranArmor
+      - id: ClothingBeltRope
       - id: N14Gladius
       - id: SmokeGrenade
       - id: N14WeaponRifle762Chinese
@@ -232,6 +240,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireVeteranArmor
+      - id: ClothingBeltRope
       - id: N14Gladius
       - id: N14FireAxe
       - id: ThrowingKnife
@@ -259,6 +268,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireVeteranArmor
+      - id: ClothingBeltRope
       - id: N14WeaponKebab
       - id: N14LegionnaireShield
       - id: N14StimpakDirty
@@ -285,6 +295,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
+      - id: ClothingBeltRope
       - id: N14Gladius
       - id: N14LegionnaireBuckler
       - id: N14WeaponShotgunShort
@@ -312,6 +323,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
+      - id: ClothingBeltRope
       - id: N14Whip
       - id: N14WeaponRevolver44Tribal
       - id: SpeedLoader44
@@ -340,6 +352,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
+      - id: ClothingBeltRope
       - id: N14TribalMachete
       - id: N14Stimpak
         amount: 3
@@ -374,6 +387,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
+      - id: ClothingBeltRope
       - id: N14TribalMachete
       - id: N14WeaponSMG10mm
       - id: MagazineBox10mm
@@ -402,6 +416,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14ClothingOuterLegionnaireBaseArmor
+      - id: ClothingBeltRope
       - id: N14TrenchClub
       - id: N14LegionnaireShield
         amount: 2
