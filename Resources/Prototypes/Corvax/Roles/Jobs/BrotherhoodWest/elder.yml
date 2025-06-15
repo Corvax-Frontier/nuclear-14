@@ -25,7 +25,7 @@
   supervisors: job-supervisors-bos-mid-commander
   canBeAntag: false
   accessGroups:
-  - BOSWest
+  - BoSWest
   special:
   - !type:AddComponentSpecial
     components:
@@ -34,7 +34,7 @@
           - BrotherhoodWest
 
 - type: startingGear
-  id: BoSWestElderCommander
+  id: BoSMidPaladinCommanderGear
   equipment:
     jumpsuit: N14ClothingUniformBosRecon
     back: N14ClothingBackpackMilitary # Corvax-Change
