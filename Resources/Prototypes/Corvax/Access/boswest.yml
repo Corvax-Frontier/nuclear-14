@@ -1,0 +1,28 @@
+- type: accessLevel
+  id: WestElderCommander
+  name: id-card-access-level-west-elder-commander
+
+- type: accessLevel
+  id: WestPaladin
+  name: id-card-access-level-west-paladin
+
+- type: accessLevel
+  id: WestKnight
+  name: id-card-access-level-west-knight
+
+- type: accessLevel
+  id: WestScribe
+  name: id-card-access-level-west-scribe
+
+- type: accessLevel
+  id: BoSWest
+  name: id-card-access-level-west
+
+- type: accessGroup
+  id: BoSWest
+  tags:
+  - WestElderCommander
+  - WestPaladin
+  - WestKnight
+  - WestScribe
+  - BoSWest

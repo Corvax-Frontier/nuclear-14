@@ -1,0 +1,52 @@
+- type: job
+  id: BoSWestPaladin
+  setPreference: true
+  name: job-name-bos-west-paladin
+  description: job-description-bos-west-paladin
+  playTimeTracker: BoSWestPaladin
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Human
+    - !type:CharacterDepartmentTimeRequirement
+      department: BrotherhoodMidwest
+      min: 108000 # 30 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Human
+  startingGear: BoSWestPaladinGear
+  alwaysUseSpawner: true
+  icon: "JobIconBosMPaladin" # Corvax-Change
+  supervisors: job-supervisors-bos-mid
+  canBeAntag: false
+  access:
+  - BoSMidwest
+  - Paladin
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - BrotherhoodWest
+
+- type: startingGear
+  id: BoSWestPaladinGear
+  equipment:
+    jumpsuit: N14ClothingUniformBosRecon
+    back: N14ClothingBackpackMilitary # Corvax-Change
+    shoes: N14ClothingBootsCombatFilled
+    head:  N14ClothingHeadHatBrotherhoodFieldCap
+    outerClothing: N14ClothingOuterMidwestArmorMK2
+    pocket1: NCRBoSMidwestPaladinkits
+    hands: N14ClothingHandsGlovesCombat
+    id: N14IDBrotherhoodHolotagPaladin
+    ears: N14ClothingHeadsetBOSMidwest #placeholder
+    belt: ClothingBeltMilitary
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
+
+- type: playTimeTracker
+  id: BoSWestPaladin

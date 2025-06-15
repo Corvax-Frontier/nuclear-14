@@ -47,3 +47,13 @@
   - type: Sprite
     netsync: false
     sprite: Corvax/Clothing/Head/PowerArmorHelmets/x02Tesla.rsi
+
+- type: entity
+  parent: N14ClothingHeadHelmetPowerArmorT45
+  id: N14ClothingHeadHelmetPowerArmorT45Sierra
+  name: T45 Sierra power armor helmet
+  description: The legendary T-45 Sierra power armor helmet. A symbol of the pre-war era, this rare piece combines classic protection with upgraded electronics for frontline combat superiority.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Corvax/Clothing/Head/PowerArmorHelmets/T45Siera.rsi
