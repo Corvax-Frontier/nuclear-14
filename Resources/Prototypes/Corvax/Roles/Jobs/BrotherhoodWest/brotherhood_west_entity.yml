@@ -4,12 +4,12 @@
   name: BoSWestElderCommander
   components:
     - type: Icon
-      sprite: _Nuclear14/Markers/Jobs/bosmid.rsi
-      state: commander
+      sprite: _Nuclear14/Markers/Jobs/boswest.rsi
+      state: elder
     - type: RandomHumanoidAppearance
       randomizeName: true
     - type: Loadout
-      prototypes: [BoSMidPaladinCommanderGear]
+      prototypes: [BoSWestElderCommanderGear]
     - type: NpcFactionMember
       factions:
       - BrotherhoodWest
@@ -22,7 +22,7 @@
     - type: Icon
       state: knight
     - type: Loadout
-      prototypes: [BoSMidKnightGear]
+      prototypes: [BoSWestKnightGear]
 
 - type: entity
   parent: N14BoSWestElderCommander
@@ -32,7 +32,7 @@
     - type: Icon
       state: paladin
     - type: Loadout
-      prototypes: [BoSMidPaladinGear]
+      prototypes: [BoSWestPaladinGear]
 
 - type: entity
   parent: N14BoSWestElderCommander
@@ -42,7 +42,7 @@
     - type: Icon
       state: scribe
     - type: Loadout
-      prototypes: [BoSMidScribeGear]
+      prototypes: [BoSWestScribeGear]
 
 - type: entity
   parent: N14BoSWestElderCommander
@@ -52,4 +52,4 @@
     - type: Icon
       state: gunsmith
     - type: Loadout
-      prototypes: [BoSMidSquireGear]
+      prototypes: [BoSWestGunsmithGear]

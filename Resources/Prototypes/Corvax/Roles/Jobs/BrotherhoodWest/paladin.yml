@@ -22,7 +22,7 @@
   supervisors: job-supervisors-bos-mid
   canBeAntag: false
   access:
-  - BosWest
+  - BoSWest
   - WestPaladin
   special:
   - !type:AddComponentSpecial

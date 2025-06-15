@@ -19,7 +19,7 @@
         - !type:CharacterSpeciesRequirement
           species:
             - Human
-  startingGear: BoSWestElderCommander
+  startingGear: BoSWestElderCommanderGear
   alwaysUseSpawner: true
   icon: "JobIconBosMCommander" # Corvax-Change
   supervisors: job-supervisors-bos-mid-commander
@@ -34,7 +34,7 @@
           - BrotherhoodWest
 
 - type: startingGear
-  id: BoSWestElderCommander
+  id: BoSWestElderCommanderGear
   equipment:
     jumpsuit: N14ClothingUniformBosRecon
     back: N14ClothingBackpackMilitary # Corvax-Change

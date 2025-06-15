@@ -12,7 +12,7 @@
             - Human
     - !type:CharacterOverallTimeRequirement
       min: 3600
-  startingGear: BoSWestSquireGear
+  startingGear: BoSWestGunsmithGear
   alwaysUseSpawner: true
   icon: "JobIconBosMSquire" # Corvax-Change
   supervisors: job-supervisors-bos-mid-initiate
@@ -27,7 +27,7 @@
           - BrotherhoodWest
 
 - type: startingGear
-  id: BoSWestSquireGear
+  id: BoSWestGunsmithGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitBOSGreen
     back: N14ClothingBackpackMilitary # Corvax-Change
