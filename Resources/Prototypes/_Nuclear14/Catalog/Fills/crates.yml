@@ -651,11 +651,11 @@
   parent: N14CrateBreakPlain
   id: N14CrateBreakPlainFilledGrenadier
   name: Grenadier crate
-  description: Dangerous! Contains 4 40mm grenades for the grenade launcher.
+  description: Dangerous! Contains 2 40mm grenades for the grenade launcher.
   components:
   - type: StorageFill
     contents:
       - id: 40mmGrenadeFrag
-        amount: 4
+        amount: 2 # Corvax-Change
 
 

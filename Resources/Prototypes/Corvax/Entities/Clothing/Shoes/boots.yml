@@ -19,3 +19,4 @@
     sprite: Corvax/Clothing/Shoes/Boots/centurionboots.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Shoes/Boots/centurionboots.rsi
+  - type: NoSlip

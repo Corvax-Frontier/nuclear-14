@@ -237,6 +237,9 @@
     - !type:CharacterJobRequirement
       jobs:
         - NCRRanger
+    - !type:CharacterPlaytimeRequirement
+      tracker: NCRRanger
+      min: 216000 # 60 hours veterancy unlock "First Tour"
   items:
     - ClothingMaskGasRanger
 
@@ -675,6 +678,9 @@
     - !type:CharacterJobRequirement
       jobs:
         - NCRRangerVeteran
+    - !type:CharacterPlaytimeRequirement
+      tracker: NCRRangerVeteran
+      min: 216000 # 60 hours veterancy unlock "First Tour"
   items:
     - ClothingMaskGasRanger
 
