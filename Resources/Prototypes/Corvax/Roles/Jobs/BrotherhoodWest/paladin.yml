@@ -9,7 +9,7 @@
       species:
       - Human
     - !type:CharacterDepartmentTimeRequirement
-      department: BrotherhoodMidwest
+      department: BrotherhoodWest
       min: 108000 # 30 hours
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -32,7 +32,7 @@
           - BrotherhoodWest
 
 - type: startingGear
-  id: BoSPaladinGear
+  id: BoSWestPaladinGear
   equipment:
     jumpsuit: N14ClothingUniformBosRecon
     back: N14ClothingBackpackMilitary # Corvax-Change

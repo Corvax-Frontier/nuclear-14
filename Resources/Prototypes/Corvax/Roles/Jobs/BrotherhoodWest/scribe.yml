@@ -9,7 +9,7 @@
       species:
       - Human
     - !type:CharacterDepartmentTimeRequirement
-      department: BrotherhoodMidwest
+      department: BrotherhoodWest
       min: 54000 # 15 hours
     - !type:CharacterLogicOrRequirement
       requirements:
