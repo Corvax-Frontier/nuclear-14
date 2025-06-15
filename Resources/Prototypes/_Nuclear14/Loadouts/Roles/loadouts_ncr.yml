@@ -181,6 +181,21 @@
   items:
     - ClothingNeckPinNCRMajor
 
+- type: loadout # Corvax Fallout
+  id: LoadoutNCRPowerArmorT45Sierra
+  category: Roles
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRLT
+    - !type:CharacterPlaytimeRequirement
+      tracker: NCROfficer
+      min: 144000 # 40 hours veterancy unlock 60
+  items:
+    - N14ClothingOuterPowerArmorT45Sierra # Corvax Fallout
+
 - type: loadout
   id: LoadoutNCRPinDoctor
   category: Roles

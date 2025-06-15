@@ -82,3 +82,16 @@
   - type: Reflect
     reflectProb: 0.325
     spread: 300
+
+- type: entity
+  parent: N14ClothingOuterPowerArmorT45
+  id: N14ClothingOuterPowerArmorT45Sierra
+  name: T-45 Sierra Power Armor
+  description: A fully functional suit of power armor with servos. Rare and issued exclusively to veterans of the Republic Armed Forces. The left shoulder pad features a stuffed bear head. You may see it for the first and last time in your life.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/PowerArmor/T45Siera.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/PowerArmor/T45Siera.rsi
+  - type: ToggleableClothing
+    clothingPrototype: N14ClothingHeadHelmetPowerArmorT45Sierra

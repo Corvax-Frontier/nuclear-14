@@ -16,3 +16,14 @@
   color: "#093f09"
   roles:
   - Raider
+
+- type: department
+  id: BrotherhoodWest
+  description: department-CaesarLegion-description
+  color: "#0c0fb1"
+  roles:
+  - BoSWestElderCommander
+  - BoSWestGunsmith
+  - BoSWestPaladin
+  - BoSWestScribe
+  - BoSWestKnight

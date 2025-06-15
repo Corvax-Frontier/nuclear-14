@@ -1,0 +1,54 @@
+- type: job
+  id: BoSWestElderCommander
+  setPreference: true
+  name: job-name-bos-west-elder-comm
+  description: job-description-bos-west-elder-comm
+  playTimeTracker: BoSWestElderCommander
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Human
+    - !type:CharacterDepartmentTimeRequirement
+      department: BrotherhoodWest
+      min: 216000 # 60 hours Corvax-Change
+    - !type:CharacterPlaytimeRequirement # Corvax-Add
+      tracker: BoSWestPaladin
+      min: 43200 # 12 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Human
+  startingGear: BoSWestElderCommanderGear
+  alwaysUseSpawner: true
+  icon: "JobIconBosMCommander" # Corvax-Change
+  supervisors: job-supervisors-bos-mid-commander
+  canBeAntag: false
+  accessGroups:
+  - BoSWest
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - BrotherhoodWest
+
+- type: startingGear
+  id: BoSWestElderCommanderGear
+  equipment:
+    jumpsuit: N14ClothingUniformBosRecon
+    back: N14ClothingBackpackMilitary # Corvax-Change
+    shoes: N14ClothingBootsCombatFilled
+    head:  N14ClothingHeadHatBrotherhoodFieldCap
+    outerClothing: N14ClothingOuterMidwestArmorMK2
+    hands: N14ClothingHandsGlovesCombat
+    pocket1: NCRBoSMidwestPaladinkits
+    id: N14IDBrotherhoodHolotagCommander
+    ears: N14ClothingHeadsetBOSMidwest
+    belt: ClothingBeltMilitary
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
+
+- type: playTimeTracker
+  id: BoSWestElderCommander

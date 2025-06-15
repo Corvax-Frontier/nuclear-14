@@ -38,7 +38,7 @@
       tracker: CaesarLegionDean
       min: 216000 # 60 hours veterancy unlock
   items:
-    - N14ClothingHeadHatDeanVeteranHelmet 
+    - N14ClothingHeadHatDeanVeteranHelmet
 
 - type: loadout
   id: LoadoutLegionDeadPrimeHelmet

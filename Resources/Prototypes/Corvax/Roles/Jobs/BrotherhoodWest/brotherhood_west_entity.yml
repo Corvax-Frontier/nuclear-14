@@ -1,0 +1,55 @@
+- type: entity
+  parent: MobHuman
+  id: N14BoSWestElderCommander
+  name: BoSWestElderCommander
+  components:
+    - type: Icon
+      sprite: _Nuclear14/Markers/Jobs/boswest.rsi
+      state: elder
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: Loadout
+      prototypes: [BoSWestElderCommanderGear]
+    - type: NpcFactionMember
+      factions:
+      - BrotherhoodWest
+
+- type: entity
+  parent: N14BoSWestElderCommander
+  id: N14MobHumanBoSWestKnight
+  name: BoSWestKnight
+  components:
+    - type: Icon
+      state: knight
+    - type: Loadout
+      prototypes: [BoSWestKnightGear]
+
+- type: entity
+  parent: N14BoSWestElderCommander
+  id: N14MobHumanBoSWestPaladin
+  name: BoSWestPaladin
+  components:
+    - type: Icon
+      state: paladin
+    - type: Loadout
+      prototypes: [BoSWestPaladinGear]
+
+- type: entity
+  parent: N14BoSWestElderCommander
+  id: N14MobHumanBoSWestScribe
+  name: BoSWestScribe
+  components:
+    - type: Icon
+      state: scribe
+    - type: Loadout
+      prototypes: [BoSWestScribeGear]
+
+- type: entity
+  parent: N14BoSWestElderCommander
+  id: N14MobHumanBoSWestGunsmith
+  name: BoSWestGunsmith
+  components:
+    - type: Icon
+      state: gunsmith
+    - type: Loadout
+      prototypes: [BoSWestGunsmithGear]

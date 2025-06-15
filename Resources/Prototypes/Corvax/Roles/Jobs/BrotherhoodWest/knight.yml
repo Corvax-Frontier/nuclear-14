@@ -1,0 +1,50 @@
+- type: job
+  id: BoSWestKnight
+  setPreference: true
+  name: job-name-bos-mid-knight
+  description: job-description-bos-mid-knight
+  playTimeTracker: BoSWestKnight
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Human
+    - !type:CharacterDepartmentTimeRequirement
+      department: BrotherhoodWest
+      min: 54000 # 15 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Human
+  startingGear: BoSWestKnightGear
+  alwaysUseSpawner: true
+  icon: "JobIconBosMKnight" # Corvax-Change
+  supervisors: job-supervisors-bos-mid-knight
+  canBeAntag: false
+  access:
+  - BoSWest
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - BrotherhoodWest
+
+- type: startingGear
+  id: BoSWestKnightGear
+  equipment:
+    jumpsuit: N14ClothingUniformJumpsuitBOSGreen
+    back: N14ClothingBackpackMilitary # Corvax-Change
+    shoes: N14ClothingBootsCombatFilled
+    head: N14ClothingHeadHatBrotherhoodMidwestHelmet
+    outerClothing: N14ClothingOuterMidwestArmor
+    pocket1: NCRBoSMidwestkits
+    hands: N14ClothingHandsGlovesCombat
+    id: N14IDBrotherhoodHolotagKnight
+    belt: ClothingBeltMilitary
+  storage: # Corvax-Change
+    back:
+    - N14BoxPlasticFilledMilitary
+
+- type: playTimeTracker
+  id: BoSWestKnight
